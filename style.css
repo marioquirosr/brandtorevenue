@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Brand to Revenue — style.css
+   Hoja de estilos consolidada de la landing.
+
+   Incluye: fuentes (Poppins + Merriweather), variables de color, tipografía,
+   espaciado, bordes/sombras, resets base, clases utilitarias de marca y los
+   breakpoints responsive.
+
+   NOTA: la landing original renderiza con estilos en línea (CSS-in-JS) y
+   breakpoints por JavaScript. Este archivo recoge TODO el sistema visual
+   (tokens + fundamentos + utilidades) para reutilizarlo en cualquier página.
+   Las fuentes se cargan desde Google Fonts; si necesitas 100% offline,
+   reemplaza el @import por @font-face con archivos locales (woff2/ttf).
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/* ==========================================================================
+   1 · TOKENS — Variables de marca
+   ========================================================================== */
+:root {
+  /* ---- Paleta cruda ---- */
+  --b2r-morado:        #5C38A4; /* Morado Autoridad — base estructural */
+  --b2r-morado-abismo: #2E1C52; /* Morado Abismo — superficies oscuras, hero */
+  --b2r-morado-niebla: #B9A8DC; /* Morado Niebla — texto sobre oscuro */
+  --b2r-magenta:       #E91E64; /* Magenta Acción — SOLO CTAs / acciones */
+  --b2r-amarillo:      #FFE600; /* Amarillo Acento — fondo de impacto, NUNCA texto */
+
+  --b2r-negro:         #1A1525; /* Negro Tinta — texto principal sobre claro */
+  --b2r-gris-humo:     #6B6478; /* Gris Humo — texto secundario */
+  --b2r-gris-niebla:   #A8A2B5; /* Gris Niebla — deshabilitado / terciario */
+  --b2r-blanco:        #FDFCFF; /* Blanco Hueso — fondo base */
+  --b2r-lila:          #F4F1FA; /* Lila Papel — fondo de secciones alternas */
+  --b2r-borde:         #DDD8EC; /* Borde — líneas finas sobre claro */
+
+  /* Tintes endurecidos para hover/press (sin gradientes, solo sólidos) */
+  --b2r-magenta-press: #C4174F;
+  --b2r-morado-press:  #4A2C86;
+
+  /* ---- Alias semánticos ---- */
+  --text-strong:    var(--b2r-negro);
+  --text-body:      var(--b2r-negro);
+  --text-secondary: var(--b2r-gris-humo);
+  --text-disabled:  var(--b2r-gris-niebla);
+  --text-on-dark:   var(--b2r-blanco);
+  --text-muted-dark:var(--b2r-morado-niebla);
+  --text-heading:   var(--b2r-morado);
+
+  --surface-base:    var(--b2r-blanco);
+  --surface-alt:     var(--b2r-lila);
+  --surface-card:    var(--b2r-blanco);
+  --surface-dark:    var(--b2r-morado);
+  --surface-abyss:   var(--b2r-morado-abismo);
+
+  --border-hairline: var(--b2r-borde);
+  --border-strong:   var(--b2r-morado);
+
+  --action:          var(--b2r-magenta);
+  --action-hover:    var(--b2r-magenta-press);
+  --action-text:     #FFFFFF;
+  --structure:       var(--b2r-morado);
+  --structure-hover: var(--b2r-morado-press);
+  --accent-impact:   var(--b2r-amarillo);
+  --focus-ring:      var(--b2r-magenta);
+
+  /* ---- Tipografía ---- */
+  --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:    'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-ui:      'Poppins', system-ui, -apple-system, sans-serif;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extrabold:800; /* lockup del logo — Poppins ExtraBold */
+  --fw-black:    900;
+
+  --fs-display:  72px;
+  --fs-h1:       44px;
+  --fs-h2:       32px;
+  --fs-h3:       20px;
+  --fs-label:    11px;
+  --fs-small:    13px;
+  --fs-body-lg:  18px;
+  --fs-body:     16px;
+  --fs-body-sm:  14px;
+
+  --lh-tight:   1.05;
+  --lh-heading: 1.15;
+  --lh-snug:    1.4;
+  --lh-body:    1.8;
+
+  --ls-display: -0.02em;
+  --ls-heading: -0.01em;
+  --ls-label:    0.22em;
+  --ls-wide:     0.1em;
+
+  /* ---- Espaciado (base 4px) ---- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 100px;
+  --seam: 2px;
+
+  /* ---- Radios — la marca es CUADRADA: todo en 0 ---- */
+  --radius-none: 0;
+  --radius: 0;
+
+  /* ---- Bordes ---- */
+  --border-hair: 1px;
+  --border-rule: 3px; /* regla estructural izquierda (morado) */
+  --border-cta:  2px; /* contorno de botón secundario */
+
+  /* ---- Sombras (uso restringido, planas, neutras) ---- */
+  --shadow-none: none;
+  --shadow-card: 0 1px 0 rgba(26,21,37,0.06), 0 2px 8px rgba(26,21,37,0.05);
+  --shadow-pop:  0 8px 28px rgba(46,28,82,0.18);
+
+  /* ---- Foco ---- */
+  --focus-width: 2px;
+  --focus-offset: 2px;
+
+  /* ---- Contenedores ---- */
+  --measure: 700px;
+  --container: 1200px;
+
+  /* ---- Movimiento (sobrio, sin rebotes) ---- */
+  --ease: cubic-bezier(0.2, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+
+  /* ---- Breakpoints (referencia; mismos valores que la landing JS) ---- */
+  --bp-mobile: 768px;  /* nav hamburguesa, footer 1 columna, CTAs apilados */
+  --bp-tablet: 820px;  /* grids 2-col -> 1-col en Hero/Framework/Servicios */
+}
+
+/* ==========================================================================
+   2 · RESET / BASE
+   ========================================================================== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--surface-base);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--b2r-morado); color: #fff; }
+a { -webkit-tap-highlight-color: transparent; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ==========================================================================
+   3 · TIPOGRAFÍA — Clases utilitarias
+   Poppins = estructura/títulos/UI · Merriweather = SOLO cuerpo
+   ========================================================================== */
+.b2r-display {
+  font-family: var(--font-display); font-weight: var(--fw-extrabold);
+  font-size: var(--fs-display); line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display); color: var(--text-strong);
+}
+.b2r-h1 {
+  font-family: var(--font-display); font-weight: var(--fw-bold);
+  font-size: var(--fs-h1); line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading); color: var(--text-heading);
+}
+.b2r-h2 {
+  font-family: var(--font-display); font-weight: var(--fw-bold);
+  font-size: var(--fs-h2); line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading); color: var(--text-heading);
+}
+.b2r-h3 {
+  font-family: var(--font-display); font-weight: var(--fw-semibold);
+  font-size: var(--fs-h3); line-height: var(--lh-heading); color: var(--text-strong);
+}
+.b2r-body {
+  font-family: var(--font-body); font-weight: var(--fw-regular);
+  font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text-body);
+}
+.b2r-body-lg { font-family: var(--font-body); font-size: var(--fs-body-lg); line-height: var(--lh-body); }
+.b2r-small   { font-family: var(--font-ui); font-size: var(--fs-small); color: var(--text-secondary); }
+.b2r-eyebrow {
+  font-family: var(--font-ui); font-weight: var(--fw-bold);
+  font-size: var(--fs-label); text-transform: uppercase;
+  letter-spacing: var(--ls-label); color: var(--text-heading);
+}
+
+/* ==========================================================================
+   4 · LAYOUT
+   ========================================================================== */
+.b2r-shell {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 56px);
+  padding-right: clamp(20px, 5vw, 56px);
+}
+.b2r-section { padding-top: var(--space-9); padding-bottom: var(--space-9); }
+.b2r-surface-alt   { background: var(--surface-alt); }
+.b2r-surface-dark  { background: var(--surface-dark); color: var(--text-on-dark); }
+.b2r-surface-abyss { background: var(--surface-abyss); color: var(--text-on-dark); }
+
+/* ==========================================================================
+   5 · COMPONENTES — Botones, callout, badges (cuadrados, sin gradientes)
+   ========================================================================== */
+.b2r-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-ui); font-weight: var(--fw-semibold); font-size: 16px;
+  line-height: 1; padding: 18px 44px; border: 0; border-radius: var(--radius);
+  cursor: pointer; text-decoration: none; transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.b2r-btn--primary { background: var(--action); color: var(--action-text); }
+.b2r-btn--primary:hover { background: var(--action-hover); }
+.b2r-btn--secondary {
+  background: transparent; color: var(--structure);
+  box-shadow: inset 0 0 0 var(--border-cta) var(--structure);
+}
+.b2r-btn--secondary:hover { background: var(--structure); color: #fff; }
+.b2r-btn--ghost { background: transparent; color: var(--structure); padding-left: 0; padding-right: 0; }
+.b2r-btn--ghost:hover { color: var(--structure-hover); }
+.b2r-btn--sm { font-size: 13px; padding: 10px 22px; }
+.b2r-btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+.b2r-callout {
+  background: var(--surface-alt); border-left: var(--space-1) solid var(--structure);
+  padding: 20px 24px;
+}
+.b2r-badge {
+  display: inline-flex; align-items: center; font-family: var(--font-ui);
+  font-size: 10px; font-weight: var(--fw-bold); letter-spacing: 0.16em;
+  text-transform: uppercase; line-height: 1; padding: 6px 10px;
+  background: var(--structure); color: #fff;
+}
+
+:focus-visible {
+  outline: var(--focus-width) solid var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* ==========================================================================
+   6 · RESPONSIVE
+   La landing decide el layout móvil por JS en --bp-tablet (820px) y
+   --bp-mobile (768px). Estas media queries replican el comportamiento clave
+   para uso CSS puro.
+   ========================================================================== */
+
+/* Tablet y abajo: grids de 2 columnas -> 1 columna, escala de tipografía */
+@media (max-width: 820px) {
+  :root {
+    --fs-display: 48px;
+    --fs-h1: 34px;
+    --fs-h2: 28px;
+  }
+  .b2r-section { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+}
+
+/* Móvil (≤768px): tipografía compacta, CTAs full-width, secciones más juntas */
+@media (max-width: 768px) {
+  :root {
+    --fs-display: 36px;
+    --fs-h1: 30px;
+    --fs-h2: 26px;
+    --fs-h3: 18px;
+  }
+  .b2r-shell { padding-left: 24px; padding-right: 24px; }
+  .b2r-section { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+  .b2r-btn { width: 100%; max-width: 280px; font-size: 14px; padding: 12px 32px; }
+}
+
+/* Móvil pequeño (≤400px) */
+@media (max-width: 400px) {
+  :root { --fs-display: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
