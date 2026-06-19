@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/B2R_logo_black.png">
+    <link rel="apple-touch-icon" href="images/B2R_logo_black.png">
+    <title>Caso de Éxito: Café Cucúa — Brand to Revenue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --morado: #5C38A4;
+            --morado-dark: #2E1C52;
+            --morado-light: #B9A8DC;
+            --magenta: #E91E64;
+            --amarillo: #FFE600;
+            --negro: #1A1525;
+            --gris-humo: #6B6478;
+            --gris-niebla: #A8A2B5;
+            --lila: #F4F1FA;
+            --blanco: #FDFCFF;
+            --borde: #DDD8EC;
+            --ff-d: 'Poppins', sans-serif;
+            --ff-b: 'Merriweather', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--ff-b);
+            background: var(--blanco);
+            color: var(--negro);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: var(--blanco);
+            border-bottom: 1px solid var(--borde);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-logo {
+            font-family: var(--ff-d);
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 0.98;
+            letter-spacing: -0.02em;
+            color: var(--negro);
+            text-decoration: none;
+        }
+
+        .back-link {
+            font-family: var(--ff-d);
+            font-size: 13px;
+            color: var(--morado);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        /* HEADER ACTIONS */
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .hdr-btn {
+            font-family: var(--ff-d);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 22px;
+            text-decoration: none;
+            transition: .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .hdr-btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+        .hdr-btn--primary {
+            background: var(--magenta);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(233,30,100,.35);
+        }
+        .hdr-btn--primary:hover {
+            background: #c81857;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(233,30,100,.45);
+        }
+        .hdr-btn--ghost {
+            color: var(--morado);
+            border: 1px solid var(--borde);
+            background: transparent;
+        }
+        .hdr-btn--ghost:hover { background: var(--lila); }
+
+        /* PORTADA */
+        .cover {
+            background: linear-gradient(150deg, var(--morado-dark) 0%, var(--morado) 100%);
+            padding: 100px 80px 80px;
+            text-align: center;
+        }
+
+        .cover-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin-bottom: 24px;
+        }
+
+        .cover-title {
+            font-family: var(--ff-d);
+            font-size: 64px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .cover-subtitle {
+            font-family: var(--ff-d);
+            font-size: 20px;
+            color: var(--morado-light);
+            margin-bottom: 64px;
+        }
+
+        /* STATS ROW */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.08);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--ff-d);
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--magenta);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--morado-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+        }
+
+        /* CONTENIDO */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .section-block {
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--morado);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--ff-d);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--negro);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-body {
+            font-size: 16px;
+            color: var(--gris-humo);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .section-body strong {
+            color: var(--negro);
+            font-weight: 700;
+        }
+
+        /* CALLOUT */
+        .callout {
+            background: var(--lila);
+            border-left: 4px solid var(--morado);
+            padding: 24px 28px;
+            margin: 32px 0;
+        }
+
+        .callout-text {
+            font-family: var(--ff-d);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--negro);
+            line-height: 1.5;
+        }
+
+        /* PIVOT GRID */
+        .pivot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 32px 0;
+        }
+
+        .pivot-item {
+            background: var(--lila);
+            padding: 24px;
+            border-left: 3px solid var(--morado);
+        }
+
+        .pivot-label {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--gris-niebla);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+        }
+
+        .pivot-before {
+            font-family: var(--ff-d);
+            font-size: 14px;
+            color: var(--gris-humo);
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+
+        .pivot-after {
+            font-family: var(--ff-d);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--morado);
+        }
+
+        /* RESULTS */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2px;
+            margin: 32px 0;
+        }
+
+        .result-item {
+            background: white;
+            border: 1px solid var(--borde);
+            border-left: 4px solid var(--magenta);
+            padding: 24px 28px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .result-number {
+            font-family: var(--ff-d);
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--magenta);
+            line-height: 1;
+            min-width: 80px;
+        }
+
+        .result-content {}
+
+        .result-title {
+            font-family: var(--ff-d);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--negro);
+            margin-bottom: 6px;
+        }
+
+        .result-desc {
+            font-size: 14px;
+            color: var(--gris-humo);
+            line-height: 1.6;
+        }
+
+        /* SEPARATOR */
+        .sep {
+            height: 1px;
+            background: var(--borde);
+            margin: 64px 0;
+        }
+
+        /* CIERRE */
+        .closing {
+            background: var(--morado-dark);
+            padding: 64px 80px;
+            text-align: center;
+        }
+
+        .closing-text {
+            font-family: var(--ff-d);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--amarillo);
+            margin-bottom: 32px;
+            line-height: 1.3;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--magenta);
+            color: white;
+            font-family: var(--ff-d);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 16px 40px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--negro);
+            padding: 32px 80px;
+            text-align: center;
+            font-family: var(--ff-d);
+            font-size: 12px;
+            color: var(--gris-humo);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .site-header { padding: 16px 24px; }
+            .header-actions { gap: 8px; }
+            .hdr-btn { padding: 10px 16px; font-size: 12px; }
+            .hdr-btn--ghost svg { display: none; }
+            .cover { padding: 60px 24px 48px; }
+            .cover-title { font-size: 40px; }
+            .stats-row { grid-template-columns: 1fr; }
+            .container { padding: 48px 24px; }
+            .pivot-grid { grid-template-columns: 1fr; }
+            .closing { padding: 48px 24px; }
+            .closing-text { font-size: 20px; }
+            .site-footer { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
+        <div class="header-actions">
+            <a href="B2R_Mindset_v5.html" class="hdr-btn hdr-btn--ghost">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+                Descargar Playbook
+            </a>
+            <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--primary">Agendar llamada</a>
+        </div>
+    </header>
+
+    <!-- PORTADA -->
+    <div class="cover">
+        <div class="cover-eyebrow">Caso de Éxito · B2R Operating System</div>
+        <div class="cover-title">Café Cucúa</div>
+        <div class="cover-subtitle">De commodity a robusta de especialidad con identidad penonomeña</div>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-number">+100%</div>
+                <div class="stat-label">en precio de venta por unidad</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">2x</div>
+                <div class="stat-label">valor comercial vs proyección inicial</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">MVP</div>
+                <div class="stat-label">lanzado sin inversión en infraestructura de escala</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="container">
+
+        <!-- EL DESAFÍO -->
+        <div class="section-block">
+            <div class="section-label">01 — El Desafío</div>
+            <div class="section-title">Un proyecto en ruta hacia el mercado equivocado</div>
+            <p class="section-body">El café Robusta en Panamá ha sido históricamente tratado como commodity de bajo costo: el café del termo, de la oficina y del consumo masivo. Roberto Del Rosario, fundador de Cucúa, llegó con una visión inercial: vender un Robusta tradicional enfocado en el mercado masivo.</p>
+            <p class="section-body">El proyecto enfrentaba tres barreras críticas que hacían inviable esa ruta:</p>
+        </div>
+
+        <div class="pivot-grid">
+            <div class="pivot-item">
+                <div class="pivot-label">Barrera 1</div>
+                <div class="pivot-after">Presupuesto limitado para competir por volumen contra grandes torrefactoras</div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-label">Barrera 2</div>
+                <div class="pivot-after">Sin experiencia en la distribución y logística que exige el consumo masivo</div>
+            </div>
+            <div class="pivot-item" style="grid-column: 1 / -1;">
+                <div class="pivot-label">Barrera 3</div>
+                <div class="pivot-after">Competir por precio en una categoría donde los márgenes para un productor pequeño son destructivos</div>
+            </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- EL INSIGHT -->
+        <div class="section-block">
+            <div class="section-label">02 — El Insight</div>
+            <div class="section-title">Validar antes de ejecutar cambió todo</div>
+            <p class="section-body">En lugar de salir a producir el commodity proyectado, se congeló la ejecución para activar un proceso de discovery: entrevistas con tostadores, baristas de alta gama y dueños de cafeterías de especialidad.</p>
+
+            <div class="callout">
+                <div class="callout-text">"El Robusta está viviendo una revalorización histórica dentro del nicho de especialidad — si se procesa con altos estándares."</div>
+            </div>
+
+            <p class="section-body">Ese hallazgo — obtenido <strong>antes de invertir un solo dólar en ejecución</strong> — redefinió el negocio en tres niveles:</p>
+        </div>
+
+        <div class="pivot-grid">
+            <div class="pivot-item">
+                <div class="pivot-label">Antes</div>
+                <div class="pivot-before">Café barato de oficina</div>
+                <div class="pivot-after">Robusta de especialidad con trazabilidad y origen diferenciado</div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-label">Antes</div>
+                <div class="pivot-before">Competir por volumen</div>
+                <div class="pivot-after">Modelo de alta rentabilidad por unidad</div>
+            </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- LA MARCA -->
+        <div class="section-block">
+            <div class="section-label">03 — La Construcción de Marca</div>
+            <div class="section-title">Identidad cultural como argumento de ventas</div>
+            <p class="section-body">Una vez redefinido el modelo, la estrategia se ancló en un pilar de valor innegociable: la identidad penonomeña de Coclé, transformando la herencia cultural en el principal activo de diferenciación comercial.</p>
+            <p class="section-body">El nombre <strong>Cucúa</strong> no es decorativo. Los diablitos cucuá son danzantes tradicionales de Coclé que confeccionan sus trajes con la corteza del árbol de cucuá — símbolo de la lucha entre el bien y el mal en las celebraciones del Corpus Christi. Identidad panameña en estado puro: artesanal, ancestral, con peso cultural.</p>
+            <p class="section-body">La marca tomó ese sentido y lo tradujo en un café que no necesita disfrazarse para disfrutarse.</p>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- RESULTADOS -->
+        <div class="section-block">
+            <div class="section-label">04 — Resultados</div>
+            <div class="section-title">Lo que produce validar antes de escalar</div>
+
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-number">2x</div>
+                    <div class="result-content">
+                        <div class="result-title">Duplicación del valor comercial</div>
+                        <div class="result-desc">Al mover el producto de commodity a especialidad, Cucúa capturó cerca del doble del valor por unidad que el fundador había proyectado originalmente.</div>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">0</div>
+                    <div class="result-content">
+                        <div class="result-title">Inversión en infraestructura antes de validar</div>
+                        <div class="result-desc">El producto se lanzó en fase MVP dentro de un círculo cerrado para medir recompra real antes de gastar en infraestructura de escalado.</div>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">∞</div>
+                    <div class="result-content">
+                        <div class="result-title">Estructura lista para crecer</div>
+                        <div class="result-desc">Se transformó una idea de bajo margen en un activo de alta gama con identidad cultural — diseñada para sostener el crecimiento sin reinventarse en el camino.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CIERRE -->
+    <div class="closing">
+        <div class="closing-text">Eso es lo que hace el B2R Operating System.<br>Validar. Posicionar. Construir sobre certezas.</div>
+        <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="cta-btn">Agendar llamada estratégica</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="site-footer">
+        © 2026 Brand to Revenue · Caso de Éxito: Café Cucúa · @brandtorevenue
+    </div>
+
+</body>
+</html>
