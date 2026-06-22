@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/B2R_logo_black.png">
+    <link rel="apple-touch-icon" href="images/B2R_logo_black.png">
+    <title>La Transición Global del Marketing y su Impacto Estructural en Panamá — Brand to Revenue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --morado: #5C38A4;
+            --morado-dark: #2E1C52;
+            --morado-light: #B9A8DC;
+            --magenta: #E91E64;
+            --amarillo: #FFE600;
+            --negro: #1A1525;
+            --gris-humo: #6B6478;
+            --gris-niebla: #A8A2B5;
+            --lila: #F4F1FA;
+            --blanco: #FDFCFF;
+            --borde: #DDD8EC;
+            --ff-d: 'Poppins', sans-serif;
+            --ff-b: 'Merriweather', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--ff-b);
+            background: var(--blanco);
+            color: var(--negro);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: var(--blanco);
+            border-bottom: 1px solid var(--borde);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .site-logo {
+            font-family: var(--ff-d);
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 0.98;
+            letter-spacing: -0.02em;
+            color: var(--negro);
+            text-decoration: none;
+        }
+
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        .hdr-btn {
+            font-family: var(--ff-d);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 22px;
+            text-decoration: none;
+            transition: .2s cubic-bezier(0.2,0,0.2,1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .hdr-btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+        .hdr-btn--primary {
+            background: var(--magenta);
+            color: #fff;
+        }
+        .hdr-btn--primary:hover { background: #C4174F; }
+        .hdr-btn--ghost {
+            color: var(--morado);
+            border: 1px solid var(--borde);
+            background: transparent;
+        }
+        .hdr-btn--ghost:hover { background: var(--lila); }
+
+        /* PORTADA */
+        .cover {
+            background: var(--morado-dark);
+            padding: 110px 80px 96px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cover-inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+        .cover-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .cover-eyebrow::before { content: ""; width: 40px; height: 3px; background: var(--magenta); }
+        .cover-title {
+            font-family: var(--ff-d);
+            font-size: 60px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.02;
+            margin-bottom: 28px;
+            letter-spacing: -0.03em;
+            text-wrap: balance;
+        }
+        .cover-subtitle {
+            font-family: var(--ff-d);
+            font-size: 21px;
+            font-weight: 500;
+            color: var(--morado-light);
+            line-height: 1.45;
+            max-width: 700px;
+            margin-bottom: 56px;
+        }
+        .cover-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 28px;
+        }
+        .meta-item { padding-right: 48px; }
+        .meta-k {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gris-niebla);
+            margin-bottom: 6px;
+        }
+        .meta-v { font-family: var(--ff-d); font-size: 15px; font-weight: 600; color: white; }
+
+        /* CONTENIDO */
+        .container { max-width: 800px; margin: 0 auto; padding: 88px 40px; }
+
+        .section-block { margin-bottom: 72px; }
+        .section-block:last-child { margin-bottom: 0; }
+
+        .section-label {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--morado);
+            margin-bottom: 14px;
+        }
+        .section-title {
+            font-family: var(--ff-d);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--negro);
+            margin-bottom: 22px;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            text-wrap: balance;
+        }
+        .section-body {
+            font-size: 16px;
+            color: var(--gris-humo);
+            line-height: 1.85;
+            margin-bottom: 18px;
+            text-wrap: pretty;
+        }
+        .section-body:last-child { margin-bottom: 0; }
+        .section-body strong { color: var(--negro); font-weight: 700; }
+        .section-body em { font-style: italic; color: var(--morado); }
+        .section-body .critical { color: var(--magenta); font-weight: 700; }
+
+        .lead { font-size: 19px; line-height: 1.7; color: var(--negro); }
+
+        /* SUB-HEADING dentro de sección */
+        .sub-title {
+            font-family: var(--ff-d);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--negro);
+            line-height: 1.3;
+            margin: 40px 0 16px;
+            letter-spacing: -0.01em;
+        }
+        .sub-title--minor { font-size: 17px; color: var(--morado); margin-top: 34px; }
+
+        /* LISTAS */
+        .b2r-list { list-style: none; display: grid; gap: 2px; margin: 22px 0; }
+        .b2r-list li {
+            background: var(--lila);
+            border-left: 3px solid var(--morado);
+            padding: 14px 20px;
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--negro);
+            display: flex;
+            gap: 14px;
+        }
+        .b2r-list li::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--magenta);
+            flex: 0 0 auto;
+            margin-top: 9px;
+        }
+        .b2r-list li strong { font-weight: 700; color: var(--morado); }
+
+        /* CALLOUT */
+        .callout {
+            background: var(--lila);
+            border-left: 4px solid var(--morado);
+            padding: 26px 32px;
+            margin: 32px 0;
+        }
+        .callout-text { font-size: 16px; color: var(--negro); line-height: 1.65; }
+        .callout-text strong { font-family: var(--ff-d); font-weight: 600; color: var(--morado); }
+        .callout--action { border-left-color: var(--magenta); }
+        .callout--action .callout-text strong { color: var(--magenta); }
+
+        /* STAT BOXES */
+        .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 28px 0; }
+        .stat-box {
+            background: var(--lila);
+            border-left: 4px solid var(--morado);
+            padding: 26px 28px;
+        }
+        .stat-box.critical { border-left-color: var(--magenta); }
+        .stat-num {
+            font-family: var(--ff-d);
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--morado);
+            line-height: 1;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .stat-box.critical .stat-num { color: var(--magenta); }
+        .stat-label {
+            font-family: var(--ff-d);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gris-humo);
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+        }
+
+        /* TABLA */
+        .compare-wrap { margin: 28px 0; border: 1px solid var(--borde); overflow-x: auto; }
+        table.compare {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--ff-d);
+            min-width: 540px;
+        }
+        table.compare thead th {
+            background: var(--morado);
+            color: white;
+            text-align: left;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 15px 18px;
+            vertical-align: top;
+        }
+        table.compare thead th:first-child { background: var(--morado-dark); }
+        table.compare tbody td {
+            padding: 16px 18px;
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: var(--negro);
+            vertical-align: top;
+            border-bottom: 1px solid var(--borde);
+        }
+        table.compare tbody tr:last-child td { border-bottom: none; }
+        table.compare tbody tr:nth-child(even) { background: var(--lila); }
+        table.compare tbody td .critical { color: var(--magenta); font-weight: 700; }
+        table.compare tbody td:first-child { font-weight: 600; color: var(--morado); }
+
+        /* SEPARATOR */
+        .sep { height: 1px; background: var(--borde); margin: 0 0 72px; }
+
+        /* CIERRE */
+        .closing { background: var(--morado-dark); padding: 84px 80px; }
+        .closing-inner { max-width: 800px; margin: 0 auto; }
+        .closing-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin-bottom: 24px;
+        }
+        .closing-body {
+            font-family: var(--ff-b);
+            font-size: 17px;
+            color: var(--morado-light);
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+        .closing-body:last-of-type { margin-bottom: 36px; }
+        .closing-body strong { color: white; font-weight: 700; }
+        .closing-sub {
+            font-family: var(--ff-d);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin: 40px 0 16px;
+        }
+        .closing-list { list-style: none; display: grid; gap: 2px; margin-bottom: 36px; }
+        .closing-list li {
+            background: rgba(255,255,255,0.06);
+            border-left: 3px solid var(--magenta);
+            padding: 14px 20px;
+            font-family: var(--ff-d);
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.5;
+        }
+        .closing-q {
+            font-family: var(--ff-d);
+            font-size: 26px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+            margin-bottom: 44px;
+            text-wrap: balance;
+            font-style: normal;
+        }
+        .closing-q em { font-style: italic; color: var(--amarillo); }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--magenta);
+            color: white;
+            font-family: var(--ff-d);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 17px 40px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: .2s cubic-bezier(0.2,0,0.2,1);
+        }
+        .cta-btn:hover { background: #C4174F; }
+        .cta-btn svg { width: 16px; height: 16px; }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--negro);
+            padding: 40px 80px;
+            text-align: center;
+            font-family: var(--ff-d);
+            font-size: 12px;
+            color: var(--gris-humo);
+            letter-spacing: 0.02em;
+            line-height: 1.8;
+        }
+        .site-footer .foot-main { color: var(--gris-niebla); margin-bottom: 12px; }
+        .site-footer .foot-note {
+            font-family: var(--ff-b);
+            font-style: italic;
+            font-size: 11.5px;
+            color: var(--gris-humo);
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .site-header { padding: 16px 20px; }
+            .cover { padding: 64px 24px 56px; }
+            .cover-title { font-size: 36px; }
+            .cover-subtitle { font-size: 18px; }
+            .meta-item { padding-right: 28px; }
+            .container { padding: 56px 24px; }
+            .section-title { font-size: 25px; }
+            .stat-row { grid-template-columns: 1fr; }
+            .closing { padding: 56px 24px; }
+            .closing-q { font-size: 21px; }
+            .site-footer { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
+        <div class="header-actions">
+            <a href="informes.html" class="hdr-btn hdr-btn--primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                Ver todos los manifiestos
+            </a>
+        </div>
+    </header>
+
+    <!-- PORTADA -->
+    <div class="cover">
+        <div class="cover-inner">
+            <div class="cover-eyebrow">Informe de Mercado · Marketing en Panamá</div>
+            <h1 class="cover-title">La Transición Global del Marketing y su Impacto Estructural en Panamá</h1>
+            <p class="cover-subtitle">Análisis de tendencias internacionales y rezagos estructurales del mercado panameño.</p>
+            <div class="cover-meta">
+                <div class="meta-item">
+                    <div class="meta-k">Formato</div>
+                    <div class="meta-v">Informe de mercado</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-k">Eje</div>
+                    <div class="meta-v">Global → Panamá</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-k">Actualización</div>
+                    <div class="meta-v">Junio 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="container">
+
+        <!-- INTRO EJECUTIVA -->
+        <div class="section-block">
+            <div class="section-label">Introducción Ejecutiva</div>
+            <p class="section-body lead">El marketing global está experimentando una reconfiguración estructural sin precedentes. Lo que antes se gestionaba como un departamento enfocado en la comunicación y la estética, hoy se está transformando en una disciplina de ingeniería de negocios, impulsada por arquitectura de datos, automatización y modelos rigurosos de rendimiento financiero.</p>
+            <p class="section-body">Este informe analiza el panorama internacional de esta transformación y aterriza de manera específica en la realidad de Panamá, examinando tanto las dinámicas globales como los rezagos estructurales locales.</p>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- SECCIÓN 1 -->
+        <div class="section-block">
+            <div class="section-label">01 — Panorama Mundial</div>
+            <h2 class="section-title">La Era de la Ingeniería de Marketing</h2>
+
+            <p class="section-body">A nivel global, el marketing ha dejado de ser una serie de campañas aisladas para convertirse en un sistema operativo continuo. Esta evolución está impulsada por presiones económicas, regulatorias y tecnológicas claramente documentadas.</p>
+
+            <h3 class="sub-title">1.1 La Explosión del Ecosistema MarTech</h3>
+            <p class="section-body">El mercado global de tecnología de marketing (MarTech) está en expansión acelerada:</p>
+            <ul class="b2r-list">
+                <li><span><strong>Valuación actual (2025):</strong> USD 524-589 billones, según múltiples fuentes</span></li>
+                <li><span><strong>Proyección 2026:</strong> USD 1.031 billones (State of Martech &amp; Marketing Ops Report 2025)</span></li>
+                <li><span><strong>Crecimiento de soluciones:</strong> El panorama de herramientas disponibles pasó de 150 en 2011 a aproximadamente 14,100 soluciones consolidadas en 2024</span></li>
+                <li><span><strong>Tendencia de inversión:</strong> El gasto empresarial se está desplazando hacia infraestructura de software, automatización y plataformas de datos</span></li>
+            </ul>
+            <div class="callout">
+                <p class="callout-text"><strong>Lo que esto significa:</strong> La sofisticación técnica ya no es un diferencial competitivo; es una línea base. La pregunta no es "¿usamos MarTech?". Sino "¿qué problemas específicos resolvemos con MarTech?"</p>
+            </div>
+
+            <h3 class="sub-title">1.2 Presión Presupuestaria y Reconfiguración de Gastos</h3>
+            <p class="section-body">La investigación de Gartner 2026 CMO Spend Survey revela dinámicas presupuestarias críticas:</p>
+            <div class="stat-row">
+                <div class="stat-box">
+                    <div class="stat-num">7.8%</div>
+                    <div class="stat-label">Porcentaje promedio de ingresos asignado a marketing</div>
+                </div>
+                <div class="stat-box critical">
+                    <div class="stat-num">59%</div>
+                    <div class="stat-label">CMOs que reportan presupuestos insuficientes</div>
+                </div>
+            </div>
+            <p class="section-body">Sin crecimiento de presupuestos generales, los CFOs exigen eficiencia extrema. <strong>Consecuencia clave:</strong> El marketing ya no puede reportar "vistas" o "me gusta". Debe reportar Unit Economics directos: costo de adquisición de clientes (CAC), valor de tiempo de vida del cliente (LTV) y retorno sobre inversión publicitaria (ROAS).</p>
+
+            <h3 class="sub-title">1.3 Inteligencia Artificial: De Herramienta a Infraestructura</h3>
+            <p class="section-body">Los datos más recientes de Gartner 2026 CMO Spend Survey muestran una adopción acelerada de IA:</p>
+            <div class="compare-wrap">
+                <table class="compare">
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>Porcentaje</th>
+                            <th>Interpretación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inversión promedio en IA</td>
+                            <td><span class="critical">15.3%</span></td>
+                            <td>De presupuestos de marketing</td>
+                        </tr>
+                        <tr>
+                            <td>CMOs con capacidades maduras</td>
+                            <td><span class="critical">21.3%</span></td>
+                            <td>Líderes del mercado</td>
+                        </tr>
+                        <tr>
+                            <td>Mejora en eficiencia de tiempo</td>
+                            <td><span class="critical">49%</span></td>
+                            <td>ROI documentado</td>
+                        </tr>
+                        <tr>
+                            <td>Percepciones vs. reality</td>
+                            <td>70% vs. 30%</td>
+                            <td>Dicen que es crítico pero sin capacidades</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout">
+                <p class="callout-text"><strong>Lo que esto significa:</strong> La IA no es un experimento; es presupuesto operativo. Pero la mayoría de las organizaciones no están estructuradas para capturar valor de esa inversión.</p>
+            </div>
+
+            <h3 class="sub-title">1.4 La Era Post-Cookie y el Peso Estratégico de First-Party Data</h3>
+            <p class="section-body">Tras las restricciones de privacidad (Apple's App Tracking Transparency, regulaciones GDPR/CCPA), la estrategia de datos se ha reconfigurado completamente:</p>
+            <ul class="b2r-list">
+                <li><span><strong>Efectividad de third-party data:</strong> Ha decaído significativamente en plataformas de medios</span></li>
+                <li><span><strong>Impacto de first-party data:</strong> Empresas que estructuran bases de datos propias logran un aumento de 2.9X en revenue lift (Google/BCG study)</span></li>
+                <li><span><strong>Mejora en ROAS:</strong> 40% de mejora en retorno sobre inversión publicitaria (McKinsey)</span></li>
+                <li><span><strong>Reducción de CAC:</strong> Hasta 50% de reducción en costo de adquisición de clientes (McKinsey)</span></li>
+            </ul>
+            <div class="callout">
+                <p class="callout-text"><strong>Lo que esto significa:</strong> El activo más valioso en marketing ya no es el reach; es el orden, profundidad y capacidad predictiva de tu base de datos propia.</p>
+            </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- SECCIÓN 2 -->
+        <div class="section-block">
+            <div class="section-label">02 — La Realidad en Panamá</div>
+            <h2 class="section-title">Diagnóstico Estructural</h2>
+
+            <p class="section-body">Al analizar el mercado panameño de manera objetiva, es evidente que el país se encuentra en una etapa de maduración intermedia, con talento humano competente pero bajo un marco estratégico rezagado respecto a estándares globales.</p>
+
+            <h3 class="sub-title">2.1 Tres Factores Estructurales que Explican el Rezago</h3>
+
+            <h3 class="sub-title sub-title--minor">Factor 1: El Sesgo del "Capital Barato"</h3>
+            <p class="section-body">Durante las décadas de bonanza económica y alto consumo en Panamá (pre-2018), las empresas locales vendían con relativa facilidad. El flujo de dinero en las calles y centros comerciales reducía la necesidad de optimizar Unit Economics.</p>
+            <p class="section-body"><strong>Consecuencia operativa:</strong> Las grandes corporaciones locales desarrollaron una ortodoxia de marketing basada en volumen: vallas publicitarias masivas, pauta televisiva continua, eventos corporativos de gran escala y presupuestos definidos por "lo que hicimos el año pasado".</p>
+            <p class="section-body"><strong>El problema actual:</strong> Cuando el mercado se contrajo o saturó post-2019, estas organizaciones carecían de infraestructura técnica para pivotear hacia el marketing de precisión.</p>
+
+            <h3 class="sub-title sub-title--minor">Factor 2: La Burbuja de "Métricas de Vanidad" en Redes Sociales</h3>
+            <p class="section-body">Panamá es uno de los países con mayor penetración de redes sociales por habitante en la región (95%+ en zonas urbanas). Sin embargo, el uso corporativo ha sido superficial:</p>
+            <ul class="b2r-list">
+                <li><span><strong>Dependencia de influencer marketing:</strong> Las marcas gastan desproporcionadamente en influencers de entretenimiento en lugar de contenido especializado</span></li>
+                <li><span><strong>Métricas incorrectas:</strong> Se reportan "likes", comentarios o seguidores en lugar de tasas de conversión o valor de cliente adquirido</span></li>
+                <li><span><strong>Estructura de demanda:</strong> Los clientes locales exigen reportes basados en engagement de red social, no en impacto en revenue</span></li>
+            </ul>
+            <div class="callout">
+                <p class="callout-text"><strong>Aclaración importante:</strong> Esto es un problema de sofisticación de la demanda corporativa, no de la falta de talento en agencias. Las agencias panameñas pueden hacer atribución sofisticada; es que los clientes no les pagan por ello.</p>
+            </div>
+
+            <h3 class="sub-title sub-title--minor">Factor 3: Captura de Presupuesto por Medios Tradicionales</h3>
+            <p class="section-body">A diferencia de mercados como Colombia o México, donde la inversión digital ya representa el 60-70% del pastel publicitario, en Panamá los grandes grupos de medios tradicionales retienen un porcentaje elevado:</p>
+            <ul class="b2r-list">
+                <li><span>Estructura del mercado: 3-4 canales televisivos abiertos con poder de lobby significativo</span></li>
+                <li><span>Percepción de "garantía": CMOs locales frecuentemente ven la TV como lo seguro en mercados fragmentados digitalmente</span></li>
+                <li><span>Costo de migración: El capital publicitario está cautivo en contratos multianuales y relaciones comerciales establecidas</span></li>
+            </ul>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- SECCIÓN 3 -->
+        <div class="section-block">
+            <div class="section-label">03 — Matriz de Transición</div>
+            <h2 class="section-title">Evolución Observable en Panamá</h2>
+
+            <p class="section-body">El mercado panameño se encuentra en un punto donde las presiones financieras y tecnológicas están forzando cambios estructurales. La siguiente matriz muestra el viaje desde la ortodoxia tradicional hacia estándares globales:</p>
+
+            <div class="compare-wrap">
+                <table class="compare">
+                    <thead>
+                        <tr>
+                            <th>Modelo Tradicional (Rezagado)</th>
+                            <th>Modelo en Transición (Actual - Panamá)</th>
+                            <th>Modelo Global (Destino)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Campaneo masivo e interrupción</td>
+                            <td>Mezcla de campañas + sistemas continuos</td>
+                            <td>Sistemas Always-On enfoque LTV/CAC</td>
+                        </tr>
+                        <tr>
+                            <td>Reportes basados en "engagement" de redes</td>
+                            <td>Comienzan a medir conversión</td>
+                            <td>Infraestructura de Datos Propios (First-Party Data)</td>
+                        </tr>
+                        <tr>
+                            <td>Creación manual y masiva de contenidos</td>
+                            <td>Primeros intentos de automatización</td>
+                            <td>Estrategia y Arquitectura Tecnológica MarTech</td>
+                        </tr>
+                        <tr>
+                            <td>Presupuesto concentrado en TV/Radio</td>
+                            <td>Migración lenta hacia digital</td>
+                            <td>Atribución científica multitoque</td>
+                        </tr>
+                        <tr>
+                            <td>Sin auditoría de customer journey</td>
+                            <td>Fragmentación tecnológica sin integración</td>
+                            <td>Optimización continua basada en datos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CIERRE / CONCLUSIÓN -->
+    <div class="closing">
+        <div class="closing-inner">
+            <div class="closing-eyebrow">04 — Conclusión · Evaluación Objetiva</div>
+            <p class="closing-body">El marketing en Panamá no sufre de falta de talento intelectual en agencias o profesionales. Sufre de una <strong>sofisticación desigual de la demanda corporativa</strong> y de una estructura de incentivos corporativos que penaliza la experimentación.</p>
+            <p class="closing-body">La transformación no es teórica; es una necesidad de supervivencia empresarial en una economía que se sofistica más rápido que su infraestructura de marketing.</p>
+
+            <div class="closing-sub">Oportunidad para Profesionales y Agencias</div>
+            <p class="closing-body" style="margin-bottom:16px;">Existe un océano azul para profesionales que decidan romper con ortodoxias locales y presentarse ante empresas panameñas no como creadores de contenido, sino como:</p>
+            <ul class="closing-list">
+                <li>Arquitectos de sistemas operativos de negocio bajo la perspectiva B2R (Brand to Revenue™)</li>
+                <li>Directores de transformación de datos</li>
+                <li>Consultores en eficiencia de customer acquisition</li>
+            </ul>
+
+            <p class="closing-q">El mercado panameño está sediento de eficiencia. <em>Solo necesita profesionales que le enseñen a medir lo que realmente importa.</em></p>
+
+            <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="cta-btn">
+                Agendar llamada estratégica
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="site-footer">
+        <div class="foot-main">© 2026 Brand to Revenue · @brandtorevenue · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b666a796264547a7e627964784b647e7f6764646025686466">[email&#160;protected]</a> · +507 6244-0096</div>
+        <div class="foot-note">Nota: Este análisis representa una evaluación basada en datos globales y locales disponibles a junio de 2026. Las dinámicas de mercado están sujetas a cambios. Se recomienda la validación con investigación primaria antes de tomar decisiones estructurales basadas en este informe.</div>
+    </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

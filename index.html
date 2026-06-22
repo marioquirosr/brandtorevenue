@@ -4494,12 +4494,13 @@ function LandingNav() {
   const links = [
     { id: 'problem', label: 'Problema' },
     { id: 'framework', label: 'Sistema' },
+    { id: 'manifiestos', label: 'Manifiestos', href: 'informes.html' },
     { id: 'services', label: 'Servicios' },
     { id: 'bio', label: 'Sobre Mario' },
   ];
   // Close the menu when switching back to desktop.
   React.useEffect(() => { if (!isMobile) setOpen(false); }, [isMobile]);
-  const go = (id) => { setOpen(false); window.scrollToId(id); };
+  const go = (l) => { setOpen(false); if (l.href) { window.location.href = l.href; } else { window.scrollToId(l.id); } };
 
   return (
     <header style={{
@@ -4518,7 +4519,7 @@ function LandingNav() {
         {!isMobile && (
           <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
             {links.map((l) => (
-              <a key={l.id} onClick={() => go(l.id)} style={{
+              <a key={l.id} href={l.href || ('#' + l.id)} onClick={(e) => { if (!l.href) { e.preventDefault(); go(l); } }} style={{
                 fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 500,
                 color: 'var(--b2r-negro)', textDecoration: 'none', cursor: 'pointer', letterSpacing: '0.01em',
               }}>{l.label}</a>
@@ -4553,7 +4554,7 @@ function LandingNav() {
           padding: '8px clamp(20px, 5vw, 56px) 20px', display: 'flex', flexDirection: 'column',
         }}>
           {links.map((l) => (
-            <a key={l.id} onClick={() => go(l.id)} style={{
+            <a key={l.id} href={l.href || ('#' + l.id)} onClick={(e) => { if (!l.href) { e.preventDefault(); go(l); } else { setOpen(false); } }} style={{
               fontFamily: 'var(--font-ui)', fontSize: '16px', fontWeight: 600,
               color: 'var(--b2r-negro)', textDecoration: 'none', cursor: 'pointer',
               padding: '15px 0', borderBottom: '1px solid var(--b2r-borde)',
@@ -5140,6 +5141,11 @@ function Bio() {
               <p style={{ margin: '0 0 18px' }}>He liderado estrategias de crecimiento en sectores como Fintech, Consumo Masivo y Tecnología — y fundé mis propias empresas, incluyendo una agencia de marketing digital y una operación de logística durante la pandemia.</p>
               <p style={{ margin: 0 }}>Esa trayectoria me dio una ventaja difícil de replicar: <strong style={{ color: 'var(--b2r-magenta)', fontFamily: 'var(--font-display)', fontWeight: 700 }}>identificar el problema real de un negocio antes de gastar un solo dólar en ejecución.</strong></p>
             </div>
+
+            <p style={{ fontFamily: 'var(--font-ui)', fontSize: '15px', lineHeight: 1.7, color: 'var(--b2r-negro)', margin: '24px 0 0' }}>
+              Cada cierto tiempo publico manifiestos sobre marketing y negocios.{' '}
+              <a href="informes.html" style={{ color: 'var(--b2r-magenta)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}>→ Ver manifiestos</a>
+            </p>
 
             {/* incubation program — Ciudad del Saber logo slot beside the note */}
             <div style={{

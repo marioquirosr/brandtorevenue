@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/B2R_logo_black.png">
+    <link rel="apple-touch-icon" href="images/B2R_logo_black.png">
+    <title>La Economía de la Atención — Brand to Revenue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --morado: #5C38A4;
+            --morado-dark: #2E1C52;
+            --morado-light: #B9A8DC;
+            --magenta: #E91E64;
+            --amarillo: #FFE600;
+            --negro: #1A1525;
+            --gris-humo: #6B6478;
+            --gris-niebla: #A8A2B5;
+            --lila: #F4F1FA;
+            --blanco: #FDFCFF;
+            --borde: #DDD8EC;
+            --ff-d: 'Poppins', sans-serif;
+            --ff-b: 'Merriweather', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--ff-b);
+            background: var(--blanco);
+            color: var(--negro);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: var(--blanco);
+            border-bottom: 1px solid var(--borde);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .site-logo {
+            font-family: var(--ff-d);
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 0.98;
+            letter-spacing: -0.02em;
+            color: var(--negro);
+            text-decoration: none;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .hdr-btn {
+            font-family: var(--ff-d);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 22px;
+            text-decoration: none;
+            transition: .2s cubic-bezier(0.2,0,0.2,1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .hdr-btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+        .hdr-btn--primary {
+            background: var(--magenta);
+            color: #fff;
+        }
+        .hdr-btn--primary:hover { background: #C4174F; }
+        .hdr-btn--ghost {
+            color: var(--morado);
+            border: 1px solid var(--borde);
+            background: transparent;
+        }
+        .hdr-btn--ghost:hover { background: var(--lila); }
+
+        /* PORTADA */
+        .cover {
+            background: var(--morado-dark);
+            padding: 110px 80px 96px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cover-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .cover-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .cover-eyebrow::before {
+            content: "";
+            width: 40px;
+            height: 3px;
+            background: var(--magenta);
+        }
+        .cover-title {
+            font-family: var(--ff-d);
+            font-size: 76px;
+            font-weight: 900;
+            color: white;
+            line-height: 0.98;
+            margin-bottom: 28px;
+            letter-spacing: -0.03em;
+        }
+        .cover-subtitle {
+            font-family: var(--ff-d);
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--morado-light);
+            line-height: 1.4;
+            max-width: 680px;
+            margin-bottom: 56px;
+        }
+        .cover-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 28px;
+        }
+        .meta-item { padding-right: 48px; }
+        .meta-k {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gris-niebla);
+            margin-bottom: 6px;
+        }
+        .meta-v {
+            font-family: var(--ff-d);
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* CONTENIDO */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 88px 40px;
+        }
+
+        .section-block { margin-bottom: 72px; }
+        .section-block:last-child { margin-bottom: 0; }
+
+        .section-label {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--morado);
+            margin-bottom: 14px;
+        }
+        .section-title {
+            font-family: var(--ff-d);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--negro);
+            margin-bottom: 22px;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            text-wrap: balance;
+        }
+        .section-body {
+            font-size: 16px;
+            color: var(--gris-humo);
+            line-height: 1.85;
+            margin-bottom: 18px;
+            text-wrap: pretty;
+        }
+        .section-body:last-child { margin-bottom: 0; }
+        .section-body strong { color: var(--negro); font-weight: 700; }
+        .section-body em { font-style: italic; color: var(--morado); }
+
+        /* LEAD intro */
+        .lead {
+            font-size: 19px;
+            line-height: 1.7;
+            color: var(--negro);
+        }
+
+        /* CALLOUT */
+        .callout {
+            background: var(--lila);
+            border-left: 4px solid var(--morado);
+            padding: 28px 32px;
+            margin: 36px 0;
+        }
+        .callout-text {
+            font-family: var(--ff-d);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--negro);
+            line-height: 1.5;
+        }
+        .callout--action { border-left-color: var(--magenta); }
+
+        /* SEPARATOR */
+        .sep { height: 1px; background: var(--borde); margin: 0 0 72px; }
+
+        /* ===== TIMELINE ===== */
+        .timeline { margin: 8px 0 0; }
+        .era {
+            display: grid;
+            grid-template-columns: 96px 1fr;
+            border-left: 2px solid var(--borde);
+            padding: 0 0 2px 0;
+            position: relative;
+        }
+        .era:last-child { border-left-color: transparent; }
+        .era-rail {
+            position: relative;
+            padding: 4px 24px 48px 28px;
+        }
+        .era-index {
+            font-family: var(--ff-d);
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--morado);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .era-rail::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--morado);
+        }
+        .era:last-child .era-rail::before { background: var(--magenta); }
+        .era-body { padding: 0 0 48px 8px; }
+        .era-period {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gris-niebla);
+            margin-bottom: 8px;
+        }
+        .era-name {
+            font-family: var(--ff-d);
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--negro);
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+        .era-archetype {
+            font-family: var(--ff-d);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--morado);
+            margin-bottom: 16px;
+        }
+        .era-desc {
+            font-size: 15px;
+            color: var(--gris-humo);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+        .era-attrs {
+            display: grid;
+            gap: 2px;
+        }
+        .era-attr {
+            background: var(--lila);
+            border-left: 3px solid var(--morado);
+            padding: 16px 20px;
+        }
+        .era-attr-k {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--morado);
+            margin-bottom: 6px;
+        }
+        .era-attr-v {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: var(--negro);
+        }
+        .era-attr-v strong { font-weight: 700; }
+
+        /* ===== TABLE ===== */
+        .compare-wrap { margin: 8px 0 0; border: 1px solid var(--borde); }
+        table.compare {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--ff-d);
+        }
+        table.compare thead th {
+            background: var(--morado);
+            color: white;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 16px 20px;
+        }
+        table.compare thead th:first-child { background: var(--morado-dark); }
+        table.compare tbody td {
+            padding: 18px 20px;
+            font-size: 14px;
+            line-height: 1.55;
+            color: var(--negro);
+            vertical-align: top;
+            border-bottom: 1px solid var(--borde);
+        }
+        table.compare tbody tr:last-child td { border-bottom: none; }
+        table.compare tbody tr:nth-child(even) { background: var(--lila); }
+        table.compare tbody td:first-child {
+            font-weight: 700;
+            color: var(--morado);
+            width: 24%;
+        }
+        table.compare .td-past { color: var(--gris-humo); }
+
+        /* ===== COMPETIDORES ===== */
+        .vs-list {
+            display: grid;
+            gap: 2px;
+            margin: 28px 0;
+        }
+        .vs-item {
+            background: white;
+            border: 1px solid var(--borde);
+            border-left: 3px solid var(--negro);
+            padding: 16px 22px;
+            font-family: var(--ff-d);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--negro);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .vs-item span.dot {
+            width: 7px; height: 7px;
+            background: var(--magenta);
+            flex: 0 0 auto;
+        }
+
+        /* ===== CASE STUDY ===== */
+        .case-divider {
+            background: var(--morado-dark);
+            padding: 64px 80px;
+            margin: 0;
+        }
+        .case-inner { max-width: 800px; margin: 0 auto; }
+        .case-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .case-eyebrow::before { content:""; width:40px; height:3px; background: var(--magenta); }
+        .case-title {
+            font-family: var(--ff-d);
+            font-size: 38px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            text-wrap: balance;
+        }
+        .case-sub {
+            font-family: var(--ff-b);
+            font-size: 17px;
+            color: var(--morado-light);
+            line-height: 1.7;
+        }
+
+        /* image placeholder */
+        .img-ph {
+            margin: 8px 0 12px;
+            border: 1px solid var(--borde);
+            background:
+                repeating-linear-gradient(135deg, var(--lila) 0 14px, var(--blanco) 14px 28px);
+            aspect-ratio: 16 / 8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+        .img-ph code {
+            font-family: 'Poppins', monospace;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+            color: var(--gris-humo);
+            background: var(--blanco);
+            border: 1px solid var(--borde);
+            padding: 10px 16px;
+            max-width: 460px;
+            line-height: 1.5;
+        }
+        .img-cap {
+            font-family: var(--ff-b);
+            font-style: italic;
+            font-size: 13.5px;
+            color: var(--gris-niebla);
+            line-height: 1.6;
+            margin: 0 0 8px;
+        }
+
+        /* factor cards */
+        .factor {
+            background: white;
+            border: 1px solid var(--borde);
+            border-left: 4px solid var(--morado);
+            padding: 28px 32px;
+            margin-bottom: 2px;
+        }
+        .factor-head {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+        .factor-num {
+            font-family: var(--ff-d);
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--morado);
+            line-height: 1;
+            flex: 0 0 auto;
+        }
+        .factor-title {
+            font-family: var(--ff-d);
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--negro);
+            line-height: 1.25;
+        }
+        .factor-body { font-size: 15px; color: var(--gris-humo); line-height: 1.8; }
+        .factor-body strong { color: var(--negro); font-weight: 700; }
+        .factor-body + .factor-body { margin-top: 12px; }
+
+        .ba-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 18px 0 0;
+        }
+        .ba-cell {
+            background: var(--lila);
+            border-left: 3px solid var(--morado);
+            padding: 18px 20px;
+        }
+        .ba-k {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gris-niebla);
+            margin-bottom: 8px;
+        }
+        .ba-v { font-family: var(--ff-d); font-size: 14.5px; font-weight: 600; color: var(--morado); line-height: 1.5; }
+        .ba-cell--before .ba-v { color: var(--gris-humo); font-weight: 500; }
+
+        /* CIERRE */
+        .closing {
+            background: var(--morado-dark);
+            padding: 84px 80px;
+        }
+        .closing-inner { max-width: 800px; margin: 0 auto; }
+        .closing-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin-bottom: 24px;
+        }
+        .closing-lead {
+            font-family: var(--ff-b);
+            font-size: 19px;
+            color: var(--morado-light);
+            line-height: 1.8;
+            margin-bottom: 36px;
+        }
+        .closing-q {
+            font-family: var(--ff-d);
+            font-size: 34px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            margin-bottom: 44px;
+            text-wrap: balance;
+        }
+        .closing-q strong { color: var(--amarillo); font-weight: 800; }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--magenta);
+            color: white;
+            font-family: var(--ff-d);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 17px 40px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: .2s cubic-bezier(0.2,0,0.2,1);
+        }
+        .cta-btn:hover { background: #C4174F; }
+        .cta-btn svg { width: 16px; height: 16px; }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--negro);
+            padding: 36px 80px;
+            text-align: center;
+            font-family: var(--ff-d);
+            font-size: 12px;
+            color: var(--gris-humo);
+            letter-spacing: 0.02em;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .site-header { padding: 16px 20px; }
+            .header-actions { gap: 8px; }
+            .hdr-btn { padding: 10px 14px; font-size: 12px; }
+            .hdr-btn--ghost { display: none; }
+            .cover { padding: 64px 24px 56px; }
+            .cover-title { font-size: 44px; }
+            .cover-subtitle { font-size: 18px; }
+            .meta-item { padding-right: 28px; }
+            .container { padding: 56px 24px; }
+            .section-title { font-size: 26px; }
+            .era { grid-template-columns: 58px 1fr; }
+            .era-rail { padding: 4px 10px 40px 18px; }
+            .era-index { font-size: 22px; }
+            .compare-wrap { overflow-x: auto; }
+            table.compare { min-width: 560px; }
+            .case-divider { padding: 48px 24px; }
+            .case-title { font-size: 28px; }
+            .factor { padding: 24px 22px; }
+            .ba-grid { grid-template-columns: 1fr; }
+            .closing { padding: 56px 24px; }
+            .closing-q { font-size: 24px; }
+            .site-footer { padding: 28px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
+        <div class="header-actions">
+            <a href="informes.html" class="hdr-btn hdr-btn--primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                Ver todos los manifiestos
+            </a>
+        </div>
+    </header>
+
+    <!-- PORTADA -->
+    <div class="cover">
+        <div class="cover-inner">
+            <div class="cover-eyebrow">Informe B2R · Comportamiento del consumidor</div>
+            <h1 class="cover-title">La Economía<br>de la Atención</h1>
+            <p class="cover-subtitle">Cómo evolucionó el consumidor y por qué hoy todos compiten por los mismos segundos.</p>
+            <div class="cover-meta">
+                <div class="meta-item">
+                    <div class="meta-k">Formato</div>
+                    <div class="meta-v">Informe estratégico</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-k">Eje</div>
+                    <div class="meta-v">Atención → Confianza</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-k">Lectura</div>
+                    <div class="meta-v">9 minutos</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="container">
+
+        <!-- INTRO -->
+        <div class="section-block">
+            <div class="section-label">Introducción</div>
+            <p class="section-body lead">Para entender cómo llegamos a la actual economía de la atención, hay que ver el marketing no como una serie de tecnologías aisladas, sino como una evolución en la forma en que los seres humanos procesamos la información y tomamos decisiones de compra.</p>
+            <p class="section-body">Pasamos de un consumidor pasivo que escuchaba lo que había, a un consumidor saturado que activamente bloquea los impactos publicitarios.</p>
+            <p class="section-body">Este informe traza esa evolución analizando el comportamiento del consumidor, los canales dominantes y el patrón de consumo que definió cada era — y cierra con un caso práctico que muestra cómo esta lógica ya está cambiando hasta los negocios físicos.</p>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- TIMELINE -->
+        <div class="section-block">
+            <div class="section-label">01 — La línea del tiempo de la atención</div>
+            <h2 class="section-title">Cinco eras, cinco consumidores distintos</h2>
+            <p class="section-body" style="margin-bottom:8px;">Cada salto tecnológico no solo cambió el canal: redefinió quién tenía el control sobre la atención.</p>
+
+            <div class="timeline">
+
+                <div class="era">
+                    <div class="era-rail"><div class="era-index">01</div></div>
+                    <div class="era-body">
+                        <div class="era-period">1920s – 1940s · Radio y Prensa</div>
+                        <div class="era-name">El Consumidor Lineal</div>
+                        <div class="era-archetype">Medios escasos y centralizados</div>
+                        <p class="era-desc">Los medios eran escasos y centralizados. Las familias se reunían alrededor del aparato de radio a una hora específica.</p>
+                        <div class="era-attrs">
+                            <div class="era-attr">
+                                <div class="era-attr-k">Patrón de consumo</div>
+                                <div class="era-attr-v">Pasivo, lineal y comunitario. Confianza ciega en las figuras de autoridad y los locutores.</div>
+                            </div>
+                            <div class="era-attr">
+                                <div class="era-attr-k">Comportamiento</div>
+                                <div class="era-attr-v">La publicidad vendía repitiendo beneficios básicos y jingles pegajosos. Si salía en la radio, se asumía que era <strong>real y seguro</strong>.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era">
+                    <div class="era-rail"><div class="era-index">02</div></div>
+                    <div class="era-body">
+                        <div class="era-period">1950s – 1980s · Televisión</div>
+                        <div class="era-name">El Consumidor Aspiracional</div>
+                        <div class="era-archetype">La imagen en movimiento define la cultura</div>
+                        <p class="era-desc">La llegada de la imagen en movimiento al hogar. Los medios masivos definían la cultura popular.</p>
+                        <div class="era-attrs">
+                            <div class="era-attr">
+                                <div class="era-attr-k">Patrón de consumo</div>
+                                <div class="era-attr-v">Síncrono y masivo. Las marcas creaban "arquetipos de vida ideal" — el sueño americano, la familia perfecta.</div>
+                            </div>
+                            <div class="era-attr">
+                                <div class="era-attr-k">Comportamiento</div>
+                                <div class="era-attr-v">Se compraba para pertenecer a un estatus social. La atención era fácil de capturar: con pocos canales, el comportamiento era predecible — <strong>comerciales en prime time = ventas seguras el fin de semana</strong>.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era">
+                    <div class="era-rail"><div class="era-index">03</div></div>
+                    <div class="era-body">
+                        <div class="era-period">1990s – inicios 2000s · Internet 1.0</div>
+                        <div class="era-name">El Consumidor Buscador</div>
+                        <div class="era-archetype">La información se democratiza</div>
+                        <p class="era-desc">Nace la web y los motores de búsqueda. La información se democratiza.</p>
+                        <div class="era-attrs">
+                            <div class="era-attr">
+                                <div class="era-attr-k">Patrón de consumo</div>
+                                <div class="era-attr-v">Asíncrono e intencional. El consumidor deja de esperar a que la marca le hable; ahora busca activamente soluciones.</div>
+                            </div>
+                            <div class="era-attr">
+                                <div class="era-attr-k">Comportamiento</div>
+                                <div class="era-attr-v">Comienza la <strong>pérdida de control de las marcas</strong>. El consumidor compara precios, lee especificaciones y desconfía del discurso corporativo. Nace el banner — y con él la ceguera por saturación.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era">
+                    <div class="era-rail"><div class="era-index">04</div></div>
+                    <div class="era-body">
+                        <div class="era-period">2010s · Redes Sociales / Internet 2.0</div>
+                        <div class="era-name">El Consumidor Conectado</div>
+                        <div class="era-archetype">El contenido lo genera el usuario</div>
+                        <p class="era-desc">Auge de Facebook, Instagram, Twitter y los smartphones. El contenido es generado por el usuario (UGC).</p>
+                        <div class="era-attrs">
+                            <div class="era-attr">
+                                <div class="era-attr-k">Patrón de consumo</div>
+                                <div class="era-attr-v">Fragmentado y socialmente validado. La atención se traslada de la televisión al bolsillo.</div>
+                            </div>
+                            <div class="era-attr">
+                                <div class="era-attr-k">Comportamiento</div>
+                                <div class="era-attr-v">El consumidor ya no le cree a la marca; le cree a sus pares y a los influencers. El descubrimiento ocurre haciendo scroll y la validación en las comunidades. <strong>El embudo tradicional empieza a romperse.</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era">
+                    <div class="era-rail"><div class="era-index">05</div></div>
+                    <div class="era-body">
+                        <div class="era-period">Actualidad · La Atención Absoluta</div>
+                        <div class="era-name">El Consumidor Saturado</div>
+                        <div class="era-archetype">Algoritmos en tiempo real e IA</div>
+                        <p class="era-desc">Algoritmos de recomendación en tiempo real (TikTok, Reels), plataformas de streaming, IA y sobrecarga de estímulos.</p>
+                        <div class="era-attrs">
+                            <div class="era-attr">
+                                <div class="era-attr-k">Patrón de consumo</div>
+                                <div class="era-attr-v">Efímero, de gratificación instantánea, con un rango de atención de apenas segundos.</div>
+                            </div>
+                            <div class="era-attr">
+                                <div class="era-attr-k">Comportamiento</div>
+                                <div class="era-attr-v">Sufre de infoxicación y desarrolla barreras contra la publicidad — bloqueadores, saltar el anuncio en 3 segundos. <strong>La confianza es el activo más escaso:</strong> busca autenticidad, personalización y relevancia inmediata.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- TABLA -->
+        <div class="section-block">
+            <div class="section-label">02 — Del mensaje unidireccional a la guerra por el scroll</div>
+            <h2 class="section-title">El mismo mercado, dos lógicas opuestas</h2>
+            <p class="section-body">Para entender la transición psicológica del consumidor, conviene contrastar cómo funcionaba la dinámica del mercado antes frente a cómo opera hoy.</p>
+            <div class="compare-wrap">
+                <table class="compare">
+                    <thead>
+                        <tr>
+                            <th>Atributo</th>
+                            <th>El Pasado · Radio / TV</th>
+                            <th>La Actualidad · Algorítmica / Multi-pantalla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Acceso a la atención</td>
+                            <td class="td-past">Comprada por presupuesto (monopolio de medios)</td>
+                            <td>Ganada por relevancia (democratización total)</td>
+                        </tr>
+                        <tr>
+                            <td>Rol del consumidor</td>
+                            <td class="td-past">Receptor pasivo de impactos</td>
+                            <td>Creador, crítico y curador de su propio feed</td>
+                        </tr>
+                        <tr>
+                            <td>Métrica clave</td>
+                            <td class="td-past">Alcance y frecuencia (cuántos y cuántas veces)</td>
+                            <td>Engagement, retención y tiempo de permanencia</td>
+                        </tr>
+                        <tr>
+                            <td>Barrera de entrada</td>
+                            <td class="td-past">Altísima (producción y pauta en TV)</td>
+                            <td>Cero (cualquiera con un teléfono compite con Coca-Cola)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- PARADOJA -->
+        <div class="section-block">
+            <div class="section-label">03 — La paradoja de la oferta infinita</div>
+            <h2 class="section-title">Por qué hoy todos compiten por atención</h2>
+            <p class="section-body">El gran cambio de patrón que hay que entender es este:</p>
+            <div class="callout">
+                <div class="callout-text">El contenido y los productos se volvieron infinitos, pero el tiempo y la atención humana siguen siendo finitos.</div>
+            </div>
+            <p class="section-body">En la era de la televisión, si tenías el presupuesto para pautar en el partido más visto, tenías la atención garantizada. Hoy, una marca no solo compite contra su competidor directo en la categoría; compite contra todo lo que cabe en una pantalla:</p>
+            <div class="vs-list">
+                <div class="vs-item"><span class="dot"></span>El meme del momento en X.</div>
+                <div class="vs-item"><span class="dot"></span>El video de un creador de contenido en TikTok.</div>
+                <div class="vs-item"><span class="dot"></span>Un mensaje de WhatsApp de un familiar.</div>
+                <div class="vs-item"><span class="dot"></span>La notificación de un correo del trabajo.</div>
+            </div>
+            <p class="section-body"><strong>La realidad del mercado actual:</strong> la atención ya no se puede comprar de manera forzada; se tiene que negociar a cambio de valor real. Si el estímulo no genera valor —entretenimiento, educación, utilidad o identidad— en los primeros dos segundos, el consumidor simplemente hace swipe y desaparece del radar.</p>
+            <p class="section-body">Las marcas que ganan no son las que gritan más fuerte —como en la era de la radio y la TV—, sino las que logran construir <strong>confianza y señales claras en medio del ruido digital</strong>: cada segundo de atención que un usuario otorga es un recurso ultra-valioso que no se puede desperdiciar en métricas de vanidad.</p>
+        </div>
+
+    </div>
+
+    <!-- CASE STUDY DIVIDER -->
+    <div class="case-divider">
+        <div class="case-inner">
+            <div class="case-eyebrow">Caso práctico · Atención en el mundo físico</div>
+            <h2 class="case-title">Por qué hasta la tienda de la gasolinera puso el Mundial</h2>
+            <p class="case-sub">Una escena que resume todo lo anterior — y no tiene nada que ver con redes sociales.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="section-block">
+            <figure class="img-ph">
+                <code>[ Imagen: tienda de conveniencia de gasolinera con mesas y una pantalla pasando el Mundial — images/caso_informe-economia_de_la_atencion.png ]</code>
+            </figure>
+            <p class="img-cap">La pantalla como infraestructura básica: un Mundial convierte cualquier tienda de paso en un punto de encuentro.</p>
+
+            <p class="section-body" style="margin-top:28px;">Hay una escena que resume perfecto todo lo anterior: una tienda de conveniencia de gasolinera, con mesas para comer, pasando los partidos del Mundial en una pantalla.</p>
+            <p class="section-body">Estas tiendas han existido por décadas y han visto pasar varios mundiales sin nunca poner una televisión. ¿Por qué ahora sí? La respuesta conecta directamente con la evolución de la atención que acabamos de recorrer, y responde a tres factores.</p>
+        </div>
+
+        <!-- FACTORES -->
+        <div class="section-block">
+            <div class="factor">
+                <div class="factor-head">
+                    <div class="factor-num">01</div>
+                    <div class="factor-title">El Mundial: el último "secuestrador de atención" en tiempo real</div>
+                </div>
+                <p class="factor-body">Casi todo el contenido hoy se consume bajo demanda — Netflix, YouTube, TikTok se ven cuando el usuario quiere. Los eventos deportivos en vivo, y el Mundial por encima de todos, son de las poquísimas cosas que aún <strong>obligan a la gente a conectarse en tiempo real y al mismo tiempo</strong>.</p>
+                <p class="factor-body">Para un negocio, el Mundial es un imán de atención garantizado. En una era donde capturar atención digital es carísimo, capturar atención física con un partido es sumamente eficiente.</p>
+            </div>
+
+            <div class="factor">
+                <div class="factor-head">
+                    <div class="factor-num">02</div>
+                    <div class="factor-title">Mutación del modelo de negocio: de "paso" a "destino"</div>
+                </div>
+                <p class="factor-body">Las tiendas de conveniencia nacieron bajo el concepto de bajar, comprar rápido e irse. En los últimos años, su modelo migró agresivamente hacia el <strong>food service</strong> — cafetería, comida preparada, panadería.</p>
+                <div class="ba-grid">
+                    <div class="ba-cell ba-cell--before">
+                        <div class="ba-k">Antes</div>
+                        <div class="ba-v">Vendían snacks empacados. No necesitaban que te quedaras.</div>
+                    </div>
+                    <div class="ba-cell">
+                        <div class="ba-k">Ahora</div>
+                        <div class="ba-v">Venden almuerzos, cafés premium y comida caliente. Ahí está el margen.</div>
+                    </div>
+                </div>
+                <p class="factor-body" style="margin-top:18px;">Para que ese negocio funcione, necesitan aumentar el <strong>dwell time</strong>: el tiempo de permanencia del cliente. Entras por un café, hay un partido, te sientas, te quedas una hora y consumes el café, un combo y quizás un postre. La pantalla es la excusa perfecta para transformar un espacio de tránsito en un <em>tercer lugar</em> de convivencia.</p>
+            </div>
+
+            <div class="factor">
+                <div class="factor-head">
+                    <div class="factor-num">03</div>
+                    <div class="factor-title">La democratización y "comoditización" de la tecnología</div>
+                </div>
+                <p class="factor-body">Hace tres o cuatro mundiales, poner una pantalla implicaba una inversión considerable: televisores costosos y contratos complejos de cable satelital o antenas especiales para locales.</p>
+                <p class="factor-body">Hoy, el costo de una pantalla gigante de alta definición es ridículamente bajo. Con el streaming y el internet de alta velocidad, conectar una pantalla a la señal del partido es sencillo y accesible para cualquier administrador. <strong>La barrera de entrada tecnológica se destruyó.</strong></p>
+            </div>
+        </div>
+
+        <!-- FRONTERAS -->
+        <div class="section-block">
+            <div class="section-label">El borde de las categorías</div>
+            <h2 class="section-title">¿Por qué se meten negocios que "no eran de su territorio"?</h2>
+            <p class="section-body">Porque las fronteras entre categorías de negocio se han borrado. Antes, los restaurantes sabían que el Mundial era territorio de los sport bars. Pero hoy, con la presión económica, el costo de los alquileres y la competencia feroz por el gasto del consumidor, <strong>ningún negocio se puede dar el lujo de ceder tráfico de clientes</strong>.</p>
+            <p class="section-body">Si un restaurante o una tienda de conveniencia no pone el partido, el consumidor simplemente elige el lugar de al lado que sí lo tenga.</p>
+            <div class="callout callout--action">
+                <div class="callout-text">En el marketing actual el Mundial ya no es una "promoción temática", sino una infraestructura básica temporal: durante ese mes, si vendes comida o bebida y tienes mesas, la pantalla es tan obligatoria como el aire acondicionado o el Wi-Fi.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CIERRE -->
+    <div class="closing">
+        <div class="closing-inner">
+            <div class="closing-eyebrow">Conclusión</div>
+            <p class="closing-lead">Lo que pasó en esa tienda de conveniencia es la misma historia que contamos desde la radio: la atención dejó de regalarse y hay que ganársela, en tiempo real, con valor genuino, sin importar si el negocio es digital o físico, grande o pequeño.</p>
+            <p class="closing-q">La pregunta ya no es <em>si</em> tu marca debe competir por la atención. Es: <strong>¿qué valor real le estás dando a esos dos segundos que alguien te regala?</strong></p>
+            <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="cta-btn">
+                Agendar llamada estratégica
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="site-footer">
+        © 2026 Brand to Revenue · La Economía de la Atención · @brandtorevenue
+    </div>
+
+</body>
+</html>

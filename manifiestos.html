@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/B2R_logo_black.png">
+    <link rel="apple-touch-icon" href="images/B2R_logo_black.png">
+    <title>Manifiestos — Brand to Revenue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --morado: #5C38A4;
+            --morado-dark: #2E1C52;
+            --morado-light: #B9A8DC;
+            --magenta: #E91E64;
+            --amarillo: #FFE600;
+            --negro: #1A1525;
+            --gris-humo: #6B6478;
+            --gris-niebla: #A8A2B5;
+            --lila: #F4F1FA;
+            --blanco: #FDFCFF;
+            --borde: #DDD8EC;
+            --ff-d: 'Poppins', sans-serif;
+            --ff-b: 'Merriweather', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--ff-b);
+            background: var(--blanco);
+            color: var(--negro);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: var(--blanco);
+            border-bottom: 1px solid var(--borde);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .site-logo {
+            font-family: var(--ff-d);
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 0.98;
+            letter-spacing: -0.02em;
+            color: var(--negro);
+            text-decoration: none;
+        }
+        .main-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-link {
+            font-family: var(--ff-d);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--negro);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color .2s ease;
+        }
+        .nav-link:hover { color: var(--morado); }
+        .nav-link--active { color: var(--magenta); font-weight: 600; }
+        .nav-cta {
+            font-family: var(--ff-d);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 22px;
+            text-decoration: none;
+            background: var(--magenta);
+            color: #fff;
+            transition: background .2s cubic-bezier(0.2,0,0.2,1);
+            white-space: nowrap;
+        }
+        .nav-cta:hover { background: #C4174F; }
+
+        /* HERO */
+        .hero {
+            background: var(--lila);
+            padding: 96px 80px 64px;
+            border-bottom: 1px solid var(--borde);
+        }
+        .hero-inner { max-width: 1100px; margin: 0 auto; }
+        .hero-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--magenta);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero-eyebrow::before {
+            content: "";
+            width: 40px;
+            height: 3px;
+            background: var(--magenta);
+        }
+        .hero-title {
+            font-family: var(--ff-d);
+            font-size: 84px;
+            font-weight: 900;
+            color: var(--morado);
+            line-height: 0.98;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+        .hero-subtitle {
+            font-family: var(--ff-d);
+            font-size: 21px;
+            font-weight: 500;
+            color: var(--gris-humo);
+            line-height: 1.6;
+            max-width: 640px;
+        }
+
+        /* GRID */
+        .reports {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 72px 80px 96px;
+        }
+        .reports-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border: 1px solid var(--borde);
+            padding: 40px 40px 36px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            transition: background .25s ease, border-color .25s ease, transform .25s ease;
+        }
+        .card:hover {
+            background: var(--lila);
+            border-color: var(--morado-light);
+            transform: translateY(-3px);
+        }
+        .card-eyebrow {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--magenta);
+            margin-bottom: 18px;
+        }
+        .card-title {
+            font-family: var(--ff-d);
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--negro);
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            text-wrap: balance;
+        }
+        .card-desc {
+            font-family: var(--ff-b);
+            font-size: 16px;
+            color: var(--gris-humo);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            text-wrap: pretty;
+        }
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-family: var(--ff-d);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gris-niebla);
+            letter-spacing: 0.02em;
+            padding-top: 22px;
+            border-top: 1px solid var(--borde);
+            margin-top: auto;
+            margin-bottom: 22px;
+        }
+        .card-meta .dot { color: var(--morado-light); }
+        .card-link {
+            font-family: var(--ff-d);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--magenta);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap .2s ease;
+        }
+        .card:hover .card-link { gap: 14px; }
+        .card-link svg { width: 16px; height: 16px; }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--negro);
+            padding: 36px 80px;
+            text-align: center;
+            font-family: var(--ff-d);
+            font-size: 12px;
+            color: var(--gris-humo);
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .site-header { padding: 16px 20px; }
+            .main-nav { gap: 16px; }
+            .nav-link { display: none; }
+            .hero { padding: 56px 24px 44px; }
+            .hero-title { font-size: 48px; }
+            .hero-subtitle { font-size: 18px; }
+            .reports { padding: 48px 24px 64px; }
+            .reports-grid { grid-template-columns: 1fr; gap: 20px; }
+            .card { padding: 32px 26px 30px; }
+            .card-title { font-size: 25px; }
+            .site-footer { padding: 28px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
+        <nav class="main-nav">
+            <a href="index.html#problem" class="nav-link">Problema</a>
+            <a href="index.html#framework" class="nav-link">Sistema</a>
+            <a href="index.html#services" class="nav-link">Servicios</a>
+            <a href="index.html#bio" class="nav-link">Sobre Mario</a>
+            <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="nav-cta">Agendar llamada</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <h1 class="hero-title">Manifiestos</h1>
+            <p class="hero-subtitle">Bienvenidos a este espacio donde comparto lo que aprendo analizando cómo el marketing y los negocios evolucionan.</p>
+        </div>
+    </section>
+
+    <!-- REPORTS -->
+    <section class="reports">
+        <div class="reports-grid">
+
+            <a href="B2R_Informe_EconomiaAtencion.html" class="card">
+                <div class="card-eyebrow">Comportamiento del consumidor</div>
+                <h2 class="card-title">La Economía de la Atención</h2>
+                <p class="card-desc">Cómo evolucionó el consumidor y por qué hoy todos compiten por los mismos segundos.</p>
+                <div class="card-meta">
+                    <span>9 minutos de lectura</span>
+                    <span class="dot">·</span>
+                    <span>Eje: Atención → Confianza</span>
+                </div>
+                <span class="card-link">
+                    Leer manifiesto
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+            </a>
+
+            <a href="B2R_Marketing_Diagnosis_Panama_2026.html" class="card">
+                <div class="card-eyebrow">Mercado · Panamá 2026</div>
+                <h2 class="card-title">Diagnóstico de Marketing Panamá 2026</h2>
+                <p class="card-desc">Análisis de la transición global del marketing y su impacto en el mercado panameño.</p>
+                <div class="card-meta">
+                    <span>12 minutos de lectura</span>
+                    <span class="dot">·</span>
+                    <span>Eje: Mercado → Estrategia</span>
+                </div>
+                <span class="card-link">
+                    Leer manifiesto
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="site-footer">
+        © 2026 Brand to Revenue · @brandtorevenue · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5d8d4c7dcdaeac4c0dcc7dac6f5dac0c1d9dadade9bd6dad8">[email&#160;protected]</a> · +507 6244-0096
+    </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
