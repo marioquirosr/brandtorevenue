@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="images/B2R_logo_black.png">
-<link rel="apple-touch-icon" href="images/B2R_logo_black.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <title>Brand to Revenue | Marketing Estratégico que Convierte</title>
 <meta name="description" content="Framework de marketing estratégico para convertir atención en revenue predecible. Consultoría 1:1, workshops y playbook gratuito. Conoce el B2R Operating System.">
 <style>
@@ -4494,7 +4494,7 @@ function LandingNav() {
   const links = [
     { id: 'problem', label: 'Problema' },
     { id: 'framework', label: 'Sistema' },
-    { id: 'manifiestos', label: 'Manifiestos', href: 'manifiestos.html' },
+    { id: 'manifiestos', label: 'Manifiestos', href: 'manifiestos.html', newTab: true },
     { id: 'services', label: 'Servicios' },
     { id: 'bio', label: 'Sobre Mario' },
   ];
@@ -4519,7 +4519,7 @@ function LandingNav() {
         {!isMobile && (
           <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
             {links.map((l) => (
-              <a key={l.id} href={l.href || ('#' + l.id)} onClick={(e) => { if (!l.href) { e.preventDefault(); go(l); } }} style={{
+              <a key={l.id} href={l.href || ('#' + l.id)} target={l.newTab ? '_blank' : undefined} rel={l.newTab ? 'noopener noreferrer' : undefined} onClick={(e) => { if (!l.href) { e.preventDefault(); go(l); } }} style={{
                 fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 500,
                 color: 'var(--b2r-negro)', textDecoration: 'none', cursor: 'pointer', letterSpacing: '0.01em',
               }}>{l.label}</a>
@@ -4554,7 +4554,7 @@ function LandingNav() {
           padding: '8px clamp(20px, 5vw, 56px) 20px', display: 'flex', flexDirection: 'column',
         }}>
           {links.map((l) => (
-            <a key={l.id} href={l.href || ('#' + l.id)} onClick={(e) => { if (!l.href) { e.preventDefault(); go(l); } else { setOpen(false); } }} style={{
+            <a key={l.id} href={l.href || ('#' + l.id)} target={l.newTab ? '_blank' : undefined} rel={l.newTab ? 'noopener noreferrer' : undefined} onClick={(e) => { if (!l.href) { e.preventDefault(); go(l); } else { setOpen(false); } }} style={{
               fontFamily: 'var(--font-ui)', fontSize: '16px', fontWeight: 600,
               color: 'var(--b2r-negro)', textDecoration: 'none', cursor: 'pointer',
               padding: '15px 0', borderBottom: '1px solid var(--b2r-borde)',
