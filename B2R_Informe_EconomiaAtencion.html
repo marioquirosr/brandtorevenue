@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/B2R_logo_black.png">
-    <link rel="apple-touch-icon" href="images/B2R_logo_black.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <title>La Economía de la Atención — Brand to Revenue</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -415,29 +415,16 @@
             line-height: 1.7;
         }
 
-        /* image placeholder */
+        /* image */
         .img-ph {
             margin: 8px 0 12px;
             border: 1px solid var(--borde);
-            background:
-                repeating-linear-gradient(135deg, var(--lila) 0 14px, var(--blanco) 14px 28px);
-            aspect-ratio: 16 / 8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 24px;
+            overflow: hidden;
         }
-        .img-ph code {
-            font-family: 'Poppins', monospace;
-            font-size: 12px;
-            letter-spacing: 0.05em;
-            color: var(--gris-humo);
-            background: var(--blanco);
-            border: 1px solid var(--borde);
-            padding: 10px 16px;
-            max-width: 460px;
-            line-height: 1.5;
+        .img-ph img {
+            display: block;
+            width: 100%;
+            height: auto;
         }
         .img-cap {
             font-family: var(--ff-b);
@@ -830,7 +817,7 @@
 
         <div class="section-block">
             <figure class="img-ph">
-                <code>[ Imagen: tienda de conveniencia de gasolinera con mesas y una pantalla pasando el Mundial — images/caso_informe-economia_de_la_atencion.png ]</code>
+                <img src="images/caso_informe-economia_de_la_atencion.png" alt="Tienda de conveniencia de gasolinera con mesas y una pantalla pasando el Mundial">
             </figure>
             <p class="img-cap">La pantalla como infraestructura básica: un Mundial convierte cualquier tienda de paso en un punto de encuentro.</p>
 
