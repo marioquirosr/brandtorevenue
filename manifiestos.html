@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="images/B2R_logo_black.png">
     <link rel="apple-touch-icon" href="images/B2R_logo_black.png">
     <title>Manifiestos — Brand to Revenue</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -88,7 +88,7 @@
 
         /* HERO */
         .hero {
-            background: var(--lila);
+            background: var(--morado-dark);
             padding: 96px 80px 64px;
             border-bottom: 1px solid var(--borde);
         }
@@ -114,8 +114,8 @@
         .hero-title {
             font-family: var(--ff-d);
             font-size: 84px;
-            font-weight: 900;
-            color: var(--morado);
+            font-weight: 700;
+            color: #fff;
             line-height: 0.98;
             letter-spacing: -0.03em;
             margin-bottom: 24px;
@@ -123,10 +123,10 @@
         .hero-subtitle {
             font-family: var(--ff-d);
             font-size: 21px;
-            font-weight: 500;
-            color: var(--gris-humo);
+            font-weight: 300;
+            color: var(--morado-light);
             line-height: 1.6;
-            max-width: 640px;
+            max-width: 760px;
         }
 
         /* GRID */
@@ -211,15 +211,68 @@
         .card-link svg { width: 16px; height: 16px; }
 
         /* FOOTER */
-        .site-footer {
-            background: var(--negro);
-            padding: 36px 80px;
-            text-align: center;
+        .site-footer { background: var(--morado-dark); color: #fff; }
+        .footer-shell {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 56px clamp(20px, 5vw, 56px) 40px;
+            box-sizing: border-box;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 0.9fr 1.5fr 0.9fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .footer-wordmark {
             font-family: var(--ff-d);
-            font-size: 12px;
-            color: var(--gris-humo);
-            letter-spacing: 0.02em;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            color: #fff;
+            display: block;
+            margin-bottom: 16px;
+        }
+        .footer-wordmark .to { color: #fff; }
+        .footer-desc {
+            font-family: var(--ff-b);
+            font-size: 13px;
             line-height: 1.7;
+            color: var(--morado-light);
+            margin: 0;
+            max-width: 34ch;
+        }
+        .footer-contacts { display: contents; }
+        .footer-label {
+            font-family: var(--ff-d);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--morado-light);
+            margin-bottom: 8px;
+        }
+        .footer-value {
+            display: inline-block;
+            font-family: var(--ff-d);
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(185,168,220,0.22);
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            font-family: var(--ff-d);
+            font-size: 11px;
+            color: var(--morado-light);
         }
 
         /* RESPONSIVE */
@@ -234,7 +287,9 @@
             .reports-grid { grid-template-columns: 1fr; gap: 20px; }
             .card { padding: 32px 26px 30px; }
             .card-title { font-size: 25px; }
-            .site-footer { padding: 28px 24px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-contacts { display: flex; flex-direction: column; gap: 16px; }
+            .footer-bottom { flex-direction: column; }
         }
     </style>
 </head>
@@ -257,7 +312,7 @@
     <section class="hero">
         <div class="hero-inner">
             <h1 class="hero-title">Manifiestos</h1>
-            <p class="hero-subtitle">Bienvenidos a este espacio donde comparto lo que aprendo analizando cómo el marketing y los negocios evolucionan.</p>
+            <p class="hero-subtitle">Bienvenidos a este espacio donde comparto lo que aprendo<br>analizando cómo el marketing y los negocios evolucionan.</p>
         </div>
     </section>
 
@@ -299,9 +354,34 @@
     </section>
 
     <!-- FOOTER -->
-    <div class="site-footer">
-        © 2026 Brand to Revenue · @brandtorevenue · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="274a46554e487856524e554854674852534b48484c0944484a">[email&#160;protected]</a> · +507 6244-0096
-    </div>
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <div class="footer-grid">
+                <div>
+                    <span class="footer-wordmark">Brand <span class="to">to</span> Revenue</span>
+                    <p class="footer-desc">Marketing estratégico que convierte atención en revenue predecible.</p>
+                </div>
+                <div class="footer-contacts">
+                    <div>
+                        <div class="footer-label">Handle</div>
+                        <a href="https://instagram.com/brandtorevenue" class="footer-value">@brandtorevenue</a>
+                    </div>
+                    <div>
+                        <div class="footer-label">Email</div>
+                        <a href="/cdn-cgi/l/email-protection#bfd2decdd6d0e0cecad6cdd0ccffd0cacbd3d0d0d491dcd0d2" class="footer-value"><span class="__cf_email__" data-cfemail="345955465d5b6b45415d465b47745b4140585b5b5f1a575b59">[email&#160;protected]</span></a>
+                    </div>
+                    <div>
+                        <div class="footer-label">Teléfono</div>
+                        <a href="tel:+50762440096" class="footer-value">+507 6244-0096</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Brand to Revenue · Todos los derechos reservados</span>
+                <span>Mario Quirós R. · Consultor de marketing estratégico</span>
+            </div>
+        </div>
+    </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
