@@ -4576,6 +4576,26 @@ window.LandingNav = LandingNav;
 function LandingHero() {
   const { Eyebrow } = window.BrandToRevenueDesignSystem_f0690e;
   const isMobile = window.useIsMobile(820);
+
+  const phrases = [
+    'La atención es la nueva economía',
+    'La confianza es la nueva moneda',
+    'El sistema es la nueva ventaja',
+  ];
+  const [idx, setIdx] = React.useState(0);
+  const [visible, setVisible] = React.useState(true);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setIdx(i => (i + 1) % phrases.length);
+        setVisible(true);
+      }, 500);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section style={{ background: 'var(--b2r-morado-abismo)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
       <window.Shell style={{ position: 'relative', paddingTop: isMobile ? '64px' : '116px', paddingBottom: isMobile ? '64px' : '104px' }}>
@@ -4585,8 +4605,11 @@ function LandingHero() {
           fontFamily: 'var(--font-display)', fontWeight: 800,
           fontSize: 'clamp(40px, 7vw, 82px)', lineHeight: 0.98, letterSpacing: '-0.025em',
           margin: '0 0 28px', maxWidth: '15ch',
+          transition: 'opacity 0.5s ease, transform 0.5s ease',
+          opacity: visible ? 1 : 0,
+          transform: visible ? 'translateY(0)' : 'translateY(8px)',
         }}>
-          La atención es la nueva economía
+          {phrases[idx]}
         </h1>
         <p style={{
           fontFamily: 'var(--font-display)', fontWeight: 500,
@@ -4745,6 +4768,62 @@ function DataInsights() {
   );
 }
 window.DataInsights = DataInsights;
+
+</script>
+<script type="text/babel" data-presets="react">
+/* Brand to Revenue — ¿Qué es B2R? (video section between DataInsights and Solution) */
+function B2RVideo() {
+  const { Button } = window.BrandToRevenueDesignSystem_f0690e;
+  const isMobile = window.useIsMobile(820);
+  return (
+    <section id="b2r-video" style={{ background: '#2E1C52', color: '#fff' }}>
+      <window.Shell style={{ paddingTop: isMobile ? '72px' : '110px', paddingBottom: isMobile ? '72px' : '110px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '36px' }}>
+
+          {/* Eyebrow — magenta manual (color overrides onDark white) */}
+          <p style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase',
+            color: '#B9A8DC', margin: 0,
+          }}>04 — BRAND TO REVENUE</p>
+
+          {/* Título */}
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 900,
+            fontSize: 'clamp(28px, 4vw, 44px)', lineHeight: 1.1, letterSpacing: '-0.015em',
+            color: '#fff', margin: 0,
+          }}>¿Qué es Brand to Revenue?</h2>
+
+          {/* Video */}
+          <div style={{ width: '100%', maxWidth: '800px' }}>
+            <video
+              src="https://res.cloudinary.com/jsqhpxyf/video/upload/v1783001668/Que_es_B2R-Web_rwoyrt.mp4"
+              controls
+              width="100%"
+              style={{ display: 'block', width: '100%', borderRadius: '3px' }}
+            />
+          </div>
+
+          {/* CTA */}
+          <a href="B2R_Mindset_v5.html" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <span style={{
+              display: 'inline-block',
+              background: 'transparent', color: '#fff',
+              border: '2px solid #fff',
+              fontFamily: 'var(--font-display)', fontWeight: 600,
+              fontSize: isMobile ? '14px' : '16px',
+              letterSpacing: '0.01em',
+              padding: isMobile ? '12px 28px' : '14px 36px',
+              cursor: 'pointer', lineHeight: 1,
+            }}>Descargar Playbook gratis</span>
+          </a>
+
+        </div>
+      </window.Shell>
+    </section>
+  );
+}
+window.B2RVideo = B2RVideo;
 
 </script>
 <script type="text/babel" data-presets="react">
@@ -5271,6 +5350,6 @@ function LandingFooter() {
 window.LandingFooter = LandingFooter;
 
 </script>
-<script type="text/babel" data-presets="react">function App(){return (<React.Fragment><window.LandingNav/><window.LandingHero/><window.Problem/><window.DataInsights/><window.Solution/><window.Framework/><window.CaseStudy/><window.Bio/><window.Services/><window.BottomCta/><window.LandingFooter/></React.Fragment>);}
+<script type="text/babel" data-presets="react">function App(){return (<React.Fragment><window.LandingNav/><window.LandingHero/><window.Problem/><window.DataInsights/><window.B2RVideo/><window.Solution/><window.Framework/><window.CaseStudy/><window.Bio/><window.Services/><window.BottomCta/><window.LandingFooter/></React.Fragment>);}
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);</script>
 </body></html>
