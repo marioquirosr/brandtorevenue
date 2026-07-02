@@ -356,12 +356,43 @@
             color: var(--gris-humo);
         }
 
+        /* HAMBURGER */
+        .hdr-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hdr-hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--negro);
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .hdr-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hdr-hamburger.open span:nth-child(2) { opacity: 0; }
+        .hdr-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .hdr-mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            padding: 16px 20px;
+            border-top: 1px solid var(--borde);
+            background: var(--blanco);
+        }
+        .hdr-mobile-menu.open { display: flex; }
+        .hdr-mobile-menu .hdr-btn { text-align: center; }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .site-header { padding: 16px 24px; }
-            .header-actions { gap: 8px; }
-            .hdr-btn { padding: 10px 16px; font-size: 12px; }
-            .hdr-btn--ghost svg { display: none; }
+            .site-header { padding: 0; }
+            .header-actions { display: none; }
+            .hdr-hamburger { display: flex; }
             .cover { padding: 60px 24px 48px; }
             .cover-title { font-size: 40px; }
             .stats-row { grid-template-columns: 1fr; }
@@ -376,16 +407,31 @@
 <body>
 
     <!-- HEADER -->
-    <header class="site-header">
-        <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
-        <div class="header-actions">
-            <a href="B2R_Mindset_v5.html" class="hdr-btn hdr-btn--ghost">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-                Descargar Playbook
-            </a>
+    <header class="site-header" style="padding:0;">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1180px;margin:0 auto;padding:16px clamp(20px,5vw,56px);box-sizing:border-box;">
+            <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
+            <div class="header-actions">
+                <a href="B2R_Mindset_v5.html" class="hdr-btn hdr-btn--ghost">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+                    Descargar Playbook
+                </a>
+                <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--primary">Agendar llamada</a>
+            </div>
+            <button class="hdr-hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="hdr-mobile-menu" id="mobile-menu">
+            <a href="B2R_Mindset_v5.html" class="hdr-btn hdr-btn--ghost">Descargar Playbook</a>
             <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--primary">Agendar llamada</a>
         </div>
     </header>
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('open');
+            document.getElementById('mobile-menu').classList.toggle('open');
+        });
+    </script>
 
     <!-- PORTADA -->
     <div class="cover">
