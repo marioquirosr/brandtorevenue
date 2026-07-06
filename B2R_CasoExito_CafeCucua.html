@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/B2R_logo_black.png">
-    <link rel="apple-touch-icon" href="images/B2R_logo_black.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <title>Caso de Éxito: Café Cucúa — Brand to Revenue</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Cómo Café Cucúa pasó de commodity a Robusta de especialidad con identidad penonomeña: +100% en precio por unidad validando antes de escalar. Caso del B2R Operating System.">
+    <meta property="og:title" content="Caso de Éxito: Café Cucúa — Brand to Revenue">
+    <meta property="og:description" content="De commodity a especialidad: 2x el valor comercial proyectado, sin inversión previa en infraestructura.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,11 +27,12 @@
             --lila: #F4F1FA;
             --blanco: #FDFCFF;
             --borde: #DDD8EC;
+            --magenta-press: #C4174F;
             --ff-d: 'Poppins', sans-serif;
             --ff-b: 'Merriweather', serif;
         }
 
-        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
         body {
             font-family: var(--ff-b);
@@ -40,7 +46,7 @@
         .site-header {
             background: var(--blanco);
             border-bottom: 1px solid var(--borde);
-            padding: 20px 80px;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -48,6 +54,30 @@
             top: 0;
             z-index: 50;
             flex-wrap: wrap;
+        }
+        .site-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 16px clamp(20px, 5vw, 56px);
+            box-sizing: border-box;
+        }
+
+        .skip-link {
+            position: absolute; left: -9999px; top: 0;
+            background: var(--morado); color: #fff;
+            padding: 12px 20px; font-family: var(--ff-d); font-weight: 600;
+            z-index: 200; text-decoration: none;
+        }
+        .skip-link:focus { left: 0; }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--magenta); outline-offset: 2px;
+        }
+        .cover a:focus-visible, .closing a:focus-visible, .site-footer a:focus-visible {
+            outline-color: #fff;
         }
 
         .site-logo {
@@ -91,14 +121,11 @@
         }
         .hdr-btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
         .hdr-btn--primary {
-            background: var(--magenta);
+            background: var(--magenta-press);
             color: #fff;
-            box-shadow: 0 4px 14px rgba(233,30,100,.35);
         }
         .hdr-btn--primary:hover {
-            background: #c81857;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(233,30,100,.45);
+            background: var(--magenta);
         }
         .hdr-btn--ghost {
             color: var(--morado);
@@ -109,7 +136,7 @@
 
         /* PORTADA */
         .cover {
-            background: linear-gradient(150deg, var(--morado-dark) 0%, var(--morado) 100%);
+            background: var(--morado-dark);
             padding: 100px 80px 80px;
             text-align: center;
         }
@@ -126,7 +153,7 @@
 
         .cover-title {
             font-family: var(--ff-d);
-            font-size: 64px;
+            font-size: clamp(38px, 7vw, 64px);
             font-weight: 900;
             color: white;
             line-height: 1;
@@ -136,7 +163,7 @@
 
         .cover-subtitle {
             font-family: var(--ff-d);
-            font-size: 20px;
+            font-size: clamp(17px, 2.4vw, 20px);
             color: var(--morado-light);
             margin-bottom: 64px;
         }
@@ -154,13 +181,14 @@
             background: rgba(255,255,255,0.08);
             padding: 32px 24px;
             text-align: center;
+            border-top: 3px solid var(--magenta);
         }
 
         .stat-number {
             font-family: var(--ff-d);
             font-size: 48px;
             font-weight: 900;
-            color: var(--magenta);
+            color: #fff;
             line-height: 1;
             margin-bottom: 8px;
         }
@@ -251,7 +279,7 @@
             font-family: var(--ff-d);
             font-size: 10px;
             font-weight: 700;
-            color: var(--gris-niebla);
+            color: var(--gris-humo);
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin-bottom: 8px;
@@ -271,6 +299,8 @@
             font-weight: 700;
             color: var(--morado);
         }
+
+        .pivot-item--full { grid-column: 1 / -1; }
 
         /* RESULTS */
         .results-grid {
@@ -298,8 +328,6 @@
             line-height: 1;
             min-width: 80px;
         }
-
-        .result-content {}
 
         .result-title {
             font-family: var(--ff-d);
@@ -329,18 +357,25 @@
             text-align: center;
         }
 
+        .closing-bar {
+            width: 56px;
+            height: 4px;
+            background: var(--amarillo);
+            margin: 0 auto 24px;
+        }
+
         .closing-text {
             font-family: var(--ff-d);
             font-size: 28px;
             font-weight: 700;
-            color: var(--amarillo);
+            color: #fff;
             margin-bottom: 32px;
             line-height: 1.3;
         }
 
         .cta-btn {
             display: inline-block;
-            background: var(--magenta);
+            background: var(--magenta-press);
             color: white;
             font-family: var(--ff-d);
             font-size: 14px;
@@ -349,15 +384,16 @@
             text-decoration: none;
             letter-spacing: 0.02em;
         }
+        .cta-btn:hover { background: var(--magenta); }
 
         /* FOOTER */
         .site-footer {
-            background: var(--negro);
+            background: var(--morado-dark);
             padding: 32px 80px;
             text-align: center;
             font-family: var(--ff-d);
             font-size: 12px;
-            color: var(--gris-humo);
+            color: var(--morado-light);
         }
 
         /* HAMBURGER */
@@ -395,11 +431,9 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .site-header { padding: 0; }
             .header-actions { display: none; }
             .hdr-hamburger { display: flex; }
             .cover { padding: 60px 24px 48px; }
-            .cover-title { font-size: 40px; }
             .stats-row { grid-template-columns: 1fr; }
             .container { padding: 48px 24px; }
             .pivot-grid { grid-template-columns: 1fr; }
@@ -410,39 +444,56 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
 
     <!-- HEADER -->
-    <header class="site-header" style="padding:0;">
-        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1180px;margin:0 auto;padding:16px clamp(20px,5vw,56px);box-sizing:border-box;">
+    <header class="site-header">
+        <div class="site-header-inner">
             <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
+            <a href="index.html#caso" class="back-link">← Volver</a>
             <div class="header-actions">
                 <a href="B2R_Mindset_v5.html" class="hdr-btn hdr-btn--ghost">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
                     Descargar Playbook
                 </a>
-                <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--primary">Agendar llamada</a>
+                <a href="https://calendly.com/brandtorevenue/30min" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--primary">Agendar llamada</a>
             </div>
-            <button class="hdr-hamburger" id="hamburger" aria-label="Abrir menú">
+            <button class="hdr-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
         <div class="hdr-mobile-menu" id="mobile-menu">
             <a href="B2R_Mindset_v5.html" class="hdr-btn hdr-btn--ghost">Descargar Playbook</a>
-            <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--primary">Agendar llamada</a>
+            <a href="https://calendly.com/brandtorevenue/30min" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--primary">Agendar llamada</a>
         </div>
     </header>
     <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            this.classList.toggle('open');
-            document.getElementById('mobile-menu').classList.toggle('open');
+        const hamburgerBtn = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerBtn.addEventListener('click', function() {
+            const open = this.classList.toggle('open');
+            mobileMenu.classList.toggle('open', open);
+            this.setAttribute('aria-expanded', open);
+            this.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && hamburgerBtn.classList.contains('open')) {
+                hamburgerBtn.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.setAttribute('aria-label', 'Abrir menú');
+                hamburgerBtn.focus();
+            }
         });
     </script>
 
+    <main id="main">
+
     <!-- PORTADA -->
-    <div class="cover">
+    <section class="cover">
         <div class="cover-eyebrow">Caso de Éxito · B2R Operating System</div>
-        <div class="cover-title">Café Cucúa</div>
-        <div class="cover-subtitle">De commodity a robusta de especialidad con identidad penonomeña</div>
+        <h1 class="cover-title">Café Cucúa</h1>
+        <p class="cover-subtitle">De commodity a robusta de especialidad con identidad penonomeña</p>
 
         <div class="stats-row">
             <div class="stat-box">
@@ -458,7 +509,7 @@
                 <div class="stat-label">lanzado sin inversión en infraestructura de escala</div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CONTENIDO -->
     <div class="container">
@@ -466,7 +517,7 @@
         <!-- EL DESAFÍO -->
         <div class="section-block">
             <div class="section-label">01 — El Desafío</div>
-            <div class="section-title">Un proyecto en ruta hacia el mercado equivocado</div>
+            <h2 class="section-title">Un proyecto en ruta hacia el mercado equivocado</h2>
             <p class="section-body">El café Robusta en Panamá ha sido históricamente tratado como commodity de bajo costo: el café del termo, de la oficina y del consumo masivo. Roberto Del Rosario, fundador de Cucúa, llegó con una visión inercial: vender un Robusta tradicional enfocado en el mercado masivo.</p>
             <p class="section-body">El proyecto enfrentaba tres barreras críticas que hacían inviable esa ruta:</p>
         </div>
@@ -480,7 +531,7 @@
                 <div class="pivot-label">Barrera 2</div>
                 <div class="pivot-after">Sin experiencia en la distribución y logística que exige el consumo masivo</div>
             </div>
-            <div class="pivot-item" style="grid-column: 1 / -1;">
+            <div class="pivot-item pivot-item--full">
                 <div class="pivot-label">Barrera 3</div>
                 <div class="pivot-after">Competir por precio en una categoría donde los márgenes para un productor pequeño son destructivos</div>
             </div>
@@ -491,7 +542,7 @@
         <!-- EL INSIGHT -->
         <div class="section-block">
             <div class="section-label">02 — El Insight</div>
-            <div class="section-title">Validar antes de ejecutar cambió todo</div>
+            <h2 class="section-title">Validar antes de ejecutar cambió todo</h2>
             <p class="section-body">En lugar de salir a producir el commodity proyectado, se congeló la ejecución para activar un proceso de discovery: entrevistas con tostadores, baristas de alta gama y dueños de cafeterías de especialidad.</p>
 
             <div class="callout">
@@ -503,12 +554,12 @@
 
         <div class="pivot-grid">
             <div class="pivot-item">
-                <div class="pivot-label">Antes</div>
+                <div class="pivot-label">Pivote de producto</div>
                 <div class="pivot-before">Café barato de oficina</div>
                 <div class="pivot-after">Robusta de especialidad con trazabilidad y origen diferenciado</div>
             </div>
             <div class="pivot-item">
-                <div class="pivot-label">Antes</div>
+                <div class="pivot-label">Pivote de modelo</div>
                 <div class="pivot-before">Competir por volumen</div>
                 <div class="pivot-after">Modelo de alta rentabilidad por unidad</div>
             </div>
@@ -519,7 +570,7 @@
         <!-- LA MARCA -->
         <div class="section-block">
             <div class="section-label">03 — La Construcción de Marca</div>
-            <div class="section-title">Identidad cultural como argumento de ventas</div>
+            <h2 class="section-title">Identidad cultural como argumento de ventas</h2>
             <p class="section-body">Una vez redefinido el modelo, la estrategia se ancló en un pilar de valor innegociable: la identidad penonomeña de Coclé, transformando la herencia cultural en el principal activo de diferenciación comercial.</p>
             <p class="section-body">El nombre <strong>Cucúa</strong> no es decorativo. Los diablitos cucuá son danzantes tradicionales de Coclé que confeccionan sus trajes con la corteza del árbol de cucuá — símbolo de la lucha entre el bien y el mal en las celebraciones del Corpus Christi. Identidad panameña en estado puro: artesanal, ancestral, con peso cultural.</p>
             <p class="section-body">La marca tomó ese sentido y lo tradujo en un café que no necesita disfrazarse para disfrutarse.</p>
@@ -530,27 +581,27 @@
         <!-- RESULTADOS -->
         <div class="section-block">
             <div class="section-label">04 — Resultados</div>
-            <div class="section-title">Lo que produce validar antes de escalar</div>
+            <h2 class="section-title">Lo que produce validar antes de escalar</h2>
 
             <div class="results-grid">
                 <div class="result-item">
                     <div class="result-number">2x</div>
                     <div class="result-content">
-                        <div class="result-title">Duplicación del valor comercial</div>
+                        <h3 class="result-title">Duplicación del valor comercial</h3>
                         <div class="result-desc">Al mover el producto de commodity a especialidad, Cucúa capturó cerca del doble del valor por unidad que el fundador había proyectado originalmente.</div>
                     </div>
                 </div>
                 <div class="result-item">
                     <div class="result-number">0</div>
                     <div class="result-content">
-                        <div class="result-title">Inversión en infraestructura antes de validar</div>
+                        <h3 class="result-title">Inversión en infraestructura antes de validar</h3>
                         <div class="result-desc">El producto se lanzó en fase MVP dentro de un círculo cerrado para medir recompra real antes de gastar en infraestructura de escalado.</div>
                     </div>
                 </div>
                 <div class="result-item">
                     <div class="result-number">∞</div>
                     <div class="result-content">
-                        <div class="result-title">Estructura lista para crecer</div>
+                        <h3 class="result-title">Estructura lista para crecer</h3>
                         <div class="result-desc">Se transformó una idea de bajo margen en un activo de alta gama con identidad cultural — diseñada para sostener el crecimiento sin reinventarse en el camino.</div>
                     </div>
                 </div>
@@ -559,16 +610,19 @@
 
     </div>
 
+    </main>
+
     <!-- CIERRE -->
     <div class="closing">
+        <div class="closing-bar"></div>
         <div class="closing-text">Eso es lo que hace el B2R Operating System.<br>Validar. Posicionar. Construir sobre certezas.</div>
-        <a href="https://calendly.com/brandtorevenue/30min?back=1&month=2026-06" target="_blank" rel="noopener noreferrer" class="cta-btn">Agendar llamada estratégica</a>
+        <a href="https://calendly.com/brandtorevenue/30min" target="_blank" rel="noopener noreferrer" class="cta-btn">Agendar llamada estratégica</a>
     </div>
 
     <!-- FOOTER -->
-    <div class="site-footer">
+    <footer class="site-footer">
         © 2026 Brand to Revenue · Caso de Éxito: Café Cucúa · @brandtorevenue
-    </div>
+    </footer>
 
 </body>
 </html>
