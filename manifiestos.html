@@ -6,7 +6,12 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <title>Manifiestos — Brand to Revenue</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Manifiestos de Brand to Revenue: análisis sobre la evolución del marketing, la economía de la atención y el mercado panameño. Por Mario Quirós R.">
+    <meta property="og:title" content="Manifiestos — Brand to Revenue">
+    <meta property="og:description" content="Análisis sobre cómo el marketing y los negocios evolucionan.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&family=Poppins:wght@300;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -15,6 +20,7 @@
             --morado-dark: #2E1C52;
             --morado-light: #B9A8DC;
             --magenta: #E91E64;
+            --magenta-press: #C4174F;
             --amarillo: #FFE600;
             --negro: #1A1525;
             --gris-humo: #6B6478;
@@ -22,11 +28,12 @@
             --lila: #F4F1FA;
             --blanco: #FDFCFF;
             --borde: #DDD8EC;
+            --shell-max: 1100px;
             --ff-d: 'Poppins', sans-serif;
             --ff-b: 'Merriweather', serif;
         }
 
-        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
         body {
             font-family: var(--ff-b);
@@ -40,13 +47,24 @@
         .site-header {
             background: var(--blanco);
             border-bottom: 1px solid var(--borde);
-            padding: 20px 80px;
+            padding: 0;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 50;
+        }
+        .site-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: var(--shell-max);
+            margin: 0 auto;
+            padding: 16px clamp(20px, 5vw, 56px);
+            box-sizing: border-box;
         }
         .site-logo {
             font-family: var(--ff-d);
@@ -94,14 +112,14 @@
             padding: 96px 80px 64px;
             border-bottom: 1px solid var(--borde);
         }
-        .hero-inner { max-width: 1100px; margin: 0 auto; }
+        .hero-inner { max-width: var(--shell-max); margin: 0 auto; }
         .hero-eyebrow {
             font-family: var(--ff-d);
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--magenta);
+            color: var(--morado-light);
             margin-bottom: 24px;
             display: flex;
             align-items: center;
@@ -115,7 +133,7 @@
         }
         .hero-title {
             font-family: var(--ff-d);
-            font-size: 84px;
+            font-size: clamp(44px, 8vw, 84px);
             font-weight: 700;
             color: #fff;
             line-height: 0.98;
@@ -124,16 +142,33 @@
         }
         .hero-subtitle {
             font-family: var(--ff-d);
-            font-size: 21px;
+            font-size: clamp(17px, 2.2vw, 21px);
             font-weight: 300;
             color: var(--morado-light);
             line-height: 1.6;
             max-width: 760px;
         }
+        .hero-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-family: var(--ff-d);
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--blanco);
+        }
+        .hero-author img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
 
         /* GRID */
         .reports {
-            max-width: 1100px;
+            max-width: var(--shell-max);
             margin: 0 auto;
             padding: 72px 80px 96px;
         }
@@ -152,18 +187,36 @@
             text-decoration: none;
             transition: background .25s ease, border-color .25s ease, transform .25s ease;
         }
-        .card:hover {
+        .card:hover, .card:focus-visible {
             background: var(--lila);
             border-color: var(--morado-light);
             transform: translateY(-3px);
         }
+        @media (prefers-reduced-motion: reduce) {
+            .card, .card-link { transition: none; }
+            .card:hover, .card:focus-visible { transform: none; }
+        }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--magenta);
+            outline-offset: 2px;
+        }
+        .hero a:focus-visible, .site-footer a:focus-visible {
+            outline-color: #fff;
+        }
+        .skip-link {
+            position: absolute; left: -9999px; top: 0;
+            background: var(--morado); color: #fff;
+            padding: 12px 20px; font-family: var(--ff-d); font-weight: 600;
+            z-index: 200; text-decoration: none;
+        }
+        .skip-link:focus { left: 0; }
         .card-eyebrow {
             font-family: var(--ff-d);
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--magenta);
+            color: var(--morado);
             margin-bottom: 18px;
         }
         .card-title {
@@ -191,7 +244,7 @@
             font-family: var(--ff-d);
             font-size: 12px;
             font-weight: 500;
-            color: var(--gris-niebla);
+            color: var(--gris-humo);
             letter-spacing: 0.02em;
             padding-top: 22px;
             border-top: 1px solid var(--borde);
@@ -203,7 +256,7 @@
             font-family: var(--ff-d);
             font-size: 14px;
             font-weight: 600;
-            color: var(--magenta);
+            color: var(--magenta-press);
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -216,7 +269,7 @@
         .site-footer { background: var(--morado-dark); color: #fff; }
         .footer-shell {
             width: 100%;
-            max-width: 1180px;
+            max-width: var(--shell-max);
             margin: 0 auto;
             padding: 56px clamp(20px, 5vw, 56px) 40px;
             box-sizing: border-box;
@@ -328,16 +381,17 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
 
     <!-- HEADER -->
-    <header class="site-header" style="flex-wrap: wrap; padding: 0;">
-        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 16px clamp(20px, 5vw, 56px); box-sizing: border-box; max-width: 1180px; margin: 0 auto;">
+    <header class="site-header">
+        <div class="site-header-inner">
             <a href="index.html" class="site-logo">Brand<br>to<br>Revenue</a>
             <div class="header-actions">
                 <a href="https://brandtorevenue.vercel.app/" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--secondary">Conoce Brand to Revenue</a>
                 <a href="https://wa.link/p51el8" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--mario">Habla con Mario <span aria-hidden="true">→</span></a>
             </div>
-            <button class="hdr-hamburger" id="hamburger" aria-label="Abrir menú">
+            <button class="hdr-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -347,17 +401,36 @@
         </div>
     </header>
     <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            this.classList.toggle('open');
-            document.getElementById('mobile-menu').classList.toggle('open');
+        const hamburgerBtn = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerBtn.addEventListener('click', function() {
+            const open = this.classList.toggle('open');
+            mobileMenu.classList.toggle('open', open);
+            this.setAttribute('aria-expanded', open);
+            this.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && hamburgerBtn.classList.contains('open')) {
+                hamburgerBtn.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.setAttribute('aria-label', 'Abrir menú');
+                hamburgerBtn.focus();
+            }
         });
     </script>
+
+    <main id="main">
 
     <!-- HERO -->
     <section class="hero">
         <div class="hero-inner">
             <h1 class="hero-title">Manifiestos</h1>
-            <p class="hero-subtitle">Bienvenidos a este espacio donde comparto lo que aprendo analizando cómo el marketing y los negocios evolucionan.<br><span style="display:inline-flex;align-items:center;gap:10px;margin-top:16px;font-size:0.85em;opacity:0.85;"><img src="images/MQR-profile.png" alt="Mario Quirós" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"><span style="color:#FDFCFF;font-weight:700;">— Mario Quirós R.</span></span></p>
+            <p class="hero-subtitle">Bienvenidos a este espacio donde comparto lo que aprendo analizando cómo el marketing y los negocios evolucionan.</p>
+            <div class="hero-author">
+                <img src="images/MQR-profile.png" alt="" width="44" height="44">
+                <span>— Mario Quirós R.</span>
+            </div>
         </div>
     </section>
 
@@ -397,6 +470,7 @@
 
         </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -413,7 +487,7 @@
                     </div>
                     <div>
                         <div class="footer-label">Email</div>
-                        <a href="/cdn-cgi/l/email-protection#ec818d9e8583b39d99859e839fac83999880838387c28f8381" class="footer-value"><span class="__cf_email__" data-cfemail="c0ada1b2a9af9fb1b5a9b2afb380afb5b4acafafabeea3afad">[email&#160;protected]</span></a>
+                        <a href="mailto:mario_quiros@outlook.com" class="footer-value">mario_quiros@outlook.com</a>
                     </div>
                     <div>
                         <div class="footer-label">Teléfono</div>
@@ -428,5 +502,5 @@
         </div>
     </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 </html>
