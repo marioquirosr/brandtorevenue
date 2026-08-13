@@ -2,7 +2,7 @@
    Brand to Revenue — style.css
    Hoja de estilos consolidada de la landing.
 
-   Incluye: fuentes (Poppins + Merriweather), variables de color, tipografía,
+   Incluye: fuentes (Poppins + Figtree), variables de color, tipografía,
    espaciado, bordes/sombras, resets base, clases utilitarias de marca y los
    breakpoints responsive.
 
@@ -13,7 +13,7 @@
    reemplaza el @import por @font-face con archivos locales (woff2/ttf).
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Figtree:wght@300;400;600;700&display=swap');
 
 /* ==========================================================================
    1 · TOKENS — Variables de marca
@@ -65,7 +65,7 @@
 
   /* ---- Tipografía ---- */
   --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-body:    'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-body:    'Figtree', system-ui, -apple-system, sans-serif;
   --font-ui:      'Poppins', system-ui, -apple-system, sans-serif;
 
   --fw-regular:  400;
@@ -161,7 +161,7 @@ img { max-width: 100%; display: block; }
 
 /* ==========================================================================
    3 · TIPOGRAFÍA — Clases utilitarias
-   Poppins = estructura/títulos/UI · Merriweather = SOLO cuerpo
+   Poppins = estructura/títulos/UI · Figtree = SOLO cuerpo
    ========================================================================== */
 .b2r-display {
   font-family: var(--font-display); font-weight: var(--fw-extrabold);
