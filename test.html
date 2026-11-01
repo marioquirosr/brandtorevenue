@@ -6,7 +6,7 @@
 <title>Test gratis: ¿en qué nivel está tu marketing? | Brand to Revenue</title>
 <meta name="description" content="6 preguntas, 1 minuto. Descubre si tu marketing está conectado con los números de tu negocio y qué necesitas hacer.">
 <link rel="canonical" href="https://www.brandtorevenue.agency/test.html">
-<meta name="theme-color" content="#2E1C52">
+<meta name="theme-color" content="#FDFCFF">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Brand to Revenue">
 <meta property="og:locale" content="es_PA">
@@ -23,51 +23,50 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="b2r.css?v=2">
+<link rel="stylesheet" href="b2r.css?v=3">
 <script src="config.js?v=1"></script>
 <script src="b2r.js?v=1" defer></script>
 <style>
   body { background: var(--lila); }
   .quiz-wrap { max-width: 640px; margin: 0 auto; padding: 32px var(--gutter) 64px; }
-  .quiz-card { background: #fff; border: 1px solid var(--borde); border-radius: 8px; padding: 28px 22px; }
+  .quiz-card { background: #fff; border: 1px solid var(--borde); border-radius: 24px; padding: 28px 22px; box-shadow: var(--shadow); }
   .progress { height: 6px; background: var(--lila); border-radius: 3px; overflow: hidden; margin-bottom: 22px; }
   .progress i { display: block; height: 100%; width: 0; background: var(--magenta-accion); transition: width .25s; }
   .step-meta { display: flex; justify-content: space-between; align-items: center; font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--gris-humo); margin-bottom: 10px; letter-spacing: .04em; }
   .q-block { font-family: var(--display); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--morado); }
   .q-title { font-size: clamp(22px, 5vw, 28px); color: var(--negro); margin-bottom: 22px; }
   .opts { display: grid; gap: 10px; }
-  .opt { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 14px 16px; text-align: left; background: #fff; border: 2px solid var(--borde); border-radius: 6px; font: inherit; font-size: 16px; line-height: 1.35; color: var(--negro); cursor: pointer; transition: border-color .12s, background .12s; }
-  .opt:hover { border-color: var(--morado); }
-  .opt[aria-pressed="true"] { border-color: var(--morado); background: var(--lila); }
+  .opt { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 14px 16px; text-align: left; background: #fff; border: 1px solid var(--borde); border-radius: 14px; font: inherit; font-size: 16px; line-height: 1.35; color: var(--negro); cursor: pointer; transition: border-color .12s, background .12s; }
+  .opt:hover { border-color: var(--negro); }
+  .opt[aria-pressed="true"] { border-color: var(--negro); background: var(--lila); }
   .opt .dot { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--gris-niebla); }
   .opt[aria-pressed="true"] .dot { border-color: var(--morado); background: radial-gradient(circle, var(--morado) 45%, transparent 50%); }
   .back { margin-top: 18px; background: none; border: 0; font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--gris-humo); cursor: pointer; padding: 10px 0; min-height: 44px; }
   .back:hover { color: var(--morado); }
-  .intro h1 { font-size: clamp(30px, 7vw, 42px); font-weight: 800; color: var(--morado); margin-bottom: 14px; line-height: 1.08; }
+  .intro h1 { font-size: clamp(32px, 7vw, 46px); font-weight: 600; color: var(--morado); margin-bottom: 14px; line-height: 1.08; }
   .intro p { color: var(--gris-humo); }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 26px; }
-  .chips span { font-family: var(--display); font-size: 13px; font-weight: 600; background: var(--lila); color: var(--morado); padding: 6px 12px; border-radius: 20px; }
+  .chips span { font-family: var(--display); font-size: 13px; font-weight: 600; background: var(--lila); border: 1px solid var(--borde); color: var(--negro); padding: 6px 12px; border-radius: 999px; }
   .result .level-label { font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta-accion); margin-bottom: 6px; }
-  .result h2 { font-size: clamp(28px, 6vw, 38px); color: var(--morado); margin-bottom: 14px; }
+  .result h2 { font-size: clamp(28px, 6vw, 38px); color: var(--negro); margin-bottom: 14px; }
   .result .diag { font-size: 18px; }
   .meter { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 4px 0 24px; }
   .meter span { height: 8px; border-radius: 4px; background: var(--lila); }
   .meter span.on { background: var(--morado); }
   .meter-labels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: -18px; margin-bottom: 24px; font-family: var(--display); font-size: 12px; color: var(--gris-humo); }
-  .model { background: var(--lila); border-left: 4px solid var(--morado); padding: 14px 16px; margin: 18px 0; font-size: 16px; }
+  .model { background: var(--lila); border-radius: 14px; border-left: 0; padding: 14px 16px; margin: 18px 0; font-size: 16px; }
   .model strong { font-family: var(--display); color: var(--morado); }
   .todo { border-top: 1px solid var(--borde); padding-top: 18px; margin-top: 18px; }
   .todo h3 { font-size: 16px; color: var(--negro); margin-bottom: 6px; }
-  .cta-box { background: var(--morado-abismo); color: #fff; border-radius: 6px; padding: 22px; margin-top: 24px; }
+  .cta-box { background: var(--morado-abismo); color: #fff; border-radius: 20px; padding: 22px; margin-top: 24px; }
   .cta-box h3 { font-size: 20px; margin-bottom: 6px; }
   .cta-box p { color: var(--morado-niebla); font-size: 16px; margin-bottom: 16px; }
   .product-note { font-size: 14px; color: var(--gris-humo); margin-top: 18px; }
   .product-note a { color: var(--morado); font-family: var(--display); font-weight: 600; }
   .level-head { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
-  .level-num { margin: 0; font-family: var(--display); font-weight: 800; font-size: 88px; line-height: .85; letter-spacing: -0.05em; color: var(--morado); }
+  .level-num { margin: 0; font-family: var(--display); font-weight: 600; font-size: 88px; line-height: .85; letter-spacing: -0.05em; color: var(--morado); }
   .level-num small { font-size: 28px; color: var(--gris-niebla); letter-spacing: 0; }
   .result .level-head h2 { margin-bottom: 0; }
-  .quiz-card.has-result { box-shadow: 12px 12px 0 var(--amarillo); }
   [hidden] { display: none !important; }
 </style>
 </head>
@@ -76,7 +75,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="./" aria-label="Brand to Revenue, inicio"><span>Brand</span><span>to</span><span>Revenue</span></a>
-    <a class="btn btn-ghost" style="min-height:44px;padding:10px 16px;font-size:14px" href="./">← Inicio</a>
+    <a class="ulink" href="./">← Inicio</a>
   </div>
 </header>
 
@@ -301,7 +300,7 @@
       '<div class="todo"><h3>Lo que necesitas hacer</h3><p>' + esc(r.level.todo) + '</p></div>' +
       '<div class="cta-box"><h3>¿Quieres que lo hagamos juntos?</h3>' +
       '<p>Agenda tu diagnóstico gratis de 30 minutos. Vemos tu caso y definimos el camino.</p>' +
-      '<a class="btn btn-primary btn-block" href="' + esc(cal) + '" target="_blank" rel="noopener" data-cta="test-resultado">Agenda tu diagnóstico gratis</a></div>' +
+      '<a class="btn btn-light btn-block" href="' + esc(cal) + '" target="_blank" rel="noopener" data-cta="test-resultado">Agenda tu diagnóstico gratis</a></div>' +
       '<p class="product-note">La asesoría que va con tu perfil: <strong>' + esc(PRODUCTS[S.segment.product]) + '</strong>. <a href="./#servicios">Ver detalles</a></p>' +
       '<button class="back" type="button" id="again">↺ Volver a hacer el test</button>' +
       '</div>';

@@ -6,7 +6,7 @@
 <title>Brand to Revenue | Marketing desde el negocio</title>
 <meta name="description" content="Conectamos tu marketing con lo que mueve tu negocio: clientes, ventas y caja. Asesoría para agencias, equipos de marketing y dueños de negocio en Panamá. Haz el test gratis en 1 minuto.">
 <link rel="canonical" href="https://www.brandtorevenue.agency/">
-<meta name="theme-color" content="#2E1C52">
+<meta name="theme-color" content="#FDFCFF">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Brand to Revenue">
@@ -25,10 +25,11 @@
 <link rel="apple-touch-icon" href="favicon.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="b2r.css?v=2">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="b2r.css?v=3">
+<script>document.documentElement.classList.add("js");</script>
 <script src="config.js?v=1"></script>
-<script src="b2r.js?v=1" defer></script>
+<script src="b2r.js?v=2" defer></script>
 
 <script type="application/ld+json">
 {
@@ -77,16 +78,16 @@
   <div class="wrap">
     <a class="logo" href="./" aria-label="Brand to Revenue, inicio"><span>Brand</span><span>to</span><span>Revenue</span></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
     </button>
     <nav id="nav-menu" aria-label="Principal">
       <ul>
-        <li><a href="#enfoque">El enfoque</a></li>
+        <li><a href="#enfoque">Enfoque</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="test.html" data-cta="nav">Test gratis</a></li>
+        <li><a href="test.html" data-cta="nav">Test</a></li>
         <li><a href="manifiestos.html">Manifiestos</a></li>
         <li><a href="#mario">Sobre Mario</a></li>
-        <li><a class="btn btn-primary" href="https://calendly.com/brandtorevenue/30min" data-cta="nav" target="_blank" rel="noopener">Diagnóstico gratis</a></li>
+        <li><a class="ulink" href="https://calendly.com/brandtorevenue/30min" data-cta="nav" target="_blank" rel="noopener">Diagnóstico gratis</a></li>
       </ul>
     </nav>
   </div>
@@ -96,144 +97,141 @@
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="bar" aria-hidden="true"></div>
-        <p class="kicker">Marketing desde el negocio</p>
-        <h1 id="hero-title">Antes de la idea, el número.</h1>
-        <p class="sub">Conectamos tu marketing con lo que mueve tu negocio: clientes, ventas y caja.</p>
-        <p class="who">Para agencias, equipos de marketing y dueños de negocio que quieren que su trabajo se vea en el feed y en las ventas.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="test.html" data-cta="hero">Haz el test gratis · 1 min</a>
-          <a class="btn btn-ghost-light" href="https://calendly.com/brandtorevenue/30min" data-cta="hero" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="label">Marketing desde el negocio</p>
+          <h1 id="hero-title">Antes de la idea, <em>el número.</em></h1>
+          <p class="sub">Conectamos tu marketing con lo que mueve tu negocio: clientes, ventas y caja. Para que tu trabajo se vea en el feed y en las ventas.</p>
+          <div class="ctas">
+            <a class="btn btn-primary" href="test.html" data-cta="hero">Haz el test gratis</a>
+            <a class="ulink" href="https://calendly.com/brandtorevenue/30min" data-cta="hero" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
+          </div>
+          <p class="micro">1 minuto · resultado al instante · sin compromiso</p>
         </div>
-        <p class="micro">6 preguntas · resultado al instante · sin compromiso</p>
+
+        <div class="panel" id="panel">
+          <div class="panel-head">
+            <p id="panel-q">El mismo mes, visto como…</p>
+            <div class="toggle" role="group" aria-labelledby="panel-q">
+              <span class="knob" aria-hidden="true"></span>
+              <button type="button" data-view="mkt" aria-pressed="true">Marketing</button>
+              <button type="button" data-view="biz" aria-pressed="false">Negocio</button>
+            </div>
+          </div>
+          <div aria-live="polite">
+            <div class="metric"><small class="swap" data-k="l1">Impresiones</small><b class="swap" data-k="v1">120,000</b></div>
+            <div class="metric"><small class="swap" data-k="l2">Seguidores nuevos</small><b class="swap" data-k="v2">+3,000</b></div>
+            <div class="metric"><small class="swap" data-k="l3">Interacciones</small><b class="swap" data-k="v3">8,400</b></div>
+            <p class="verdict"><i aria-hidden="true"></i><span class="swap" data-k="vd">¿Y cuánto vendimos? Este reporte no lo dice.</span></p>
+          </div>
+          <p class="panel-note">Toca "Negocio" · Ejemplo ilustrativo</p>
+        </div>
       </div>
 
-      <figure class="compare" aria-label="Ejemplo: el mismo mes reportado de 2 formas">
-        <p class="compare-title">El mismo mes, 2 reportes</p>
-        <div class="report mkt">
-          <p class="tag"><i aria-hidden="true"></i>Reporte de marketing</p>
-          <div class="kpis">
-            <div class="kpi"><b>120,000</b><span>impresiones</span></div>
-            <div class="kpi"><b>+3,000</b><span>seguidores nuevos</span></div>
-          </div>
-        </div>
-        <div class="report biz">
-          <p class="tag"><i aria-hidden="true"></i>Reporte de negocio</p>
-          <div class="kpis">
-            <div class="kpi"><b>30 → 65</b><span>ventas al mes</span></div>
-            <div class="kpi"><b>$4 vs $15</b><span>costo por cliente, según canal</span></div>
-          </div>
-          <p class="next"><strong>Próximo mes:</strong> más presupuesto a lo que trae ventas.</p>
-        </div>
-        <figcaption class="compare-note">Ejemplo ilustrativo.</figcaption>
-      </figure>
+      <div class="strip">
+        <div><span class="n">01</span><h3>Preguntar</h3><p>Qué tiene que pasar en el negocio, antes que qué piezas hacer.</p></div>
+        <div><span class="n">02</span><h3>Proponer</h3><p>Cada idea amarrada al número que tiene que mover.</p></div>
+        <div><span class="n">03</span><h3>Reportar</h3><p>Ventas primero. El alcance explica, no es el resultado.</p></div>
+      </div>
     </div>
   </section>
 
-  <!-- 01 PROBLEMA -->
+  <!-- EL PROBLEMA -->
   <section id="enfoque" aria-labelledby="problema-title">
-    <div class="wrap two">
-      <div>
-        <p class="eyebrow"><span class="n">01</span>El problema</p>
-        <h2 class="h2" id="problema-title">Marketing y dirección no miden lo mismo</h2>
-        <p class="lead">Marketing reporta atención. La dirección evalúa dinero.</p>
-        <p>Los equipos y las agencias reportan alcance, clics, reproducciones y engagement. La dirección decide con lo que cuesta conseguir un cliente, cuánto vuelve a comprar y cuánto deja. Cuando se pregunta cuánto retorno dejó cada dólar, la respuesta llega en volumen de tráfico.</p>
-        <p>El problema no es la creatividad ni el equipo. <span class="hl">Es que los dos números no están conectados.</span></p>
-      </div>
-      <div class="flow" role="img" aria-label="Pauta, clic y venta: entre el clic y la venta se pierde el costo real por cliente">
-        <div class="flow-steps" aria-hidden="true">
-          <div class="flow-step">Pauta</div><span class="flow-arrow">→</span>
-          <div class="flow-step">Clic</div><span class="flow-arrow">→</span>
-          <div class="flow-step">Venta</div><span class="flow-arrow flow-gap">→</span>
+    <div class="wrap">
+      <p class="label">El problema</p>
+      <div class="two">
+        <h2 class="statement reveal" id="problema-title">Marketing reporta atención. <em>La dirección evalúa dinero.</em></h2>
+        <div class="reveal">
+          <p>Los equipos y las agencias reportan alcance, clics, reproducciones y engagement. La dirección decide con lo que cuesta conseguir un cliente, cuánto vuelve a comprar y cuánto deja.</p>
+          <p>El problema no es la creatividad ni el equipo. <strong>Es que los dos números no están conectados.</strong></p>
+          <div class="flow" role="img" aria-label="Pauta, clic y venta: entre el clic y la venta se pierde el costo real por cliente">
+            <span>Pauta</span><i aria-hidden="true">→</i><span>Clic</span><i aria-hidden="true">→</i><span>Venta</span><i aria-hidden="true">→</i><span class="gap">¿Costo real por cliente?</span>
+          </div>
         </div>
-        <p class="flow-note" aria-hidden="true">Aquí se pierde el costo real por cliente</p>
       </div>
     </div>
   </section>
 
-  <!-- 02 EL CAMBIO -->
-  <section class="band" aria-labelledby="cambio-title">
+  <!-- EL CAMBIO -->
+  <section class="soft" aria-labelledby="cambio-title">
     <div class="wrap">
-      <p class="eyebrow"><span class="n">02</span>El cambio</p>
-      <h2 class="h2" id="cambio-title">¿Qué número del negocio tiene que moverse?</h2>
-      <p class="lead">Esa pregunta va antes de cualquier campaña. Y se instala en 3 momentos. Un ejemplo con un restaurante cuyos clientes vienen 1 vez y no vuelven:</p>
+      <p class="label">El cambio</p>
+      <h2 class="h2 reveal" id="cambio-title">¿Qué número del negocio <em>tiene que moverse?</em></h2>
+      <p class="lead reveal">Esa pregunta va antes de cualquier campaña, y se instala en 3 momentos. Un ejemplo: un restaurante cuyos clientes vienen 1 vez y no vuelven.</p>
 
-      <div class="moments">
-        <article class="moment">
-          <span class="moment-n" aria-hidden="true">1</span>
-          <h3>Preguntar</h3>
-          <p class="what">Cómo se levanta la necesidad.</p>
-          <div class="ba">
-            <p class="before"><b>Antes</b>"¿Qué piezas necesitas y para cuándo?"</p>
-            <p class="after"><b>Después</b>"¿Qué tiene que pasar en tu negocio y qué lo está frenando?"</p>
-          </div>
-        </article>
-        <article class="moment">
-          <span class="moment-n" aria-hidden="true">2</span>
-          <h3>Proponer</h3>
-          <p class="what">Cómo se arma la propuesta.</p>
-          <div class="ba">
-            <p class="before"><b>Antes</b>"12 posts, 4 reels y 1 influencer."</p>
-            <p class="after"><b>Después</b>"Tus clientes vienen 1 vez. Esta campaña busca que vuelvan, y lo vamos a contar en 60 días."</p>
-          </div>
-        </article>
-        <article class="moment">
-          <span class="moment-n" aria-hidden="true">3</span>
-          <h3>Reportar</h3>
-          <p class="what">Cómo se demuestra el resultado.</p>
-          <div class="ba">
-            <p class="before"><b>Antes</b>"45,000 de alcance y 1,200 interacciones."</p>
-            <p class="after"><b>Después</b>"Regresaron 180 clientes en 60 días. El reel que más canjes trajo recibe más presupuesto."</p>
-          </div>
-        </article>
+      <div class="tabs" role="tablist" aria-label="Los 3 momentos">
+        <button class="tab" role="tab" id="tab-1" aria-controls="tp-1" aria-selected="true"><span>01</span>Preguntar</button>
+        <button class="tab" role="tab" id="tab-2" aria-controls="tp-2" aria-selected="false" tabindex="-1"><span>02</span>Proponer</button>
+        <button class="tab" role="tab" id="tab-3" aria-controls="tp-3" aria-selected="false" tabindex="-1"><span>03</span>Reportar</button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="tp-1" aria-labelledby="tab-1">
+        <p class="what">Cómo se levanta la necesidad.</p>
+        <div class="ba">
+          <div class="before"><b>Antes</b><p>"¿Qué piezas necesitas y para cuándo?"</p></div>
+          <div class="after"><b>Después</b><p>"¿Qué tiene que pasar en tu negocio y qué lo está frenando?"</p></div>
+        </div>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="tp-2" aria-labelledby="tab-2" hidden>
+        <p class="what">Cómo se arma la propuesta.</p>
+        <div class="ba">
+          <div class="before"><b>Antes</b><p>"12 posts, 4 reels y 1 influencer."</p></div>
+          <div class="after"><b>Después</b><p>"Tus clientes vienen 1 vez. Esta campaña busca que vuelvan, y lo vamos a contar en 60 días."</p></div>
+        </div>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="tp-3" aria-labelledby="tab-3" hidden>
+        <p class="what">Cómo se demuestra el resultado.</p>
+        <div class="ba">
+          <div class="before"><b>Antes</b><p>"45,000 de alcance y 1,200 interacciones."</p></div>
+          <div class="after"><b>Después</b><p>"Regresaron 180 clientes en 60 días. El reel que más canjes trajo recibe más presupuesto."</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 SERVICIOS -->
-  <section id="servicios" class="alt" aria-labelledby="servicios-title">
+  <!-- SERVICIOS -->
+  <section id="servicios" aria-labelledby="servicios-title">
     <div class="wrap">
-      <p class="eyebrow"><span class="n">03</span>Servicios</p>
-      <h2 class="h2" id="servicios-title">Elige cómo trabajamos juntos</h2>
+      <p class="label">Servicios</p>
+      <h2 class="h2 reveal" id="servicios-title">Elige cómo <em>trabajamos juntos</em></h2>
 
       <div class="cards">
-        <article class="card feature">
-          <span class="badge">Asesoría</span>
+        <article class="card reveal">
+          <p class="kind">Asesoría</p>
           <p class="product">Marketing desde el Negocio</p>
           <h3>para Equipos</h3>
           <p class="for">Agencias y equipos de marketing internos</p>
-          <p>Instalamos el mindset en tu equipo: preguntar, proponer y reportar en números de negocio.</p>
-          <div class="card-stat"><b>9 h</b><span>en 5 sesiones</span></div>
+          <p class="muted">Instalamos el mindset en tu equipo: preguntar, proponer y reportar en números de negocio.</p>
+          <div class="card-stat"><b data-count="9" data-suffix=" h">9 h</b><span>en 5 sesiones</span></div>
           <ul>
             <li>1 sesión con el líder, 3 con el equipo y 1 de cierre</li>
-            <li>Se llevan la guía de preguntas, la estructura de propuesta y la de reporte</li>
+            <li>Guía de preguntas, estructura de propuesta y de reporte</li>
           </ul>
           <a class="btn btn-primary btn-block" href="https://calendly.com/brandtorevenue/30min" data-cta="servicio-equipos" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
         </article>
 
-        <article class="card feature">
-          <span class="badge">Asesoría</span>
+        <article class="card reveal">
+          <p class="kind">Asesoría</p>
           <p class="product">Marketing desde el Negocio</p>
           <h3>para Dueños</h3>
           <p class="for">Dueños sin equipo de marketing, con el negocio andando o por nacer</p>
-          <p>Aprende a definir qué necesita tu negocio, a elegir quién ejecuta tu marketing y a exigir resultados en ventas.</p>
-          <div class="card-stat"><b>6 h</b><span>en 4 sesiones 1 a 1</span></div>
+          <p class="muted">Aprende a definir qué necesita tu negocio, a elegir quién ejecuta tu marketing y a exigir resultados en ventas.</p>
+          <div class="card-stat"><b data-count="6" data-suffix=" h">6 h</b><span>en 4 sesiones 1 a 1</span></div>
           <ul>
             <li>Se trabaja sobre tu propio negocio</li>
-            <li>Te llevas tu brief de negocio y el reporte que vas a exigir</li>
+            <li>Tu brief de negocio y el reporte que vas a exigir</li>
           </ul>
           <a class="btn btn-primary btn-block" href="https://calendly.com/brandtorevenue/30min" data-cta="servicio-duenos" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
         </article>
 
-        <article class="card">
-          <span class="badge">Medición</span>
+        <article class="card reveal">
+          <p class="kind">Medición</p>
           <p class="product">Brand to Revenue</p>
           <h3>Sprint de medición</h3>
           <p class="for">Marcas con pauta activa y ventas registradas</p>
-          <p>Calculamos lo que te cuesta cada cliente y cuánto vale, canal por canal, y te decimos dónde poner el próximo dólar.</p>
-          <div class="card-stat"><b>2</b><span>semanas</span></div>
+          <p class="muted">Calculamos lo que te cuesta cada cliente y cuánto vale, canal por canal, y te decimos dónde poner el próximo dólar.</p>
+          <div class="card-stat"><b data-count="2">2</b><span>semanas</span></div>
           <ul>
             <li>CAC, LTV y payback por canal en un tablero ejecutivo</li>
             <li>Qué canal sube, cuál baja y cuál se corta</li>
@@ -241,61 +239,61 @@
           <a class="btn btn-ghost btn-block" href="https://wa.me/50762440096?text=Hola%20Mario%2C%20me%20interesa%20el%20sprint%20de%20medici%C3%B3n%20de%20Brand%20to%20Revenue." data-cta="servicio-sprint" target="_blank" rel="noopener">Solicitar el sprint</a>
         </article>
       </div>
-      <p class="note-line">¿Agencia grande? También auditamos equipos para mejorar cómo proponen, miden y reportan. <a href="https://calendly.com/brandtorevenue/30min" data-cta="agencia-grande" target="_blank" rel="noopener">Hablemos</a></p>
+      <p class="note-line">¿Agencia grande? También auditamos equipos para mejorar cómo proponen, miden y reportan. <a class="ulink" href="https://calendly.com/brandtorevenue/30min" data-cta="agencia-grande" target="_blank" rel="noopener">Hablemos</a></p>
     </div>
   </section>
 
-  <!-- 04 CÓMO EMPEZAR -->
-  <section aria-labelledby="empezar-title">
+  <!-- CÓMO EMPEZAR -->
+  <section class="soft" aria-labelledby="empezar-title">
     <div class="wrap">
-      <p class="eyebrow"><span class="n">04</span>Cómo empezar</p>
-      <h2 class="h2" id="empezar-title">Tres pasos, el primero toma 1 minuto</h2>
+      <p class="label">Cómo empezar</p>
+      <h2 class="h2 reveal" id="empezar-title">Tres pasos. <em>El primero toma 1 minuto.</em></h2>
       <div class="steps">
-        <div class="step"><span class="step-n" aria-hidden="true">01</span><h3>Haz el test</h3><p>6 preguntas para saber en qué nivel está tu marketing.</p></div>
-        <div class="step"><span class="step-n" aria-hidden="true">02</span><h3>Recibe tu resultado</h3><p>Tu nivel y lo que necesitas hacer, al instante.</p></div>
-        <div class="step"><span class="step-n" aria-hidden="true">03</span><h3>Diagnóstico gratis</h3><p>30 minutos para ver tu caso y definir el camino.</p></div>
+        <div class="step reveal"><span class="n" aria-hidden="true">01</span><div><h3>Haz el test</h3><p>6 preguntas para saber en qué nivel está tu marketing.</p></div></div>
+        <div class="step reveal"><span class="n" aria-hidden="true">02</span><div><h3>Recibe tu resultado</h3><p>Tu nivel y lo que necesitas hacer, al instante.</p></div></div>
+        <div class="step reveal"><span class="n" aria-hidden="true">03</span><div><h3>Diagnóstico gratis</h3><p>30 minutos para ver tu caso y definir el camino.</p></div></div>
       </div>
-      <div class="btn-row">
+      <div class="ctas-row">
         <a class="btn btn-primary" href="test.html" data-cta="pasos">Haz el test gratis</a>
-        <a class="btn btn-ghost" href="https://calendly.com/brandtorevenue/30min" data-cta="pasos" target="_blank" rel="noopener">Ir directo al diagnóstico</a>
+        <a class="ulink" href="https://calendly.com/brandtorevenue/30min" data-cta="pasos" target="_blank" rel="noopener">Ir directo al diagnóstico</a>
       </div>
     </div>
   </section>
 
   <!-- CASO -->
-  <section class="alt" aria-labelledby="caso-title">
+  <section aria-labelledby="caso-title">
     <div class="wrap">
-      <div class="case">
+      <div class="case reveal">
         <div>
-          <p class="eyebrow">Caso · Café Cucúa</p>
+          <p class="label">Caso · Café Cucúa</p>
           <h3 id="caso-title">De commodity a robusta de especialidad</h3>
           <p>Antes de invertir en producir, validamos con tostadores, baristas y cafeterías. Ese hallazgo cambió el producto, el modelo y el precio.</p>
-          <a class="btn btn-ghost" href="B2R_CasoExito_CafeCucua.html">Leer el caso completo</a>
+          <a class="ulink" href="B2R_CasoExito_CafeCucua.html">Leer el caso completo</a>
         </div>
         <div class="case-stats">
-          <div class="case-stat"><b>+100%</b><span>en precio de venta por unidad</span></div>
-          <div class="case-stat"><b>2x</b><span>valor comercial vs. la proyección inicial</span></div>
+          <div class="case-stat"><b data-count="100" data-prefix="+" data-suffix="%">+100%</b><span>en precio de venta por unidad</span></div>
+          <div class="case-stat"><b data-count="2" data-suffix="x">2x</b><span>valor comercial vs. la proyección inicial</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SOBRE MARIO -->
-  <section id="mario" aria-labelledby="mario-title">
+  <section id="mario" class="soft" aria-labelledby="mario-title">
     <div class="wrap">
       <div class="bio-grid">
-        <div class="photo">
+        <div class="photo reveal">
           <img src="images/MQR-profile.webp" width="720" height="720" alt="Mario Quirós R." loading="lazy" decoding="async">
           <span class="tag">Desde 2013</span>
         </div>
-        <div>
-          <p class="eyebrow">Mario Quirós R.</p>
-          <h2 class="h2" id="mario-title">Consultor de marketing, conectando marca y resultados desde 2013.</h2>
+        <div class="reveal">
+          <p class="label">Mario Quirós R.</p>
+          <h2 id="mario-title">Consultor de marketing, conectando marca y resultados <em>desde 2013.</em></h2>
           <p>Mi trabajo es que el marketing hable el idioma del negocio: cuánto cuesta cada cliente, cuánto vale y en cuánto tiempo se recupera la inversión.</p>
           <p>He liderado estrategias de crecimiento en sectores como Fintech, Consumo Masivo y Tecnología, y fundé mis propias empresas, incluyendo una agencia de marketing digital y una operación de logística durante la pandemia.</p>
-          <p>Esa trayectoria, incluidos el P&amp;L y el voto en junta directiva en Tafi, me dio una ventaja difícil de replicar: <span class="hl">hablar el idioma de marketing y el de la dirección financiera.</span></p>
+          <p>Esa trayectoria, incluidos el P&amp;L y el voto en junta directiva en Tafi, me dio una ventaja difícil de replicar: <strong>hablar el idioma de marketing y el de la dirección financiera.</strong></p>
           <div class="mentor">
-            <img src="images/cds.svg" width="96" height="40" alt="Ciudad del Saber" loading="lazy">
+            <img src="images/cds.svg" width="92" height="38" alt="Ciudad del Saber" loading="lazy">
             <p style="margin:0">Mentor del Programa de Incubación de Startups de Ciudad del Saber, el ecosistema de innovación y emprendimiento de Panamá.</p>
           </div>
         </div>
@@ -316,28 +314,22 @@
   </section>
 
   <!-- RECURSOS -->
-  <section class="alt" aria-labelledby="recursos-title">
+  <section aria-labelledby="recursos-title">
     <div class="wrap">
-      <p class="eyebrow"><span class="n">05</span>Recursos gratis</p>
-      <h2 class="h2" id="recursos-title">Para seguir pensando desde el negocio</h2>
-      <div class="resources">
+      <p class="label">Recursos gratis</p>
+      <h2 class="h2 reveal" id="recursos-title">Para seguir pensando <em>desde el negocio</em></h2>
+      <div class="res-list">
         <button type="button" class="res" data-playbook>
-          <span class="kind">Playbook · PDF</span>
-          <h3>El playbook Brand to Revenue</h3>
-          <p>La lógica con la que conectamos el marketing con los resultados del negocio.</p>
-          <span class="go">Descargar gratis →</span>
+          <span><span class="kind">Playbook · PDF</span><h3>El playbook Brand to Revenue</h3><p>La lógica con la que conectamos el marketing con los resultados del negocio.</p></span>
+          <span class="arrow" aria-hidden="true">↓</span>
         </button>
         <a class="res" href="manifiestos.html">
-          <span class="kind">Manifiestos</span>
-          <h3>Análisis sobre marketing y negocios</h3>
-          <p>Cómo evoluciona el marketing y qué significa para tu negocio.</p>
-          <span class="go">Ver manifiestos →</span>
+          <span><span class="kind">Manifiestos</span><h3>Análisis sobre marketing y negocios</h3><p>Cómo evoluciona el marketing y qué significa para tu negocio.</p></span>
+          <span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="res" href="B2R_Marketing_Diagnosis_Panama_2026.html">
-          <span class="kind">Informe</span>
-          <h3>Diagnóstico de Marketing Panamá 2026</h3>
-          <p>La transición global del marketing y su impacto en el mercado panameño.</p>
-          <span class="go">Leer el informe →</span>
+          <span><span class="kind">Informe</span><h3>Diagnóstico de Marketing Panamá 2026</h3><p>La transición global del marketing y su impacto en el mercado panameño.</p></span>
+          <span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -346,13 +338,15 @@
   <!-- CTA FINAL -->
   <section class="final" aria-labelledby="final-title">
     <div class="wrap">
-      <h2 id="final-title">¿En qué nivel está tu marketing?</h2>
-      <p>Descúbrelo en 1 minuto. Después, si quieres, lo vemos juntos en un diagnóstico gratis de 30 minutos.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="test.html" data-cta="final">Haz el test gratis</a>
-        <a class="btn btn-ghost-light" href="https://calendly.com/brandtorevenue/30min" data-cta="final" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
+      <div class="final-card reveal">
+        <h2 id="final-title">¿En qué nivel está tu marketing?</h2>
+        <p>Descúbrelo en 1 minuto. Después, si quieres, lo vemos juntos en un diagnóstico gratis de 30 minutos.</p>
+        <div class="btn-row">
+          <a class="btn btn-light" href="test.html" data-cta="final">Haz el test gratis</a>
+          <a class="ulink" href="https://calendly.com/brandtorevenue/30min" data-cta="final" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
+        </div>
+        <p class="micro">Sin compromiso · 30 minutos</p>
       </div>
-      <p class="micro">Sin compromiso · 30 minutos</p>
     </div>
   </section>
 </main>
@@ -416,5 +410,90 @@
     </div>
   </div>
 </div>
+
+<script>
+/* Interacciones del home: panel Marketing | Negocio, tabs, cifras y entradas */
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Panel */
+  var DATA = {
+    mkt: { l1: "Impresiones", v1: "120,000", l2: "Seguidores nuevos", v2: "+3,000", l3: "Interacciones", v3: "8,400", vd: "¿Y cuánto vendimos? Este reporte no lo dice." },
+    biz: { l1: "Ventas al mes", v1: "30 → 65", l2: "Costo por cliente", v2: "$4 vs $15", l3: "Recupera la inversión en", v3: "3 semanas", vd: "Próximo mes: más presupuesto al canal de $4." }
+  };
+  var panel = document.getElementById("panel");
+  var toggle = panel.querySelector(".toggle");
+  var touched = false;
+  function setView(v) {
+    var isBiz = v === "biz";
+    if (panel.classList.contains("is-biz") === isBiz) return;
+    panel.classList.toggle("is-biz", isBiz);
+    toggle.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.view === v)); });
+    var els = panel.querySelectorAll("[data-k]");
+    els.forEach(function (el) { el.classList.add("out"); });
+    setTimeout(function () {
+      els.forEach(function (el) { el.textContent = DATA[v][el.dataset.k]; el.classList.remove("out"); });
+    }, reduce ? 0 : 200);
+    if (window.B2R) window.B2R.track("panel_toggle", { vista: v });
+  }
+  toggle.querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () { touched = true; setView(b.dataset.view); });
+  });
+  if (!reduce) setTimeout(function () { if (!touched) { toggle.classList.add("nudge"); } }, 2500);
+
+  /* Tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(t) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute("aria-selected", String(on));
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { select(t); });
+    t.addEventListener("keydown", function (e) {
+      var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus();
+    });
+  });
+
+  /* Encabezado con línea al hacer scroll */
+  var header = document.querySelector(".site-header");
+  window.addEventListener("scroll", function () { header.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
+
+  /* Entradas y cifras que cuentan */
+  function countUp(el) {
+    var to = +el.dataset.count, pre = el.dataset.prefix || "", suf = el.dataset.suffix || "";
+    if (reduce) { el.textContent = pre + to + suf; return; }
+    var t0 = null, dur = 1100;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + Math.round(to * e) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add("in");
+        en.target.querySelectorAll("[data-count]").forEach(countUp);
+        if (en.target.matches("[data-count]")) countUp(en.target);
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+  }
+})();
+</script>
 </body>
 </html>
