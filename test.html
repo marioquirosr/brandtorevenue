@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="b2r.css?v=1">
+<link rel="stylesheet" href="b2r.css?v=2">
 <script src="config.js?v=1"></script>
 <script src="b2r.js?v=1" defer></script>
 <style>
@@ -31,7 +31,7 @@
   .quiz-wrap { max-width: 640px; margin: 0 auto; padding: 32px var(--gutter) 64px; }
   .quiz-card { background: #fff; border: 1px solid var(--borde); border-radius: 8px; padding: 28px 22px; }
   .progress { height: 6px; background: var(--lila); border-radius: 3px; overflow: hidden; margin-bottom: 22px; }
-  .progress i { display: block; height: 100%; width: 0; background: var(--magenta-press); transition: width .25s; }
+  .progress i { display: block; height: 100%; width: 0; background: var(--magenta-accion); transition: width .25s; }
   .step-meta { display: flex; justify-content: space-between; align-items: center; font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--gris-humo); margin-bottom: 10px; letter-spacing: .04em; }
   .q-block { font-family: var(--display); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--morado); }
   .q-title { font-size: clamp(22px, 5vw, 28px); color: var(--negro); margin-bottom: 22px; }
@@ -47,7 +47,7 @@
   .intro p { color: var(--gris-humo); }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 26px; }
   .chips span { font-family: var(--display); font-size: 13px; font-weight: 600; background: var(--lila); color: var(--morado); padding: 6px 12px; border-radius: 20px; }
-  .result .level-label { font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta-press); margin-bottom: 6px; }
+  .result .level-label { font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta-accion); margin-bottom: 6px; }
   .result h2 { font-size: clamp(28px, 6vw, 38px); color: var(--morado); margin-bottom: 14px; }
   .result .diag { font-size: 18px; }
   .meter { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 4px 0 24px; }
@@ -63,6 +63,11 @@
   .cta-box p { color: var(--morado-niebla); font-size: 16px; margin-bottom: 16px; }
   .product-note { font-size: 14px; color: var(--gris-humo); margin-top: 18px; }
   .product-note a { color: var(--morado); font-family: var(--display); font-weight: 600; }
+  .level-head { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
+  .level-num { margin: 0; font-family: var(--display); font-weight: 800; font-size: 88px; line-height: .85; letter-spacing: -0.05em; color: var(--morado); }
+  .level-num small { font-size: 28px; color: var(--gris-niebla); letter-spacing: 0; }
+  .result .level-head h2 { margin-bottom: 0; }
+  .quiz-card.has-result { box-shadow: 12px 12px 0 var(--amarillo); }
   [hidden] { display: none !important; }
 </style>
 </head>
@@ -288,8 +293,8 @@
     var labels = LEVEL_NAMES[t].map(function (l) { return '<span>' + l + '</span>'; }).join("");
     card.innerHTML =
       '<div class="result">' +
-      '<p class="level-label">Tu resultado · nivel ' + r.level.n + ' de 3</p>' +
-      '<h2>' + esc(r.level.name) + '</h2>' +
+      '<div class="level-head"><p class="level-num" aria-hidden="true">' + r.level.n + '<small>/3</small></p><div><p class="level-label">Tu resultado · nivel ' + r.level.n + '</p>' +
+      '<h2>' + esc(r.level.name) + '</h2></div></div>' +
       '<div class="meter" aria-hidden="true">' + meter + '</div><div class="meter-labels" aria-hidden="true">' + labels + '</div>' +
       '<p class="diag">' + esc(r.level.diag) + '</p>' +
       (r.model ? '<p class="model">Para tu etapa, te conviene empezar con: <strong>' + esc(r.model) + '</strong>.</p>' : '') +
@@ -300,7 +305,8 @@
       '<p class="product-note">La asesoría que va con tu perfil: <strong>' + esc(PRODUCTS[S.segment.product]) + '</strong>. <a href="./#servicios">Ver detalles</a></p>' +
       '<button class="back" type="button" id="again">↺ Volver a hacer el test</button>' +
       '</div>';
-    document.getElementById("again").onclick = function () { S.segment = null; S.answers = []; S.i = 0; S.step = "segment"; render(); };
+    card.classList.add('has-result');
+    document.getElementById("again").onclick = function () { card.classList.remove('has-result'); S.segment = null; S.answers = []; S.i = 0; S.step = "segment"; render(); };
   }
 
   function bindOpts(onPick) {
