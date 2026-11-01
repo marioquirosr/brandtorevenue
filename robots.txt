@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /B2R_BrandBook_v2.html
+
+Sitemap: https://www.brandtorevenue.agency/sitemap.xml

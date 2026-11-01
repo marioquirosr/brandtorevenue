@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test gratis: ¿en qué nivel está tu marketing? | Brand to Revenue</title>
+<meta name="description" content="6 preguntas, 1 minuto. Descubre si tu marketing está conectado con los números de tu negocio y qué necesitas hacer.">
+<link rel="canonical" href="https://www.brandtorevenue.agency/test.html">
+<meta name="theme-color" content="#2E1C52">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brand to Revenue">
+<meta property="og:locale" content="es_PA">
+<meta property="og:url" content="https://www.brandtorevenue.agency/test.html">
+<meta property="og:title" content="¿En qué nivel está tu marketing? Test gratis de 1 minuto">
+<meta property="og:description" content="6 preguntas para saber si tu marketing está conectado con los números de tu negocio.">
+<meta property="og:image" content="https://www.brandtorevenue.agency/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.brandtorevenue.agency/og-image.png">
+<link rel="icon" type="image/png" href="favicon.png?v=3">
+<link rel="apple-touch-icon" href="favicon.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="b2r.css?v=1">
+<script src="config.js?v=1"></script>
+<script src="b2r.js?v=1" defer></script>
+<style>
+  body { background: var(--lila); }
+  .quiz-wrap { max-width: 640px; margin: 0 auto; padding: 32px var(--gutter) 64px; }
+  .quiz-card { background: #fff; border: 1px solid var(--borde); border-radius: 8px; padding: 28px 22px; }
+  .progress { height: 6px; background: var(--lila); border-radius: 3px; overflow: hidden; margin-bottom: 22px; }
+  .progress i { display: block; height: 100%; width: 0; background: var(--magenta-press); transition: width .25s; }
+  .step-meta { display: flex; justify-content: space-between; align-items: center; font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--gris-humo); margin-bottom: 10px; letter-spacing: .04em; }
+  .q-block { font-family: var(--display); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--morado); }
+  .q-title { font-size: clamp(22px, 5vw, 28px); color: var(--negro); margin-bottom: 22px; }
+  .opts { display: grid; gap: 10px; }
+  .opt { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 14px 16px; text-align: left; background: #fff; border: 2px solid var(--borde); border-radius: 6px; font: inherit; font-size: 16px; line-height: 1.35; color: var(--negro); cursor: pointer; transition: border-color .12s, background .12s; }
+  .opt:hover { border-color: var(--morado); }
+  .opt[aria-pressed="true"] { border-color: var(--morado); background: var(--lila); }
+  .opt .dot { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--gris-niebla); }
+  .opt[aria-pressed="true"] .dot { border-color: var(--morado); background: radial-gradient(circle, var(--morado) 45%, transparent 50%); }
+  .back { margin-top: 18px; background: none; border: 0; font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--gris-humo); cursor: pointer; padding: 10px 0; min-height: 44px; }
+  .back:hover { color: var(--morado); }
+  .intro h1 { font-size: clamp(30px, 7vw, 42px); font-weight: 800; color: var(--morado); margin-bottom: 14px; line-height: 1.08; }
+  .intro p { color: var(--gris-humo); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 26px; }
+  .chips span { font-family: var(--display); font-size: 13px; font-weight: 600; background: var(--lila); color: var(--morado); padding: 6px 12px; border-radius: 20px; }
+  .result .level-label { font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta-press); margin-bottom: 6px; }
+  .result h2 { font-size: clamp(28px, 6vw, 38px); color: var(--morado); margin-bottom: 14px; }
+  .result .diag { font-size: 18px; }
+  .meter { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 4px 0 24px; }
+  .meter span { height: 8px; border-radius: 4px; background: var(--lila); }
+  .meter span.on { background: var(--morado); }
+  .meter-labels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: -18px; margin-bottom: 24px; font-family: var(--display); font-size: 12px; color: var(--gris-humo); }
+  .model { background: var(--lila); border-left: 4px solid var(--morado); padding: 14px 16px; margin: 18px 0; font-size: 16px; }
+  .model strong { font-family: var(--display); color: var(--morado); }
+  .todo { border-top: 1px solid var(--borde); padding-top: 18px; margin-top: 18px; }
+  .todo h3 { font-size: 16px; color: var(--negro); margin-bottom: 6px; }
+  .cta-box { background: var(--morado-abismo); color: #fff; border-radius: 6px; padding: 22px; margin-top: 24px; }
+  .cta-box h3 { font-size: 20px; margin-bottom: 6px; }
+  .cta-box p { color: var(--morado-niebla); font-size: 16px; margin-bottom: 16px; }
+  .product-note { font-size: 14px; color: var(--gris-humo); margin-top: 18px; }
+  .product-note a { color: var(--morado); font-family: var(--display); font-weight: 600; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<a class="skip" href="#quiz">Saltar al test</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="Brand to Revenue, inicio"><span>Brand</span><span>to</span><span>Revenue</span></a>
+    <a class="btn btn-ghost" style="min-height:44px;padding:10px 16px;font-size:14px" href="./">← Inicio</a>
+  </div>
+</header>
+
+<main class="quiz-wrap" id="quiz">
+  <div class="quiz-card" id="card" aria-live="polite"></div>
+  <noscript><p>Este test necesita JavaScript. También puedes <a href="https://calendly.com/brandtorevenue/30min">agendar directo tu diagnóstico gratis</a>.</p></noscript>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------- Contenido ---------------- */
+  var SEGMENTS = [
+    { id: "agencia", label: "Trabajo en una agencia", test: "A", product: "equipos" },
+    { id: "interno", label: "Lidero o formo parte de un equipo de marketing interno", test: "A", product: "equipos" },
+    { id: "dueno", label: "Tengo un negocio andando", test: "A", product: "duenos" },
+    { id: "por-nacer", label: "Mi negocio está por nacer", test: "B", product: "duenos" }
+  ];
+
+  /* Test A: comprensión. Puntos en "p". Orden de opciones mezclado a propósito. */
+  var TEST_A = [
+    { block: "Preguntar", q: "Un negocio te dice \"quiero vender más\". ¿Qué preguntas primero?", o: [
+      ["¿Qué tipo de contenido te gusta?", 0], ["¿Por qué crees que hoy no vendes más?", 2], ["¿Cuál es tu meta de ventas?", 1] ] },
+    { block: "Preguntar", q: "Antes de arrancar una campaña, ¿qué es lo más importante tener claro?", o: [
+      ["El concepto creativo", 0], ["Qué número del negocio tiene que moverse", 2], ["A qué público le vamos a hablar", 1] ] },
+    { block: "Proponer", q: "Tienes 2 propuestas para el mismo negocio. ¿Cuál eliges?", o: [
+      ["La que trae más piezas por el mismo presupuesto", 0], ["La que explica cómo va a mover las ventas y cómo se va a medir", 2], ["La que tiene la idea creativa más fuerte", 1] ] },
+    { block: "Proponer", q: "Una campaña busca que los clientes vuelvan a comprar. ¿Qué la hace buena?", o: [
+      ["Que tenga buen alcance", 0], ["Que le dé al cliente una razón concreta para volver", 2], ["Que mantenga la marca presente", 1] ] },
+    { block: "Reportar", q: "Una campaña alcanzó a 200,000 personas y las ventas no se movieron. ¿Cómo la calificas?", o: [
+      ["Funcionó: mucha gente vio la marca", 0], ["Puede haber funcionado; hay que esperar", 1], ["No cumplió; hay que revisar qué falló", 2] ] },
+    { block: "Reportar", q: "Al cierre del mes, ¿qué debería mostrar primero un reporte?", o: [
+      ["Alcance, interacciones y seguidores", 0], ["Las ventas del mes", 1], ["Cuánto se movió el número acordado y qué lo causó", 2] ] }
+  ];
+
+  /* Test B: negocio por nacer. Preguntas 1 y 2 = datos (k), 3 a 6 = claridad (p). */
+  var TEST_B = [
+    { block: "Tu punto de partida", key: "presupuesto", q: "¿Cuánto podrías invertir en marketing al mes?", o: [
+      ["Menos de $300", "bajo"], ["$300 a $1,000", "medio"], ["Más de $1,000", "alto"] ] },
+    { block: "Tu punto de partida", key: "horas", q: "¿Cuántas horas a la semana le puedes dedicar a tu marketing?", o: [
+      ["Menos de 3", "pocas"], ["De 3 a 10", "medias"], ["Más de 10", "muchas"] ] },
+    { block: "Claridad", q: "¿A quién le vas a vender?", o: [
+      ["A todo el que quiera", 0], ["Tengo una idea general", 1], ["Lo tengo definido", 2] ] },
+    { block: "Claridad", q: "¿Sabes cuánto te va a dejar cada cliente?", o: [
+      ["Todavía no", 0], ["Tengo una idea", 1], ["Sí, con números", 2] ] },
+    { block: "Claridad", q: "¿Qué harías primero con tu marketing?", o: [
+      ["Abrir redes y empezar a publicar", 0], ["Contratar a alguien que se encargue", 1], ["Definir cuánto tengo que vender y a quién", 2] ] },
+    { block: "Claridad", q: "Tu primer mes de marketing salió bien si...", o: [
+      ["Gané seguidores", 0], ["La gente conoce mi marca", 1], ["Conseguí mis primeros clientes", 2] ] }
+  ];
+
+  var RESULTS_A = [
+    { max: 5, n: 1, name: "Marketing de marca",
+      diag: "Tu marketing hace que te vean, pero todavía no se nota en las ventas.",
+      todo: "Arrancar cada campaña preguntando qué número del negocio tiene que moverse." },
+    { max: 9, n: 2, name: "Camino al negocio",
+      diag: "Ya hablas de ventas, pero todavía cuesta demostrarlas.",
+      todo: "Conectar cada propuesta con un número y definir desde el inicio cómo se va a medir." },
+    { max: 12, n: 3, name: "Marketing desde el negocio",
+      diag: "Piensas en el negocio antes que en la idea.",
+      todo: "Que esa forma de pensar sea el estándar en cada campaña, no la excepción." }
+  ];
+  var RESULTS_B = [
+    { max: 3, n: 1, name: "Idea",
+      diag: "Tienes la idea, pero todavía falta el número.",
+      todo: "Definir a quién le vendes y cuánto te deja cada cliente, antes de invertir en marketing." },
+    { max: 6, n: 2, name: "Plan",
+      diag: "Sabes a dónde vas, pero falta el cómo.",
+      todo: "Conectar tu marketing con los números que tu negocio necesita desde el día 1." },
+    { max: 8, n: 3, name: "Listo para arrancar",
+      diag: "Tienes claro tu negocio y tus números.",
+      todo: "Elegir bien quién ejecuta tu marketing y qué le vas a exigir." }
+  ];
+  var LEVEL_NAMES = { A: ["Marca", "Camino", "Negocio"], B: ["Idea", "Plan", "Listo"] };
+
+  /* Regla del modelo: presupuesto x horas */
+  function model(presupuesto, horas) {
+    if (presupuesto === "bajo") return "Freelance";
+    if (presupuesto === "medio") return horas === "muchas" ? "Freelance" : "Agencia";
+    return horas === "muchas" ? "Equipo interno" : "Agencia";
+  }
+
+  var PRODUCTS = {
+    equipos: "Marketing desde el Negocio · para Equipos",
+    duenos: "Marketing desde el Negocio · para Dueños"
+  };
+
+  /* ---------------- Estado ---------------- */
+  var S = { step: "intro", segment: null, i: 0, answers: [], nombre: "", email: "" };
+  var card = document.getElementById("card");
+
+  function esc(t) { var d = document.createElement("div"); d.textContent = t; return d.innerHTML; }
+  function questions() { return S.segment && S.segment.test === "B" ? TEST_B : TEST_A; }
+  function total() { return questions().length + 2; } /* segmento + preguntas + contacto */
+  function track(n, d) { if (window.B2R) window.B2R.track(n, d || {}); }
+
+  function focusTitle() {
+    var h = card.querySelector("h1, h2, .q-title");
+    if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function progress(pos) {
+    var pct = Math.round((pos / total()) * 100);
+    return '<div class="progress" aria-hidden="true"><i style="width:' + pct + '%"></i></div>';
+  }
+
+  /* ---------------- Pantallas ---------------- */
+  function renderIntro() {
+    card.innerHTML =
+      '<div class="intro">' +
+      '<p class="q-block">Test gratis · Brand to Revenue</p>' +
+      '<h1>¿En qué nivel está tu marketing?</h1>' +
+      '<p>Descubre si tu marketing está conectado con los números del negocio y qué necesitas hacer para lograrlo.</p>' +
+      '<div class="chips"><span>6 preguntas</span><span>1 minuto</span><span>Resultado al instante</span></div>' +
+      '<button class="btn btn-primary btn-block" type="button" id="start">Empezar el test</button>' +
+      '</div>';
+    document.getElementById("start").onclick = function () { S.step = "segment"; track("test_start"); render(); };
+  }
+
+  function optionsHtml(opts, selectedIndex) {
+    return '<div class="opts" role="group">' + opts.map(function (o, idx) {
+      return '<button type="button" class="opt" data-i="' + idx + '" aria-pressed="' + (selectedIndex === idx) + '"><span class="dot" aria-hidden="true"></span><span>' + esc(o) + '</span></button>';
+    }).join("") + '</div>';
+  }
+
+  function renderSegment() {
+    var sel = S.segment ? SEGMENTS.indexOf(S.segment) : -1;
+    card.innerHTML = progress(0) +
+      '<div class="step-meta"><span class="q-block">Antes de empezar</span><span>1 de ' + total() + '</span></div>' +
+      '<h2 class="q-title">¿Qué te describe mejor?</h2>' +
+      optionsHtml(SEGMENTS.map(function (s) { return s.label; }), sel) +
+      '<button class="back" type="button" id="back">← Volver</button>';
+    bindOpts(function (idx) {
+      var changed = S.segment !== SEGMENTS[idx];
+      S.segment = SEGMENTS[idx];
+      if (changed) S.answers = [];
+      S.i = 0; S.step = "q";
+      track("test_segment", { segmento: S.segment.id });
+      setTimeout(render, 180);
+    });
+    document.getElementById("back").onclick = function () { S.step = "intro"; render(); };
+  }
+
+  function renderQuestion() {
+    var qs = questions(), q = qs[S.i];
+    var prev = S.answers[S.i];
+    card.innerHTML = progress(S.i + 1) +
+      '<div class="step-meta"><span class="q-block">' + esc(q.block) + '</span><span>' + (S.i + 2) + ' de ' + total() + '</span></div>' +
+      '<h2 class="q-title">' + esc(q.q) + '</h2>' +
+      optionsHtml(q.o.map(function (o) { return o[0]; }), prev === undefined ? -1 : prev) +
+      '<button class="back" type="button" id="back">← Anterior</button>';
+    bindOpts(function (idx) {
+      S.answers[S.i] = idx;
+      if (S.i < qs.length - 1) { S.i++; } else { S.step = "contact"; }
+      setTimeout(render, 180);
+    });
+    document.getElementById("back").onclick = function () {
+      if (S.i === 0) S.step = "segment"; else S.i--;
+      render();
+    };
+  }
+
+  function renderContact() {
+    card.innerHTML = progress(total() - 1) +
+      '<div class="step-meta"><span class="q-block">Último paso</span><span>' + total() + ' de ' + total() + '</span></div>' +
+      '<h2 class="q-title">Tu resultado está listo</h2>' +
+      '<p class="muted">Déjanos tu nombre y correo para verlo. Así, si agendas tu diagnóstico, llegamos con tu caso preparado.</p>' +
+      '<form id="contact" novalidate>' +
+      '<div class="field"><label for="t-nombre">Nombre</label><input id="t-nombre" name="nombre" type="text" autocomplete="name" required value="' + esc(S.nombre) + '"></div>' +
+      '<div class="field"><label for="t-email">Correo</label><input id="t-email" name="email" type="email" autocomplete="email" required value="' + esc(S.email) + '"></div>' +
+      '<div class="hp" aria-hidden="true"><label for="t-web">No llenar</label><input id="t-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>' +
+      '<button class="btn btn-primary btn-block" type="submit">Ver mi resultado</button>' +
+      '<p class="privacy">Usamos tus datos solo para tu diagnóstico y contenido de Brand to Revenue.</p>' +
+      '</form>' +
+      '<button class="back" type="button" id="back">← Anterior</button>';
+    var form = document.getElementById("contact");
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      if (form.website.value) return;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      S.nombre = form.nombre.value.trim();
+      S.email = form.email.value.trim();
+      var r = compute();
+      track("test_complete", { segmento: S.segment.id, test: S.segment.test, nivel: r.level.n });
+      if (window.B2R) window.B2R.sendLead({
+        formulario: "test", nombre: S.nombre, email: S.email,
+        segmento: S.segment.id, test: S.segment.test, puntos: r.score,
+        nivel: r.level.n + " - " + r.level.name, modelo: r.model || "",
+        producto: PRODUCTS[S.segment.product]
+      });
+      S.step = "result";
+      render();
+    };
+    document.getElementById("back").onclick = function () { S.i = questions().length - 1; S.step = "q"; render(); };
+  }
+
+  function compute() {
+    var qs = questions(), score = 0, data = {};
+    qs.forEach(function (q, idx) {
+      var v = q.o[S.answers[idx]][1];
+      if (q.key) data[q.key] = v; else score += v;
+    });
+    var table = S.segment.test === "B" ? RESULTS_B : RESULTS_A;
+    var level = table.filter(function (l) { return score <= l.max; })[0];
+    return { score: score, level: level, model: S.segment.test === "B" ? model(data.presupuesto, data.horas) : null };
+  }
+
+  function renderResult() {
+    var r = compute(), t = S.segment.test;
+    var cal = window.B2R ? window.B2R.calendlyUrl("test-nivel-" + t + r.level.n, { name: S.nombre, email: S.email }) : "https://calendly.com/brandtorevenue/30min";
+    var meter = [1, 2, 3].map(function (n) { return '<span class="' + (n <= r.level.n ? "on" : "") + '"></span>'; }).join("");
+    var labels = LEVEL_NAMES[t].map(function (l) { return '<span>' + l + '</span>'; }).join("");
+    card.innerHTML =
+      '<div class="result">' +
+      '<p class="level-label">Tu resultado · nivel ' + r.level.n + ' de 3</p>' +
+      '<h2>' + esc(r.level.name) + '</h2>' +
+      '<div class="meter" aria-hidden="true">' + meter + '</div><div class="meter-labels" aria-hidden="true">' + labels + '</div>' +
+      '<p class="diag">' + esc(r.level.diag) + '</p>' +
+      (r.model ? '<p class="model">Para tu etapa, te conviene empezar con: <strong>' + esc(r.model) + '</strong>.</p>' : '') +
+      '<div class="todo"><h3>Lo que necesitas hacer</h3><p>' + esc(r.level.todo) + '</p></div>' +
+      '<div class="cta-box"><h3>¿Quieres que lo hagamos juntos?</h3>' +
+      '<p>Agenda tu diagnóstico gratis de 30 minutos. Vemos tu caso y definimos el camino.</p>' +
+      '<a class="btn btn-primary btn-block" href="' + esc(cal) + '" target="_blank" rel="noopener" data-cta="test-resultado">Agenda tu diagnóstico gratis</a></div>' +
+      '<p class="product-note">La asesoría que va con tu perfil: <strong>' + esc(PRODUCTS[S.segment.product]) + '</strong>. <a href="./#servicios">Ver detalles</a></p>' +
+      '<button class="back" type="button" id="again">↺ Volver a hacer el test</button>' +
+      '</div>';
+    document.getElementById("again").onclick = function () { S.segment = null; S.answers = []; S.i = 0; S.step = "segment"; render(); };
+  }
+
+  function bindOpts(onPick) {
+    card.querySelectorAll(".opt").forEach(function (b) {
+      b.onclick = function () {
+        card.querySelectorAll(".opt").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+        b.setAttribute("aria-pressed", "true");
+        onPick(+b.dataset.i);
+      };
+    });
+  }
+
+  function render() {
+    ({ intro: renderIntro, segment: renderSegment, q: renderQuestion, contact: renderContact, result: renderResult })[S.step]();
+    if (S.step !== "intro") focusTitle();
+  }
+  render();
+})();
+</script>
+</body>
+</html>
