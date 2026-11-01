@@ -264,7 +264,14 @@ footer{background:#15101f;padding:48px 28px}
 <meta property="og:image" content="https://www.brandtorevenue.agency/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script src="config.js?v=1"></script>
-<script src="b2r.js?v=1" defer></script>
+<script src="b2r.js?v=3" defer></script>
+<link rel="stylesheet" href="b2r-shell.css?v=1">
+<style>
+.topbar .tb-dl{background:var(--b2r-negro);border-radius:999px;box-shadow:none;padding:10px 18px}
+.topbar .tb-dl:hover{background:#000}
+.topbar .tb-menu{border-radius:999px}
+.topbar .b2r-logo{font-size:14px}
+</style>
 </head>
 <body>
 <a href="#intro" class="skip-link">Saltar al contenido</a>
@@ -273,12 +280,13 @@ footer{background:#15101f;padding:48px 28px}
 
 <!-- TOP BAR -->
 <div class="topbar">
-  <a class="tb-dl" href="B2R_Mindset_v5.pdf" download="B2R_Mindset_v5.pdf" aria-label="Descargar el playbook en PDF">
+  <a class="b2r-logo" href="./" aria-label="Brand to Revenue, inicio"><span>Brand</span><span>to</span><span>Revenue</span></a>
+  <div class="tb-spacer"></div>
+  <div class="tb-actions">
+    <a class="tb-dl" href="B2R_Mindset_v5.pdf" download="B2R_Mindset_v5.pdf" aria-label="Descargar el playbook en PDF">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
     <span class="full">Descarga el playbook</span><span class="short" style="display:none">Descarga</span>
   </a>
-  <div class="tb-spacer"></div>
-  <div class="tb-actions">
     <button class="tb-menu" id="menuBtn" onclick="toggleDrawer(true)" aria-label="Abrir menú de contenido" aria-expanded="false" aria-controls="drawer">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -635,10 +643,15 @@ footer{background:#15101f;padding:48px 28px}
 
 </main>
 
-<footer>
-  <div class="foot-inner">
-    <div class="foot-logo">Brand<br>to<br>Revenue</div>
-    <div class="foot-meta">let's build for the now · Playbook v6 · © 2026 Mario Quirós R.<br>Todos los derechos reservados · @brandtorevenue</div>
+<footer class="b2r-ft">
+  <div class="b2r-ft-in">
+    <div class="b2r-ft-grid">
+      <div><p class="b2r-ft-brand">Brand to Revenue</p><p class="b2r-ft-tag">Marketing desde el negocio.</p></div>
+      <div><p class="b2r-ft-label">Instagram</p><a href="https://instagram.com/brandtorevenue" target="_blank" rel="noopener">@brandtorevenue</a></div>
+      <div><p class="b2r-ft-label">Email</p><a href="mailto:mario_quiros@outlook.com">mario_quiros@outlook.com</a></div>
+      <div><p class="b2r-ft-label">Teléfono</p><a href="tel:+50762440096">+507 6244-0096</a></div>
+    </div>
+    <div class="b2r-ft-bottom"><span>© 2026 Brand to Revenue · Todos los derechos reservados</span><span>Mario Quirós R. · Consultor de marketing</span></div>
   </div>
 </footer>
 

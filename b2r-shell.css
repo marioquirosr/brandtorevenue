@@ -1,0 +1,88 @@
+/* Brand to Revenue — marco compartido (header, footer, botones y tipografía)
+   para las páginas editoriales: manifiestos, caso, informes y playbook.
+   Clases con prefijo b2r- para no chocar con el CSS propio de cada página. */
+
+:root {
+  --magenta: #D81B5C; /* variante accesible del magenta (AA con blanco) */
+  --b2r-negro: #1A1525;
+  --b2r-morado: #5C38A4;
+  --b2r-gris: #6B6478;
+  --b2r-borde: #E7E3EF;
+  --b2r-blanco: #FDFCFF;
+  --b2r-amarillo: #FFE600;
+  --b2r-accion: #D81B5C;
+  --b2r-display: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --b2r-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --b2r-ease: cubic-bezier(.7, 0, .2, 1);
+}
+
+/* ---------- Tipografía alineada al home: títulos en semibold ---------- */
+:is(h1, h2):not(#b2r) { font-weight: 600 !important; letter-spacing: -0.035em !important; }
+
+/* ---------- Header ---------- */
+.b2r-hd, .b2r-hd * , .b2r-ft, .b2r-ft * { box-sizing: border-box; }
+.b2r-hd { position: sticky; top: 0; z-index: 60; background: rgba(253, 252, 255, .88); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--b2r-borde); font-family: var(--b2r-body); }
+.b2r-hd-in { max-width: 1240px; margin: 0 auto; padding: 0 20px; min-height: 72px; display: flex; align-items: center; justify-content: space-between; }
+.b2r-logo { font-family: var(--b2r-display); font-weight: 700; font-size: 15px; line-height: .95; letter-spacing: -0.02em; color: var(--b2r-negro) !important; text-decoration: none !important; display: block; }
+.b2r-logo span { display: block; }
+.b2r-hd .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin: 0 -12px 0 0; padding: 0; background: none; border: 0; cursor: pointer; color: var(--b2r-negro); }
+.b2r-hd .nav-toggle svg { width: 24px; height: 24px; flex: 0 0 auto; }
+.b2r-hd #nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--b2r-blanco); border-bottom: 1px solid var(--b2r-borde); padding: 8px 20px 24px; }
+.b2r-hd #nav-menu.is-open { display: block; }
+.b2r-hd #nav-menu ul { list-style: none; margin: 0; padding: 0; }
+.b2r-hd #nav-menu li { margin: 0; padding: 0; border: 0; font-size: inherit; line-height: inherit; }
+.b2r-hd #nav-menu li::before { content: none; }
+.b2r-hd #nav-menu a { display: block; padding: 14px 0; font-family: var(--b2r-display); font-weight: 500; font-size: 18px; line-height: 1.3; color: var(--b2r-negro); text-decoration: none; border-bottom: 1px solid var(--b2r-borde); letter-spacing: 0; }
+.b2r-hd #nav-menu a.b2r-ulink { display: inline-block; margin-top: 16px; padding: 8px 0 2px; font-weight: 600; border-bottom: 2px solid var(--b2r-amarillo); }
+
+/* ---------- Footer ---------- */
+footer.b2r-ft { background: var(--b2r-blanco); color: var(--b2r-negro); padding: 40px 0 32px; margin: 0; font-family: var(--b2r-body); text-align: left; border: 0; }
+.b2r-ft-in { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+.b2r-ft-grid { display: grid; gap: 24px; border-top: 1px solid var(--b2r-borde); padding-top: 40px; }
+.b2r-ft-brand { font-family: var(--b2r-display); font-weight: 700; font-size: 18px; margin: 0 0 6px; color: var(--b2r-negro); line-height: 1.3; }
+.b2r-ft-tag { font-size: 15px; color: var(--b2r-gris); margin: 0; line-height: 1.5; }
+.b2r-ft-label { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--b2r-gris); margin: 0 0 2px; line-height: 1.5; }
+.b2r-ft a { display: inline-block; padding: 8px 0; font-family: var(--b2r-display); font-weight: 500; font-size: 16px; color: var(--b2r-negro); text-decoration: none; line-height: 1.4; border: 0; }
+.b2r-ft a:hover { text-decoration: underline; text-decoration-color: var(--b2r-amarillo); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.b2r-ft-bottom { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--b2r-borde); display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--b2r-gris); line-height: 1.5; }
+.b2r-note { max-width: 760px; margin: 0 auto; padding: 32px 20px 0; font-size: 13px; line-height: 1.6; color: var(--b2r-gris); font-style: italic; font-family: var(--b2r-body); }
+
+/* ---------- Botones dentro del contenido ---------- */
+.cta-btn:not(#b2r) {
+  display: inline-flex !important; align-items: center; gap: 12px;
+  background: #fff !important; color: var(--b2r-negro) !important; box-shadow: none !important;
+  border-radius: 999px !important; padding: 14px 14px 14px 24px !important;
+  font-family: var(--b2r-display) !important; font-weight: 600 !important; font-size: 15px !important; letter-spacing: 0 !important;
+  text-decoration: none !important; transition: background .2s;
+}
+.cta-btn:not(#b2r)::after {
+  content: "→"; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 28px; height: 28px; border-radius: 50%; background: var(--b2r-accion); color: #fff; font-size: 14px;
+  transition: transform .25s var(--b2r-ease);
+}
+.cta-btn:not(#b2r):hover { background: #F4F1FA !important; }
+.cta-btn:not(#b2r):hover::after { transform: translateX(3px); }
+
+/* ---------- WhatsApp flotante ---------- */
+.wa-float { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,.18); opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity .25s, transform .25s; }
+.wa-float.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.wa-float svg { width: 26px; height: 26px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .b2r-hd *, .b2r-ft *, .cta-btn, .cta-btn::after, .wa-float { transition: none !important; }
+}
+
+@media (min-width: 720px) {
+  .b2r-hd-in, .b2r-ft-in { padding: 0 32px; }
+  .b2r-ft-grid { grid-template-columns: 2fr 1fr 1.4fr 1fr; }
+  .b2r-ft-bottom { flex-direction: row; justify-content: space-between; }
+}
+@media (min-width: 960px) {
+  .b2r-hd .nav-toggle { display: none; }
+  .b2r-hd #nav-menu { display: block; position: static; padding: 0; border: 0; background: none; }
+  .b2r-hd #nav-menu ul { display: flex; align-items: center; gap: 34px; }
+  .b2r-hd #nav-menu a { border: 0; padding: 8px 0; font-size: 15px; color: var(--b2r-gris); }
+  .b2r-hd #nav-menu a:hover { color: var(--b2r-negro); }
+  .b2r-hd #nav-menu a.b2r-ulink { margin: 0 0 0 10px; color: var(--b2r-negro); padding: 8px 0 2px; border-bottom: 2px solid var(--b2r-amarillo); }
+  .b2r-hd #nav-menu a[aria-current="page"] { color: var(--b2r-negro); }
+}

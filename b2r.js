@@ -123,7 +123,7 @@
   /* ---------- WhatsApp flotante: aparece después del hero ---------- */
   function initFloat() {
     var fab = document.querySelector(".wa-float");
-    var hero = document.querySelector(".hero");
+    var hero = document.querySelector(".hero, .cover");
     if (!fab) return;
     if (!hero || !("IntersectionObserver" in window)) { fab.classList.add("is-visible"); return; }
     new IntersectionObserver(function (entries) {
