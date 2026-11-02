@@ -92,6 +92,22 @@
   .result h3 { font-size: 21px; letter-spacing: -0.02em; margin: 2px 0 0; }
   .result p { margin: 0; color: var(--gris-humo); font-size: 16px; max-width: 34em; }
 
+
+  .layers { display: grid; gap: 12px; margin-top: 8px; }
+  .layer { border-radius: 20px; padding: 22px; border: 1px solid var(--borde); background: #fff; }
+  .layer em { display: inline-block; font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; margin-bottom: 12px; }
+  .layer.ok { border-color: var(--morado); }
+  .layer.ok em { background: var(--morado); color: #fff; }
+  .layer.mid em { background: var(--amarillo); color: var(--negro); }
+  .layer.off { background: var(--lila); }
+  .layer.off em { background: #fff; color: var(--gris-humo); border: 1px solid var(--borde); }
+  .layer b { display: block; font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .layer p { margin: 0; font-size: 15px; color: var(--gris-humo); line-height: 1.5; }
+  .principle { background: var(--morado-abismo); color: #fff; border-radius: 20px; padding: 24px; }
+  .principle b { display: block; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--amarillo); margin-bottom: 8px; }
+  .chapter .principle p { margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(18px, 2.4vw, 22px); line-height: 1.4; letter-spacing: -0.01em; color: #fff; max-width: 40em; }
+  @media (min-width: 720px) { .layers { grid-template-columns: repeat(2, 1fr); } .principle { padding: 28px 32px; } }
+  @media (min-width: 960px) { .layers { grid-template-columns: repeat(4, 1fr); } }
   .final-card .ulink { color: #fff; }
 
   @media (max-width: 559px) {
@@ -232,6 +248,22 @@
         <div class="result reveal"><b data-count="0" data-prefix="$">$0</b><h3>En infraestructura antes de validar</h3><p>El producto salió como MVP en un círculo cerrado para medir recompra real antes de gastar en escalar.</p></div>
         <div class="result reveal"><b data-count="3">3</b><h3>Decisiones redefinidas antes de producir</h3><p>Producto, modelo y precio cambiaron con el hallazgo, no después del lanzamiento. Una idea de bajo margen se convirtió en un activo de alta gama, lista para crecer sin reinventarse.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- 05 LECTURA B2R -->
+  <section class="soft" aria-labelledby="l-title">
+    <div class="wrap chapter">
+      <span class="n">05 · Lectura B2R</span>
+      <h2 class="h2 reveal" id="l-title">Dónde está el caso <em>en el sistema.</em></h2>
+      <p class="reveal">El orden importó tanto como las decisiones: primero la señal, después la marca y solo entonces la escala.</p>
+      <div class="layers">
+        <div class="layer ok reveal"><em>Validada</em><b>Signal Layer</b><p>Discovery con tostadores, baristas y cafeterías antes de producir. El hallazgo redefinió producto, modelo y precio.</p></div>
+        <div class="layer ok reveal"><em>Activado</em><b>Trust Engine</b><p>La identidad penonomeña como argumento de valor: es lo que sostiene un precio +100% por unidad.</p></div>
+        <div class="layer mid reveal"><em>En validación</em><b>Demand Engine</b><p>MVP en un círculo cerrado, con $0 en infraestructura de escala hasta confirmar demanda real.</p></div>
+        <div class="layer off reveal"><em>Siguiente</em><b>Value Engine</b><p>La recompra del MVP es la métrica que decide cuándo y cuánto escalar.</p></div>
+      </div>
+      <div class="principle reveal"><b>Principio aplicado</b><p>La marca no es decoración: es el activo que permite cobrar el doble. Y la escala se compra con certezas, no con supuestos.</p></div>
     </div>
   </section>
 
