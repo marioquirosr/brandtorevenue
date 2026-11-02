@@ -153,6 +153,26 @@
   .read p { margin: 0; font-family: var(--display); font-weight: 500; font-size: 18px; line-height: 1.4; letter-spacing: -0.01em; }
   .src { font-size: 13px; color: var(--gris-humo); margin: 22px 0 0; }
 
+
+  .ratios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+  .ratios div { border-top: 1px solid var(--borde); padding-top: 12px; }
+  .ratios b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.04em; line-height: 1; color: var(--morado); font-variant-numeric: tabular-nums; margin-bottom: 6px; }
+  .ratios span { font-size: 13px; color: var(--gris-humo); line-height: 1.35; display: block; }
+  .layers { display: grid; gap: 12px; margin-top: 6px; }
+  .layer { border-radius: 18px; padding: 20px; border: 1px solid var(--borde); background: #fff; }
+  .layer em { display: inline-block; font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; margin-bottom: 12px; }
+  .layer.ok { border-color: var(--morado); }
+  .layer.ok em { background: var(--morado); color: #fff; }
+  .layer.mid em { background: var(--amarillo); color: var(--negro); }
+  .layer.off { background: var(--lila); }
+  .layer.off em { background: #fff; color: var(--gris-humo); border: 1px solid var(--borde); }
+  .layer b { display: block; font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .layer p { margin: 0; font-size: 15px; color: var(--gris-humo); line-height: 1.5; }
+  .reco { margin-top: 16px; background: var(--morado-abismo); color: #fff; border-radius: 18px; padding: 22px; }
+  .reco b { display: block; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--amarillo); margin-bottom: 8px; }
+  .reco p { margin: 0; font-family: var(--display); font-weight: 500; font-size: 18px; line-height: 1.4; letter-spacing: -0.01em; color: #fff; }
+  @media (min-width: 720px) { .layers { grid-template-columns: repeat(3, 1fr); } .reco { padding: 26px 28px; } }
+
   /* Próximos */
   .soon { border: 1px dashed var(--borde); border-radius: 22px; padding: 22px; display: flex; align-items: center; gap: 14px; color: var(--gris-humo); font-size: 15px; margin-top: 16px; }
   .soon i { width: 10px; height: 10px; border-radius: 50%; background: var(--amarillo); flex-shrink: 0; animation: pulse 2s ease-in-out infinite; }
@@ -229,13 +249,13 @@
         <div class="ticker-item"><b>2x</b><span>valor comercial proyectado · Café Cucúa</span><i></i></div>
         <div class="ticker-item"><b>95.3%</b><span>alcance fuera de la audiencia · Microcaso</span><i></i></div>
         <div class="ticker-item"><b>$0</b><span>en infraestructura antes de validar · Café Cucúa</span><i></i></div>
-        <div class="ticker-item"><b>1,115</b><span>veces compartido en menos de 24 h · Microcaso</span><i></i></div>
+        <div class="ticker-item"><b>1,115</b><span>compartidos en menos de 24 h · Microcaso</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>+100%</b><span>precio por unidad · Café Cucúa</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>10.4x</b><span>alcance vs. audiencia · Microcaso</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>2x</b><span>valor comercial proyectado · Café Cucúa</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>95.3%</b><span>alcance fuera de la audiencia · Microcaso</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>$0</b><span>en infraestructura antes de validar · Café Cucúa</span><i></i></div>
-        <div class="ticker-item" aria-hidden="true"><b>1,115</b><span>veces compartido en menos de 24 h · Microcaso</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>1,115</b><span>compartidos en menos de 24 h · Microcaso</span><i></i></div>
       </div>
     </div>
   </section>
@@ -288,9 +308,9 @@
       <article class="micro-case reveal" id="aves-halloween" aria-labelledby="mc1-title">
         <div class="mc-head">
           <div>
-            <div class="tagline"><span class="chip solid">Microcaso</span><span class="chip">Contenido · Instagram</span><span class="chip">31 oct 2026</span></div>
-            <h3 id="mc1-title">Tembló en Halloween. <em>Las aves hicieron el resto.</em></h3>
-            <p class="hook">Una cuenta de 3,110 seguidores llegó a <strong>32,165 personas en menos de 24 horas.</strong> El 95.3% no la seguía.</p>
+            <div class="tagline"><span class="chip solid">Microcaso</span><span class="chip">Signal Layer</span><span class="chip">Contenido orgánico · Instagram</span><span class="chip">Oct 2026</span></div>
+            <h3 id="mc1-title">10.4x la audiencia <em>en menos de 24 horas.</em></h3>
+            <p class="hook">Análisis de una pieza publicada durante un evento de alta conversación en Panamá. Una cuenta de 3,110 seguidores alcanzó a <strong>32,165 personas; el 95.3% estaba fuera de su audiencia.</strong></p>
           </div>
           <div class="mc-kpis">
             <div class="mc-kpi"><b data-count="10.4" data-dec="1" data-suffix="x">10.4x</b><span>alcance vs. audiencia</span></div>
@@ -305,34 +325,34 @@
             <div class="mc-inner">
 
               <div class="beat">
-                <span class="n">01 · La señal</span>
-                <h4>3 cosas al mismo tiempo</h4>
-                <p>Sábado 31 de octubre. Tiembla en Panamá, es Halloween y el cielo está lleno de aves: la migración que cruza el país cada año en esta época. La gente conecta las 3 cosas y se arma una pequeña histeria colectiva.</p>
+                <span class="n">01 · Contexto</span>
+                <h4>Un evento de alta conversación</h4>
+                <p>El 31 de octubre coincidieron 3 hechos: un sismo, la migración anual de aves sobre Panamá y Halloween. La asociación entre ellos disparó la conversación en redes, con <strong>alto volumen y baja calidad de información.</strong></p>
               </div>
 
               <div class="beat">
-                <span class="n">02 · El vacío</span>
-                <h4>Mucho alcance, ninguna respuesta</h4>
-                <p>Páginas con gran alcance subieron las imágenes. No alarmaban, pero tampoco aclaraban: comunicaban para ganar interacción. <strong>La conversación estaba ahí. La explicación, no.</strong></p>
+                <span class="n">02 · Diagnóstico</span>
+                <h4>Demanda de información sin respuesta</h4>
+                <p>Las cuentas de mayor alcance publicaron el fenómeno sin explicarlo, priorizando interacción sobre claridad. La señal era concreta: <strong>alta intención de entender y ninguna pieza que resolviera la duda.</strong></p>
               </div>
 
               <div class="beat">
-                <span class="n">03 · El movimiento</span>
-                <h4>Saber no basta: hay que explicarlo bien</h4>
-                <p>La migración no era una sorpresa: es un fenómeno conocido y recurrente. Lo que hacía falta era contarlo con precisión. Profundizamos la investigación con IA, <strong>validamos cada dato contra sus fuentes</strong> y lo convertimos en un carrusel simple: qué está pasando, por qué ahora y por qué no tiene relación con el temblor.</p>
+                <span class="n">03 · Ejecución</span>
+                <h4>Respuesta validada, formato de baja fricción</h4>
+                <p>Sobre un fenómeno conocido y recurrente, se profundizó la investigación con IA y <strong>se validó cada dato contra sus fuentes.</strong> El resultado fue un carrusel de lectura rápida con 3 respuestas: qué ocurre, por qué ahora y por qué no guarda relación con el sismo.</p>
               </div>
 
               <div class="beat">
-                <span class="n">04 · El alcance</span>
-                <h4>Fuera de la burbuja</h4>
-                <p>Cada punto equivale a 100 personas. Recorre los 3 momentos.</p>
+                <span class="n">04 · Distribución</span>
+                <h4>Alcance fuera de la audiencia</h4>
+                <p>1 punto = 100 personas. Selecciona cada etapa.</p>
                 <div class="reach" id="reach">
                   <div class="reach-top">
                     <div class="reach-num" aria-live="polite"><b id="reach-n">3,110</b><span id="reach-l">seguidores de la cuenta al publicar</span></div>
-                    <div class="reach-steps" role="group" aria-label="Momentos del alcance">
+                    <div class="reach-steps" role="group" aria-label="Etapas del alcance">
                       <button type="button" data-step="0" aria-pressed="true">Audiencia</button>
                       <button type="button" data-step="1" aria-pressed="false">Alcance</button>
-                      <button type="button" data-step="2" aria-pressed="false">Quién lo vio</button>
+                      <button type="button" data-step="2" aria-pressed="false">Composición</button>
                     </div>
                   </div>
                   <div class="dots" id="dots" aria-hidden="true"></div>
@@ -341,8 +361,8 @@
               </div>
 
               <div class="beat">
-                <span class="n">05 · Qué hizo la gente</span>
-                <h4>Lo compartieron para aclararle a otros</h4>
+                <span class="n">05 · Comportamiento</span>
+                <h4>El compartido como motor de distribución</h4>
                 <div class="bars" id="bars">
                   <div class="bar"><small>Likes</small><div class="track"><div class="fill" data-v="1698"></div></div><b>1,698</b></div>
                   <div class="bar hl"><small>Compartidos</small><div class="track"><div class="fill" data-v="1115"></div></div><b>1,115</b></div>
@@ -350,30 +370,37 @@
                   <div class="bar"><small>Guardados</small><div class="track"><div class="fill" data-v="176"></div></div><b>176</b></div>
                   <div class="bar"><small>Comentarios</small><div class="track"><div class="fill" data-v="73"></div></div><b>73</b></div>
                 </div>
-                <p class="bars-note">Por cada 3 likes, casi 2 personas lo enviaron a alguien. <em>El contenido funcionó como respuesta, y una respuesta viaja sola.</em></p>
+                <div class="ratios">
+                  <div><b>0.66</b><span>compartidos por cada like</span></div>
+                  <div><b>3.5%</b><span>del alcance compartió la pieza</span></div>
+                  <div><b>1.59</b><span>vistas por persona alcanzada</span></div>
+                </div>
+                <p class="bars-note">La pieza se distribuyó por utilidad: <em>la audiencia la usó para informar a terceros.</em></p>
               </div>
 
               <div class="beat">
-                <span class="n">06 · Los números</span>
-                <h4>Menos de 24 horas</h4>
+                <span class="n">06 · Resultados</span>
+                <h4>Métricas a menos de 24 horas</h4>
                 <div class="m-grid">
                   <div><b>32,165</b><span>personas alcanzadas</span></div>
-                  <div><b>30,654</b><span>no seguían la cuenta</span></div>
-                  <div><b>50,938</b><span>vistas totales · 1.59 por persona</span></div>
-                  <div><b>3,341</b><span>interacciones · 10.4% del alcance</span></div>
-                  <div><b>+36</b><span>seguidores nuevos · +1.2% la cuenta</span></div>
-                  <div><b>27.3%</b><span>de las visitas al perfil terminó en follow</span></div>
+                  <div><b>30,654</b><span>fuera de la audiencia</span></div>
+                  <div><b>50,938</b><span>vistas totales</span></div>
+                  <div><b>10.4%</b><span>engagement sobre alcance · 3,341 interacciones</span></div>
+                  <div><b>+1.2%</b><span>crecimiento de la cuenta · 36 seguidores</span></div>
+                  <div><b>27.3%</b><span>conversión de visita al perfil a seguidor</span></div>
                 </div>
               </div>
 
               <div class="beat" style="border-bottom:0">
-                <span class="n">07 · La lectura</span>
-                <h4>Qué nos dice, desde el negocio</h4>
-                <div class="read">
-                  <div class="yes"><b>Lo que funcionó</b><p>Llegar primero con la explicación correcta. La utilidad distribuyó el contenido a 30,654 personas que no conocían la cuenta.</p></div>
-                  <div class="next"><b>Lo que sigue</b><p>Explicar una noticia trae alcance, no seguidores: 1 de cada 852 no seguidores siguió la cuenta. El próximo paso es darles una razón para quedarse.</p></div>
+                <span class="n">07 · Lectura B2R</span>
+                <h4>Dónde quedó la pieza en el sistema</h4>
+                <div class="layers">
+                  <div class="layer ok"><em>Validada</em><b>Signal Layer</b><p>Mensaje correcto en el momento correcto: 10.4x la audiencia y 95.3% de alcance nuevo.</p></div>
+                  <div class="layer mid"><em>Parcial</em><b>Trust Engine</b><p>Quien llegó al perfil, se quedó: 27.3% de las visitas terminó en seguidor.</p></div>
+                  <div class="layer off"><em>Sin activar</em><b>Demand Engine</b><p>0.12% de los no seguidores siguió la cuenta. La pieza no tenía un siguiente paso.</p></div>
                 </div>
-                <p class="src">Datos de Instagram Insights, medidos a menos de 24 horas de publicado.</p>
+                <div class="reco"><b>Recomendación</b><p>Amplificar con pauta solo las piezas que ya demostraron señal orgánica, y diseñar cada una con un siguiente paso que convierta alcance en audiencia.</p></div>
+                <p class="src">Fuente: Instagram Insights, medición a menos de 24 horas de publicado. Cálculos sobre personas alcanzadas.</p>
               </div>
 
             </div>
@@ -381,7 +408,7 @@
         </div>
       </article>
 
-      <div class="soon reveal"><i aria-hidden="true"></i>Nuevos microcasos en camino. Cada uno con sus números, buenos y no tan buenos.</div>
+      <div class="soon reveal"><i aria-hidden="true"></i>Próximos microcasos en documentación. Cada uno con su medición completa.</div>
     </section>
   </div>
 
@@ -512,9 +539,9 @@
   var dots = [];
   for (var i = 0; i < TOTAL; i++) { var s = document.createElement("span"); dotsEl.appendChild(s); dots.push(s); }
   var STEPS = [
-    { n: 3110, l: "seguidores de la cuenta al publicar", leg: [["l-own", "Audiencia de la cuenta"], ["l-off", "Alcance potencial"]] },
-    { n: 32165, l: "personas vieron el carrusel · 10.4x la audiencia", leg: [["l-on", "Personas alcanzadas"]] },
-    { n: 30654, l: "no seguían la cuenta · 95.3% del alcance", leg: [["l-on", "No seguidores"], ["l-own", "Seguidores que lo vieron (1,512)"]] }
+    { n: 3110, l: "seguidores de la cuenta al publicar", leg: [["l-own", "Audiencia de la cuenta"], ["l-off", "Base de comparación: alcance total"]] },
+    { n: 32165, l: "personas alcanzadas · 10.4x la audiencia", leg: [["l-on", "Personas alcanzadas"]] },
+    { n: 30654, l: "fuera de la audiencia · 95.3% del alcance", leg: [["l-on", "Fuera de la audiencia"], ["l-own", "Seguidores alcanzados (1,512)"]] }
   ];
   var cur = 0, numEl = document.getElementById("reach-n"), lblEl = document.getElementById("reach-l"), legEl = document.getElementById("legend");
   var sbtns = document.querySelectorAll(".reach-steps button");
