@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Casos | Brand to Revenue</title>
-<meta name="description" content="Casos y microcasos de Brand to Revenue: desde un negocio que cambió de modelo hasta un contenido que llegó 10 veces más lejos que su audiencia. Resultados con números.">
+<meta name="description" content="Casos y microcasos de Brand to Revenue: desde un negocio que cambió de modelo hasta un contenido que llegó a 10 veces más personas que sus seguidores. Resultados con números.">
 <link rel="canonical" href="https://www.brandtorevenue.agency/casos.html">
 <meta name="theme-color" content="#FDFCFF">
 <meta property="og:type" content="website">
@@ -107,23 +107,32 @@
   .beat p { margin: 0; color: var(--gris-humo); font-size: 17px; max-width: 36em; }
   .beat p strong { color: var(--negro); font-weight: 600; }
 
-  /* Visual de alcance: cada punto = 100 personas */
+  /* Visual de alcance: seguidores vs. alcance */
   .reach { background: var(--lila); border-radius: 22px; padding: 22px 18px; margin-top: 8px; }
-  .reach-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px; margin-bottom: 18px; }
-  .reach-num b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(44px, 7vw, 76px); line-height: .9; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: var(--negro); }
-  .reach-num span { font-size: 15px; color: var(--gris-humo); display: block; margin-top: 8px; min-height: 1.4em; }
-  .reach-steps { display: flex; gap: 6px; flex-wrap: wrap; }
-  .reach-steps button { border: 1px solid var(--borde); background: #fff; border-radius: 999px; min-height: 42px; padding: 8px 14px; font-family: var(--display); font-weight: 600; font-size: 13px; color: var(--gris-humo); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
-  .reach-steps button[aria-pressed="true"] { background: var(--negro); border-color: var(--negro); color: #fff; }
-  .dots { display: grid; grid-template-columns: repeat(23, 1fr); gap: 4px; }
-  .dots span { aspect-ratio: 1; border-radius: 50%; background: var(--borde); transform: scale(.55); transition: background .45s var(--ease), transform .45s var(--ease); transition-delay: var(--d, 0s); }
-  .dots span.on { background: var(--morado); transform: scale(1); }
-  .dots span.own { background: var(--amarillo); transform: scale(1); box-shadow: inset 0 0 0 1.5px var(--negro); }
-  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 13px; color: var(--gris-humo); }
-  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
-  .legend .l-on { background: var(--morado); }
-  .legend .l-own { background: var(--amarillo); box-shadow: inset 0 0 0 1.5px var(--negro); }
-  .legend .l-off { background: var(--borde); }
+  .vs-row { margin-bottom: 18px; }
+  .vs-label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .vs-label span { font-size: 15px; color: var(--gris-humo); }
+  .vs-label b { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.045em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .vs-track { height: 44px; background: #fff; border-radius: 12px; overflow: hidden; }
+  .vs-fill { height: 100%; width: 0; background: var(--morado); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; transition: width 1.4s var(--ease); }
+  .vs-fill.own { background: var(--amarillo); box-shadow: inset 0 0 0 1.5px var(--negro); }
+  .vs-fill em { font-style: normal; font-family: var(--display); font-weight: 600; font-size: 18px; color: #fff; padding-right: 16px; opacity: 0; transition: opacity .4s 1.2s; }
+  .vs-fill.go em { opacity: 1; }
+  .vs-sub { font-size: 15px; color: var(--gris-humo); margin: 28px 0 10px; border-top: 1px solid var(--borde); padding-top: 22px; }
+  .split { display: flex; height: 44px; border-radius: 12px; overflow: hidden; gap: 3px; background: #fff; }
+  .split > div { width: 0; height: 100%; transition: width 1.2s var(--ease); }
+  .split-f { background: var(--amarillo); box-shadow: inset 0 0 0 1.5px var(--negro); border-radius: 12px 0 0 12px; }
+  .split-n { background: var(--morado); border-radius: 0 12px 12px 0; }
+  .split-legend { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; }
+  .split-legend b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(26px, 3.6vw, 40px); letter-spacing: -0.045em; line-height: 1; }
+  .split-legend .n { text-align: right; }
+  .split-legend .n b { color: var(--morado); }
+  .split-legend span { font-size: 13px; color: var(--gris-humo); }
+  .vs-punch { font-family: var(--display); font-weight: 500; font-size: clamp(18px, 2.4vw, 22px); line-height: 1.35; letter-spacing: -0.01em; margin: 24px 0 0; max-width: 30em; }
+  #reach .vs-sub { max-width: none; margin: 28px 0 10px; }
+  #reach .vs-punch { margin: 28px 0 0; color: var(--negro); }
+  .split-legend span { font-weight: 400; line-height: 1.35; display: block; margin-top: 6px; }
+  .vs-punch em { font-style: normal; color: var(--morado); }
 
   /* Barras de interacción */
   .bars { display: grid; gap: 12px; margin-top: 6px; }
@@ -197,7 +206,6 @@
     .mc-head { grid-template-columns: 1.1fr .9fr; align-items: end; gap: 40px; padding: 48px 56px 44px; }
     .mc-head .mc-actions { grid-column: 1; }
     .mc-inner { padding: 8px 56px 48px; }
-    .dots { gap: 6px; max-width: 620px; }
   }
   @media (max-width: 719px) {
     .group-head { flex-direction: column; }
@@ -241,20 +249,20 @@
     <div class="wrap">
       <p class="label">Casos</p>
       <h1 id="c-title">Resultados, <em>con números.</em></h1>
-      <p class="sub">Casos completos y microcasos. Desde un negocio que cambió de modelo hasta un contenido que llegó 10 veces más lejos que su audiencia.</p>
+      <p class="sub">Casos completos y microcasos. Desde un negocio que cambió de modelo hasta un contenido que llegó a 10 veces más personas que sus seguidores.</p>
     </div>
     <div class="ticker" aria-label="Cifras destacadas de los casos">
       <div class="ticker-track">
         <div class="ticker-item"><b>+100%</b><span>precio por unidad · Café Cucuá</span><i></i></div>
-        <div class="ticker-item"><b>10.4x</b><span>alcance vs. audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item"><b>10.4x</b><span>alcance vs. seguidores · Microcaso</span><i></i></div>
         <div class="ticker-item"><b>2x</b><span>valor comercial proyectado · Café Cucuá</span><i></i></div>
-        <div class="ticker-item"><b>95.3%</b><span>alcance fuera de la audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item"><b>95.3%</b><span>alcance a no seguidores · Microcaso</span><i></i></div>
         <div class="ticker-item"><b>$0</b><span>en infraestructura antes de validar · Café Cucuá</span><i></i></div>
         <div class="ticker-item"><b>1,115</b><span>compartidos en menos de 24 h · Microcaso</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>+100%</b><span>precio por unidad · Café Cucuá</span><i></i></div>
-        <div class="ticker-item" aria-hidden="true"><b>10.4x</b><span>alcance vs. audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>10.4x</b><span>alcance vs. seguidores · Microcaso</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>2x</b><span>valor comercial proyectado · Café Cucuá</span><i></i></div>
-        <div class="ticker-item" aria-hidden="true"><b>95.3%</b><span>alcance fuera de la audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>95.3%</b><span>alcance a no seguidores · Microcaso</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>$0</b><span>en infraestructura antes de validar · Café Cucuá</span><i></i></div>
         <div class="ticker-item" aria-hidden="true"><b>1,115</b><span>compartidos en menos de 24 h · Microcaso</span><i></i></div>
       </div>
@@ -310,11 +318,11 @@
         <div class="mc-head">
           <div>
             <div class="tagline"><span class="chip solid">Microcaso</span><span class="chip">Signal Layer</span><span class="chip">Contenido orgánico · Instagram</span><span class="chip">Oct 2026</span></div>
-            <h3 id="mc1-title">10.4x la audiencia <em>en menos de 24 horas.</em></h3>
-            <p class="hook">Análisis de una pieza publicada durante un evento de alta conversación en Panamá. Una cuenta de 3,110 seguidores alcanzó a <strong>32,165 personas; el 95.3% estaba fuera de su audiencia.</strong></p>
+            <h3 id="mc1-title">3,110 seguidores. <em>32,165 personas alcanzadas.</em></h3>
+            <p class="hook">Análisis de una pieza publicada durante un evento de alta conversación en Panamá. En menos de 24 horas, una cuenta de 3,110 seguidores llegó a <strong>10.4 veces más personas que sus seguidores. El 95.3% no la seguía.</strong></p>
           </div>
           <div class="mc-kpis">
-            <div class="mc-kpi"><b data-count="10.4" data-dec="1" data-suffix="x">10.4x</b><span>alcance vs. audiencia</span></div>
+            <div class="mc-kpi"><b data-count="10.4" data-dec="1" data-suffix="x">10.4x</b><span>alcance vs. seguidores</span></div>
             <div class="mc-kpi"><b data-count="95.3" data-dec="1" data-suffix="%">95.3%</b><span>no seguidores</span></div>
             <div class="mc-kpi"><b data-count="1115" data-sep="1">1,115</b><span>compartidos</span></div>
           </div>
@@ -345,19 +353,23 @@
 
               <div class="beat">
                 <span class="n">04 · Distribución</span>
-                <h4>Alcance fuera de la audiencia</h4>
-                <p>1 punto = 100 personas. Selecciona cada etapa.</p>
+                <h4>Pocos seguidores, alcance grande</h4>
                 <div class="reach" id="reach">
-                  <div class="reach-top">
-                    <div class="reach-num" aria-live="polite"><b id="reach-n">3,110</b><span id="reach-l">seguidores de la cuenta al publicar</span></div>
-                    <div class="reach-steps" role="group" aria-label="Etapas del alcance">
-                      <button type="button" data-step="0" aria-pressed="true">Audiencia</button>
-                      <button type="button" data-step="1" aria-pressed="false">Alcance</button>
-                      <button type="button" data-step="2" aria-pressed="false">Composición</button>
-                    </div>
+                  <div class="vs-row">
+                    <div class="vs-label"><span>Seguidores de la cuenta</span><b>3,110</b></div>
+                    <div class="vs-track"><div class="vs-fill own" data-w="9.67"></div></div>
                   </div>
-                  <div class="dots" id="dots" aria-hidden="true"></div>
-                  <div class="legend" id="legend"></div>
+                  <div class="vs-row">
+                    <div class="vs-label"><span>Personas alcanzadas</span><b>32,165</b></div>
+                    <div class="vs-track"><div class="vs-fill" data-w="100"><em>10.4x</em></div></div>
+                  </div>
+                  <p class="vs-sub">De esas 32,165 personas:</p>
+                  <div class="split" aria-hidden="true"><div class="split-f" data-w="4.7"></div><div class="split-n" data-w="95.3"></div></div>
+                  <div class="split-legend">
+                    <div><b>4.7%</b><span>seguidores<br>1,512 personas</span></div>
+                    <div class="n"><b>95.3%</b><span>no seguidores<br>30,654 personas</span></div>
+                  </div>
+                  <p class="vs-punch">Por cada seguidor que vio la pieza, <em>más de 20 personas que no seguían la cuenta</em> también la vieron.</p>
                 </div>
               </div>
 
@@ -376,7 +388,7 @@
                   <div><b>3.5%</b><span>del alcance compartió la pieza</span></div>
                   <div><b>1.59</b><span>vistas por persona alcanzada</span></div>
                 </div>
-                <p class="bars-note">La pieza se distribuyó por utilidad: <em>la audiencia la usó para informar a terceros.</em></p>
+                <p class="bars-note">La pieza se distribuyó por utilidad: <em>quien la vio la usó para informar a otros.</em></p>
               </div>
 
               <div class="beat">
@@ -384,7 +396,7 @@
                 <h4>Métricas a menos de 24 horas</h4>
                 <div class="m-grid">
                   <div><b>32,165</b><span>personas alcanzadas</span></div>
-                  <div><b>30,654</b><span>fuera de la audiencia</span></div>
+                  <div><b>30,654</b><span>no seguidores alcanzados</span></div>
                   <div><b>50,938</b><span>vistas totales</span></div>
                   <div><b>10.4%</b><span>engagement sobre alcance · 3,341 interacciones</span></div>
                   <div><b>+1.2%</b><span>crecimiento de la cuenta · 36 seguidores</span></div>
@@ -396,11 +408,11 @@
                 <span class="n">07 · Lectura B2R</span>
                 <h4>Dónde quedó la pieza en el sistema</h4>
                 <div class="layers">
-                  <div class="layer ok"><em>Validada</em><b>Signal Layer</b><p>Mensaje correcto en el momento correcto: 10.4x la audiencia y 95.3% de alcance nuevo.</p></div>
+                  <div class="layer ok"><em>Validada</em><b>Signal Layer</b><p>Mensaje correcto en el momento correcto: 10.4x los seguidores y 95.3% del alcance en no seguidores.</p></div>
                   <div class="layer mid"><em>Parcial</em><b>Trust Engine</b><p>Quien llegó al perfil, se quedó: 27.3% de las visitas terminó en seguidor.</p></div>
                   <div class="layer off"><em>Sin activar</em><b>Demand Engine</b><p>0.12% de los no seguidores siguió la cuenta. La pieza no tenía un siguiente paso.</p></div>
                 </div>
-                <div class="reco"><b>Recomendación</b><p>Amplificar con pauta solo las piezas que ya demostraron señal orgánica, y diseñar cada una con un siguiente paso que convierta alcance en audiencia.</p></div>
+                <div class="reco"><b>Recomendación</b><p>Amplificar con pauta solo las piezas que ya demostraron señal orgánica, y diseñar cada una con un siguiente paso que convierta alcance en seguidores.</p></div>
                 <p class="src">Fuente: Instagram Insights, medición a menos de 24 horas de publicado. Cálculos sobre personas alcanzadas. <a href="https://www.instagram.com/p/DfKquANmoxD/" target="_blank" rel="noopener" style="color:var(--negro)">Ver la pieza original</a>.</p>
               </div>
 
@@ -534,47 +546,12 @@
     });
   }
 
-  /* Visual de alcance: 322 puntos (23 x 14) = 32,165 personas */
-  var dotsEl = document.getElementById("dots");
-  var TOTAL = 322, AUD = 32, FOL = 16;
-  var dots = [];
-  for (var i = 0; i < TOTAL; i++) { var s = document.createElement("span"); dotsEl.appendChild(s); dots.push(s); }
-  var STEPS = [
-    { n: 3110, l: "seguidores de la cuenta al publicar", leg: [["l-own", "Audiencia de la cuenta"], ["l-off", "Base de comparación: alcance total"]] },
-    { n: 32165, l: "personas alcanzadas · 10.4x la audiencia", leg: [["l-on", "Personas alcanzadas"]] },
-    { n: 30654, l: "fuera de la audiencia · 95.3% del alcance", leg: [["l-on", "Fuera de la audiencia"], ["l-own", "Seguidores alcanzados (1,512)"]] }
-  ];
-  var cur = 0, numEl = document.getElementById("reach-n"), lblEl = document.getElementById("reach-l"), legEl = document.getElementById("legend");
-  var sbtns = document.querySelectorAll(".reach-steps button");
-  function animNum(from, to) {
-    if (reduce) { numEl.textContent = fmt(to); return; }
-    var t0 = null;
-    function st(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / 900, 1), e = 1 - Math.pow(1 - p, 3); numEl.textContent = fmt(Math.round(from + (to - from) * e)); if (p < 1) requestAnimationFrame(st); }
-    requestAnimationFrame(st);
-  }
-  function setStep(k) {
-    var prev = STEPS[cur].n; cur = k;
-    sbtns.forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.step === k)); });
-    dots.forEach(function (d, idx) {
-      var cls = "";
-      if (k === 0) cls = idx < AUD ? "own" : "";
-      if (k === 1) cls = "on";
-      if (k === 2) cls = idx < FOL ? "own" : "on";
-      d.style.setProperty("--d", reduce ? "0s" : ((idx % 23) * 0.012 + Math.floor(idx / 23) * 0.03) + "s");
-      d.className = cls;
-    });
-    animNum(prev, STEPS[k].n);
-    lblEl.textContent = STEPS[k].l;
-    legEl.innerHTML = STEPS[k].leg.map(function (x) { return '<span><i class="' + x[0] + '"></i>' + x[1] + "</span>"; }).join("");
-  }
-  sbtns.forEach(function (b) { b.addEventListener("click", function () { auto = false; setStep(+b.dataset.step); }); });
-  var auto = true;
+  /* Visual de alcance: seguidores vs. alcance */
   function playReach() {
-    if (reduce) { setStep(2); return; }
-    setTimeout(function () { if (auto) setStep(1); }, 1200);
-    setTimeout(function () { if (auto) setStep(2); }, 3600);
+    document.querySelectorAll("#reach [data-w]").forEach(function (el, i) {
+      setTimeout(function () { el.style.width = el.dataset.w + "%"; el.classList.add("go"); }, reduce ? 0 : (el.closest(".split") ? 900 : i * 350));
+    });
   }
-  setStep(0);
 
   /* Enlace directo: casos.html#aves-halloween abre el microcaso */
   if (location.hash === "#aves-halloween") {
