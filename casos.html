@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casos | Brand to Revenue</title>
+<meta name="description" content="Casos y microcasos de Brand to Revenue: desde un negocio que cambió de modelo hasta un contenido que llegó 10 veces más lejos que su audiencia. Resultados con números.">
+<link rel="canonical" href="https://www.brandtorevenue.agency/casos.html">
+<meta name="theme-color" content="#FDFCFF">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brand to Revenue">
+<meta property="og:locale" content="es_PA">
+<meta property="og:url" content="https://www.brandtorevenue.agency/casos.html">
+<meta property="og:title" content="Casos | Brand to Revenue">
+<meta property="og:description" content="Resultados, con números. Casos completos y microcasos.">
+<meta property="og:image" content="https://www.brandtorevenue.agency/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png?v=3">
+<link rel="apple-touch-icon" href="favicon.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="b2r.css?v=3">
+<script>document.documentElement.classList.add("js");</script>
+<script src="config.js?v=1"></script>
+<script src="b2r.js?v=3" defer></script>
+<style>
+  /* ---------- Hero de casos ---------- */
+  .c-hero { padding: 40px 0 24px; }
+  .c-hero h1 { font-size: clamp(44px, 7vw, 84px); line-height: 1; letter-spacing: -0.045em; margin: 0 0 22px; max-width: 12ch; }
+  .c-hero h1 em { display: inline; }
+  .c-hero .sub { font-size: clamp(17px, 2vw, 20px); color: var(--gris-humo); max-width: 30em; margin: 0; }
+
+  /* Cinta de cifras */
+  .ticker { margin-top: 48px; border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); overflow: hidden; position: relative; }
+  .ticker-track { display: flex; width: max-content; animation: tick 38s linear infinite; }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  .ticker-item { display: flex; align-items: baseline; gap: 12px; padding: 22px 36px 22px 0; white-space: nowrap; }
+  .ticker-item b { font-family: var(--display); font-weight: 600; font-size: 34px; letter-spacing: -0.04em; color: var(--morado); line-height: 1; }
+  .ticker-item span { font-size: 14px; color: var(--gris-humo); }
+  .ticker-item i { width: 8px; height: 8px; background: var(--amarillo); margin-left: 24px; align-self: center; flex-shrink: 0; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+
+  /* Filtro */
+  .filter-bar { position: sticky; top: 72px; z-index: 20; background: rgba(253,252,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 14px 0; }
+  .filter { display: inline-flex; gap: 6px; background: var(--lila); border: 1px solid var(--borde); border-radius: 999px; padding: 4px; position: relative; }
+  .filter button { position: relative; z-index: 1; border: 0; background: none; cursor: pointer; min-height: 42px; padding: 8px 16px; border-radius: 999px; font-family: var(--display); font-weight: 600; font-size: 14px; color: var(--gris-humo); display: inline-flex; align-items: center; gap: 8px; transition: color .3s; }
+  .filter button sup { font-size: 11px; font-weight: 700; color: var(--magenta-accion); top: 0; transition: color .3s; }
+  .filter button[aria-pressed="true"] { color: #fff; }
+  .filter button[aria-pressed="true"] sup { color: var(--amarillo); }
+  .filter .knob { position: absolute; top: 4px; bottom: 4px; left: 0; border-radius: 999px; background: var(--negro); transition: transform .45s var(--ease), width .45s var(--ease); }
+
+  .group { padding: 56px 0 24px; }
+  .group[hidden] { display: none; }
+  .group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--borde); padding-bottom: 18px; margin-bottom: 28px; }
+  .group-head h2 { font-size: clamp(28px, 4vw, 40px); }
+  .group-head p { margin: 0; font-size: 15px; color: var(--gris-humo); max-width: 26em; text-align: right; }
+  .is-filtering .group { animation: fadeUp .5s var(--ease); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- Caso grande ---------- */
+  .big { position: relative; display: grid; gap: 28px; background: var(--morado-abismo); color: #fff; border-radius: 32px; padding: 32px 24px; text-decoration: none; overflow: hidden; isolation: isolate; }
+  .big::before { content: ""; position: absolute; width: 520px; height: 520px; right: -180px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(92,56,164,.9), rgba(46,28,82,0) 70%); z-index: -1; transition: transform .8s var(--ease); }
+  .big:hover::before { transform: translate(-40px, 40px) scale(1.1); }
+  .big .tagline { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(185,168,220,.4); color: var(--morado-niebla); }
+  .chip.solid { background: var(--amarillo); border-color: var(--amarillo); color: var(--negro); }
+  .big h3 { font-size: clamp(36px, 6vw, 68px); line-height: .98; letter-spacing: -0.045em; margin: 18px 0 14px; }
+  .big h3 em { font-style: normal; color: var(--morado-niebla); display: block; font-size: .5em; letter-spacing: -0.02em; line-height: 1.15; margin-top: 10px; }
+  .big p { color: var(--morado-niebla); font-size: 17px; max-width: 30em; margin: 0; }
+  .big-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-content: end; }
+  .big-stat { border-top: 1px solid rgba(185,168,220,.3); padding-top: 14px; }
+  .big-stat b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(34px, 5vw, 60px); line-height: .95; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; margin-bottom: 8px; }
+  .big-stat span { font-size: 13px; color: var(--morado-niebla); line-height: 1.35; display: block; }
+  .big-cta { display: inline-flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 600; font-size: 15px; background: #fff; color: var(--negro); border-radius: 999px; padding: 12px 12px 12px 22px; justify-self: start; }
+  .big-cta::after { content: "→"; width: 28px; height: 28px; border-radius: 50%; background: var(--magenta-accion); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; transition: transform .25s var(--ease); }
+  .big:hover .big-cta::after { transform: translateX(4px); }
+  .big:focus-visible { outline-offset: 4px; }
+
+  /* ---------- Microcaso ---------- */
+  .micro-case { background: #fff; border: 1px solid var(--borde); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); scroll-margin-top: 150px; }
+  .mc-head { padding: 28px 22px 24px; display: grid; gap: 22px; }
+  .mc-head .tagline { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mc-head .chip { color: var(--gris-humo); border-color: var(--borde); }
+  .mc-head h3 { font-size: clamp(30px, 4.6vw, 52px); line-height: 1.02; letter-spacing: -0.045em; margin: 16px 0 12px; max-width: 15ch; }
+  .mc-head h3 em { font-style: normal; color: var(--morado); }
+  .mc-head .hook { font-size: 18px; color: var(--gris-humo); margin: 0; max-width: 32em; }
+  .mc-head .hook strong { color: var(--negro); font-weight: 600; }
+  .mc-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .mc-kpi { border-top: 1px solid var(--borde); padding-top: 14px; }
+  .mc-kpi b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4.4vw, 52px); line-height: .95; letter-spacing: -0.05em; color: var(--morado); font-variant-numeric: tabular-nums; margin-bottom: 8px; }
+  .mc-kpi span { font-size: 13px; color: var(--gris-humo); display: block; line-height: 1.35; }
+  .mc-toggle { justify-self: start; display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 12px 12px 12px 22px; border-radius: 999px; border: 0; background: var(--negro); color: #fff; font-family: var(--display); font-weight: 600; font-size: 15px; cursor: pointer; transition: background .2s; }
+  .mc-toggle:hover { background: #000; }
+  .mc-toggle i { width: 28px; height: 28px; border-radius: 50%; background: var(--magenta-accion); display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-size: 16px; transition: transform .4s var(--ease); }
+  .mc-toggle[aria-expanded="true"] i { transform: rotate(45deg); }
+
+  .mc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .7s var(--ease); }
+  .mc-body.open { grid-template-rows: 1fr; }
+  .mc-body > div { overflow: hidden; }
+  .mc-inner { border-top: 1px solid var(--borde); padding: 8px 22px 32px; }
+
+  .beat { display: grid; gap: 10px; padding: 28px 0; border-bottom: 1px solid var(--borde); }
+  .beat .n { font-family: var(--display); font-weight: 600; font-size: 14px; color: var(--magenta-accion); }
+  .beat h4 { font-family: var(--display); font-weight: 600; font-size: clamp(22px, 3vw, 30px); letter-spacing: -0.03em; line-height: 1.12; margin: 0; }
+  .beat p { margin: 0; color: var(--gris-humo); font-size: 17px; max-width: 36em; }
+  .beat p strong { color: var(--negro); font-weight: 600; }
+
+  /* Visual de alcance: cada punto = 100 personas */
+  .reach { background: var(--lila); border-radius: 22px; padding: 22px 18px; margin-top: 8px; }
+  .reach-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px; margin-bottom: 18px; }
+  .reach-num b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(44px, 7vw, 76px); line-height: .9; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: var(--negro); }
+  .reach-num span { font-size: 15px; color: var(--gris-humo); display: block; margin-top: 8px; min-height: 1.4em; }
+  .reach-steps { display: flex; gap: 6px; flex-wrap: wrap; }
+  .reach-steps button { border: 1px solid var(--borde); background: #fff; border-radius: 999px; min-height: 42px; padding: 8px 14px; font-family: var(--display); font-weight: 600; font-size: 13px; color: var(--gris-humo); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+  .reach-steps button[aria-pressed="true"] { background: var(--negro); border-color: var(--negro); color: #fff; }
+  .dots { display: grid; grid-template-columns: repeat(23, 1fr); gap: 4px; }
+  .dots span { aspect-ratio: 1; border-radius: 50%; background: var(--borde); transform: scale(.55); transition: background .45s var(--ease), transform .45s var(--ease); transition-delay: var(--d, 0s); }
+  .dots span.on { background: var(--morado); transform: scale(1); }
+  .dots span.own { background: var(--amarillo); transform: scale(1); box-shadow: inset 0 0 0 1.5px var(--negro); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 13px; color: var(--gris-humo); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+  .legend .l-on { background: var(--morado); }
+  .legend .l-own { background: var(--amarillo); box-shadow: inset 0 0 0 1.5px var(--negro); }
+  .legend .l-off { background: var(--borde); }
+
+  /* Barras de interacción */
+  .bars { display: grid; gap: 12px; margin-top: 6px; }
+  .bar { display: grid; grid-template-columns: 96px 1fr 60px; align-items: center; gap: 12px; font-size: 14px; }
+  .bar small { color: var(--gris-humo); font-size: 14px; }
+  .bar .track { height: 14px; background: var(--lila); border-radius: 999px; overflow: hidden; }
+  .bar .fill { height: 100%; width: 0; border-radius: 999px; background: var(--morado-niebla); transition: width 1.2s var(--ease); }
+  .bar.hl .fill { background: var(--morado); }
+  .bar.hl small, .bar.hl b { color: var(--negro); font-weight: 700; }
+  .bar b { font-family: var(--display); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; color: var(--gris-humo); }
+  .bars-note { font-family: var(--display); font-weight: 500; font-size: 18px; letter-spacing: -0.01em; color: var(--negro); margin: 18px 0 0; max-width: 32em; }
+  .bars-note em { font-style: normal; color: var(--morado); }
+
+  /* Grid de métricas */
+  .m-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--borde); border-left: 1px solid var(--borde); margin-top: 6px; }
+  .m-grid div { padding: 18px 16px; border-right: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+  .m-grid b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; margin-bottom: 6px; }
+  .m-grid span { font-size: 13px; color: var(--gris-humo); line-height: 1.35; display: block; }
+
+  /* Lectura B2R */
+  .read { display: grid; gap: 12px; margin-top: 6px; }
+  .read > div { border-radius: 18px; padding: 20px; }
+  .read .yes { background: #fff; border: 1px solid var(--morado); }
+  .read .next { background: var(--lila); }
+  .read b { display: block; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px; }
+  .read .yes b { color: var(--magenta-accion); }
+  .read .next b { color: var(--gris-humo); }
+  .read p { margin: 0; font-family: var(--display); font-weight: 500; font-size: 18px; line-height: 1.4; letter-spacing: -0.01em; }
+  .src { font-size: 13px; color: var(--gris-humo); margin: 22px 0 0; }
+
+  /* Próximos */
+  .soon { border: 1px dashed var(--borde); border-radius: 22px; padding: 22px; display: flex; align-items: center; gap: 14px; color: var(--gris-humo); font-size: 15px; margin-top: 16px; }
+  .soon i { width: 10px; height: 10px; border-radius: 50%; background: var(--amarillo); flex-shrink: 0; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 50% { transform: scale(1.6); opacity: .5; } }
+
+  .site-header .wrap { position: relative; }
+
+  @media (min-width: 720px) {
+    .mc-head, .mc-inner { padding-left: 40px; padding-right: 40px; }
+    .mc-head { padding-top: 40px; }
+    .beat { grid-template-columns: 120px 1fr; gap: 6px 24px; }
+    .beat > :not(.n) { grid-column: 2; }
+    .reach { padding: 28px; }
+    .m-grid { grid-template-columns: repeat(3, 1fr); }
+    .read { grid-template-columns: 1fr 1fr; }
+    .bar { grid-template-columns: 120px 1fr 70px; }
+  }
+  @media (min-width: 960px) {
+    .c-hero { padding: 72px 0 24px; }
+    .big { grid-template-columns: 1.1fr .9fr; padding: 56px; gap: 48px; align-items: end; }
+    .mc-head { grid-template-columns: 1.1fr .9fr; align-items: end; gap: 40px; padding: 48px 56px 44px; }
+    .mc-head .mc-toggle { grid-column: 1; }
+    .mc-inner { padding: 8px 56px 48px; }
+    .dots { gap: 6px; max-width: 620px; }
+  }
+  @media (max-width: 719px) {
+    .group-head { flex-direction: column; }
+    .group-head p { text-align: left; }
+    .big-stats, .mc-kpis { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .filter-bar { top: 72px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track { animation: none; flex-wrap: wrap; width: auto; }
+    .soon i { animation: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="Brand to Revenue, inicio"><span>Brand</span><span>to</span><span>Revenue</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
+    </button>
+    <nav id="nav-menu" aria-label="Principal">
+      <ul>
+        <li><a href="./#enfoque">Enfoque</a></li>
+        <li><a href="./#servicios">Servicios</a></li>
+        <li><a href="casos.html" aria-current="page" style="color:var(--negro)">Casos</a></li>
+        <li><a href="test.html" data-cta="nav">Test</a></li>
+        <li><a href="manifiestos.html">Manifiestos</a></li>
+        <li><a href="./#mario">Sobre Mario</a></li>
+        <li><a class="ulink" href="https://calendly.com/brandtorevenue/30min" data-cta="nav" target="_blank" rel="noopener">Diagnóstico gratis</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="c-hero hero" aria-labelledby="c-title">
+    <div class="wrap">
+      <p class="label">Casos</p>
+      <h1 id="c-title">Resultados, <em>con números.</em></h1>
+      <p class="sub">Casos completos y microcasos. Desde un negocio que cambió de modelo hasta un contenido que llegó 10 veces más lejos que su audiencia.</p>
+    </div>
+    <div class="ticker" aria-label="Cifras destacadas de los casos">
+      <div class="ticker-track">
+        <div class="ticker-item"><b>+100%</b><span>precio por unidad · Café Cucúa</span><i></i></div>
+        <div class="ticker-item"><b>10.4x</b><span>alcance vs. audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item"><b>2x</b><span>valor comercial proyectado · Café Cucúa</span><i></i></div>
+        <div class="ticker-item"><b>95.3%</b><span>alcance fuera de la audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item"><b>$0</b><span>en infraestructura antes de validar · Café Cucúa</span><i></i></div>
+        <div class="ticker-item"><b>1,115</b><span>veces compartido en menos de 24 h · Microcaso</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>+100%</b><span>precio por unidad · Café Cucúa</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>10.4x</b><span>alcance vs. audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>2x</b><span>valor comercial proyectado · Café Cucúa</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>95.3%</b><span>alcance fuera de la audiencia · Microcaso</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>$0</b><span>en infraestructura antes de validar · Café Cucúa</span><i></i></div>
+        <div class="ticker-item" aria-hidden="true"><b>1,115</b><span>veces compartido en menos de 24 h · Microcaso</span><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTRO -->
+  <div class="filter-bar">
+    <div class="wrap">
+      <div class="filter" role="group" aria-label="Filtrar casos">
+        <span class="knob" aria-hidden="true"></span>
+        <button type="button" data-filter="all" aria-pressed="true">Todos <sup>2</sup></button>
+        <button type="button" data-filter="casos" aria-pressed="false">Casos <sup>1</sup></button>
+        <button type="button" data-filter="micro" aria-pressed="false">Microcasos <sup>1</sup></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="groups">
+
+    <!-- CASOS -->
+    <section class="group" data-group="casos" aria-labelledby="g-casos">
+      <div class="group-head">
+        <h2 id="g-casos">Casos</h2>
+        <p>Negocios completos: el problema, la decisión y lo que cambió en los números.</p>
+      </div>
+
+      <a class="big reveal" href="B2R_CasoExito_CafeCucua.html">
+        <div>
+          <div class="tagline"><span class="chip solid">Caso</span><span class="chip">Lanzamiento de producto</span><span class="chip">Signal Layer</span></div>
+          <h3>Café Cucúa <em>De commodity a robusta de especialidad.</em></h3>
+          <p>Antes de producir, validamos con tostadores, baristas y cafeterías. Ese hallazgo cambió el producto, el modelo y el precio.</p>
+        </div>
+        <div style="display:grid;gap:28px">
+          <div class="big-stats">
+            <div class="big-stat"><b data-count="100" data-prefix="+" data-suffix="%">+100%</b><span>precio de venta por unidad</span></div>
+            <div class="big-stat"><b data-count="2" data-suffix="x">2x</b><span>valor comercial vs. la proyección</span></div>
+            <div class="big-stat"><b data-count="0" data-prefix="$">$0</b><span>en infraestructura antes de validar</span></div>
+          </div>
+          <span class="big-cta">Leer el caso completo</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- MICROCASOS -->
+    <section class="group" data-group="micro" aria-labelledby="g-micro">
+      <div class="group-head">
+        <h2 id="g-micro">Microcasos</h2>
+        <p>Una pieza, una decisión, un resultado. Rápidos de leer, igual de medidos.</p>
+      </div>
+
+      <article class="micro-case reveal" id="aves-halloween" aria-labelledby="mc1-title">
+        <div class="mc-head">
+          <div>
+            <div class="tagline"><span class="chip solid">Microcaso</span><span class="chip">Contenido · Instagram</span><span class="chip">31 oct 2026</span></div>
+            <h3 id="mc1-title">Tembló en Halloween. <em>Las aves hicieron el resto.</em></h3>
+            <p class="hook">Una cuenta de 3,110 seguidores llegó a <strong>32,165 personas en menos de 24 horas.</strong> El 95.3% no la seguía.</p>
+          </div>
+          <div class="mc-kpis">
+            <div class="mc-kpi"><b data-count="10.4" data-dec="1" data-suffix="x">10.4x</b><span>alcance vs. audiencia</span></div>
+            <div class="mc-kpi"><b data-count="95.3" data-dec="1" data-suffix="%">95.3%</b><span>no seguidores</span></div>
+            <div class="mc-kpi"><b data-count="1115" data-sep="1">1,115</b><span>compartidos</span></div>
+          </div>
+          <button class="mc-toggle" type="button" aria-expanded="false" aria-controls="mc1-body">Abrir el microcaso <i aria-hidden="true">+</i></button>
+        </div>
+
+        <div class="mc-body" id="mc1-body" role="region" aria-labelledby="mc1-title" hidden>
+          <div>
+            <div class="mc-inner">
+
+              <div class="beat">
+                <span class="n">01 · La señal</span>
+                <h4>3 cosas al mismo tiempo</h4>
+                <p>Sábado 31 de octubre. Tiembla en Panamá, es Halloween y el cielo está lleno de aves: la migración que cruza el país cada año en esta época. La gente conecta las 3 cosas y se arma una pequeña histeria colectiva.</p>
+              </div>
+
+              <div class="beat">
+                <span class="n">02 · El vacío</span>
+                <h4>Mucho alcance, ninguna respuesta</h4>
+                <p>Páginas con gran alcance subieron las imágenes. No alarmaban, pero tampoco aclaraban: comunicaban para ganar interacción. <strong>La conversación estaba ahí. La explicación, no.</strong></p>
+              </div>
+
+              <div class="beat">
+                <span class="n">03 · El movimiento</span>
+                <h4>Saber no basta: hay que explicarlo bien</h4>
+                <p>La migración no era una sorpresa: es un fenómeno conocido y recurrente. Lo que hacía falta era contarlo con precisión. Profundizamos la investigación con IA, <strong>validamos cada dato contra sus fuentes</strong> y lo convertimos en un carrusel simple: qué está pasando, por qué ahora y por qué no tiene relación con el temblor.</p>
+              </div>
+
+              <div class="beat">
+                <span class="n">04 · El alcance</span>
+                <h4>Fuera de la burbuja</h4>
+                <p>Cada punto equivale a 100 personas. Recorre los 3 momentos.</p>
+                <div class="reach" id="reach">
+                  <div class="reach-top">
+                    <div class="reach-num" aria-live="polite"><b id="reach-n">3,110</b><span id="reach-l">seguidores de la cuenta al publicar</span></div>
+                    <div class="reach-steps" role="group" aria-label="Momentos del alcance">
+                      <button type="button" data-step="0" aria-pressed="true">Audiencia</button>
+                      <button type="button" data-step="1" aria-pressed="false">Alcance</button>
+                      <button type="button" data-step="2" aria-pressed="false">Quién lo vio</button>
+                    </div>
+                  </div>
+                  <div class="dots" id="dots" aria-hidden="true"></div>
+                  <div class="legend" id="legend"></div>
+                </div>
+              </div>
+
+              <div class="beat">
+                <span class="n">05 · Qué hizo la gente</span>
+                <h4>Lo compartieron para aclararle a otros</h4>
+                <div class="bars" id="bars">
+                  <div class="bar"><small>Likes</small><div class="track"><div class="fill" data-v="1698"></div></div><b>1,698</b></div>
+                  <div class="bar hl"><small>Compartidos</small><div class="track"><div class="fill" data-v="1115"></div></div><b>1,115</b></div>
+                  <div class="bar"><small>Reposts</small><div class="track"><div class="fill" data-v="279"></div></div><b>279</b></div>
+                  <div class="bar"><small>Guardados</small><div class="track"><div class="fill" data-v="176"></div></div><b>176</b></div>
+                  <div class="bar"><small>Comentarios</small><div class="track"><div class="fill" data-v="73"></div></div><b>73</b></div>
+                </div>
+                <p class="bars-note">Por cada 3 likes, casi 2 personas lo enviaron a alguien. <em>El contenido funcionó como respuesta, y una respuesta viaja sola.</em></p>
+              </div>
+
+              <div class="beat">
+                <span class="n">06 · Los números</span>
+                <h4>Menos de 24 horas</h4>
+                <div class="m-grid">
+                  <div><b>32,165</b><span>personas alcanzadas</span></div>
+                  <div><b>30,654</b><span>no seguían la cuenta</span></div>
+                  <div><b>50,938</b><span>vistas totales · 1.59 por persona</span></div>
+                  <div><b>3,341</b><span>interacciones · 10.4% del alcance</span></div>
+                  <div><b>+36</b><span>seguidores nuevos · +1.2% la cuenta</span></div>
+                  <div><b>27.3%</b><span>de las visitas al perfil terminó en follow</span></div>
+                </div>
+              </div>
+
+              <div class="beat" style="border-bottom:0">
+                <span class="n">07 · La lectura</span>
+                <h4>Qué nos dice, desde el negocio</h4>
+                <div class="read">
+                  <div class="yes"><b>Lo que funcionó</b><p>Llegar primero con la explicación correcta. La utilidad distribuyó el contenido a 30,654 personas que no conocían la cuenta.</p></div>
+                  <div class="next"><b>Lo que sigue</b><p>Explicar una noticia trae alcance, no seguidores: 1 de cada 852 no seguidores siguió la cuenta. El próximo paso es darles una razón para quedarse.</p></div>
+                </div>
+                <p class="src">Datos de Instagram Insights, medidos a menos de 24 horas de publicado.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="soon reveal"><i aria-hidden="true"></i>Nuevos microcasos en camino. Cada uno con sus números, buenos y no tan buenos.</div>
+    </section>
+  </div>
+
+  <!-- CTA FINAL -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="final-card reveal">
+        <h2 id="final-title">¿Cuál sería el número de tu caso?</h2>
+        <p>Lo vemos juntos en un diagnóstico gratis de 30 minutos. O empieza por el test: 1 minuto.</p>
+        <div class="btn-row">
+          <a class="btn btn-light" href="https://calendly.com/brandtorevenue/30min" data-cta="casos-final" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
+          <a class="ulink" href="test.html" data-cta="casos-final">Haz el test gratis</a>
+        </div>
+        <p class="micro">Sin compromiso · 30 minutos</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">Brand to Revenue</p>
+        <p class="foot-tag">Marketing desde el negocio.</p>
+      </div>
+      <div><p class="foot-label">Instagram</p><a href="https://instagram.com/brandtorevenue" target="_blank" rel="noopener">@brandtorevenue</a></div>
+      <div><p class="foot-label">Email</p><a href="mailto:mario_quiros@outlook.com">mario_quiros@outlook.com</a></div>
+      <div><p class="foot-label">Teléfono</p><a href="tel:+50762440096">+507 6244-0096</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Brand to Revenue · Todos los derechos reservados</span>
+      <span>Mario Quirós R. · Consultor de marketing</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/50762440096?text=Hola%20Mario%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20casos%20de%20Brand%20to%20Revenue." target="_blank" rel="noopener" aria-label="Escríbele a Mario por WhatsApp" data-cta="flotante">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.49-8.41z"/></svg>
+</a>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function fmt(n, dec) { return n.toLocaleString("en-US", { minimumFractionDigits: dec || 0, maximumFractionDigits: dec || 0 }); }
+
+  /* Encabezado con línea al hacer scroll */
+  var header = document.querySelector(".site-header");
+  window.addEventListener("scroll", function () { header.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
+
+  /* Cifras que cuentan */
+  function countUp(el) {
+    var to = +el.dataset.count, dec = +(el.dataset.dec || 0), pre = el.dataset.prefix || "", suf = el.dataset.suffix || "";
+    if (reduce) { el.textContent = pre + fmt(to, dec) + suf; return; }
+    var t0 = null, dur = 1200;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + fmt(to * e, dec) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("in");
+      en.target.querySelectorAll("[data-count]").forEach(countUp);
+      io.unobserve(en.target);
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }) : null;
+  document.querySelectorAll(".reveal").forEach(function (el) { io ? io.observe(el) : el.classList.add("in"); });
+
+  /* Filtro Todos / Casos / Microcasos */
+  var filter = document.querySelector(".filter");
+  var knob = filter.querySelector(".knob");
+  var fbtns = filter.querySelectorAll("button");
+  var groupsWrap = document.getElementById("groups");
+  function moveKnob(b) { knob.style.width = b.offsetWidth + "px"; knob.style.transform = "translateX(" + b.offsetLeft + "px)"; }
+  function setFilter(f, b) {
+    fbtns.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+    moveKnob(b);
+    groupsWrap.classList.remove("is-filtering"); void groupsWrap.offsetWidth; groupsWrap.classList.add("is-filtering");
+    document.querySelectorAll(".group").forEach(function (g) {
+      g.hidden = !(f === "all" || g.dataset.group === f);
+      if (!g.hidden) g.querySelectorAll(".reveal:not(.in)").forEach(function (r) { r.classList.add("in"); r.querySelectorAll("[data-count]").forEach(countUp); });
+    });
+    if (window.B2R) window.B2R.track("casos_filtro", { filtro: f });
+  }
+  fbtns.forEach(function (b) { b.addEventListener("click", function () { setFilter(b.dataset.filter, b); }); });
+  function initKnob() { moveKnob(filter.querySelector('[aria-pressed="true"]')); }
+  window.addEventListener("resize", initKnob);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(initKnob); else initKnob();
+  initKnob();
+
+  /* Microcaso: abrir / cerrar */
+  var tgl = document.querySelector(".mc-toggle");
+  var body = document.getElementById("mc1-body");
+  var played = false;
+  function openMC(open, scroll) {
+    tgl.setAttribute("aria-expanded", String(open));
+    tgl.firstChild.nodeValue = open ? "Cerrar el microcaso " : "Abrir el microcaso ";
+    if (open) {
+      body.hidden = false;
+      requestAnimationFrame(function () { requestAnimationFrame(function () { body.classList.add("open"); }); });
+      if (!played) { played = true; setTimeout(playReach, reduce ? 0 : 500); setTimeout(fillBars, reduce ? 0 : 300); }
+      if (window.B2R) window.B2R.track("microcaso_abrir", { caso: "aves-halloween" });
+    } else {
+      body.classList.remove("open");
+      setTimeout(function () { if (tgl.getAttribute("aria-expanded") === "false") body.hidden = true; }, reduce ? 0 : 700);
+      if (scroll) document.getElementById("aves-halloween").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    }
+  }
+  tgl.addEventListener("click", function () { openMC(tgl.getAttribute("aria-expanded") !== "true", true); });
+
+  /* Barras */
+  function fillBars() {
+    var max = 1698;
+    document.querySelectorAll("#bars .fill").forEach(function (f, i) {
+      setTimeout(function () { f.style.width = (f.dataset.v / max * 100) + "%"; }, reduce ? 0 : i * 120);
+    });
+  }
+
+  /* Visual de alcance: 322 puntos (23 x 14) = 32,165 personas */
+  var dotsEl = document.getElementById("dots");
+  var TOTAL = 322, AUD = 32, FOL = 16;
+  var dots = [];
+  for (var i = 0; i < TOTAL; i++) { var s = document.createElement("span"); dotsEl.appendChild(s); dots.push(s); }
+  var STEPS = [
+    { n: 3110, l: "seguidores de la cuenta al publicar", leg: [["l-own", "Audiencia de la cuenta"], ["l-off", "Alcance potencial"]] },
+    { n: 32165, l: "personas vieron el carrusel · 10.4x la audiencia", leg: [["l-on", "Personas alcanzadas"]] },
+    { n: 30654, l: "no seguían la cuenta · 95.3% del alcance", leg: [["l-on", "No seguidores"], ["l-own", "Seguidores que lo vieron (1,512)"]] }
+  ];
+  var cur = 0, numEl = document.getElementById("reach-n"), lblEl = document.getElementById("reach-l"), legEl = document.getElementById("legend");
+  var sbtns = document.querySelectorAll(".reach-steps button");
+  function animNum(from, to) {
+    if (reduce) { numEl.textContent = fmt(to); return; }
+    var t0 = null;
+    function st(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / 900, 1), e = 1 - Math.pow(1 - p, 3); numEl.textContent = fmt(Math.round(from + (to - from) * e)); if (p < 1) requestAnimationFrame(st); }
+    requestAnimationFrame(st);
+  }
+  function setStep(k) {
+    var prev = STEPS[cur].n; cur = k;
+    sbtns.forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.step === k)); });
+    dots.forEach(function (d, idx) {
+      var cls = "";
+      if (k === 0) cls = idx < AUD ? "own" : "";
+      if (k === 1) cls = "on";
+      if (k === 2) cls = idx < FOL ? "own" : "on";
+      d.style.setProperty("--d", reduce ? "0s" : ((idx % 23) * 0.012 + Math.floor(idx / 23) * 0.03) + "s");
+      d.className = cls;
+    });
+    animNum(prev, STEPS[k].n);
+    lblEl.textContent = STEPS[k].l;
+    legEl.innerHTML = STEPS[k].leg.map(function (x) { return '<span><i class="' + x[0] + '"></i>' + x[1] + "</span>"; }).join("");
+  }
+  sbtns.forEach(function (b) { b.addEventListener("click", function () { auto = false; setStep(+b.dataset.step); }); });
+  var auto = true;
+  function playReach() {
+    if (reduce) { setStep(2); return; }
+    setTimeout(function () { if (auto) setStep(1); }, 1200);
+    setTimeout(function () { if (auto) setStep(2); }, 3600);
+  }
+  setStep(0);
+
+  /* Enlace directo: casos.html#aves-halloween abre el microcaso */
+  if (location.hash === "#aves-halloween") {
+    openMC(true);
+    setTimeout(function () { document.getElementById("aves-halloween").scrollIntoView(); }, 50);
+  }
+})();
+</script>
+</body>
+</html>
