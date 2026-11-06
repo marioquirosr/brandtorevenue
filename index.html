@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="b2r.css?v=3">
+<link rel="stylesheet" href="b2r.css?v=4">
 <script>document.documentElement.classList.add("js");</script>
 <script src="config.js?v=1"></script>
 <script src="b2r.js?v=3" defer></script>
@@ -83,6 +83,7 @@
     <nav id="nav-menu" aria-label="Principal">
       <ul>
         <li><a href="#enfoque">Enfoque</a></li>
+        <li><a href="#metodologia">Metodología</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="casos.html">Casos</a></li>
         <li><a href="test.html" data-cta="nav">Test</a></li>
@@ -186,6 +187,36 @@
         <div class="ba">
           <div class="before"><b>Antes</b><p>"45,000 de alcance y 1,200 interacciones."</p></div>
           <div class="after"><b>Después</b><p>"Regresaron 180 clientes en 60 días. El reel que más canjes trajo recibe más presupuesto."</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODOLOGÍA -->
+  <section id="metodologia" class="fw-sec" aria-labelledby="fw-title">
+    <div class="wrap">
+      <div class="fw-card">
+        <p class="label">Metodología</p>
+        <h2 class="h2 reveal" id="fw-title">Así se ve un cliente <em>saludable.</em></h2>
+        <p class="lead reveal">Arriba, el camino que recorre tu cliente. Abajo, lo que hacemos para que lo recorra. Toca un paso.</p>
+
+        <div class="fw reveal" data-fw>
+          <div class="fw-row-lbl fw-l1"><i></i>El journey del cliente</div>
+          <div class="fw-track" aria-hidden="true"><span></span></div>
+          <button type="button" class="fw-j" data-s="1" aria-pressed="false"><span class="fw-n">01</span><span class="fw-tag">El cliente</span><b>Me ve</b><span class="fw-d">Te encuentra entre el ruido.</span></button>
+          <button type="button" class="fw-j" data-s="2" aria-pressed="false"><span class="fw-n">02</span><span class="fw-tag">El cliente</span><b>Me entiende</b><span class="fw-d">Sabe qué vendes, cómo le resuelves y en qué crees.</span></button>
+          <button type="button" class="fw-j" data-s="3" aria-pressed="false"><span class="fw-n">03</span><span class="fw-tag">El cliente</span><b>Me compra</b><span class="fw-d">Llega al producto sin fricción.</span></button>
+          <button type="button" class="fw-j" data-s="4" aria-pressed="false"><span class="fw-n">04</span><span class="fw-tag">El cliente</span><b>Me vuelve a elegir</b><span class="fw-d">Vuelve, y trae a otros.</span></button>
+          <div class="fw-bridge" aria-hidden="true"><span>Para lograrlo, B2R ejecuta</span></div>
+          <div class="fw-e" data-s="1"><span class="fw-tag">B2R</span><b>Escuchar</b><p>Validamos qué mensaje corta el ruido antes de invertir en escala.</p><span class="fw-m">Alcance · costo por atención</span></div>
+          <div class="fw-e" data-s="2"><span class="fw-tag">B2R</span><b>Construir confianza</b><p>Educamos: el problema, la solución, la visión de la marca y cómo se compra.</p><span class="fw-m">Consideración · leads</span></div>
+          <div class="fw-e" data-s="3"><span class="fw-tag">B2R</span><b>Escalar</b><p>Quitamos obstáculos del camino de compra y amplificamos solo lo probado.</p><span class="fw-m">Conversión · CAC</span></div>
+          <div class="fw-e" data-s="4"><span class="fw-tag">B2R</span><b>Retener</b><p>Diseñamos la experiencia que convierte la primera compra en recompra.</p><span class="fw-m">Retención · LTV</span></div>
+        </div>
+
+        <div class="fw-foot reveal">
+          <p class="fw-loop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Un ciclo, no un embudo: lo que aprendemos al retener vuelve a escuchar.</p>
+          <div class="fw-result"><span>Resultado</span><b>CAC <em>↓</em></b><b>LTV <em>↑</em></b></div>
         </div>
       </div>
     </div>
@@ -465,6 +496,39 @@
       var n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus();
     });
   });
+
+
+  /* Metodología: resaltar un paso (cliente + ejecución) */
+  var fw = document.querySelector("[data-fw]");
+  if (fw) {
+    var fwBtns = Array.prototype.slice.call(fw.querySelectorAll(".fw-j"));
+    var fwTimer = null, fwIdx = 0;
+    function fwSet(n) {
+      fw.dataset.active = n ? String(n) : "";
+      fw.classList.toggle("has-active", !!n);
+      fw.querySelectorAll("[data-s]").forEach(function (el) { el.classList.toggle("on", el.dataset.s === String(n)); });
+      fwBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.s === String(n))); });
+      fw.style.setProperty("--fw-p", n ? (n / 4) : 1);
+    }
+    function fwStop() { if (fwTimer) { clearInterval(fwTimer); fwTimer = null; } }
+    fwBtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        fwStop();
+        var n = +b.dataset.s;
+        fwSet(fw.dataset.active === String(n) ? 0 : n);
+        if (window.B2R) window.B2R.track("metodologia_paso", { paso: n });
+      });
+    });
+    if (!reduce && "IntersectionObserver" in window) {
+      var fwIo = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) return;
+        fwIo.disconnect();
+        fwSet(1); fwIdx = 1;
+        fwTimer = setInterval(function () { fwIdx = fwIdx % 4 + 1; fwSet(fwIdx); }, 2600);
+      }, { threshold: 0.5 });
+      fwIo.observe(fw);
+    }
+  }
 
   /* Encabezado con línea al hacer scroll */
   var header = document.querySelector(".site-header");

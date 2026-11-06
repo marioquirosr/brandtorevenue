@@ -320,3 +320,85 @@ section { padding: 88px 0; }
   .hero h1 { font-size: clamp(52px, 4.4vw, 62px); }
   .hero-grid { grid-template-columns: 1.08fr .92fr; gap: 64px; }
 }
+
+/* =========================================================
+   Metodología: journey del cliente + ejecución B2R
+   ========================================================= */
+.fw-sec { padding-top: 40px; }
+.fw-card { background: var(--morado-abismo); color: #fff; border-radius: 32px; padding: 48px 20px 36px; position: relative; overflow: hidden; }
+.fw-card::before { content: ""; position: absolute; width: 520px; height: 520px; right: -220px; top: -240px; border-radius: 50%; background: radial-gradient(closest-side, rgba(185,168,220,.18), transparent); pointer-events: none; }
+.fw-card .label { color: var(--morado-niebla); }
+.fw-card .h2 { color: #fff; max-width: 18ch; }
+.fw-card .h2 em { color: var(--morado-niebla); font-style: italic; font-weight: 500; }
+.fw-card .lead { color: var(--morado-niebla); font-size: 18px; }
+
+.fw { position: relative; display: grid; gap: 10px; margin-top: 40px; --fw-p: 1; }
+.fw-tag { display: block; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--morado-niebla); opacity: .8; }
+.fw-row-lbl { display: none; }
+.fw-track { display: none; }
+.fw-bridge { display: none; }
+
+/* Paso del cliente */
+.fw-j { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 6px; padding: 22px 20px 20px; border-radius: 20px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); transition: background .35s var(--ease), border-color .35s, opacity .35s, transform .35s var(--ease); }
+.fw-j:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 3px; }
+.fw-j .fw-n { font-family: var(--display); font-weight: 600; font-size: 13px; color: var(--amarillo); letter-spacing: .02em; }
+.fw-j b { font-family: var(--display); font-weight: 600; font-size: 26px; line-height: 1.05; letter-spacing: -0.03em; color: #fff; }
+.fw-j .fw-d { font-size: 15px; line-height: 1.45; color: var(--morado-niebla); }
+
+/* Ejecución B2R */
+.fw-e { padding: 18px 20px 20px; border-radius: 20px; background: #fff; color: var(--negro); border: 1px solid transparent; margin-bottom: 14px; transition: opacity .35s, transform .35s var(--ease), box-shadow .35s; }
+.fw-e .fw-tag { color: var(--magenta-accion); opacity: 1; }
+.fw-e b { display: block; font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: -0.02em; margin: 6px 0 6px; }
+.fw-e p { margin: 0 0 14px; font-size: 15px; line-height: 1.5; color: var(--gris-humo); }
+.fw-m { display: inline-block; font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .02em; color: var(--morado); background: var(--lila); border-radius: 999px; padding: 6px 12px; }
+
+/* Estados */
+.fw-j.on { background: rgba(255,255,255,.1); border-color: var(--morado-niebla); }
+.fw-e.on { box-shadow: 0 24px 48px -24px rgba(0,0,0,.55); transform: translateY(-2px); }
+
+/* Pie */
+.fw-foot { display: grid; gap: 18px; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); }
+.fw-loop { display: flex; gap: 12px; align-items: flex-start; margin: 0; font-size: 15px; color: var(--morado-niebla); }
+.fw-loop svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--amarillo); }
+.fw-result { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fw-result span { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--morado-niebla); margin-right: 6px; }
+.fw-result b { font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); }
+.fw-result em { font-style: normal; color: var(--amarillo); }
+
+/* Móvil: cada paso agrupa cliente + ejecución */
+.fw-j[data-s="1"] { order: 1; } .fw-e[data-s="1"] { order: 2; }
+.fw-j[data-s="2"] { order: 3; } .fw-e[data-s="2"] { order: 4; }
+.fw-j[data-s="3"] { order: 5; } .fw-e[data-s="3"] { order: 6; }
+.fw-j[data-s="4"] { order: 7; } .fw-e[data-s="4"] { order: 8; }
+.fw-e { position: relative; }
+.fw-e::before { content: ""; position: absolute; left: 32px; top: -10px; width: 2px; height: 10px; background: var(--morado-niebla); opacity: .5; }
+
+@media (min-width: 720px) {
+  .fw-card { padding: 72px 48px 48px; }
+}
+@media (min-width: 960px) {
+  .fw-card { padding: 88px 64px 56px; }
+  .fw { grid-template-columns: repeat(4, 1fr); column-gap: 16px; row-gap: 0; margin-top: 56px; }
+  .fw > * { order: 0 !important; }
+  .fw-row-lbl { display: flex; grid-column: 1 / -1; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--morado-niebla); margin-bottom: 18px; }
+  .fw-row-lbl i { width: 8px; height: 8px; background: var(--amarillo); }
+  .fw-track { display: block; grid-column: 1 / -1; height: 2px; background: rgba(255,255,255,.12); border-radius: 2px; margin-bottom: 18px; overflow: hidden; }
+  .fw-track span { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, var(--morado-niebla), var(--amarillo)); transform-origin: left; transform: scaleX(0); transition: transform .9s var(--ease); }
+  .fw.in .fw-track span { transform: scaleX(var(--fw-p)); }
+  .fw-j { min-height: 190px; align-content: start; }
+  .fw-j:hover { background: rgba(255,255,255,.08); }
+  .fw-j b { font-size: 28px; }
+  .fw-bridge { display: flex; grid-column: 1 / -1; align-items: center; justify-content: center; position: relative; height: 72px; }
+  .fw-bridge::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed rgba(185,168,220,.35); }
+  .fw-bridge span { position: relative; font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--morado-abismo); background: var(--morado-niebla); padding: 8px 16px; border-radius: 999px; }
+  .fw-bridge span::after { content: " ↓"; }
+  .fw-e { margin: 0; display: flex; flex-direction: column; }
+  .fw-e::before { display: none; }
+  .fw-e p { flex: 1; }
+  .fw-m { align-self: flex-start; }
+  .fw.has-active .fw-j:not(.on), .fw.has-active .fw-e:not(.on) { opacity: .45; }
+  .fw-foot { grid-template-columns: 1fr auto; align-items: center; margin-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fw-track span { transform: scaleX(1) !important; }
+}
