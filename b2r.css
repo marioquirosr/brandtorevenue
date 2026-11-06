@@ -402,3 +402,43 @@ section { padding: 88px 0; }
 @media (prefers-reduced-motion: reduce) {
   .fw-track span { transform: scaleX(1) !important; }
 }
+
+/* =========================================================
+   Servicios: 3 fases del sistema + otras formas de trabajar
+   ========================================================= */
+.phases { list-style: none; padding: 0; margin: 36px 0 0; display: grid; gap: 14px; counter-reset: none; }
+.phase { padding: 24px 20px; }
+.phase:hover { transform: none; box-shadow: none; }
+.phase-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.phase-n { font-family: var(--display); font-weight: 600; font-size: 34px; line-height: 1; letter-spacing: -0.05em; color: var(--morado); }
+.phase-pill { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .04em; color: var(--morado); background: var(--lila); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+.phase h3 { font-size: 26px; margin-bottom: 8px; }
+.phase .muted { font-size: 16px; margin-bottom: 16px; }
+.phase ul { margin-bottom: 24px; }
+.phase li { font-size: 15px; }
+.phase li::before { top: 16px; }
+.phase-feat { background: var(--morado-abismo); border-color: var(--morado-abismo); color: #fff; }
+.phase-feat .phase-n { color: var(--amarillo); }
+.phase-feat .phase-pill { background: rgba(255,255,255,.12); color: #fff; }
+.phase-feat .muted { color: var(--morado-niebla); }
+.phase-feat li::before { background: var(--amarillo); }
+.phase-feat .btn-primary { background: #fff; color: var(--negro); }
+.phase-feat .btn-primary:hover { background: var(--lila); }
+
+.alt { margin-top: 40px; }
+.alt-title { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gris-humo); margin: 0 0 4px; }
+.alt-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--borde); text-decoration: none; color: inherit; min-height: 64px; }
+.alt-row:first-of-type { border-top: 1px solid var(--borde); margin-top: 14px; }
+.alt-txt b { display: block; font-family: var(--display); font-weight: 600; font-size: 18px; letter-spacing: -0.01em; margin-bottom: 4px; }
+.alt-txt span { display: block; font-size: 15px; line-height: 1.45; color: var(--gris-humo); }
+.alt-row .arrow { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--borde); display: inline-flex; align-items: center; justify-content: center; transition: background .25s, color .25s, border-color .25s, transform .25s var(--ease); }
+.alt-row:hover .arrow { background: var(--negro); border-color: var(--negro); color: #fff; transform: translateX(4px); }
+
+@media (min-width: 960px) {
+  .phases { grid-template-columns: 1fr 1.15fr 1fr; gap: 16px; align-items: stretch; }
+  .phase { padding: 32px 28px; }
+  .phase-feat { transform: translateY(-12px); box-shadow: 0 40px 80px -40px rgba(46,28,82,.6); }
+  .phase-feat:hover { transform: translateY(-12px); box-shadow: 0 40px 80px -40px rgba(46,28,82,.6); }
+  .alt { margin-top: 56px; }
+  .alt-row { padding: 24px 0; }
+}

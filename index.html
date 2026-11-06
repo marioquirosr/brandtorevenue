@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="b2r.css?v=4">
+<link rel="stylesheet" href="b2r.css?v=5">
 <script>document.documentElement.classList.add("js");</script>
 <script src="config.js?v=1"></script>
 <script src="b2r.js?v=3" defer></script>
@@ -53,9 +53,10 @@
         "@type": "OfferCatalog",
         "name": "Servicios",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing desde el Negocio para Equipos", "description": "Asesoría para agencias y equipos de marketing internos." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing desde el Negocio para Dueños", "description": "Asesoría 1 a 1 para dueños de negocio sin equipo de marketing." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sprint de medición", "description": "CAC, LTV y payback por canal en 2 semanas." } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico", "description": "Diagnóstico gratis de 30 minutos del journey de tus clientes." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instalación del sistema Brand to Revenue", "description": "Sistema de adquisición y retención de clientes: journey, plan de ejecución y tablero de CAC, LTV y retención." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acompañamiento mensual", "description": "Medición y ajuste mensual del presupuesto de marketing según CAC y LTV." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing desde el Negocio", "description": "Asesoría para agencias, equipos de marketing y dueños de negocio." } }
         ]
       }
     },
@@ -226,52 +227,56 @@
   <section id="servicios" aria-labelledby="servicios-title">
     <div class="wrap">
       <p class="label">Servicios</p>
-      <h2 class="h2 reveal" id="servicios-title">Elige cómo <em>trabajamos juntos</em></h2>
+      <h2 class="h2 reveal" id="servicios-title">Instalamos el sistema <em>en tu negocio</em></h2>
+      <p class="lead reveal">Para dueños y gerentes de empresas que ya venden y ya invierten en marketing, pero no saben qué parte de ese gasto les trae clientes.</p>
 
-      <div class="cards">
-        <article class="card reveal">
-          <p class="kind">Asesoría</p>
-          <p class="product">Marketing desde el Negocio</p>
-          <h3>para Equipos</h3>
-          <p class="for">Agencias y equipos de marketing internos</p>
-          <p class="muted">Instalamos el mindset en tu equipo: preguntar, proponer y reportar en números de negocio.</p>
-          <div class="card-stat"><b data-count="9" data-suffix=" h">9 h</b><span>en 5 sesiones</span></div>
+      <ol class="phases">
+        <li class="card phase reveal">
+          <div class="phase-top"><span class="phase-n">01</span><span class="phase-pill">Gratis · 30 min</span></div>
+          <h3>Diagnóstico</h3>
+          <p class="muted">Revisamos tu negocio y te decimos en qué paso del journey se pierden tus clientes.</p>
           <ul>
-            <li>1 sesión con el líder, 3 con el equipo y 1 de cierre</li>
-            <li>Guía de preguntas, estructura de propuesta y de reporte</li>
+            <li>Dónde se cae tu cliente: te ve, te entiende, te compra o vuelve</li>
+            <li>Qué número tiene que moverse primero</li>
           </ul>
-          <a class="btn btn-primary btn-block" href="https://calendly.com/brandtorevenue/30min" data-cta="servicio-equipos" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
-        </article>
+          <a class="btn btn-ghost btn-block" href="https://calendly.com/brandtorevenue/30min" data-cta="servicio-diagnostico" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
+        </li>
 
-        <article class="card reveal">
-          <p class="kind">Asesoría</p>
-          <p class="product">Marketing desde el Negocio</p>
-          <h3>para Dueños</h3>
-          <p class="for">Dueños sin equipo de marketing, con el negocio andando o por nacer</p>
-          <p class="muted">Aprende a definir qué necesita tu negocio, a elegir quién ejecuta tu marketing y a exigir resultados en ventas.</p>
-          <div class="card-stat"><b data-count="6" data-suffix=" h">6 h</b><span>en 4 sesiones 1 a 1</span></div>
+        <li class="card phase phase-feat reveal">
+          <div class="phase-top"><span class="phase-n">02</span><span class="phase-pill">El sistema</span></div>
+          <h3>Instalación</h3>
+          <p class="muted">Aplicamos los 4 pasos a tu negocio y dejamos listo el camino para captar, convertir y retener clientes.</p>
           <ul>
-            <li>Se trabaja sobre tu propio negocio</li>
-            <li>Tu brief de negocio y el reporte que vas a exigir</li>
+            <li>Mapa del journey de tu cliente y dónde se pierde</li>
+            <li>Plan de ejecución: escuchar, construir confianza, escalar y retener</li>
+            <li>Tablero de CAC, LTV y retención como punto de partida</li>
           </ul>
-          <a class="btn btn-primary btn-block" href="https://calendly.com/brandtorevenue/30min" data-cta="servicio-duenos" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
-        </article>
+          <a class="btn btn-primary btn-block" href="https://wa.me/50762440096?text=Hola%20Mario%2C%20quiero%20instalar%20el%20sistema%20Brand%20to%20Revenue%20en%20mi%20negocio." data-cta="servicio-instalacion" target="_blank" rel="noopener">Quiero instalar el sistema</a>
+        </li>
 
-        <article class="card reveal">
-          <p class="kind">Medición</p>
-          <p class="product">Brand to Revenue</p>
-          <h3>Sprint de medición</h3>
-          <p class="for">Marcas con pauta activa y ventas registradas</p>
-          <p class="muted">Calculamos lo que te cuesta cada cliente y cuánto vale, canal por canal, y te decimos dónde poner el próximo dólar.</p>
-          <div class="card-stat"><b data-count="2">2</b><span>semanas</span></div>
+        <li class="card phase reveal">
+          <div class="phase-top"><span class="phase-n">03</span><span class="phase-pill">Mensual</span></div>
+          <h3>Acompañamiento</h3>
+          <p class="muted">Medimos, ajustamos y movemos el presupuesto a lo que funciona, con tu equipo o tu agencia ejecutando.</p>
           <ul>
-            <li>CAC, LTV y payback por canal en un tablero ejecutivo</li>
+            <li>Reporte mensual en números de negocio</li>
             <li>Qué canal sube, cuál baja y cuál se corta</li>
           </ul>
-          <a class="btn btn-ghost btn-block" href="https://wa.me/50762440096?text=Hola%20Mario%2C%20me%20interesa%20el%20sprint%20de%20medici%C3%B3n%20de%20Brand%20to%20Revenue." data-cta="servicio-sprint" target="_blank" rel="noopener">Solicitar el sprint</a>
-        </article>
+          <a class="btn btn-ghost btn-block" href="https://wa.me/50762440096?text=Hola%20Mario%2C%20me%20interesa%20el%20acompa%C3%B1amiento%20mensual%20de%20Brand%20to%20Revenue." data-cta="servicio-acompanamiento" target="_blank" rel="noopener">Hablemos</a>
+        </li>
+      </ol>
+
+      <div class="alt reveal">
+        <p class="alt-title">Otras formas de trabajar · Asesoría Marketing desde el Negocio</p>
+        <a class="alt-row" href="https://calendly.com/brandtorevenue/30min" data-cta="servicio-equipos" target="_blank" rel="noopener">
+          <span class="alt-txt"><b>Para agencias y equipos de marketing</b><span>Tu equipo aprende a proponer y reportar en números de negocio. 9 h en 5 sesiones.</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="alt-row" href="https://calendly.com/brandtorevenue/30min" data-cta="servicio-duenos" target="_blank" rel="noopener">
+          <span class="alt-txt"><b>Para dueños sin equipo de marketing</b><span>Define qué necesita tu negocio, elige quién ejecuta y exige resultados en ventas. 6 h en 4 sesiones 1 a 1.</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
       </div>
-      <p class="note-line">¿Agencia grande? También auditamos equipos para mejorar cómo proponen, miden y reportan. <a class="ulink" href="https://calendly.com/brandtorevenue/30min" data-cta="agencia-grande" target="_blank" rel="noopener">Hablemos</a></p>
     </div>
   </section>
 
