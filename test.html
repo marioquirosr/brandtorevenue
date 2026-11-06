@@ -81,7 +81,7 @@
 
 <main class="quiz-wrap" id="quiz">
   <div class="quiz-card" id="card" aria-live="polite"></div>
-  <noscript><p>Este test necesita JavaScript. También puedes <a href="https://calendly.com/brandtorevenue/30min">agendar directo tu diagnóstico gratis</a>.</p></noscript>
+  <noscript><p>Este test necesita JavaScript. También puedes <a href="https://calendly.com/brandtorevenue-ldsl/30min">agendar directo tu diagnóstico gratis</a>.</p></noscript>
 </main>
 
 <script>
@@ -287,7 +287,7 @@
 
   function renderResult() {
     var r = compute(), t = S.segment.test;
-    var cal = window.B2R ? window.B2R.calendlyUrl("test-nivel-" + t + r.level.n, { name: S.nombre, email: S.email }) : "https://calendly.com/brandtorevenue/30min";
+    var cal = window.B2R ? window.B2R.calendlyUrl("test-nivel-" + t + r.level.n, { name: S.nombre, email: S.email }) : "https://calendly.com/brandtorevenue-ldsl/30min";
     var meter = [1, 2, 3].map(function (n) { return '<span class="' + (n <= r.level.n ? "on" : "") + '"></span>'; }).join("");
     var labels = LEVEL_NAMES[t].map(function (l) { return '<span>' + l + '</span>'; }).join("");
     card.innerHTML =

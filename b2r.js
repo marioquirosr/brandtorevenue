@@ -61,7 +61,7 @@
 
   /* ---------- Links a Calendly con UTMs ---------- */
   function calendlyUrl(content, extra) {
-    var u = new URL(C.CALENDLY || "https://calendly.com/brandtorevenue/30min");
+    var u = new URL(C.CALENDLY || "https://calendly.com/brandtorevenue-ldsl/30min");
     var last = store("b2r_last_touch") || {};
     var page = (location.pathname.replace(/\/$/, "").split("/").pop() || "home").replace(".html", "") || "home";
     u.searchParams.set("utm_source", last.utm_source || "web");

@@ -16,7 +16,7 @@ window.B2R_CONFIG = {
   LEAD_ENDPOINT: "",
 
   // Agenda del diagnóstico gratis de 30 minutos
-  CALENDLY: "https://calendly.com/brandtorevenue/30min",
+  CALENDLY: "https://calendly.com/brandtorevenue-ldsl/30min",
 
   // WhatsApp sin "+" ni espacios
   WHATSAPP: "50762440096",
