@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="b2r.css?v=6">
+<link rel="stylesheet" href="b2r.css?v=7">
 <script>document.documentElement.classList.add("js");</script>
 <script src="config.js?v=1"></script>
 <script src="b2r.js?v=3" defer></script>
@@ -83,7 +83,7 @@
     </button>
     <nav id="nav-menu" aria-label="Principal">
       <ul>
-        <li><a href="#enfoque">Enfoque</a></li>
+        <li><a href="#creemos">En qué creemos</a></li>
         <li><a href="#metodologia">Metodología</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="casos.html">Casos</a></li>
@@ -134,10 +134,10 @@
         </div>
       </div>
 
-      <div class="strip">
-        <div><span class="n">01</span><h3>Preguntar</h3><p>Primero, qué tiene que pasar en el negocio. Después, qué piezas hacer.</p></div>
-        <div><span class="n">02</span><h3>Proponer</h3><p>Cada idea amarrada al número que tiene que mover.</p></div>
-        <div><span class="n">03</span><h3>Reportar</h3><p>Ventas primero. El alcance explica, no es el resultado.</p></div>
+      <div class="edge reveal">
+        <p class="edge-main">Hablamos el idioma de marketing <em>y el de finanzas.</em></p>
+        <p class="edge-sub">Por eso medimos en clientes, ventas y caja.</p>
+      </div>
       </div>
     </div>
   </section>
@@ -159,38 +159,22 @@
     </div>
   </section>
 
-  <!-- EL CAMBIO -->
-  <section class="soft" aria-labelledby="cambio-title">
+  <!-- EN QUÉ CREEMOS -->
+  <section id="creemos" class="soft" aria-labelledby="creemos-title">
     <div class="wrap">
-      <p class="label">El cambio</p>
-      <h2 class="h2 reveal" id="cambio-title">¿Qué número del negocio <em>tiene que moverse?</em></h2>
-      <p class="lead reveal">Esa pregunta va antes de cualquier campaña, y se aplica en 3 momentos. Un ejemplo: un restaurante cuyos clientes vienen 1 vez y no vuelven.</p>
-
-      <div class="tabs" role="tablist" aria-label="Los 3 momentos">
-        <button class="tab" role="tab" id="tab-1" aria-controls="tp-1" aria-selected="true"><span>01</span>Preguntar</button>
-        <button class="tab" role="tab" id="tab-2" aria-controls="tp-2" aria-selected="false" tabindex="-1"><span>02</span>Proponer</button>
-        <button class="tab" role="tab" id="tab-3" aria-controls="tp-3" aria-selected="false" tabindex="-1"><span>03</span>Reportar</button>
-      </div>
-      <div class="tabpanel" role="tabpanel" id="tp-1" aria-labelledby="tab-1">
-        <p class="what">Cómo se levanta la necesidad.</p>
-        <div class="ba">
-          <div class="before"><b>Antes</b><p>"¿Qué piezas necesitas y para cuándo?"</p></div>
-          <div class="after"><b>Después</b><p>"¿Qué tiene que pasar en tu negocio y qué lo está frenando?"</p></div>
+      <div class="belief-grid">
+        <div class="belief-head">
+          <p class="label">En qué creemos</p>
+          <h2 class="statement reveal" id="creemos-title">La marca no es <em>decoración.</em></h2>
+          <p class="belief-sub reveal">Es lo que hace que conseguir un cliente cueste menos y que se quede más tiempo.</p>
         </div>
-      </div>
-      <div class="tabpanel" role="tabpanel" id="tp-2" aria-labelledby="tab-2" hidden>
-        <p class="what">Cómo se arma la propuesta.</p>
-        <div class="ba">
-          <div class="before"><b>Antes</b><p>"12 posts, 4 reels y 1 influencer."</p></div>
-          <div class="after"><b>Después</b><p>"Tus clientes vienen 1 vez. Esta campaña busca que vuelvan, y lo vamos a contar en 60 días."</p></div>
-        </div>
-      </div>
-      <div class="tabpanel" role="tabpanel" id="tp-3" aria-labelledby="tab-3" hidden>
-        <p class="what">Cómo se demuestra el resultado.</p>
-        <div class="ba">
-          <div class="before"><b>Antes</b><p>"45,000 de alcance y 1,200 interacciones."</p></div>
-          <div class="after"><b>Después</b><p>"Regresaron 180 clientes en 60 días. El reel que más canjes trajo recibe más presupuesto."</p></div>
-        </div>
+        <ol class="beliefs">
+          <li class="reveal"><span class="belief-n">01</span><div><b>Primero el número, después la idea.</b><p>Cada acción existe para mover algo en el negocio.</p></div></li>
+          <li class="reveal"><span class="belief-n">02</span><div><b>Atención sin confianza es ruido.</b><p>Que te vean no basta. Tienen que entenderte para comprarte.</p></div></li>
+          <li class="reveal"><span class="belief-n">03</span><div><b>La audiencia da el insight. El negocio decide qué escalar.</b><p>Escuchamos a la gente y filtramos con tus números.</p></div></li>
+          <li class="reveal"><span class="belief-n">04</span><div><b>La pauta amplifica certezas.</b><p>Solo se invierte en lo que ya demostró tracción.</p></div></li>
+          <li class="reveal"><span class="belief-n">05</span><div><b>Un cliente que vuelve vale más.</b><p>Crecer con rentabilidad, no crecer por crecer.</p></div></li>
+        </ol>
       </div>
     </div>
   </section>
@@ -215,6 +199,16 @@
           <div class="fw-e" data-s="2"><span class="fw-tag">B2R</span><b>Construir confianza</b><p>Educamos: el problema, la solución, la visión de la marca y cómo se compra.</p><span class="fw-m">Consideración · leads</span></div>
           <div class="fw-e" data-s="3"><span class="fw-tag">B2R</span><b>Escalar</b><p>Quitamos obstáculos del camino de compra y amplificamos solo lo probado.</p><span class="fw-m">Conversión · CAC</span></div>
           <div class="fw-e" data-s="4"><span class="fw-tag">B2R</span><b>Retener</b><p>Diseñamos la experiencia que convierte la primera compra en recompra.</p><span class="fw-m">Retención · LTV</span></div>
+        </div>
+
+        <div class="fw-content reveal">
+          <p class="fw-content-lbl">Así trabajamos el contenido</p>
+          <ol class="fw-steps">
+            <li>Validamos en orgánico</li>
+            <li>Lo cruzamos con tus números</li>
+            <li>Escalamos lo probado</li>
+            <li>Medimos y volvemos a escuchar</li>
+          </ol>
         </div>
 
         <div class="fw-foot reveal">
@@ -282,23 +276,6 @@
     </div>
   </section>
 
-  <!-- CÓMO EMPEZAR -->
-  <section class="soft" aria-labelledby="empezar-title">
-    <div class="wrap">
-      <p class="label">Cómo empezar</p>
-      <h2 class="h2 reveal" id="empezar-title">Tres pasos. <em>El primero toma 1 minuto.</em></h2>
-      <div class="steps">
-        <div class="step reveal"><span class="n" aria-hidden="true">01</span><div><h3>Haz el test</h3><p>6 preguntas para saber en qué nivel está tu marketing.</p></div></div>
-        <div class="step reveal"><span class="n" aria-hidden="true">02</span><div><h3>Recibe tu resultado</h3><p>Tu nivel y lo que necesitas hacer, al instante.</p></div></div>
-        <div class="step reveal"><span class="n" aria-hidden="true">03</span><div><h3>Diagnóstico gratis</h3><p>30 minutos para ver tu caso y definir el camino.</p></div></div>
-      </div>
-      <div class="ctas-row">
-        <a class="btn btn-primary" href="test.html" data-cta="pasos">Haz el test gratis</a>
-        <a class="ulink" href="https://calendly.com/brandtorevenue-ldsl/30min" data-cta="pasos" target="_blank" rel="noopener">Ir directo al diagnóstico</a>
-      </div>
-    </div>
-  </section>
-
   <!-- CASO -->
   <section aria-labelledby="caso-title">
     <div class="wrap">
@@ -313,6 +290,23 @@
           <div class="case-stat"><b data-count="100" data-prefix="+" data-suffix="%">+100%</b><span>en precio de venta por unidad</span></div>
           <div class="case-stat"><b data-count="2" data-suffix="x">2x</b><span>valor comercial vs. la proyección inicial</span></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO EMPEZAR -->
+  <section class="soft" aria-labelledby="empezar-title">
+    <div class="wrap">
+      <p class="label">Cómo empezar</p>
+      <h2 class="h2 reveal" id="empezar-title">Tres pasos. <em>El primero toma 1 minuto.</em></h2>
+      <div class="steps">
+        <div class="step reveal"><span class="n" aria-hidden="true">01</span><div><h3>Haz el test</h3><p>6 preguntas para saber en qué nivel está tu marketing.</p></div></div>
+        <div class="step reveal"><span class="n" aria-hidden="true">02</span><div><h3>Recibe tu resultado</h3><p>Tu nivel y lo que necesitas hacer, al instante.</p></div></div>
+        <div class="step reveal"><span class="n" aria-hidden="true">03</span><div><h3>Diagnóstico gratis</h3><p>30 minutos para ver tu caso y definir el camino.</p></div></div>
+      </div>
+      <div class="ctas-row">
+        <a class="btn btn-primary" href="test.html" data-cta="pasos">Haz el test gratis</a>
+        <a class="ulink" href="https://calendly.com/brandtorevenue-ldsl/30min" data-cta="pasos" target="_blank" rel="noopener">Ir directo al diagnóstico</a>
       </div>
     </div>
   </section>
@@ -453,7 +447,7 @@
 </div>
 
 <script>
-/* Interacciones del home: panel Marketing | Negocio, tabs, cifras y entradas */
+/* Interacciones del home: panel Marketing | Negocio, metodología, cifras y entradas */
 (function () {
   "use strict";
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -482,27 +476,6 @@
     b.addEventListener("click", function () { touched = true; setView(b.dataset.view); });
   });
   if (!reduce) setTimeout(function () { if (!touched) { toggle.classList.add("nudge"); } }, 2500);
-
-  /* Tabs */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-  function select(t) {
-    tabs.forEach(function (x) {
-      var on = x === t;
-      x.setAttribute("aria-selected", String(on));
-      x.tabIndex = on ? 0 : -1;
-      document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
-    });
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener("click", function () { select(t); });
-    t.addEventListener("keydown", function (e) {
-      var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-      if (!d) return;
-      e.preventDefault();
-      var n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus();
-    });
-  });
-
 
   /* Metodología: resaltar un paso (cliente + ejecución) */
   var fw = document.querySelector("[data-fw]");
