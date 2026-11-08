@@ -468,7 +468,7 @@ section { padding: 88px 0; }
    ========================================================= */
 .belief-grid { display: grid; gap: 40px; }
 .belief-head .statement { margin-bottom: 18px; max-width: 12ch; }
-.belief-head .statement em { font-style: italic; font-weight: 500; }
+.belief-head .statement em { display: block; font-style: italic; font-weight: 500; }
 .belief-sub { font-size: 19px; line-height: 1.55; color: var(--gris-humo); max-width: 24em; margin: 0; }
 .beliefs { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--borde); }
 .beliefs li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 22px 0; border-bottom: 1px solid var(--borde); }
