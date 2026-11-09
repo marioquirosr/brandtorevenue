@@ -498,3 +498,21 @@ section { padding: 88px 0; }
   .fw-steps li { position: relative; font-size: 17px; padding-right: 28px; }
   .fw-steps li:not(:last-child)::after { content: "→"; position: absolute; right: 0; color: var(--morado-niebla); font-weight: 400; }
 }
+
+/* =========================================================
+   Journey: caritas por paso
+   ========================================================= */
+.fw-j { position: relative; }
+.fw-face { position: absolute; top: 18px; right: 18px; width: 34px; height: 34px; transition: transform .35s var(--ease); }
+@media (min-width: 960px) { .fw-face { top: 22px; right: 22px; width: 42px; height: 42px; } }
+.fw-j.on .fw-face { transform: scale(1.06); }
+@media (prefers-reduced-motion: no-preference) {
+  .fw-j[data-s="1"].on .fx-eyes { animation: fx-look 1.6s var(--ease) 1; }
+  .fw-j[data-s="2"].on .fw-face { animation: fx-nod .9s var(--ease) 1; }
+  .fw-j[data-s="3"].on .fw-face { animation: fx-hop .7s var(--ease) 1; }
+  .fw-j[data-s="4"].on .fw-face { animation: fx-tilt .9s var(--ease) 1; }
+}
+@keyframes fx-look { 0% { transform: translateX(-10px); } 40% { transform: translateX(-10px); } 70%,100% { transform: translateX(0); } }
+@keyframes fx-nod { 0%,100% { transform: scale(1.06) translateY(0); } 30% { transform: scale(1.06) translateY(4px); } 60% { transform: scale(1.06) translateY(-2px); } }
+@keyframes fx-hop { 0%,100% { transform: scale(1.06) translateY(0); } 40% { transform: scale(1.12) translateY(-8px); } }
+@keyframes fx-tilt { 0%,100% { transform: scale(1.06) rotate(0); } 40% { transform: scale(1.06) rotate(-12deg); } }
