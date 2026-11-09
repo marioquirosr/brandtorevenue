@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <title>Más allá del Performance: Por qué optimizar anuncios no resolverá tu CAC — Brand to Revenue</title>
-    <meta name="description" content="Un análisis bajo la filosofía Brand to Revenue sobre cómo el brand building impacta directamente en el estado de resultados.">
+    <title>CAC: por qué optimizar anuncios no lo reduce | Brand to Revenue</title>
+    <meta name="description" content="Qué es el CAC, cómo se calcula y por qué el brand building lo reduce más que optimizar la pauta. Análisis de Mario Quirós R. para Brand to Revenue.">
     <meta name="author" content="Mario Quirós R.">
-    <meta property="og:title" content="Más allá del Performance: Por qué optimizar anuncios no resolverá tu CAC — Brand to Revenue">
-    <meta property="og:description" content="Un análisis bajo la filosofía Brand to Revenue sobre cómo el brand building impacta directamente en el estado de resultados.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.brandtorevenue.agency/B2R_Manifiesto_CAC.html">
     <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Brand to Revenue">
+    <meta property="og:locale" content="es_PA">
+    <meta property="og:url" content="https://www.brandtorevenue.agency/B2R_Manifiesto_CAC.html">
+    <meta property="og:title" content="CAC: por qué optimizar anuncios no lo reduce | Brand to Revenue">
+    <meta property="og:description" content="Qué es el CAC, cómo se calcula y por qué el brand building lo reduce más que optimizar la pauta. Análisis de Mario Quirós R. para Brand to Revenue.">
+    <meta property="og:image" content="https://www.brandtorevenue.agency/images/og/cac.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Más allá del Performance: Por qué optimizar anuncios no resolverá tu CAC — Mario Quirós R., Brand to Revenue">
     <meta property="article:published_time" content="2026-10-12">
+    <meta property="article:modified_time" content="2026-11-08">
+    <meta property="article:author" content="https://marioquiros.vercel.app/">
+    <meta property="article:section" content="Unit Economics">
+    <meta property="article:tag" content="CAC">
+    <meta property="article:tag" content="costo de adquisición de clientes">
+    <meta property="article:tag" content="brand building">
+    <meta property="article:tag" content="performance marketing">
+    <meta property="article:tag" content="unit economics">
+    <meta property="article:tag" content="Brand to Revenue">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CAC: por qué optimizar anuncios no lo reduce | Brand to Revenue">
+    <meta name="twitter:description" content="Qué es el CAC, cómo se calcula y por qué el brand building lo reduce más que optimizar la pauta. Análisis de Mario Quirós R. para Brand to Revenue.">
+    <meta name="twitter:image" content="https://www.brandtorevenue.agency/images/og/cac.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -641,6 +665,27 @@
         .series-k { font-family: var(--ff-d); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gris-niebla); margin-bottom: 6px; }
         .series-v { font-family: var(--ff-d); font-size: 15px; font-weight: 600; color: var(--negro); line-height: 1.35; }
 
+        h3.factor-title { margin: 0; }
+        .factor-head:last-child { margin-bottom: 0; }
+        .author-box {
+            display: grid; grid-template-columns: 72px 1fr; gap: 20px; align-items: start;
+            margin-top: 56px; padding: 28px 30px; background: var(--lila); border-left: 4px solid var(--morado);
+        }
+        .author-box img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; }
+        .author-k { font-family: var(--ff-d); font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gris-niebla); margin-bottom: 4px; }
+        .author-name { font-family: var(--ff-d); font-size: 17px; font-weight: 700; color: var(--negro); margin-bottom: 6px; }
+        .author-name a { color: inherit; text-decoration: none; }
+        .author-bio { font-size: 14.5px; line-height: 1.7; color: var(--gris-humo); }
+        .author-bio a { color: var(--morado); font-weight: 600; }
+        .author-links { margin-top: 10px; font-family: var(--ff-d); font-size: 12.5px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+        .author-links a { color: var(--morado); text-decoration: none; }
+        .related { margin-top: 56px; }
+        .related-k { font-family: var(--ff-d); font-size: 10px; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: var(--morado); margin-bottom: 14px; }
+        .related ul { list-style: none; display: grid; gap: 2px; }
+        .related a { display: block; padding: 16px 20px; border: 1px solid var(--borde); text-decoration: none; font-family: var(--ff-d); font-weight: 600; font-size: 15px; color: var(--negro); transition: background .2s ease; }
+        .related a:hover { background: var(--lila); }
+        .related a span { display: block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gris-niebla); margin-bottom: 4px; }
+        @media (max-width: 768px) { .author-box { grid-template-columns: 1fr; } }
         .signature {
             display: flex; align-items: center; gap: 12px; margin-top: 56px; padding-top: 28px;
             border-top: 1px solid var(--borde); font-family: var(--ff-d); font-weight: 700; font-size: 15px; color: var(--negro);
@@ -656,12 +701,132 @@
             .series-nav a.next { grid-column: 1; }
         }
     </style>
-<link rel="canonical" href="https://www.brandtorevenue.agency/B2R_Manifiesto_CAC.html">
-<meta property="og:image" content="https://www.brandtorevenue.agency/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
 <script src="config.js?v=1"></script>
 <script src="b2r.js?v=3" defer></script>
 <link rel="stylesheet" href="b2r-shell.css?v=1">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.brandtorevenue.agency/B2R_Manifiesto_CAC.html#article",
+   "headline": "Más allá del Performance: Por qué optimizar anuncios no resolverá tu CAC",
+   "description": "Qué es el CAC, cómo se calcula y por qué el brand building lo reduce más que optimizar la pauta. Análisis de Mario Quirós R. para Brand to Revenue.",
+   "image": [
+    "https://www.brandtorevenue.agency/images/og/cac.png"
+   ],
+   "datePublished": "2026-10-12",
+   "dateModified": "2026-11-08",
+   "inLanguage": "es",
+   "author": {
+    "@id": "https://www.brandtorevenue.agency/#mario"
+   },
+   "publisher": {
+    "@id": "https://www.brandtorevenue.agency/#org"
+   },
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.brandtorevenue.agency/B2R_Manifiesto_CAC.html"
+   },
+   "articleSection": "Unit Economics",
+   "keywords": [
+    "CAC",
+    "costo de adquisición de clientes",
+    "brand building",
+    "performance marketing",
+    "unit economics",
+    "Brand to Revenue"
+   ],
+   "isPartOf": [
+    {
+     "@type": "CollectionPage",
+     "@id": "https://www.brandtorevenue.agency/manifiestos.html",
+     "name": "Manifiestos"
+    },
+    {
+     "@type": "CreativeWorkSeries",
+     "name": "Unit Economics · Brand to Revenue"
+    }
+   ],
+   "wordCount": 713
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://www.brandtorevenue.agency/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Manifiestos",
+     "item": "https://www.brandtorevenue.agency/manifiestos.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Más allá del Performance: Por qué optimizar anuncios no resolverá tu CAC",
+     "item": "https://www.brandtorevenue.agency/B2R_Manifiesto_CAC.html"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.brandtorevenue.agency/#mario",
+   "name": "Mario Quirós R.",
+   "alternateName": "Mario Quirós",
+   "jobTitle": "Consultor de marketing",
+   "description": "Fundador de Brand to Revenue. Estratega de marketing en Panamá desde 2013: Samsung LATAM (Cheil Worldwide), Head de Marketing y Comunicaciones en Tafi, mentor del Programa de Incubación de Ciudad del Saber.",
+   "url": "https://marioquiros.vercel.app/",
+   "image": "https://www.brandtorevenue.agency/images/MQR-profile.webp",
+   "worksFor": {
+    "@id": "https://www.brandtorevenue.agency/#org"
+   },
+   "homeLocation": {
+    "@type": "Country",
+    "name": "Panamá"
+   },
+   "knowsAbout": [
+    "Marketing estratégico",
+    "Unit economics",
+    "CAC",
+    "LTV",
+    "CAC Payback Period",
+    "Brand building",
+    "Atribución de marketing",
+    "Go-To-Market"
+   ],
+   "sameAs": [
+    "https://marioquiros.vercel.app/",
+    "https://instagram.com/mario_quiros",
+    "https://marioquiros.substack.com/"
+   ]
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://www.brandtorevenue.agency/#org",
+   "name": "Brand to Revenue",
+   "url": "https://www.brandtorevenue.agency/",
+   "logo": "https://www.brandtorevenue.agency/images/B2R_logo_black.png",
+   "founder": {
+    "@id": "https://www.brandtorevenue.agency/#mario"
+   },
+   "areaServed": [
+    "Panamá",
+    "Costa Rica",
+    "Guatemala"
+   ],
+   "sameAs": [
+    "https://instagram.com/brandtorevenue"
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -689,32 +854,45 @@
     <!-- PORTADA -->
     <div class="cover">
         <div class="cover-inner">
-            <div class="cover-eyebrow">Manifiesto B2R · Unit Economics 1/3</div>
+            <div class="cover-eyebrow">Manifiesto B2R · Unit Economics 1/4</div>
             <h1 class="cover-title" style="font-size:clamp(40px,6.4vw,64px);">Más allá del Performance: por qué optimizar anuncios no resolverá tu CAC</h1>
             <p class="cover-subtitle">Un análisis bajo la filosofía Brand to Revenue sobre cómo el brand building impacta directamente en el estado de resultados.</p>
             <div class="cover-meta">
-                <div class="meta-item"><div class="meta-k">Formato</div><div class="meta-v">Manifiesto</div></div>
+                <div class="meta-item"><div class="meta-k">Autor</div><div class="meta-v">Mario Quirós R.</div></div>
                 <div class="meta-item"><div class="meta-k">Eje</div><div class="meta-v">Marca → CAC</div></div>
                 <div class="meta-item"><div class="meta-k">Lectura</div><div class="meta-v">4 minutos</div></div>
-                <div class="meta-item"><div class="meta-k">Publicado</div><div class="meta-v">12 oct 2026</div></div>
+                <div class="meta-item"><div class="meta-k">Publicado</div><div class="meta-v"><time datetime="2026-10-12">12 oct 2026</time></div></div>
             </div>
         </div>
     </div>
 
     <!-- CONTENIDO -->
     <main id="main" class="container">
+        <article>
         <div class="section-block"><div class="section-label">01 — Qué es el CAC</div><h2 class="section-title">Qué es el CAC y por qué marca la vida o muerte de un negocio</h2><p class="section-body lead">El <strong>Costo de Adquisición de Clientes (CAC)</strong> mide la inversión total en ventas y marketing requerida para atraer a un nuevo cliente pagador durante un periodo determinado.</p><div class="formula" role="math" aria-label="CAC igual a Gastos Totales de Marketing y Ventas entre Número de Nuevos Clientes Adquiridos"><div class="formula-k">Fórmula</div><span class="formula-lhs">CAC</span><span class="formula-eq">=</span><span class="formula-frac"><span class="formula-num">Gastos Totales de Marketing y Ventas</span><span class="formula-den">Número de Nuevos Clientes Adquiridos</span></span></div><p class="section-body">En la economía actual, el CAC es una de las métricas de salud financiera más críticas para cualquier compañía. No es solo un número operativo; determina la viabilidad de la unidad económica (<em>Unit Economics</em>), los plazos de retorno de inversión (<em>CAC Payback Period</em>) y el margen EBITDA.</p><div class="callout callout--action"><p class="callout-text">Un CAC fuera de control asfixia la caja del negocio, sin importar cuán alto sea el volumen de ventas.</p></div></div>
         <div class="sep"></div>
-        <div class="section-block"><div class="section-label">02 — El impacto real</div><h2 class="section-title">El impacto real del marketing en el CAC a través del <em>Brand Building</em></h2><p class="section-body">La narrativa tradicional del marketing de respuesta directa sostiene que para reducir el CAC basta con optimizar pautas en medios digitales, ajustar la segmentación o pulir el embudo de conversión. Bajo la filosofía <strong>Brand to Revenue</strong>, esto es solo una solución superficial. El verdadero palancamiento del CAC ocurre en el activo de marca.</p><p class="section-body">La construcción de marca (<em>Brand Building</em>) impacta el CAC en tres niveles estructurales:</p><div style="margin:24px 0;"><div class="factor"><div class="factor-head"><div class="factor-num">01</div><div class="factor-title">Efecto de atracción vs. empuje (Pull vs. Push)</div></div><p class="factor-body">Una marca sólida reduce la dependencia de la pauta pagada. Genera tráfico orgánico, búsquedas directas e intencionales y referencias boca a boca, lo que incrementa el volumen de conversiones con costo marginal cercano a cero.</p></div><div class="factor"><div class="factor-head"><div class="factor-num">02</div><div class="factor-title">Eficiencia de conversión en la pauta de performance</div></div><p class="factor-body">Las campañas de respuesta directa sobre audiencias que ya conocen, confían y respetan una marca rinden sustancialmente mejor. El <em>Click-Through Rate</em> (CTR) sube y la tasa de conversión en la <em>landing page</em> aumenta, reduciendo el costo por clic (CPC) y el costo por cliente potencial (CPL).</p></div><div class="factor"><div class="factor-head"><div class="factor-num">03</div><div class="factor-title">Defensa del poder de fijación de precios (<em>Pricing Power</em>)</div></div><p class="factor-body">Una marca fuerte reduce la sensibilidad al precio en el prospecto. El esfuerzo comercial necesario para cerrar una venta disminuye, lo que acorta los ciclos de venta y reduce los costos directos asociados al equipo comercial.</p></div></div></div>
+        <div class="section-block"><div class="section-label">02 — El impacto real</div><h2 class="section-title">El impacto real del marketing en el CAC a través del <em>Brand Building</em></h2><p class="section-body">La narrativa tradicional del marketing de respuesta directa sostiene que para reducir el CAC basta con optimizar pautas en medios digitales, ajustar la segmentación o pulir el embudo de conversión. Bajo la filosofía <strong>Brand to Revenue</strong>, esto es solo una solución superficial. El verdadero apalancamiento del CAC ocurre en el activo de marca.</p><p class="section-body">La construcción de marca (<em>Brand Building</em>) impacta el CAC en tres niveles estructurales:</p><div style="margin:24px 0;"><div class="factor"><div class="factor-head"><div class="factor-num">01</div><h3 class="factor-title">Efecto de atracción vs. empuje (Pull vs. Push)</h3></div><p class="factor-body">Una marca sólida reduce la dependencia de la pauta pagada. Genera tráfico orgánico, búsquedas directas e intencionales y referencias boca a boca, lo que incrementa el volumen de conversiones con costo marginal cercano a cero.</p></div><div class="factor"><div class="factor-head"><div class="factor-num">02</div><h3 class="factor-title">Eficiencia de conversión en la pauta de performance</h3></div><p class="factor-body">Las campañas de respuesta directa sobre audiencias que ya conocen, confían y respetan una marca rinden sustancialmente mejor. El <em>Click-Through Rate</em> (CTR) sube y la tasa de conversión en la <em>landing page</em> aumenta, reduciendo el costo por clic (CPC) y el costo por cliente potencial (CPL).</p></div><div class="factor"><div class="factor-head"><div class="factor-num">03</div><h3 class="factor-title">Defensa del poder de fijación de precios (<em>Pricing Power</em>)</h3></div><p class="factor-body">Una marca fuerte reduce la sensibilidad al precio en el prospecto. El esfuerzo comercial necesario para cerrar una venta disminuye, lo que acorta los ciclos de venta y reduce los costos directos asociados al equipo comercial.</p></div></div></div>
         <div class="sep"></div>
-        <div class="section-block"><div class="section-label">03 — El peligro</div><h2 class="section-title">El peligro de un marketing desconectado del CAC</h2><p class="section-body">Cuando el marketing se gestiona de forma aislada a las métricas del estado de resultados (<em>P&amp;L</em>), la organización cae en dos trampas peligrosas:</p><ul class="b2r-list"><li><span><strong>La trampa del volumen efímero:</strong> Equipos orientados únicamente a metas de volumen (MQLs, clics o impresiones) generan prospectos de baja calidad. Esto infla el gasto de inversión comercial e incrementa el costo real de conversión, destruyendo el margen unitario.</span></li><li><span><strong>Adicción a la pauta pagada (<em>Performance Addiction</em>):</strong> Ignorar la construcción de marca obliga a la empresa a alquilar audiencias de forma perpetua. A medida que las plataformas publicitarias incrementan sus costos por mil impresiones (CPM), el CAC se dispara gradualmente hasta volver insostenible la adquisición.</span></li><li><span><strong>Miopía financiera:</strong> Sin una visión integrada entre la inversión de marca y las métricas de eficiencia comercial, el presupuesto de marketing pasa a ser percibido a nivel directivo como un gasto prescindible en lugar de un motor de rentabilidad.</span></li></ul></div>
+        <div class="section-block"><div class="section-label">03 — El peligro</div><h2 class="section-title">El peligro de un marketing desconectado del CAC</h2><p class="section-body">Cuando el marketing se gestiona de forma aislada a las métricas del estado de resultados (<em>P&amp;L</em>), la organización cae en tres trampas peligrosas:</p><ul class="b2r-list"><li><span><strong>La trampa del volumen efímero:</strong> Equipos orientados únicamente a metas de volumen (MQLs, clics o impresiones) generan prospectos de baja calidad. Esto infla el gasto de inversión comercial e incrementa el costo real de conversión, destruyendo el margen unitario.</span></li><li><span><strong>Adicción a la pauta pagada (<em>Performance Addiction</em>):</strong> Ignorar la construcción de marca obliga a la empresa a alquilar audiencias de forma perpetua. A medida que las plataformas publicitarias incrementan sus costos por mil impresiones (CPM), el CAC se dispara gradualmente hasta volver insostenible la adquisición.</span></li><li><span><strong>Miopía financiera:</strong> Sin una visión integrada entre la inversión de marca y las métricas de eficiencia comercial, el presupuesto de marketing pasa a ser percibido a nivel directivo como un gasto prescindible en lugar de un motor de rentabilidad.</span></li></ul></div>
         <div class="sep"></div>
         <div class="section-block"><div class="section-label">04 — Conclusiones</div><h2 class="section-title">La perspectiva de Brand to Revenue</h2><p class="section-body">La filosofía <strong>Brand to Revenue</strong> redefine la relación entre el activo intangible de la marca y la ingeniería financiera del negocio:</p><ul class="b2r-list"><li><span><strong>La marca es un reductor de fricción financiera:</strong> La inversión en marca no se justifica por la vanidad de la notoriedad, sino por su capacidad demostrable para estabilizar y reducir el CAC en el tiempo.</span></li><li><span><strong>Balance entre <em>Brand</em> y <em>Performance</em>:</strong> Para optimizar la economía del cliente, el presupuesto de adquisición debe balancear la creación de demanda futura (marca) con la captura de demanda presente (performance).</span></li><li><span><strong>Alineación directiva:</strong> Reducir el CAC exige que los líderes de marketing traduzcan la salud de la marca en términos que entienda el comité ejecutivo: plazo de recuperación de la inversión (<em>payback</em>), impacto en el valor de vida del cliente (<em>LTV:CAC</em>) y rentabilidad sostenible.</span></li></ul></div>
-        <div class="series-nav"><a class="next" href="B2R_Manifiesto_LTV.html"><div class="series-k">Siguiente en la serie →</div><div class="series-v">Por qué la lealtad no se compra con retargeting</div></a></div>
-        <div class="signature">
-            <img src="images/MQR-profile.png" alt="" width="44" height="44">
-            <div>— Mario Quirós R.<div class="source-note">Publicado originalmente en <a href="https://marioquiros.substack.com/p/mas-alla-del-performance-por-que" target="_blank" rel="noopener">Substack</a>.</div></div>
-        </div>
+        </article>
+        <nav class="series-nav" aria-label="Serie Unit Economics"><a class="next" href="B2R_Manifiesto_LTV.html" rel="next"><div class="series-k">Siguiente en la serie →</div><div class="series-v">Por qué la lealtad no se compra con retargeting</div></a></nav>
+        <aside class="author-box" aria-label="Sobre el autor">
+            <img src="images/MQR-profile.webp" alt="Mario Quirós R., fundador de Brand to Revenue" width="72" height="72" loading="lazy">
+            <div>
+                <div class="author-k">Escrito por</div>
+                <div class="author-name"><a href="./#mario" rel="author">Mario Quirós R.</a></div>
+                <p class="author-bio">Fundador de <a href="./">Brand to Revenue</a>. Estratega de marketing en Panamá desde 2013: Samsung LATAM (Cheil Worldwide), Head de Marketing y Comunicaciones en Tafi, mentor del Programa de Incubación de Ciudad del Saber.</p>
+                <div class="author-links">
+                    <a href="https://marioquiros.vercel.app/" target="_blank" rel="noopener me">Sitio personal</a>
+                    <a href="https://instagram.com/mario_quiros" target="_blank" rel="noopener me">@mario_quiros</a>
+                    <a href="manifiestos.html">Todos los manifiestos</a>
+                    <a href="https://marioquiros.substack.com/p/mas-alla-del-performance-por-que" target="_blank" rel="noopener">También en Substack</a>
+                </div>
+            </div>
+        </aside>
+        <div class="related"><div class="related-k">Sigue leyendo</div><ul><li><a href="B2R_Manifiesto_LTV_CAC.html"><span>Unit Economics · 4/4 · LTV:CAC</span>Tus mejores clientes están pagando la cuenta de los que se van</a></li><li><a href="B2R_Manifiesto_CACPayback.html"><span>Unit Economics · 3/4 · Payback</span>CAC Payback Period: el indicador que transforma el presupuesto comercial en caja operativa</a></li><li><a href="B2R_Manifiesto_TresPilares.html"><span>Arquitectura Brand-to-Revenue</span>Los tres pilares del marketing conectado a la rentabilidad</a></li></ul></div>
     </main>
 
     <!-- CIERRE -->

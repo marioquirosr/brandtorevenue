@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <title>Más allá del Retorno Inmediato: Por qué la lealtad no se compra con retargeting y cómo la marca maximiza el LTV — Brand to Revenue</title>
-    <meta name="description" content="Un análisis bajo la filosofía Brand to Revenue sobre cómo el activo de marca transforma el Customer Lifetime Value en un motor de rentabilidad sostenible.">
+    <title>LTV: cómo la marca maximiza el valor del cliente | Brand to Revenue</title>
+    <meta name="description" content="Qué es el LTV, cómo se calcula y por qué la lealtad no se compra con retargeting. La marca como palanca del valor de vida del cliente. Por Mario Quirós R.">
     <meta name="author" content="Mario Quirós R.">
-    <meta property="og:title" content="Más allá del Retorno Inmediato: Por qué la lealtad no se compra con retargeting y cómo la marca maximiza el LTV — Brand to Revenue">
-    <meta property="og:description" content="Un análisis bajo la filosofía Brand to Revenue sobre cómo el activo de marca transforma el Customer Lifetime Value en un motor de rentabilidad sostenible.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.brandtorevenue.agency/B2R_Manifiesto_LTV.html">
     <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Brand to Revenue">
+    <meta property="og:locale" content="es_PA">
+    <meta property="og:url" content="https://www.brandtorevenue.agency/B2R_Manifiesto_LTV.html">
+    <meta property="og:title" content="LTV: cómo la marca maximiza el valor del cliente | Brand to Revenue">
+    <meta property="og:description" content="Qué es el LTV, cómo se calcula y por qué la lealtad no se compra con retargeting. La marca como palanca del valor de vida del cliente. Por Mario Quirós R.">
+    <meta property="og:image" content="https://www.brandtorevenue.agency/images/og/ltv.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Más allá del Retorno Inmediato: Por qué la lealtad no se compra con retargeting y cómo la marca maximiza el LTV — Mario Quirós R., Brand to Revenue">
     <meta property="article:published_time" content="2026-10-19">
+    <meta property="article:modified_time" content="2026-11-08">
+    <meta property="article:author" content="https://marioquiros.vercel.app/">
+    <meta property="article:section" content="Unit Economics">
+    <meta property="article:tag" content="LTV">
+    <meta property="article:tag" content="customer lifetime value">
+    <meta property="article:tag" content="valor de vida del cliente">
+    <meta property="article:tag" content="retención">
+    <meta property="article:tag" content="LTV:CAC">
+    <meta property="article:tag" content="Brand to Revenue">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LTV: cómo la marca maximiza el valor del cliente | Brand to Revenue">
+    <meta name="twitter:description" content="Qué es el LTV, cómo se calcula y por qué la lealtad no se compra con retargeting. La marca como palanca del valor de vida del cliente. Por Mario Quirós R.">
+    <meta name="twitter:image" content="https://www.brandtorevenue.agency/images/og/ltv.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -641,6 +665,27 @@
         .series-k { font-family: var(--ff-d); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gris-niebla); margin-bottom: 6px; }
         .series-v { font-family: var(--ff-d); font-size: 15px; font-weight: 600; color: var(--negro); line-height: 1.35; }
 
+        h3.factor-title { margin: 0; }
+        .factor-head:last-child { margin-bottom: 0; }
+        .author-box {
+            display: grid; grid-template-columns: 72px 1fr; gap: 20px; align-items: start;
+            margin-top: 56px; padding: 28px 30px; background: var(--lila); border-left: 4px solid var(--morado);
+        }
+        .author-box img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; }
+        .author-k { font-family: var(--ff-d); font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gris-niebla); margin-bottom: 4px; }
+        .author-name { font-family: var(--ff-d); font-size: 17px; font-weight: 700; color: var(--negro); margin-bottom: 6px; }
+        .author-name a { color: inherit; text-decoration: none; }
+        .author-bio { font-size: 14.5px; line-height: 1.7; color: var(--gris-humo); }
+        .author-bio a { color: var(--morado); font-weight: 600; }
+        .author-links { margin-top: 10px; font-family: var(--ff-d); font-size: 12.5px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+        .author-links a { color: var(--morado); text-decoration: none; }
+        .related { margin-top: 56px; }
+        .related-k { font-family: var(--ff-d); font-size: 10px; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: var(--morado); margin-bottom: 14px; }
+        .related ul { list-style: none; display: grid; gap: 2px; }
+        .related a { display: block; padding: 16px 20px; border: 1px solid var(--borde); text-decoration: none; font-family: var(--ff-d); font-weight: 600; font-size: 15px; color: var(--negro); transition: background .2s ease; }
+        .related a:hover { background: var(--lila); }
+        .related a span { display: block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gris-niebla); margin-bottom: 4px; }
+        @media (max-width: 768px) { .author-box { grid-template-columns: 1fr; } }
         .signature {
             display: flex; align-items: center; gap: 12px; margin-top: 56px; padding-top: 28px;
             border-top: 1px solid var(--borde); font-family: var(--ff-d); font-weight: 700; font-size: 15px; color: var(--negro);
@@ -656,12 +701,132 @@
             .series-nav a.next { grid-column: 1; }
         }
     </style>
-<link rel="canonical" href="https://www.brandtorevenue.agency/B2R_Manifiesto_LTV.html">
-<meta property="og:image" content="https://www.brandtorevenue.agency/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
 <script src="config.js?v=1"></script>
 <script src="b2r.js?v=3" defer></script>
 <link rel="stylesheet" href="b2r-shell.css?v=1">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.brandtorevenue.agency/B2R_Manifiesto_LTV.html#article",
+   "headline": "Más allá del Retorno Inmediato: Por qué la lealtad no se compra con retargeting y cómo la marca maximiza el LT",
+   "description": "Qué es el LTV, cómo se calcula y por qué la lealtad no se compra con retargeting. La marca como palanca del valor de vida del cliente. Por Mario Quirós R.",
+   "image": [
+    "https://www.brandtorevenue.agency/images/og/ltv.png"
+   ],
+   "datePublished": "2026-10-19",
+   "dateModified": "2026-11-08",
+   "inLanguage": "es",
+   "author": {
+    "@id": "https://www.brandtorevenue.agency/#mario"
+   },
+   "publisher": {
+    "@id": "https://www.brandtorevenue.agency/#org"
+   },
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.brandtorevenue.agency/B2R_Manifiesto_LTV.html"
+   },
+   "articleSection": "Unit Economics",
+   "keywords": [
+    "LTV",
+    "customer lifetime value",
+    "valor de vida del cliente",
+    "retención",
+    "LTV:CAC",
+    "Brand to Revenue"
+   ],
+   "isPartOf": [
+    {
+     "@type": "CollectionPage",
+     "@id": "https://www.brandtorevenue.agency/manifiestos.html",
+     "name": "Manifiestos"
+    },
+    {
+     "@type": "CreativeWorkSeries",
+     "name": "Unit Economics · Brand to Revenue"
+    }
+   ],
+   "wordCount": 836
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://www.brandtorevenue.agency/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Manifiestos",
+     "item": "https://www.brandtorevenue.agency/manifiestos.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Más allá del Retorno Inmediato: Por qué la lealtad no se compra con retargeting y cómo la marca maximiza el LT",
+     "item": "https://www.brandtorevenue.agency/B2R_Manifiesto_LTV.html"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.brandtorevenue.agency/#mario",
+   "name": "Mario Quirós R.",
+   "alternateName": "Mario Quirós",
+   "jobTitle": "Consultor de marketing",
+   "description": "Fundador de Brand to Revenue. Estratega de marketing en Panamá desde 2013: Samsung LATAM (Cheil Worldwide), Head de Marketing y Comunicaciones en Tafi, mentor del Programa de Incubación de Ciudad del Saber.",
+   "url": "https://marioquiros.vercel.app/",
+   "image": "https://www.brandtorevenue.agency/images/MQR-profile.webp",
+   "worksFor": {
+    "@id": "https://www.brandtorevenue.agency/#org"
+   },
+   "homeLocation": {
+    "@type": "Country",
+    "name": "Panamá"
+   },
+   "knowsAbout": [
+    "Marketing estratégico",
+    "Unit economics",
+    "CAC",
+    "LTV",
+    "CAC Payback Period",
+    "Brand building",
+    "Atribución de marketing",
+    "Go-To-Market"
+   ],
+   "sameAs": [
+    "https://marioquiros.vercel.app/",
+    "https://instagram.com/mario_quiros",
+    "https://marioquiros.substack.com/"
+   ]
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://www.brandtorevenue.agency/#org",
+   "name": "Brand to Revenue",
+   "url": "https://www.brandtorevenue.agency/",
+   "logo": "https://www.brandtorevenue.agency/images/B2R_logo_black.png",
+   "founder": {
+    "@id": "https://www.brandtorevenue.agency/#mario"
+   },
+   "areaServed": [
+    "Panamá",
+    "Costa Rica",
+    "Guatemala"
+   ],
+   "sameAs": [
+    "https://instagram.com/brandtorevenue"
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -689,34 +854,47 @@
     <!-- PORTADA -->
     <div class="cover">
         <div class="cover-inner">
-            <div class="cover-eyebrow">Manifiesto B2R · Unit Economics 2/3</div>
+            <div class="cover-eyebrow">Manifiesto B2R · Unit Economics 2/4</div>
             <h1 class="cover-title" style="font-size:clamp(40px,6.4vw,64px);">Por qué la lealtad no se compra con retargeting y cómo la marca maximiza el LTV</h1>
             <p class="cover-subtitle">Un análisis bajo la filosofía Brand to Revenue sobre cómo el activo de marca transforma el Customer Lifetime Value en un motor de rentabilidad sostenible.</p>
             <div class="cover-meta">
-                <div class="meta-item"><div class="meta-k">Formato</div><div class="meta-v">Manifiesto</div></div>
+                <div class="meta-item"><div class="meta-k">Autor</div><div class="meta-v">Mario Quirós R.</div></div>
                 <div class="meta-item"><div class="meta-k">Eje</div><div class="meta-v">Marca → LTV</div></div>
                 <div class="meta-item"><div class="meta-k">Lectura</div><div class="meta-v">5 minutos</div></div>
-                <div class="meta-item"><div class="meta-k">Publicado</div><div class="meta-v">19 oct 2026</div></div>
+                <div class="meta-item"><div class="meta-k">Publicado</div><div class="meta-v"><time datetime="2026-10-19">19 oct 2026</time></div></div>
             </div>
         </div>
     </div>
 
     <!-- CONTENIDO -->
     <main id="main" class="container">
+        <article>
         <div class="section-block"><div class="section-label">Introducción</div><p class="section-body lead">En mi artículo anterior analizamos el <strong>CAC (Costo de Adquisición de Clientes)</strong> y explicamos por qué optimizar pautas en medios digitales o pulir el embudo de conversión no resolverá los problemas estructurales de tu costo de adquisición si no construyes marca.</p><p class="section-body">Hoy quiero hablarte de la otra mitad de la ecuación financiera: el <strong>Customer Lifetime Value (LTV)</strong>, o Valor de Vida del Cliente, y cómo el activo de marca es la única palanca capaz de maximizar la rentabilidad de cada cliente captado a largo plazo.</p></div>
         <div class="sep"></div>
         <div class="section-block"><div class="section-label">01 — Qué es el LTV</div><h2 class="section-title">Qué es el LTV y por qué dicta la valoración y escalabilidad de un negocio</h2><p class="section-body">El <strong>Customer Lifetime Value (LTV)</strong> mide el beneficio neto estimado que genera un cliente a lo largo de toda su relación comercial con la empresa.</p><div class="formula" role="math" aria-label="LTV igual a Average Revenue Per User/Customer × Margen Bruto (%) entre Churn Rate"><div class="formula-k">Fórmula</div><span class="formula-lhs">LTV</span><span class="formula-eq">=</span><span class="formula-frac"><span class="formula-num">Average Revenue Per User/Customer × Margen Bruto (%)</span><span class="formula-den">Churn Rate</span></span></div><p class="section-body">Mientras que el <strong>CAC</strong> determina cuánto nos cuesta abrir la puerta a un nuevo comprador, el <strong>LTV</strong> determina cuánto valor extraemos de esa relación en el tiempo. En la ingeniería financiera del negocio, el LTV no es una métrica superficial de satisfacción; es el indicador definitivo de eficiencia de capital, margen bruto acumulado y sostenibilidad a largo plazo.</p><p class="section-body">Un LTV elevado permite tres ventajas competitivas fundamentales:</p><ul class="b2r-list"><li><span><strong>Mayor margen de maniobra en adquisición:</strong> A mayor LTV, mayor capacidad de reinversión en captación sin comprometer la rentabilidad.</span></li><li><span><strong>Compensación del CAC:</strong> Permite expandir el <em>LTV:CAC Ratio</em> hacia niveles saludables (3:1 o superior) sin depender exclusivamente de recortar gastos en marketing.</span></li><li><span><strong>Predecibilidad del flujo de caja:</strong> Reduce la vulnerabilidad ante cambios macroeconómicos o incrementos en las tarifas de medios digitales.</span></li></ul></div>
         <div class="sep"></div>
-        <div class="section-block"><div class="section-label">02 — El impacto real</div><h2 class="section-title">El impacto real del marketing en el LTV a través del Brand Building</h2><p class="section-body">En el marketing de respuesta directa, el esfuerzo por aumentar la retención o las recompras suele reducirse a tácticas de automatización: secuencias de emails con descuentos, alertas de carrito abandonado o campañas agresivas de <em>retargeting</em>. Bajo la filosofía <strong>Brand to Revenue</strong>, esto es solo estimulación de corto plazo que erosiona los márgenes.</p><p class="section-body">El verdadero incremento estructural del LTV se logra mediante la <strong>construcción de marca (Brand Building)</strong>, la cual actúa en cuatro pilares financieros:</p><div style="margin:24px 0;"><div class="factor"><div class="factor-head"><div class="factor-num">01</div><div class="factor-title">Aumento de la Tasa de Retención Orgánica (Retention Rate)</div></div><p class="factor-body">Una marca que transmite propósito, consistencia y valor crea una conexión emocional que trasciende la transacción. Los clientes no permanecen por el cupón de descuento, sino por la afinidad y la confianza acumulada.</p></div><div class="factor"><div class="factor-head"><div class="factor-num">02</div><div class="factor-title">Capacidad de Expansión y Cross-selling</div></div><p class="factor-body">Las marcas fuertes gozan de una “licencia de extensión”. Cuando una empresa con reputación sólida lanza una nueva línea de productos o servicios adicionales, la barrera de adopción en la base existente es mínima.</p></div><div class="factor"><div class="factor-head"><div class="factor-num">03</div><div class="factor-title">Poder de Fijación de Precios Continuo (Pricing Power Retention)</div></div><p class="factor-body">Permite realizar ajustes de precios o actualizaciones de tarifas sin sufrir tasas desproporcionadas de cancelación (<em>churn</em>).</p></div><div class="factor"><div class="factor-head"><div class="factor-num">04</div><div class="factor-title">Reducción del Costo de Servir (Cost to Serve)</div></div><p class="factor-body">Los clientes que confían en una marca alineada a sus expectativas generan menos fricción operativa, requiriendo menor soporte y menos incentivos económicos para mantenerse activos.</p></div></div></div>
+        <div class="section-block"><div class="section-label">02 — El impacto real</div><h2 class="section-title">El impacto real del marketing en el LTV a través del Brand Building</h2><p class="section-body">En el marketing de respuesta directa, el esfuerzo por aumentar la retención o las recompras suele reducirse a tácticas de automatización: secuencias de emails con descuentos, alertas de carrito abandonado o campañas agresivas de <em>retargeting</em>. Bajo la filosofía <strong>Brand to Revenue</strong>, esto es solo estimulación de corto plazo que erosiona los márgenes.</p><p class="section-body">El verdadero incremento estructural del LTV se logra mediante la <strong>construcción de marca (Brand Building)</strong>, la cual actúa en cuatro pilares financieros:</p><div style="margin:24px 0;"><div class="factor"><div class="factor-head"><div class="factor-num">01</div><h3 class="factor-title">Aumento de la Tasa de Retención Orgánica (Retention Rate)</h3></div><p class="factor-body">Una marca que transmite propósito, consistencia y valor crea una conexión emocional que trasciende la transacción. Los clientes no permanecen por el cupón de descuento, sino por la afinidad y la confianza acumulada.</p></div><div class="factor"><div class="factor-head"><div class="factor-num">02</div><h3 class="factor-title">Capacidad de Expansión y Cross-selling</h3></div><p class="factor-body">Las marcas fuertes gozan de una “licencia de extensión”. Cuando una empresa con reputación sólida lanza una nueva línea de productos o servicios adicionales, la barrera de adopción en la base existente es mínima.</p></div><div class="factor"><div class="factor-head"><div class="factor-num">03</div><h3 class="factor-title">Poder de Fijación de Precios Continuo (Pricing Power Retention)</h3></div><p class="factor-body">Permite realizar ajustes de precios o actualizaciones de tarifas sin sufrir tasas desproporcionadas de cancelación (<em>churn</em>).</p></div><div class="factor"><div class="factor-head"><div class="factor-num">04</div><h3 class="factor-title">Reducción del Costo de Servir (Cost to Serve)</h3></div><p class="factor-body">Los clientes que confían en una marca alineada a sus expectativas generan menos fricción operativa, requiriendo menor soporte y menos incentivos económicos para mantenerse activos.</p></div></div></div>
         <div class="sep"></div>
-        <div class="section-block"><div class="section-label">03 — El peligro</div><h2 class="section-title">El peligro de un marketing desconectado del LTV</h2><p class="section-body">Gestionar la retención y el crecimiento de clientes de forma aislada a las métricas del P&amp;L lleva a la organización a cometer tres errores estratégicos:</p><ul class="b2r-list"><li><span><strong>La trampa de la retención costosa:</strong> Intentar mantener clientes retenidos a base de promociones, descuentos constantes o programas de lealtad costosos. Esto infla artificialmente la tasa de retención, pero destruye la rentabilidad unitaria por cliente.</span></li><li><span><strong>Miopía en la captación (El “Churn” invisible):</strong> Adquirir volumen masivo con mensajes agresivos o promesas desalineadas para bajar el CAC inmediato. Esto atrae clientes de baja calidad que cancelan rápidamente, colapsando el LTV real del cohorte.</span></li><li><span><strong>Erosión del valor de marca:</strong> La sobreexposición a tácticas de persuasión agresivas y comunicación puramente transaccional degrada la percepción de la empresa, convirtiéndola en un <em>commodity</em> intercambiable por precio.</span></li></ul></div>
+        <div class="section-block"><div class="section-label">03 — El peligro</div><h2 class="section-title">El peligro de un marketing desconectado del LTV</h2><p class="section-body">Gestionar la retención y el crecimiento de clientes de forma aislada a las métricas del P&amp;L lleva a la organización a cometer tres errores estratégicos:</p><ul class="b2r-list"><li><span><strong>La trampa de la retención costosa:</strong> Intentar mantener clientes retenidos a base de promociones, descuentos constantes o programas de lealtad costosos. Esto infla artificialmente la tasa de retención, pero destruye la rentabilidad unitaria por cliente.</span></li><li><span><strong>Miopía en la captación (El “Churn” invisible):</strong> Adquirir volumen masivo con mensajes agresivos o promesas desalineadas para bajar el CAC inmediato. Esto atrae clientes de baja calidad que cancelan rápidamente, colapsando el LTV real de la cohorte.</span></li><li><span><strong>Erosión del valor de marca:</strong> La sobreexposición a tácticas de persuasión agresivas y comunicación puramente transaccional degrada la percepción de la empresa, convirtiéndola en un <em>commodity</em> intercambiable por precio.</span></li></ul></div>
         <div class="sep"></div>
         <div class="section-block"><div class="section-label">04 — Conclusiones</div><h2 class="section-title">La perspectiva de Brand to Revenue</h2><p class="section-body">La filosofía <strong>Brand to Revenue</strong> conecta el valor intangible de la marca con la maximización del valor del cliente a largo plazo:</p><ul class="b2r-list"><li><span><strong>La marca multiplica el retorno sobre el CAC:</strong> Un CAC optimizado solo entrega su verdadero potencial si está respaldado por un LTV robusto. La marca es el puente que garantiza que el capital invertido hoy rinda frutos durante años.</span></li><li><span><strong>Del enfoque transaccional al relacional:</strong> La lealtad no se compra en subastas de anuncios digitales; se construye mediante la consistencia del posicionamiento y la entrega sistemática de valor.</span></li><li><span><strong>Alineación directiva y métricas clave:</strong> Maximizar el LTV exige que la alta dirección evalúe el impacto de la marca en variables clave: tasa de retención por cohortes, margen bruto acumulado por usuario (<em>Gross Margin LTV</em>) y la relación <strong>LTV:CAC</strong>.</span></li></ul></div>
-        <div class="series-nav"><a href="B2R_Manifiesto_CAC.html"><div class="series-k">← Anterior en la serie</div><div class="series-v">Por qué optimizar anuncios no resolverá tu CAC</div></a><a class="next" href="B2R_Manifiesto_CACPayback.html"><div class="series-k">Siguiente en la serie →</div><div class="series-v">CAC Payback Period: presupuesto comercial en caja operativa</div></a></div>
-        <div class="signature">
-            <img src="images/MQR-profile.png" alt="" width="44" height="44">
-            <div>— Mario Quirós R.<div class="source-note">Publicado originalmente en <a href="https://marioquiros.substack.com/p/b2r-ltv" target="_blank" rel="noopener">Substack</a>.</div></div>
-        </div>
+        </article>
+        <nav class="series-nav" aria-label="Serie Unit Economics"><a href="B2R_Manifiesto_CAC.html" rel="prev"><div class="series-k">← Anterior en la serie</div><div class="series-v">Por qué optimizar anuncios no resolverá tu CAC</div></a><a class="next" href="B2R_Manifiesto_CACPayback.html" rel="next"><div class="series-k">Siguiente en la serie →</div><div class="series-v">CAC Payback Period: presupuesto comercial en caja operativa</div></a></nav>
+        <aside class="author-box" aria-label="Sobre el autor">
+            <img src="images/MQR-profile.webp" alt="Mario Quirós R., fundador de Brand to Revenue" width="72" height="72" loading="lazy">
+            <div>
+                <div class="author-k">Escrito por</div>
+                <div class="author-name"><a href="./#mario" rel="author">Mario Quirós R.</a></div>
+                <p class="author-bio">Fundador de <a href="./">Brand to Revenue</a>. Estratega de marketing en Panamá desde 2013: Samsung LATAM (Cheil Worldwide), Head de Marketing y Comunicaciones en Tafi, mentor del Programa de Incubación de Ciudad del Saber.</p>
+                <div class="author-links">
+                    <a href="https://marioquiros.vercel.app/" target="_blank" rel="noopener me">Sitio personal</a>
+                    <a href="https://instagram.com/mario_quiros" target="_blank" rel="noopener me">@mario_quiros</a>
+                    <a href="manifiestos.html">Todos los manifiestos</a>
+                    <a href="https://marioquiros.substack.com/p/b2r-ltv" target="_blank" rel="noopener">También en Substack</a>
+                </div>
+            </div>
+        </aside>
+        <div class="related"><div class="related-k">Sigue leyendo</div><ul><li><a href="B2R_Manifiesto_LTV_CAC.html"><span>Unit Economics · 4/4 · LTV:CAC</span>Tus mejores clientes están pagando la cuenta de los que se van</a></li><li><a href="B2R_Manifiesto_TresPilares.html"><span>Arquitectura Brand-to-Revenue</span>Los tres pilares del marketing conectado a la rentabilidad</a></li><li><a href="B2R_Manifiesto_MarketingCFO.html"><span>Marketing y finanzas</span>Cuando el marketing y el CFO hablan idiomas distintos</a></li></ul></div>
     </main>
 
     <!-- CIERRE -->
