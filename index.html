@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" href="favicon.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;1,300;1,700&display=swap">
 <link rel="stylesheet" href="b2r.css?v=7">
 <script>document.documentElement.classList.add("js");</script>
 <script src="config.js?v=1"></script>
@@ -90,6 +90,109 @@
 </header>
 
 <main id="main">
+
+  <!-- BANNER ANIMADO (awareness) -->
+  <style>
+  .b2r-hero{
+    --morado:#2E1C52; --morado-m:#5C38A4; --lila:#F4F1FA;
+    --magenta:#E91E64; --amarillo:#FFE600; --negro:#1A1525;
+    position:relative; overflow:hidden; isolation:isolate;
+    width:100%; height:clamp(420px, 62vh, 640px);
+    background:var(--morado);
+    font-family:'Poppins',system-ui,sans-serif; color:var(--lila);
+  }
+  .b2r-hero::before{
+    content:""; position:absolute; inset:-20%; z-index:-1;
+    background:radial-gradient(40% 45% at 50% 48%, rgba(92,56,164,.55), transparent 70%);
+    animation:b2rBreath 6s ease-in-out infinite;
+  }
+  .b2r-hero.is-cut{ background:var(--negro); }
+  .b2r-hero.is-cut::before{ opacity:0; }
+  @keyframes b2rBreath{ 50%{ transform:scale(1.08); opacity:.8; } }
+
+  .b2r-stage{ position:absolute; inset:0; display:grid; place-items:center; padding:0 6vw 80px; text-align:center; }
+  .b2r-line{ font-size:clamp(30px, 5.4vw, 64px); line-height:1.08; letter-spacing:-.02em; }
+
+  .b2r-eye{ position:absolute; left:0; right:0; top:calc(50% - 40px - clamp(30px, 5.4vw, 64px) * 1.15); text-align:center;
+    font-weight:300; font-size:clamp(14px, 1.6vw, 20px); letter-spacing:.14em; text-transform:uppercase; color:var(--lila);
+    opacity:0; transition:opacity .4s ease; }
+  .b2r-eye.on{ opacity:.7; }
+  .b2r-thin{ font-weight:200; }
+  .b2r-light-i{ font-weight:300; font-style:italic; }
+  .b2r-bold{ font-weight:800; }
+  .b2r-bi{ font-weight:700; font-style:italic; color:var(--amarillo); text-shadow:0 0 28px rgba(255,230,0,.45); }
+
+  .b2r-in{ animation:b2rIn .45s cubic-bezier(.2,.8,.2,1) both; }
+  .b2r-out{ animation:b2rOut .18s ease-in both; }
+  @keyframes b2rIn{ from{ opacity:0; filter:blur(10px); transform:translateY(8px) scale(.98);} to{ opacity:1; filter:none; transform:none;} }
+  @keyframes b2rOut{ to{ opacity:0; filter:blur(6px); transform:scale(1.02);} }
+
+  .b2r-cursor{ display:inline-block; width:.06em; height:.9em; margin-left:.08em; vertical-align:-.08em;
+    background:var(--amarillo); animation:b2rBlink .8s steps(1) infinite; }
+  @keyframes b2rBlink{ 50%{ opacity:0; } }
+
+
+  .b2r-cta-wrap{ position:absolute; left:0; right:0; bottom:40px; display:flex; justify-content:center; }
+  .b2r-cta{ color:var(--lila); opacity:.7; text-decoration:none; font-weight:300; font-size:13px; letter-spacing:.06em;
+    transition:opacity .3s; }
+  .b2r-cta:hover{ opacity:1; }
+  .b2r-cta span{ display:inline-block; margin-left:.4em; animation:b2rNudge 1.8s ease-in-out infinite; }
+  @keyframes b2rNudge{ 50%{ transform:translateY(4px); } }
+
+  .b2r-sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  @media (max-width:600px){ .b2r-cta-wrap{ bottom:28px; } }
+    </style>
+  <section class="b2r-hero" id="b2rHero" aria-label="Brand to Revenue">
+  <div class="b2r-eye" id="b2rEye" aria-hidden="true">Tu cliente</div>
+  <div class="b2r-stage" aria-hidden="true"><div class="b2r-line" id="b2rLine"></div></div>
+  <p class="b2r-sr">Tu cliente te ve, te entiende, te compra y te vuelve a elegir. Eso es una marca. Brand to Revenue.</p>
+  <div class="b2r-cta-wrap">
+    <a class="b2r-cta" href="#metodologia">Conoce el método<span>↓</span></a>
+  </div>
+</section>
+  <script>
+(function(){
+  var hero = document.getElementById('b2rHero');
+  var line = document.getElementById('b2rLine');
+  var eye = document.getElementById('b2rEye');
+  var FINAL = '<span class="b2r-thin">Eso es una marca.</span><br><span class="b2r-bi">Brand to Revenue.</span>';
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){ line.innerHTML = FINAL; return; }
+
+  var scenes = [
+    { html:'<span class="b2r-thin">te ve.</span>', t:1000, eye:true },
+    { html:'<span class="b2r-light-i">te entiende.</span>', t:1000, eye:true },
+    { html:'<span class="b2r-thin">te compra.</span>', t:1000, eye:true },
+    { html:'<span class="b2r-light-i">te vuelve a elegir.</span>', t:1300, eye:true },
+    { html:'<span class="b2r-bold">Eso es una marca.</span>', t:1500, cut:true },
+    { type:true, t:3400 }
+  ];
+
+  var i = 0;
+  function show(){
+    var s = scenes[i];
+    hero.classList.toggle('is-cut', !!s.cut);
+    eye.classList.toggle('on', !!s.eye);
+    if (s.type){ typeFinal(); }
+    else { line.className = 'b2r-line b2r-in'; line.innerHTML = s.html; }
+    setTimeout(function(){
+      line.className = 'b2r-line b2r-out';
+      setTimeout(function(){ i = (i+1) % scenes.length; show(); }, 180);
+    }, s.t);
+  }
+
+  function typeFinal(){
+    var word = 'Brand to Revenue.', n = 0;
+    line.className = 'b2r-line b2r-in';
+    line.innerHTML = '<span class="b2r-thin">Eso es una marca.</span><br><span class="b2r-bi" id="b2rType"></span><span class="b2r-cursor"></span>';
+    var el = document.getElementById('b2rType');
+    (function tick(){ if (n <= word.length){ el.textContent = word.slice(0, n++); setTimeout(tick, 55); } })();
+  }
+
+  show();
+})();
+</script>
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
