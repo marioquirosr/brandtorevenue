@@ -95,58 +95,62 @@
   <style>
   .b2r-hero{
     --morado:#2E1C52; --morado-m:#5C38A4; --lila:#F4F1FA;
-    --magenta:#E91E64; --amarillo:#FFE600; --negro:#1A1525;
+    --amarillo:#FFE600; --negro:#1A1525;
     position:relative; overflow:hidden; isolation:isolate;
-    width:100%; height:clamp(280px, 42vh, 440px);
-    background:var(--morado);
-    font-family:'Poppins',system-ui,sans-serif; color:var(--lila);
+    width:100%; height:clamp(320px, 50vh, 500px);
+    background:var(--negro); color:var(--amarillo);
+    font-family:'Poppins',system-ui,sans-serif;
   }
+  .b2r-hero.is-y{ background:var(--amarillo); color:var(--negro); }
+  .b2r-hero.is-m{ background:var(--morado); color:var(--amarillo); }
+
+  /* ola de luz sobre amarillo (como la referencia) */
   .b2r-hero::before{
-    content:""; position:absolute; inset:-20%; z-index:-1;
-    background:radial-gradient(40% 45% at 50% 48%, rgba(92,56,164,.55), transparent 70%);
-    animation:b2rBreath 6s ease-in-out infinite;
+    content:""; position:absolute; z-index:-1; top:-20%; bottom:-20%; width:38%; left:-40%;
+    background:radial-gradient(closest-side, rgba(255,255,255,.85), rgba(255,255,255,0));
+    filter:blur(30px); opacity:0;
   }
-  .b2r-hero.is-cut{ background:var(--negro); }
-  .b2r-hero.is-cut::before{ opacity:0; }
-  @keyframes b2rBreath{ 50%{ transform:scale(1.08); opacity:.8; } }
+  .b2r-hero.is-y.wave::before{ opacity:1; animation:b2rWave 1.1s cubic-bezier(.3,.6,.3,1) both; }
+  @keyframes b2rWave{ from{ left:-40%; } to{ left:105%; } }
 
-  .b2r-stage{ position:absolute; inset:0; display:grid; place-items:center; padding:0 6vw 44px; text-align:center; }
-  .b2r-line{ font-size:clamp(30px, 5.4vw, 64px); line-height:1.08; letter-spacing:-.02em; }
+  /* retícula tenue sobre oscuro */
+  .b2r-hero::after{
+    content:""; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .3s;
+    background-image:linear-gradient(rgba(255,230,0,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,230,0,.07) 1px, transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:radial-gradient(45% 40% at 50% 50%, #000, transparent 75%); mask-image:radial-gradient(45% 40% at 50% 50%, #000, transparent 75%);
+  }
+  .b2r-hero.grid::after{ opacity:1; }
 
-  .b2r-eye{ position:absolute; left:0; right:0; top:calc(50% - 22px - clamp(30px, 5.4vw, 64px) * 1.15); text-align:center;
-    font-weight:300; font-size:clamp(14px, 1.6vw, 20px); letter-spacing:.14em; text-transform:uppercase; color:var(--lila);
-    opacity:0; transition:opacity .4s ease; }
-  .b2r-eye.on{ opacity:.7; }
-  .b2r-thin{ font-weight:200; }
-  .b2r-light-i{ font-weight:300; font-style:italic; }
-  .b2r-bold{ font-weight:800; }
-  .b2r-bi{ font-weight:700; font-style:italic; color:var(--amarillo); text-shadow:0 0 28px rgba(255,230,0,.45); }
+  .b2r-stage{ position:absolute; inset:0; display:grid; place-items:center; padding:0 5vw 40px; text-align:center; }
+  .b2r-line{ font-weight:800; font-size:clamp(44px, 8.4vw, 112px); line-height:.92; letter-spacing:-.05em; }
+  .b2r-glow{ text-shadow:0 0 18px rgba(255,230,0,.55), 0 0 60px rgba(255,230,0,.35); }
+  .b2r-sm{ display:block; font-size:.46em; letter-spacing:-.03em; line-height:1.05; }
+  .b2r-it{ font-style:italic; font-weight:700; }
+  .b2r-l{ text-align:left; display:inline-block; }
+  .b2r-r{ display:block; text-align:right; }
 
-  .b2r-in{ animation:b2rIn .45s cubic-bezier(.2,.8,.2,1) both; }
-  .b2r-out{ animation:b2rOut .18s ease-in both; }
-  @keyframes b2rIn{ from{ opacity:0; filter:blur(10px); transform:translateY(8px) scale(.98);} to{ opacity:1; filter:none; transform:none;} }
-  @keyframes b2rOut{ to{ opacity:0; filter:blur(6px); transform:scale(1.02);} }
+  .b2r-in{ animation:b2rIn .32s cubic-bezier(.2,.9,.2,1) both; }
+  @keyframes b2rIn{ from{ opacity:0; filter:blur(14px); transform:scale(1.12); } to{ opacity:1; filter:none; transform:none; } }
+  .b2r-flick{ animation:b2rFlick .5s steps(1) both; }
+  @keyframes b2rFlick{ 0%{opacity:0} 20%{opacity:1} 30%{opacity:.25} 45%{opacity:1} 55%{opacity:.5} 65%,100%{opacity:1} }
 
-  .b2r-cursor{ display:inline-block; width:.06em; height:.9em; margin-left:.08em; vertical-align:-.08em;
-    background:var(--amarillo); animation:b2rBlink .8s steps(1) infinite; }
+  .b2r-cursor{ display:inline-block; width:.07em; height:.82em; margin-right:.06em; vertical-align:-.04em;
+    background:currentColor; animation:b2rBlink .7s steps(1) infinite; }
   @keyframes b2rBlink{ 50%{ opacity:0; } }
 
-
-  .b2r-cta-wrap{ position:absolute; left:0; right:0; bottom:22px; display:flex; justify-content:center; }
-  .b2r-cta{ color:var(--lila); opacity:.7; text-decoration:none; font-weight:300; font-size:13px; letter-spacing:.06em;
-    transition:opacity .3s; }
+  .b2r-cta-wrap{ position:absolute; left:0; right:0; bottom:20px; display:flex; justify-content:center; }
+  .b2r-cta{ color:inherit; opacity:.75; text-decoration:none; font-weight:500; font-size:13px; letter-spacing:.06em; transition:opacity .3s; }
   .b2r-cta:hover{ opacity:1; }
   .b2r-cta span{ display:inline-block; margin-left:.4em; animation:b2rNudge 1.8s ease-in-out infinite; }
   @keyframes b2rNudge{ 50%{ transform:translateY(4px); } }
 
   .b2r-sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
-
-  @media (max-width:600px){ .b2r-cta-wrap{ bottom:16px; } }
+  @media (max-width:600px){ .b2r-cta-wrap{ bottom:14px; } }
     </style>
-  <section class="b2r-hero" id="b2rHero" aria-label="Brand to Revenue">
-  <div class="b2r-eye" id="b2rEye" aria-hidden="true">Tu cliente</div>
+  <section class="b2r-hero is-y" id="b2rHero" aria-label="Brand to Revenue">
   <div class="b2r-stage" aria-hidden="true"><div class="b2r-line" id="b2rLine"></div></div>
-  <p class="b2r-sr">Tu cliente te ve, te entiende, te compra y te vuelve a elegir. Eso es una marca. Brand to Revenue.</p>
+  <p class="b2r-sr">Tu cliente te ve, te entiende, te compra y te vuelve a elegir. Atención, confianza, demanda, lealtad. Eso es una marca. Brand to Revenue.</p>
   <div class="b2r-cta-wrap">
     <a class="b2r-cta" href="#metodologia">Conoce el método<span>↓</span></a>
   </div>
@@ -155,41 +159,54 @@
 (function(){
   var hero = document.getElementById('b2rHero');
   var line = document.getElementById('b2rLine');
-  var eye = document.getElementById('b2rEye');
-  var FINAL = '<span class="b2r-thin">Eso es una marca.</span><br><span class="b2r-bi">Brand to Revenue.</span>';
+  var FINAL_BG = 'y';
+  var FINAL = 'Brand to Revenue.';
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){ line.innerHTML = FINAL; return; }
-
+  // bg: y = amarillo, k = negro, m = morado · fx: wave, grid, glow, flick, type
   var scenes = [
-    { html:'<span class="b2r-thin">te ve.</span>', t:1000, eye:true },
-    { html:'<span class="b2r-light-i">te entiende.</span>', t:1000, eye:true },
-    { html:'<span class="b2r-thin">te compra.</span>', t:1000, eye:true },
-    { html:'<span class="b2r-light-i">te vuelve a elegir.</span>', t:1300, eye:true },
-    { html:'<span class="b2r-bold">Eso es una marca.</span>', t:1500, cut:true },
-    { type:true, t:3400 }
+    { bg:'y', type:'Tu cliente', t:1100 },
+    { bg:'k', html:'<span class="b2r-glow">te ve.</span>', t:650, fx:'grid' },
+    { bg:'y', html:'te entiende.', t:800, fx:'wave' },
+    { bg:'k', html:'<span class="b2r-l"><span class="b2r-sm">te</span><span class="b2r-glow">compra.</span></span>', t:800 },
+    { bg:'y', html:'y te vuelve', t:600, fx:'wave' },
+    { bg:'k', html:'<span class="b2r-glow b2r-it">a elegir.</span>', t:900, fx:'flick' },
+    { bg:'y', html:'atención', t:420 },
+    { bg:'y', html:'confianza', t:420 },
+    { bg:'y', html:'demanda', t:420 },
+    { bg:'y', html:'lealtad', t:520 },
+    { bg:'m', html:'<span class="b2r-l"><span class="b2r-sm">eso es</span><span class="b2r-glow">una marca.</span></span>', t:1400, fx:'grid' },
+    { bg:'y', type:FINAL, t:2600, fx:'wave' }
   ];
 
-  var i = 0;
+  function setBg(s){
+    hero.classList.remove('is-y','is-m','wave','grid');
+    void hero.offsetWidth; // reinicia la ola
+    if (s.bg === 'y') hero.classList.add('is-y');
+    if (s.bg === 'm') hero.classList.add('is-m');
+    if (s.fx === 'wave' || s.fx === 'grid') hero.classList.add(s.fx);
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    hero.classList.add('is-y'); line.textContent = FINAL; return;
+  }
+
+  var i = 0, typer;
   function show(){
     var s = scenes[i];
-    hero.classList.toggle('is-cut', !!s.cut);
-    eye.classList.toggle('on', !!s.eye);
-    if (s.type){ typeFinal(); }
-    else { line.className = 'b2r-line b2r-in'; line.innerHTML = s.html; }
-    setTimeout(function(){
-      line.className = 'b2r-line b2r-out';
-      setTimeout(function(){ i = (i+1) % scenes.length; show(); }, 180);
-    }, s.t);
+    clearTimeout(typer);
+    setBg(s);
+    if (s.type){
+      var n = 0; line.className = 'b2r-line';
+      (function tick(){
+        line.innerHTML = s.type.slice(0, n) + '<span class="b2r-cursor"></span>';
+        if (n++ < s.type.length) typer = setTimeout(tick, 45);
+      })();
+    } else {
+      line.className = 'b2r-line ' + (s.fx === 'flick' ? 'b2r-flick' : 'b2r-in');
+      line.innerHTML = s.html;
+    }
+    setTimeout(function(){ i = (i + 1) % scenes.length; show(); }, s.t + (s.type ? s.type.length * 45 : 0));
   }
-
-  function typeFinal(){
-    var word = 'Brand to Revenue.', n = 0;
-    line.className = 'b2r-line b2r-in';
-    line.innerHTML = '<span class="b2r-thin">Eso es una marca.</span><br><span class="b2r-bi" id="b2rType"></span><span class="b2r-cursor"></span>';
-    var el = document.getElementById('b2rType');
-    (function tick(){ if (n <= word.length){ el.textContent = word.slice(0, n++); setTimeout(tick, 55); } })();
-  }
-
   show();
 })();
 </script>
