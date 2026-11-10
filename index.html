@@ -124,6 +124,7 @@
 
   .b2r-stage{ position:absolute; inset:0; display:grid; place-items:center; padding:0 5vw 40px; text-align:center; }
   .b2r-line{ font-weight:800; font-size:clamp(44px, 8.4vw, 112px); line-height:.92; letter-spacing:-.05em; }
+  .b2r-one{ white-space:nowrap; font-size:min(clamp(44px, 8.4vw, 112px), 9vw); }
   .b2r-glow{ text-shadow:0 0 18px rgba(255,230,0,.55), 0 0 60px rgba(255,230,0,.35); }
   .b2r-sm{ display:block; font-size:.46em; letter-spacing:-.03em; line-height:1.05; }
   .b2r-it{ font-style:italic; font-weight:700; }
@@ -175,7 +176,7 @@
     { bg:'y', html:'demanda', t:420 },
     { bg:'y', html:'lealtad', t:520 },
     { bg:'m', html:'<span class="b2r-l"><span class="b2r-sm">eso es</span><span class="b2r-glow">una marca.</span></span>', t:1400, fx:'grid' },
-    { bg:'y', type:FINAL, t:2600, fx:'wave' }
+    { bg:'y', type:FINAL, t:2600, fx:'wave', one:true }
   ];
 
   function setBg(s){
@@ -187,7 +188,7 @@
   }
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    hero.classList.add('is-y'); line.textContent = FINAL; return;
+    hero.classList.add('is-y'); line.className = 'b2r-line b2r-one'; line.textContent = FINAL; return;
   }
 
   var i = 0, typer;
@@ -196,7 +197,7 @@
     clearTimeout(typer);
     setBg(s);
     if (s.type){
-      var n = 0; line.className = 'b2r-line';
+      var n = 0; line.className = 'b2r-line' + (s.one ? ' b2r-one' : '');
       (function tick(){
         line.innerHTML = s.type.slice(0, n) + '<span class="b2r-cursor"></span>';
         if (n++ < s.type.length) typer = setTimeout(tick, 45);
