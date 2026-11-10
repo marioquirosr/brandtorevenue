@@ -97,7 +97,7 @@
     --morado:#2E1C52; --morado-m:#5C38A4; --lila:#F4F1FA;
     --magenta:#E91E64; --amarillo:#FFE600; --negro:#1A1525;
     position:relative; overflow:hidden; isolation:isolate;
-    width:100%; height:clamp(420px, 62vh, 640px);
+    width:100%; height:clamp(280px, 42vh, 440px);
     background:var(--morado);
     font-family:'Poppins',system-ui,sans-serif; color:var(--lila);
   }
@@ -110,10 +110,10 @@
   .b2r-hero.is-cut::before{ opacity:0; }
   @keyframes b2rBreath{ 50%{ transform:scale(1.08); opacity:.8; } }
 
-  .b2r-stage{ position:absolute; inset:0; display:grid; place-items:center; padding:0 6vw 80px; text-align:center; }
+  .b2r-stage{ position:absolute; inset:0; display:grid; place-items:center; padding:0 6vw 44px; text-align:center; }
   .b2r-line{ font-size:clamp(30px, 5.4vw, 64px); line-height:1.08; letter-spacing:-.02em; }
 
-  .b2r-eye{ position:absolute; left:0; right:0; top:calc(50% - 40px - clamp(30px, 5.4vw, 64px) * 1.15); text-align:center;
+  .b2r-eye{ position:absolute; left:0; right:0; top:calc(50% - 22px - clamp(30px, 5.4vw, 64px) * 1.15); text-align:center;
     font-weight:300; font-size:clamp(14px, 1.6vw, 20px); letter-spacing:.14em; text-transform:uppercase; color:var(--lila);
     opacity:0; transition:opacity .4s ease; }
   .b2r-eye.on{ opacity:.7; }
@@ -132,7 +132,7 @@
   @keyframes b2rBlink{ 50%{ opacity:0; } }
 
 
-  .b2r-cta-wrap{ position:absolute; left:0; right:0; bottom:40px; display:flex; justify-content:center; }
+  .b2r-cta-wrap{ position:absolute; left:0; right:0; bottom:22px; display:flex; justify-content:center; }
   .b2r-cta{ color:var(--lila); opacity:.7; text-decoration:none; font-weight:300; font-size:13px; letter-spacing:.06em;
     transition:opacity .3s; }
   .b2r-cta:hover{ opacity:1; }
@@ -141,7 +141,7 @@
 
   .b2r-sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 
-  @media (max-width:600px){ .b2r-cta-wrap{ bottom:28px; } }
+  @media (max-width:600px){ .b2r-cta-wrap{ bottom:16px; } }
     </style>
   <section class="b2r-hero" id="b2rHero" aria-label="Brand to Revenue">
   <div class="b2r-eye" id="b2rEye" aria-hidden="true">Tu cliente</div>
