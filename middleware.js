@@ -49,7 +49,7 @@ button{width:100%;margin-top:12px;padding:16px;border:0;border-radius:14px;backg
 <input name="code" type="password" autocomplete="off" placeholder="Código de acceso" autofocus required>
 ${error ? '<p class="err">Código incorrecto. Inténtalo de nuevo.</p>' : ''}
 <button type="submit">Entrar</button>
-<img class="logo" src="/images/B2R_logo_white.png" alt="Brand to Revenue">
+<img class="logo" src="/images/b2r-logo-white-transparent.png" alt="Brand to Revenue">
 </form></body></html>`;
 }
 
