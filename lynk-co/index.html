@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Lynk &amp; Co · Overview 2027 — Brand to Revenue</title>
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Figtree:ital,wght@0,300..700;1,300..700&display=swap">
+<style>
+section {
+  box-sizing: border-box;
+  padding: 128px;
+  background: #F4F1FA;
+  color: #2E1C52;
+  font-family: 'Figtree', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+}
+section.dark { background: #2E1C52; color: #F4F1FA; }
+section.ink { background: #1A1525; color: #F4F1FA; }
+section.top { justify-content: flex-start; }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5C38A4;
+}
+.dark .eyebrow, .ink .eyebrow { color: #FFE600; }
+.dot { width: 16px; height: 16px; background: #FFE600; }
+
+.display {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  max-width: 1600px;
+}
+.title {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  max-width: 1500px;
+}
+.thin { font-weight: 300; }
+.accent { font-style: italic; font-weight: 300; color: #5C38A4; }
+.dark .accent, .ink .accent { color: #FFE600; }
+
+.lead {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.45;
+  color: #4A3F66;
+  max-width: 1150px;
+}
+.dark .lead, .ink .lead { color: #CFC6E6; }
+.note { margin: 0; font-size: 24px; line-height: 1.4; color: #6B6185; }
+.dark .note, .ink .note { color: #B7ACD6; }
+
+.wordmark {
+  position: absolute;
+  left: 128px;
+  top: 96px;
+  width: 400px;
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #F4F1FA;
+}
+
+.row { display: flex; gap: 32px; align-items: stretch; }
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 48px;
+  border-radius: 28px;
+  background: #FBFAFD;
+  border: 2px solid #E2DBF0;
+}
+.card.hl { background: #2E1C52; border-color: #2E1C52; color: #F4F1FA; }
+.card .num {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #5C38A4;
+}
+.card.hl .num { color: #FFE600; }
+.card .card-title {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+.card .card-text { margin: 0; font-size: 24px; line-height: 1.5; color: #4A3F66; }
+.card.hl .card-text { color: #CFC6E6; }
+
+.arrow {
+  align-self: center;
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 44px;
+  font-weight: 300;
+  color: #5C38A4;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 16px; }
+.chip {
+  margin: 0;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 2px solid #5C38A4;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2E1C52;
+}
+.chip.ghost { border-style: dashed; color: #6B6185; font-weight: 400; font-style: italic; }
+
+.steps { margin: 0; padding-left: 48px; font-size: 32px; line-height: 1.7; color: #F4F1FA; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } }
+.rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.d1 { animation-delay: 0.12s; }
+.d2 { animation-delay: 0.24s; }
+.d3 { animation-delay: 0.36s; }
+.d4 { animation-delay: 0.48s; }
+
+.fragment { opacity: 0.12; transition: opacity 0.5s ease; }
+.fragment.visible { opacity: 1; }
+
+.card .card-title.sm { font-size: 32px; line-height: 1.2; }
+.fx { display: flex; gap: 64px; align-items: stretch; }
+.fx-svg { width: 620px; height: 632px; flex: none; }
+.fx-col { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+.fx-item { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px; border-left: 3px solid #5C38A4; padding-left: 32px; }
+.fx-item .fx-label { margin: 0; font-family: 'Poppins', Arial, sans-serif; font-size: 32px; font-weight: 600; color: #2E1C52; }
+.fx-item .fx-text { margin: 0; font-size: 24px; line-height: 1.45; color: #4A3F66; }
+.fx-item .fx-quote { margin: 0; font-size: 24px; line-height: 1.45; font-style: italic; color: #5C38A4; }
+.tag { margin: 0; padding: 10px 22px; border-radius: 999px; background: #E2DBF0; font-size: 24px; font-weight: 600; color: #2E1C52; }
+.tag.on { background: #2E1C52; color: #F4F1FA; }
+.dark .card { background: #3A2766; border-color: #4A3580; }
+.dark .card .card-text { color: #CFC6E6; }
+.dark .card .num { color: #FFE600; }
+
+.flow { position: relative; display: flex; gap: 32px; margin-top: 16px; }
+.flow-line { position: absolute; left: 36px; top: 34px; width: 1272px; height: 4px; background: #FFE600; transform-origin: left center; animation: draw 1.4s 0.3s cubic-bezier(0.6, 0, 0.2, 1) both; }
+@keyframes draw { from { transform: scaleX(0); } }
+.step { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.node { width: 72px; height: 72px; border-radius: 50%; background: #2E1C52; border: 4px solid #FFE600; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+.node.on { background: #FFE600; }
+.node .node-num { margin: 0; font-family: 'Poppins', Arial, sans-serif; font-size: 24px; font-weight: 700; color: #FFE600; }
+.node.on .node-num { color: #2E1C52; }
+.step .step-title { margin: 0; font-family: 'Poppins', Arial, sans-serif; font-size: 44px; font-weight: 600; line-height: 1.1; color: #F4F1FA; }
+.step .step-title.y { color: #FFE600; }
+.step .step-text { margin: 0; font-size: 24px; line-height: 1.5; color: #CFC6E6; }
+.dark .fragment { opacity: 0.18; }
+.dark .fragment.visible { opacity: 1; }
+
+.dark .card.soft { background: #F4F1FA; border-color: #F4F1FA; color: #2E1C52; }
+.dark .card.soft .num { color: #5C38A4; }
+.dark .card.soft .card-text { color: #4A3F66; }
+
+
+/* ---------- viewer ---------- */
+html, body { margin: 0; height: 100%; background: #121014; overflow: hidden; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+.stage { position: fixed; inset: 0; overflow: hidden; }
+.deck { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform-origin: center center; }
+section.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility .5s; overflow: hidden; }
+section.slide.active { opacity: 1; visibility: visible; }
+.dot { display: inline-block; flex: none; border-radius: 50%; }
+.rise { animation: none; }
+.slide.active .rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+.slide.active .rise.d1 { animation-delay: .12s; }
+.slide.active .rise.d2 { animation-delay: .24s; }
+.slide.active .rise.d3 { animation-delay: .36s; }
+.slide.active .rise.d4 { animation-delay: .48s; }
+
+.progress { position: fixed; left: 0; top: 0; height: 3px; background: #FFE600; width: 0; transition: width .4s ease; z-index: 5; }
+.controls { position: fixed; right: 20px; bottom: 18px; display: flex; align-items: center; gap: 8px; z-index: 5; font-family: 'Figtree', Arial, sans-serif; }
+.controls button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(244,241,250,.25); background: rgba(18,16,20,.55); color: #F4F1FA; font-size: 18px; cursor: pointer; backdrop-filter: blur(6px); }
+.controls button:hover { background: #5C38A4; border-color: #5C38A4; }
+.controls .count { color: rgba(244,241,250,.75); font-size: 13px; min-width: 52px; text-align: center; background: rgba(18,16,20,.55); padding: 6px 10px; border-radius: 999px; }
+
+/* ---------- mobile: scrollable, reflowed ---------- */
+@media (max-width: 900px), (orientation: portrait) and (max-width: 1100px) {
+  html, body { height: auto; overflow: auto; }
+  .stage { position: static; overflow: visible; }
+  .deck { position: static; width: auto; height: auto; transform: none !important; }
+  section.slide { position: relative !important; inset: auto; width: auto !important; height: auto !important; opacity: 1 !important; visibility: visible !important; padding: 56px 22px !important; gap: 20px !important; justify-content: flex-start !important; overflow: visible; }
+  .controls { display: none; }
+  .progress { display: none; }
+  .fragment { opacity: 1 !important; }
+  .rise, .slide.active .rise { animation: none !important; }
+
+  .display { font-size: 52px; }
+  .title { font-size: 30px; max-width: none !important; }
+  .lead { font-size: 18px; width: auto !important; max-width: none !important; }
+  .note { font-size: 15px; }
+  .eyebrow { font-size: 12px; gap: 10px; }
+  .dot { width: 10px; height: 10px; }
+  .row, .fx { flex-direction: column !important; gap: 14px !important; }
+  .card { padding: 22px !important; gap: 12px !important; border-radius: 18px; flex-direction: column !important; align-items: stretch !important; flex: none !important; }
+  .card > div { gap: 10px !important; }
+  .card .card-title { font-size: 24px; }
+  .card .card-title.sm { font-size: 20px; }
+  .card .card-text { font-size: 16px; }
+  .card .num { font-size: 12px; }
+  .card img { width: 100% !important; height: 220px !important; border-radius: 12px !important; }
+  .card video { width: 100% !important; height: 460px !important; border-radius: 12px !important; }
+  .fx-svg { width: 100% !important; max-width: 340px; height: auto !important; align-self: center; }
+  .fx-item { padding-left: 16px; gap: 6px; }
+  .fx-item .fx-label { font-size: 18px; }
+  .fx-item .fx-text, .fx-item .fx-quote { font-size: 16px; }
+  .tag, .chip { font-size: 14px; padding: 8px 14px; }
+  #cover, #cierre { min-height: 100svh; justify-content: center !important; }
+  #cover > div { width: auto !important; gap: 14px !important; }
+  .cover-img { position: static !important; width: 100% !important; height: 240px !important; border-radius: 16px !important; }
+  .logo { position: static !important; width: 96px !important; height: auto !important; align-self: flex-end; margin-top: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="stage" id="stage">
+<div class="deck" id="deck">
+<section id="cover" class="slide dark" data-transition="fade" style="background:#121014">
+<img class="rise cover-img" src="assets/showroom.jpg" alt="Sucursal Lynk &amp; Co en Costa del Este" style="position:absolute;left:1000px;top:128px;width:792px;height:704px;object-fit:cover;border-radius:24px">
+<div style="width:760px;display:flex;flex-direction:column;gap:40px">
+<h1 class="display rise d1">Lynk &amp; Co</h1>
+<p class="lead rise d2">Framework de tráfico para la sucursal de Costa del Este.</p>
+</div>
+<img src="assets/b2r-logo-white.png" class="logo" alt="Brand to Revenue" style="position:absolute;object-fit:contain;top:952px;left:1684px;width:108px;height:64px;box-sizing:border-box">
+
+</section>
+<section id="objetivo" class="slide " data-transition="fade">
+<p class="eyebrow rise">Objetivo</p>
+<h2 class="title rise d1">Aumentar el tráfico a la sucursal de <span class="accent">Costa del Este.</span></h2>
+<p class="lead rise d2">Todo el framework está enfocado en una sola métrica: personas que llegan a la sucursal.</p>
+
+</section>
+<section id="funnel" class="slide top" data-transition="fade">
+<h2 class="title">Framework: <span class="thin">Ruido · Atención · Conversión</span></h2>
+<div class="fx">
+<svg class="fx-svg" viewBox="0 0 620 632" aria-label="Funnel de tres niveles: Ruido arriba, Atención al medio, Conversión abajo">
+<polygon points="0,0 620,0 552,200 68,200" fill="#E2DBF0"/>
+<polygon points="74,216 546,216 478,416 142,416" fill="#5C38A4"/>
+<polygon points="148,432 472,432 404,632 216,632" fill="#2E1C52"/>
+<text x="310" y="92" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="40" font-weight="600" fill="#2E1C52">Ruido</text>
+<text x="310" y="132" text-anchor="middle" font-family="Figtree, Arial, sans-serif" font-size="24" font-style="italic" fill="#5C38A4">«¡Ey!»</text>
+<text x="310" y="324" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="40" font-weight="600" fill="#F4F1FA">Atención</text>
+<text x="310" y="540" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="32" font-weight="600" fill="#FFE600">Conversión</text>
+</svg>
+<div class="fx-col">
+<div class="fx-item rise d1">
+<p class="fx-label">Ruido · el mercado está saturado</p>
+<p class="fx-text">Gritar «¡ey!» hace que la gente voltee, pero sigue caminando. El buen ruido es un «¡ey!» con motivo:</p>
+<p class="fx-quote">«¡Ey! Aquí hay carros cool».</p>
+</div>
+<div class="fx-item fragment">
+<p class="fx-label">Atención · el segundo en que voltean</p>
+<p class="fx-text">Ahí dices qué ofreces, educas sobre el producto y das un valor agregado:</p>
+<p class="fx-quote">«Lynk &amp; Co, con esto y esto. Ven a conocerlo y te damos esto».</p>
+</div>
+<div class="fx-item fragment">
+<p class="fx-label">Conversión · llegan a la sucursal</p>
+<p class="fx-text">La persona visita Costa del Este, conoce el carro y da el siguiente paso.</p>
+</div>
+</div>
+</div>
+
+</section>
+<section id="ataque" class="slide top" data-transition="fade">
+<h2 class="title">¿Cómo lo <span class="accent">atacamos?</span></h2>
+<p class="lead">La pauta ya busca al cliente en redes. Sumamos microcomunidades para llegar a él a menor costo.</p>
+<div class="chips">
+<p class="tag">Pauta · ya corriendo</p>
+<p class="tag on">+ Microcomunidades</p>
+</div>
+<div class="row">
+<div class="card rise d1">
+<p class="num">01</p>
+<h3 class="card-title sm">Definimos el target</h3>
+<p class="card-text">Quién es el cliente de Lynk &amp; Co.</p>
+</div>
+<div class="card rise d2">
+<p class="num">02</p>
+<h3 class="card-title sm">Buscamos microcomunidades</h3>
+<p class="card-text">Grupos alineados a ese target, cerca de la sucursal.</p>
+</div>
+<div class="card rise d3">
+<p class="num">03</p>
+<h3 class="card-title sm">Contratamos a un líder</h3>
+<p class="card-text">Alguien que ya mueve ese nicho hace la convocatoria.</p>
+</div>
+<div class="card hl rise d4">
+<p class="num">04</p>
+<h3 class="card-title sm">Experiencia en Lynk &amp; Co</h3>
+<p class="card-text">La comunidad vive la marca dentro de la sucursal.</p>
+</div>
+</div>
+
+</section>
+<section id="premium" class="slide top" data-transition="fade">
+<h2 class="title">Lo que están haciendo las marcas en el <span class="accent">mundo.</span></h2>
+<div class="row">
+<div class="card rise d1">
+<img src="assets/ref-lynk-club.jpg" alt="Foto de referencia: Club Lynk &amp; Co" style="width:100%;height:200px;object-fit:cover;border-radius:16px;background:#E2DBF0">
+<p class="num">LYNK &amp; CO · EUROPA</p>
+<h3 class="card-title sm">Clubs, no concesionarios</h3>
+<p class="card-text">Espacios con café, marcas locales y eventos: DJ, cine y arte. En 2022 recibieron más de 10,240 personas para test drive.</p>
+</div>
+<div class="card rise d2">
+<img src="assets/ref-genesis-house.jpg" alt="Foto de referencia: Genesis House" style="width:100%;height:200px;object-fit:cover;border-radius:16px;background:#E2DBF0">
+<p class="num">GENESIS · NUEVA YORK</p>
+<h3 class="card-title sm">Genesis House</h3>
+<p class="card-text">La marca de lujo de Hyundai. Showroom con restaurante, pabellón de té y un escenario con una agenda de eventos y exposiciones abiertas al público.</p>
+</div>
+<div class="card rise d3">
+<img src="assets/ref-porsche-yoga.jpg" alt="Foto de referencia: yoga en Porsche Nashville" style="width:100%;height:200px;object-fit:cover;border-radius:16px;background:#E2DBF0">
+<p class="num">PORSCHE · NASHVILLE</p>
+<h3 class="card-title sm">Yoga en el showroom</h3>
+<p class="card-text">Convirtieron el showroom en un estudio de wellness para presentar el nuevo Macan EV.</p>
+</div>
+</div>
+<p class="note">El patrón: el showroom se vuelve un lugar al que la gente quiere ir, no solo donde se vende el carro.</p>
+
+</section>
+<section id="panama" class="slide top" data-transition="fade">
+<h2 class="title">Lo que están haciendo las marcas en <span class="accent">Panamá.</span></h2>
+<div class="row">
+<div class="card rise d1" style="flex-direction:row;align-items:center;gap:40px">
+<img src="assets/volvo-panama.jpg" alt="Evento Play for Cause en el showroom de Volvo Car Panamá" style="width:300px;height:440px;object-fit:cover;border-radius:16px;flex:none">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p class="num">VOLVO CAR PANAMÁ</p>
+<h3 class="card-title sm">Play for Cause</h3>
+<p class="card-text">Evento en el showroom junto a Fundacáncer y un club de mahjong: una comunidad con causa dentro de la sucursal.</p>
+</div>
+</div>
+<div class="card rise d2" style="flex-direction:row;align-items:center;gap:40px">
+<video class="vid" src="assets/lexus-panama.mp4" poster="assets/lexus-panama.jpg" muted loop playsinline preload="metadata" aria-label="Montaje del evento Art of Wellbeing by L'Occitane en el showroom de Lexus Panamá" style="width:248px;height:440px;object-fit:cover;border-radius:16px;flex:none"></video>
+<div style="display:flex;flex-direction:column;gap:20px">
+<p class="num">LEXUS PANAMÁ</p>
+<h3 class="card-title sm">Art of Wellbeing</h3>
+<p class="card-text">Experiencia de bienestar con L’Occitane dentro del showroom, con bar de maridaje. Marca aliada, audiencia afín.</p>
+</div>
+</div>
+</div>
+<p class="note">El mercado local ya se está moviendo: el showroom como punto de encuentro.</p>
+
+</section>
+<section id="ejemplos" class="slide top" data-transition="fade">
+<h2 class="title">Así se ve en la <span class="accent">práctica.</span></h2>
+<div class="row">
+<div class="card rise d1">
+<p class="num">01 · RUNNING</p>
+<h3 class="card-title sm">Sábados en la mañana</h3>
+<p class="card-text">En Costa del Este mucha gente corre los sábados. Un líder de running alineado al target convoca. La salida y la llegada son en Lynk &amp; Co.</p>
+</div>
+<div class="card rise d2">
+<p class="num">02 · STAND-UP</p>
+<h3 class="card-title sm">Comedia y coctelería</h3>
+<p class="card-text">Un comediante que conecta con el nicho convoca una noche en Lynk &amp; Co, con coctelería de bares alineados al target, como Amano o Colectivo.</p>
+</div>
+<div class="card rise d3">
+<p class="num">03 · LIDERAZGO</p>
+<h3 class="card-title sm">Mujeres que mueven</h3>
+<p class="card-text">Referentes que convocan a su comunidad: conversación, networking y test drive en la sucursal.</p>
+</div>
+<div class="card rise d4">
+<p class="num">04 · RUTA</p>
+<h3 class="card-title sm">Escape de fin de semana</h3>
+<p class="card-text">Ruta con creadores y prospectos que sale de la sucursal para vivir el carro fuera de la ciudad.</p>
+</div>
+</div>
+<div class="card hl rise d4" style="flex:none;flex-direction:row;align-items:center;gap:32px;padding:32px 48px">
+<p class="num" style="flex:none">RECURRENCIA</p>
+<p class="card-text">Una agenda mensual en el Co:coffee de la sucursal, para que el tráfico no dependa de un evento suelto.</p>
+</div>
+
+</section>
+<section id="conversion" class="slide dark top" data-transition="fade">
+<p class="eyebrow"><span class="dot"></span>Conversión</p>
+<h2 class="title">Con la gente en la sucursal, activamos el <span class="accent">siguiente paso.</span></h2>
+<div class="row">
+<div class="card soft rise d1">
+<p class="num">01</p>
+<h3 class="card-title">Test drive</h3>
+<p class="card-text">Agendado en el momento, durante la experiencia.</p>
+</div>
+<div class="card soft rise d2">
+<p class="num">02</p>
+<h3 class="card-title">Citas</h3>
+<p class="card-text">Para conocer el carro con calma y con un asesor.</p>
+</div>
+<div class="card soft rise d3">
+<p class="num">03</p>
+<h3 class="card-title">Con el aliado</h3>
+<p class="card-text">El líder de la comunidad impulsa la acción en vivo.</p>
+</div>
+</div>
+
+</section>
+<section id="medicion" class="slide top" data-transition="fade">
+<h2 class="title">Cómo medimos cada <span class="accent">etapa.</span></h2>
+<div class="row">
+<div class="card rise d1">
+<p class="num">01 · RUIDO</p>
+<h3 class="card-title sm">Alcance</h3>
+<p class="card-text">Personas que vieron la convocatoria, desde la marca y desde cada aliado.</p>
+</div>
+<div class="card rise d2">
+<p class="num">02 · ATENCIÓN</p>
+<h3 class="card-title sm">Interacción y registros</h3>
+<p class="card-text">Interacciones, inscripciones y datos captados de cada comunidad.</p>
+</div>
+<div class="card hl rise d3">
+<p class="num">03 · CONVERSIÓN</p>
+<h3 class="card-title sm">Visitas, test drives y citas</h3>
+<p class="card-text">Personas en la sucursal, test drives y citas agendadas por activación.</p>
+</div>
+</div>
+<p class="note">Los indicadores finales se ajustan a los objetivos comerciales y a las herramientas disponibles.</p>
+
+</section>
+<section id="piloto" class="slide dark top" data-transition="fade">
+<p class="eyebrow"><span class="dot"></span>Punto de partida</p>
+<h2 class="title">Arrancamos con un <span class="accent">piloto.</span></h2>
+<div class="row">
+<div class="card rise d1">
+<p class="num">01</p>
+<h3 class="card-title sm">Preparar</h3>
+<p class="card-text">Target, mapa de microcomunidades y aliados, y calendario de activaciones.</p>
+</div>
+<div class="card rise d2">
+<p class="num">02</p>
+<h3 class="card-title sm">Activar</h3>
+<p class="card-text">Primeras activaciones en la sucursal y arranque de la agenda recurrente.</p>
+</div>
+<div class="card rise d3">
+<p class="num">03</p>
+<h3 class="card-title sm">Medir y escalar</h3>
+<p class="card-text">Resultados por etapa, qué se repite y cómo escalarlo en 2027.</p>
+</div>
+</div>
+<p class="note">Al cierre: aprendizajes, resultados y recomendación de continuidad.</p>
+
+</section>
+<section id="cierre" class="slide dark" data-transition="fade" style="background:#121014">
+<h2 class="title rise" style="max-width:1300px">Lynk &amp; Co ya propone una manera <span class="accent">diferente de moverse.</span></h2>
+<p class="lead rise d1" style="max-width:none;width:1173px;box-sizing:border-box">Queremos convertir esa diferencia en confianza, comunidad y relevancia cultural.</p>
+<img src="assets/b2r-logo-white.png" class="logo" alt="Brand to Revenue" style="position:absolute;object-fit:contain;top:952px;left:1654px;width:138px;height:64px;box-sizing:border-box">
+
+</section>
+</div>
+</div>
+<div class="controls" id="controls">
+<button id="prev" aria-label="Anterior">‹</button>
+<span class="count" id="count">1 / 1</span>
+<button id="next" aria-label="Siguiente">›</button>
+</div>
+<script>
+(function () {
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('section.slide'));
+  var count = document.getElementById('count');
+  var progress = document.getElementById('progress');
+  var mq = window.matchMedia('(max-width: 900px), (orientation: portrait) and (max-width: 1100px)');
+  var cur = 0;
+
+  function fit() {
+    if (mq.matches) { deck.style.transform = ''; return; }
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+  function frags(i) { return Array.prototype.slice.call(slides[i].querySelectorAll('.fragment')); }
+  function playVideos(i) {
+    slides.forEach(function (s, k) {
+      s.querySelectorAll('video').forEach(function (v) {
+        if (k === i || mq.matches) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+      });
+    });
+  }
+  function show(i) {
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, k) { s.classList.toggle('active', k === cur); });
+    frags(cur).forEach(function (f) { f.classList.remove('visible'); });
+    count.textContent = (cur + 1) + ' / ' + slides.length;
+    progress.style.width = ((cur + 1) / slides.length * 100) + '%';
+    if (history.replaceState) history.replaceState(null, '', '#' + (cur + 1));
+    playVideos(cur);
+  }
+  function next() {
+    var hidden = frags(cur).filter(function (f) { return !f.classList.contains('visible'); });
+    if (hidden.length) { hidden[0].classList.add('visible'); return; }
+    if (cur < slides.length - 1) show(cur + 1);
+  }
+  function prev() { if (cur > 0) show(cur - 1); }
+
+  document.getElementById('next').onclick = next;
+  document.getElementById('prev').onclick = prev;
+  document.addEventListener('keydown', function (e) {
+    if (mq.matches) return;
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].indexOf(e.key) > -1) { e.preventDefault(); next(); }
+    if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); prev(); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  document.getElementById('stage').addEventListener('click', function (e) {
+    if (mq.matches || e.target.closest('video')) return;
+    if (e.clientX < window.innerWidth * 0.3) prev(); else next();
+  });
+  var tx = null;
+  document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (mq.matches || tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+  });
+  window.addEventListener('resize', fit);
+  if (mq.addEventListener) mq.addEventListener('change', function () { fit(); playVideos(cur); });
+
+  var start = parseInt((location.hash || '').replace('#', ''), 10);
+  fit();
+  show(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+</body>
+</html>
