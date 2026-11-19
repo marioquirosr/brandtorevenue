@@ -1,6 +1,7 @@
 // Código de acceso para presentaciones privadas de clientes (ej. /lynk-co).
-// El código vive en el servidor (variable de entorno en Vercel), nunca en el navegador.
-// Para cambiarlo: Vercel → Settings → Environment Variables → LYNK_ACCESS_CODE.
+// Se valida en el servidor. Aquí solo vive el hash del código, no el código.
+// Para cambiarlo: define LYNK_ACCESS_CODE en Vercel (Settings → Environment Variables),
+// o reemplaza CODE_HASH por sha256('b2r-lynk::' + CÓDIGO_EN_MAYÚSCULAS).
 
 export const config = {
   matcher: ['/lynk-co', '/lynk-co/:path*'],
@@ -8,6 +9,7 @@ export const config = {
 
 const COOKIE = 'b2r_lynk_access';
 const SECTION = '/lynk-co';
+const CODE_HASH = '0090fee7e6eb92a1dbe2a60e93a37816134c8c885b00e8abe694fb8de0cc0c29';
 
 async function token(code) {
   const data = new TextEncoder().encode('b2r-lynk::' + code);
@@ -52,18 +54,15 @@ ${error ? '<p class="err">Código incorrecto. Inténtalo de nuevo.</p>' : ''}
 }
 
 export default async function middleware(request) {
-  const expected = process.env.LYNK_ACCESS_CODE;
-  if (!expected) {
-    return new Response('Acceso no configurado.', { status: 503 });
-  }
-  const valid = await token(expected);
+  const envCode = process.env.LYNK_ACCESS_CODE;
+  const valid = envCode ? await token(envCode.trim().toUpperCase()) : CODE_HASH;
   const url = new URL(request.url);
 
   if (readCookie(request, COOKIE) === valid) return; // acceso concedido: sigue a la página
 
   const code = url.searchParams.get('code');
   if (code !== null) {
-    if (code.trim().toUpperCase() === expected.trim().toUpperCase()) {
+    if ((await token(code.trim().toUpperCase())) === valid) {
       return new Response(null, {
         status: 302,
         headers: {
