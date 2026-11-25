@@ -516,3 +516,22 @@ section { padding: 88px 0; }
 @keyframes fx-nod { 0%,100% { transform: scale(1.06) translateY(0); } 30% { transform: scale(1.06) translateY(4px); } 60% { transform: scale(1.06) translateY(-2px); } }
 @keyframes fx-hop { 0%,100% { transform: scale(1.06) translateY(0); } 40% { transform: scale(1.12) translateY(-8px); } }
 @keyframes fx-tilt { 0%,100% { transform: scale(1.06) rotate(0); } 40% { transform: scale(1.06) rotate(-12deg); } }
+
+/* Funnel de atención (nov 2026) */
+.fnl-wrap{grid-column:1/-1;margin-bottom:8px}
+.fnl{display:grid;gap:8px;justify-items:center}
+.fnl-bar{all:unset;box-sizing:border-box;cursor:pointer;width:var(--w);min-width:300px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);transition:background .35s,border-color .35s,opacity .35s}
+.fnl-bar:nth-child(2){background:rgba(255,255,255,.08)}.fnl-bar:nth-child(3){background:rgba(255,255,255,.1)}.fnl-bar:nth-child(4){background:rgba(255,255,255,.12)}
+.fnl-bar:hover{background:rgba(255,255,255,.14)}
+.fnl-bar:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px}
+.fnl-l{display:flex;align-items:center;gap:12px}
+.fnl-face{width:34px;height:34px;flex-shrink:0;transition:transform .35s var(--ease)}
+.fnl-bar .fw-n{font-family:var(--display);font-weight:600;font-size:13px;color:var(--amarillo)}
+.fnl-bar b{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.02em;color:#fff}
+.fnl-d{font-size:15px;color:var(--morado-niebla);text-align:right}
+.fnl-bar.on{background:rgba(255,255,255,.16);border-color:var(--amarillo)}
+.fnl-bar.on .fnl-face{transform:scale(1.06)}
+.fw.has-active .fnl-bar:not(.on){opacity:.72}
+.fw.has-active .fw-e:not(.on){opacity:.78}
+.fw-track{display:none!important}
+@media (max-width:899px){.fnl-bar{flex-direction:column;align-items:flex-start;gap:4px;min-width:0;padding:12px 16px}.fnl-bar:nth-child(1){width:100%}.fnl-bar:nth-child(2){width:90%}.fnl-bar:nth-child(3){width:80%}.fnl-bar:nth-child(4){width:70%}.fnl-d{text-align:left;font-size:14px}.fnl-bar b{font-size:19px}.fnl-face{width:28px;height:28px}.fnl-wrap{margin-bottom:20px}}
