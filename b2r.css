@@ -535,3 +535,9 @@ section { padding: 88px 0; }
 .fw.has-active .fw-e:not(.on){opacity:.78}
 .fw-track{display:none!important}
 @media (max-width:899px){.fnl-bar{flex-direction:column;align-items:flex-start;gap:4px;min-width:0;padding:12px 16px}.fnl-bar:nth-child(1){width:100%}.fnl-bar:nth-child(2){width:90%}.fnl-bar:nth-child(3){width:80%}.fnl-bar:nth-child(4){width:70%}.fnl-d{text-align:left;font-size:14px}.fnl-bar b{font-size:19px}.fnl-face{width:28px;height:28px}.fnl-wrap{margin-bottom:20px}}
+
+/* Modales de servicios */
+.svc-list { list-style: none; margin: 18px 0 24px; padding: 0; display: grid; gap: 14px; }
+.svc-list li { border-top: 1px solid var(--borde); padding-top: 14px; }
+.svc-list b { display: block; font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--morado); margin-bottom: 4px; }
+.svc-list span { font-size: 16px; line-height: 1.55; color: var(--negro); }
