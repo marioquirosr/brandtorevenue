@@ -1,18 +1,31 @@
-// Código de acceso para presentaciones privadas de clientes (ej. /lynk-co).
-// Se valida en el servidor. Aquí solo vive el hash del código, no el código.
-// Para cambiarlo: define LYNK_ACCESS_CODE en Vercel (Settings → Environment Variables),
-// o reemplaza CODE_HASH por sha256('b2r-lynk::' + CÓDIGO_EN_MAYÚSCULAS).
+// Código de acceso para páginas privadas de clientes (ej. /lynk-co, /dinamico-bss).
+// Se valida en el servidor. Aquí solo vive el hash de cada código, no el código.
+// Para cambiar un código: define su variable en Vercel (Settings → Environment Variables),
+// o reemplaza su hash por sha256(salt + CÓDIGO_EN_MAYÚSCULAS).
 
 export const config = {
-  matcher: ['/lynk-co', '/lynk-co/:path*'],
+  matcher: ['/lynk-co', '/lynk-co/:path*', '/dinamico-bss', '/dinamico-bss/:path*'],
 };
 
-const COOKIE = 'b2r_lynk_access';
-const SECTION = '/lynk-co';
-const CODE_HASH = '0090fee7e6eb92a1dbe2a60e93a37816134c8c885b00e8abe694fb8de0cc0c29';
+const SECTIONS = {
+  '/lynk-co': {
+    cookie: 'b2r_lynk_access',
+    salt: 'b2r-lynk::',
+    hash: '0090fee7e6eb92a1dbe2a60e93a37816134c8c885b00e8abe694fb8de0cc0c29',
+    env: 'LYNK_ACCESS_CODE',
+    text: 'Esta presentación es confidencial. Ingresa el código de acceso que te compartimos.',
+  },
+  '/dinamico-bss': {
+    cookie: 'b2r_dinamico_access',
+    salt: 'b2r-dinamico::',
+    hash: '83ff56c4f7593b38c080d2d6f68d95505148af5c03136afe65e5ce6b786dd0eb',
+    env: 'DINAMICO_ACCESS_CODE',
+    text: 'Este documento es confidencial. Ingresa el código de acceso que te compartimos.',
+  },
+};
 
-async function token(code) {
-  const data = new TextEncoder().encode('b2r-lynk::' + code);
+async function token(salt, code) {
+  const data = new TextEncoder().encode(salt + code);
   const hash = await crypto.subtle.digest('SHA-256', data);
   return Array.from(new Uint8Array(hash)).map((b) => b.toString(16).padStart(2, '0')).join('');
 }
@@ -23,7 +36,7 @@ function readCookie(request, name) {
   return match ? decodeURIComponent(match.slice(name.length + 1)) : null;
 }
 
-function gatePage(error) {
+function gatePage(section, text, error) {
   return `<!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,9 +56,9 @@ button{width:100%;margin-top:12px;padding:16px;border:0;border-radius:14px;backg
 .err{color:#FFB4C8;font-size:14px;margin:10px 0 0}
 .logo{margin-top:40px;width:96px;opacity:.9}
 </style></head><body>
-<form class="box" method="GET" action="${SECTION}/">
+<form class="box" method="GET" action="${section}/">
 <h1>Acceso privado</h1>
-<p>Esta presentación es confidencial. Ingresa el código de acceso que te compartimos.</p>
+<p>${text}</p>
 <input name="code" type="password" autocomplete="off" placeholder="Código de acceso" autofocus required>
 ${error ? '<p class="err">Código incorrecto. Inténtalo de nuevo.</p>' : ''}
 <button type="submit">Entrar</button>
@@ -54,25 +67,29 @@ ${error ? '<p class="err">Código incorrecto. Inténtalo de nuevo.</p>' : ''}
 }
 
 export default async function middleware(request) {
-  const envCode = process.env.LYNK_ACCESS_CODE;
-  const valid = envCode ? await token(envCode.trim().toUpperCase()) : CODE_HASH;
   const url = new URL(request.url);
+  const section = Object.keys(SECTIONS).find((s) => url.pathname === s || url.pathname.startsWith(s + '/'));
+  if (!section) return;
+  const cfg = SECTIONS[section];
 
-  if (readCookie(request, COOKIE) === valid) return; // acceso concedido: sigue a la página
+  const envCode = process.env[cfg.env];
+  const valid = envCode ? await token(cfg.salt, envCode.trim().toUpperCase()) : cfg.hash;
+
+  if (readCookie(request, cfg.cookie) === valid) return; // acceso concedido: sigue a la página
 
   const code = url.searchParams.get('code');
   if (code !== null) {
-    if ((await token(code.trim().toUpperCase())) === valid) {
+    if ((await token(cfg.salt, code.trim().toUpperCase())) === valid) {
       return new Response(null, {
         status: 302,
         headers: {
-          Location: SECTION + '/',
-          'Set-Cookie': `${COOKIE}=${valid}; Path=${SECTION}; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax`,
+          Location: section + '/',
+          'Set-Cookie': `${cfg.cookie}=${valid}; Path=${section}; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax`,
         },
       });
     }
-    return new Response(gatePage(true), { status: 401, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
+    return new Response(gatePage(section, cfg.text, true), { status: 401, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
   }
 
-  return new Response(gatePage(false), { status: 401, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
+  return new Response(gatePage(section, cfg.text, false), { status: 401, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
 }
