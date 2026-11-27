@@ -10,64 +10,65 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Figtree:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--y:#FFE600;--p:#5C38A4;--deep:#2E1C52;--mag:#D81B5C;--ink:#1A1525;--g:#6B6478;--lila:#F4F1FA;--bd:#E7E3EF;--w:#fff;--d:"Poppins",system-ui,sans-serif;--b:"Figtree",system-ui,sans-serif;color-scheme:light}
+:root{--y:#FFE600;--p:#111111;--deep:#111111;--n:#8A8A8A;--mag:#6B6B6B;--ink:#1A1525;--g:#6B6B6B;--lila:#F4F4F2;--bd:#E4E4E1;--w:#fff;--d:"Poppins",system-ui,sans-serif;--b:"Figtree",system-ui,sans-serif;color-scheme:light}
 *{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{margin:0;background:var(--lila);color:var(--ink);font:16px/1.55 var(--b);-webkit-font-smoothing:antialiased;overflow-x:clip}
 .wrap{max-width:1080px;margin:0 auto;padding:0 max(4vw,18px)}
 .band{padding:clamp(40px,6vw,72px) 0}
 .band.white{background:var(--w)}
 .band.dark{background:var(--deep);color:var(--lila)}
-nav{position:sticky;top:0;z-index:10;background:rgba(46,28,82,.96);backdrop-filter:blur(6px)}
+nav{position:sticky;top:0;z-index:10;background:rgba(17,17,17,.96);backdrop-filter:blur(6px)}
 nav .wrap{display:flex;align-items:center;gap:20px;height:56px}
 nav .brand{font:600 14px var(--d);color:#fff;white-space:nowrap}
-nav .brand i{font-weight:300;color:#CFC6E6}
+nav .brand i{font-weight:300;color:#BDBDBD}
 nav .links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 nav .links::-webkit-scrollbar{display:none}
-nav a{flex:none;color:#CFC6E6;text-decoration:none;font-size:13.5px;padding:6px 10px;border-radius:999px;white-space:nowrap}
+nav a{flex:none;color:#BDBDBD;text-decoration:none;font-size:13.5px;padding:6px 10px;border-radius:999px;white-space:nowrap}
 nav a:hover,nav a.on{background:rgba(255,255,255,.1);color:#fff}
 nav a.back{color:var(--y)}
 .eyebrow{display:flex;align-items:center;gap:10px;font:600 12px var(--d);letter-spacing:.12em;text-transform:uppercase;color:var(--p);margin:0 0 12px}
 .eyebrow::before{content:"";width:9px;height:9px;background:var(--y)}
 .dark .eyebrow{color:var(--y)}
+.eyebrow{color:var(--ink)}.dark .eyebrow{color:var(--y)}
 h1{font:600 clamp(30px,4.2vw,44px)/1.08 var(--d);letter-spacing:-.035em;margin:0 0 12px;text-wrap:balance}
 h2{font:600 clamp(24px,3vw,30px)/1.12 var(--d);letter-spacing:-.03em;margin:0 0 8px}
 h3{font:600 17px/1.3 var(--d);letter-spacing:-.02em;margin:0 0 6px}
 .intro{max-width:620px;color:var(--g);margin:0 0 24px;font-size:15px}
-.dark .intro{color:#CFC6E6}
+.dark .intro{color:#BDBDBD}
 .hint{font-size:12.5px;color:var(--g);line-height:1.45;margin:8px 0 0}
-.dark .hint{color:#A99BC9}
+.dark .hint{color:#9A9A9A}
 
 /* summary */
 .sumtop{display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:end;margin-bottom:28px}
 .budget{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px 20px}
-.budget .t{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:#CFC6E6;margin-bottom:10px}
+.budget .t{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:#BDBDBD;margin-bottom:10px}
 .budget .t b{font:700 22px var(--d);color:#fff}
 .split{height:12px;border-radius:999px;background:rgba(255,255,255,.12);display:flex;overflow:hidden}
 .split span{height:100%;width:0;transition:width 1s cubic-bezier(.2,.7,.2,1)}
-.split .a{background:#8E72D6}.split .b{background:var(--y)}
-.legend{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font-size:13px;color:#DCD2F0;flex-wrap:wrap}
+.split .a{background:#8A8A8A}.split .b{background:var(--y)}
+.legend{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font-size:13px;color:#D6D6D6;flex-wrap:wrap}
 .legend b{font-family:var(--d);color:#fff}
 .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
 .wins{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .win{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px;display:flex;flex-direction:column}
 .win .n{font:700 30px/1 var(--d);letter-spacing:-.04em;color:#fff}
-.win .n small{font:400 13px var(--b);color:#CFC6E6;letter-spacing:0}
+.win .n small{font:400 13px var(--b);color:#BDBDBD;letter-spacing:0}
 .win .l{font:600 13.5px/1.3 var(--d);color:#fff;margin:8px 0 0}
 .win .hint{margin-top:auto;padding-top:10px}
 .win.hl{background:var(--y);border-color:var(--y)}
-.win.hl .n,.win.hl .l{color:var(--ink)}.win.hl .n small,.win.hl .hint{color:#4A3F2A}
+.win.hl .n,.win.hl .l{color:var(--ink)}.win.hl .n small,.win.hl .hint{color:#4A4636}
 
 /* pillars */
 .pillars{display:grid;grid-template-columns:repeat(var(--c,4),1fr);gap:10px}
 .pil{all:unset;box-sizing:border-box;cursor:pointer;background:var(--w);border:1px solid var(--bd);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;transition:border-color .2s,background .2s;position:relative}
-.pil:hover{border-color:#B9A6E8}
+.pil:hover{border-color:#9A9A9A}
 .pil:focus-visible{outline:2px solid var(--p);outline-offset:2px}
 .pil small{font:600 11px var(--d);letter-spacing:.07em;text-transform:uppercase;color:var(--g)}
 .pil b{font:700 22px/1.1 var(--d);letter-spacing:-.03em}
 .pil span{font-size:13px;color:var(--g);line-height:1.35}
 .pil[aria-selected=true]{background:var(--deep);border-color:var(--deep);color:#fff}
 .pil[aria-selected=true] small{color:var(--y)}
-.pil[aria-selected=true] span{color:#CFC6E6}
+.pil[aria-selected=true] span{color:#BDBDBD}
 .white .pil{background:var(--lila);border-color:var(--lila)}
 .white .pil[aria-selected=true]{background:var(--deep);border-color:var(--deep)}
 .panel{display:none;margin-top:14px;background:var(--w);border:1px solid var(--bd);border-radius:18px;padding:24px;animation:in .25s ease}
@@ -87,10 +88,10 @@ h3{font:600 17px/1.3 var(--d);letter-spacing:-.02em;margin:0 0 6px}
 .br .top{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:5px}
 .br .top b{font:600 14px var(--d);white-space:nowrap}
 .br .top small{color:var(--g)}
-.track{height:9px;border-radius:999px;background:#ECE8F3;overflow:hidden}
-.track span{display:block;height:100%;width:0;border-radius:999px;background:#B9A6E8;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.track{height:9px;border-radius:999px;background:#EAEAE7;overflow:hidden}
+.track span{display:block;height:100%;width:0;border-radius:999px;background:#9A9A9A;transition:width .9s cubic-bezier(.2,.7,.2,1)}
 .br.w .track span{background:var(--p)}
-.br.ref .track span{background:#D4CDDF}
+.br.ref .track span{background:#D2D2CF}
 .badge{font:600 10px var(--d);letter-spacing:.05em;text-transform:uppercase;background:var(--y);color:var(--ink);padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:1px;white-space:nowrap}
 
 /* table */
@@ -118,7 +119,7 @@ dl.kv dd{margin:0}
 .tli{display:grid;grid-template-columns:64px 14px 1fr;gap:12px}
 .tli .d{font:600 13px var(--d);color:var(--p);text-align:right}
 .tli .dot{width:12px;height:12px;border-radius:50%;background:var(--p);margin-top:5px;position:relative}
-.tli:not(:last-child) .dot::after{content:"";position:absolute;left:5px;top:14px;width:2px;height:40px;background:#D4CDDF}
+.tli:not(:last-child) .dot::after{content:"";position:absolute;left:5px;top:14px;width:2px;height:40px;background:#D2D2CF}
 .tli .t{padding-bottom:18px;font-size:14px}
 .tli .t b{font:600 14px var(--d);display:block}
 
@@ -140,6 +141,50 @@ dl.kv dd{margin:0}
 .timebar div{padding:8px 10px;color:#fff;background:var(--p)}
 .timebar div:nth-child(1){background:var(--mag)}.timebar div:nth-child(3){background:var(--deep)}
 .timebar b{display:block;font:600 12.5px var(--d)}
+
+
+/* plan v2 */
+.sub{font:600 15px var(--d);letter-spacing:.02em;text-transform:uppercase;margin:34px 0 12px;color:var(--ink)}
+.kpibar{display:grid;grid-template-columns:repeat(5,1fr);background:var(--ink);color:#fff;border-radius:16px;overflow:hidden}
+.kpibar div{padding:16px 18px;border-right:1px solid rgba(255,255,255,.1)}
+.kpibar div:last-child{border:0}
+.kpibar b{display:block;font:700 26px/1 var(--d);letter-spacing:-.03em}
+.kpibar div:first-child b{color:var(--y)}
+.kpibar span{display:block;font-size:12.5px;color:#BDBDBD;margin-top:6px}
+.tree{display:grid;gap:12px}
+.node{background:var(--lila);border:1px solid var(--bd);border-radius:14px;padding:14px 16px}
+.node small{display:block;font:600 11px var(--d);letter-spacing:.07em;text-transform:uppercase;color:var(--g)}
+.node b{display:block;font:600 16px var(--d);margin:2px 0}
+.node span{font-size:13px;color:var(--g)}
+.node.root{background:var(--ink);border-color:var(--ink);color:#fff}.node.root small,.node.root span{color:#BDBDBD}
+.node.res{border-style:dashed;background:var(--w)}
+.branches{display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:12px;position:relative;padding-top:14px}
+.branches::before{content:"";position:absolute;top:0;left:16px;right:16px;height:14px;border:2px solid var(--bd);border-bottom:0;border-radius:10px 10px 0 0}
+.ads{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ads span{font-size:12px;padding:4px 9px;border-radius:999px;background:var(--w);border:1px solid var(--bd)}
+.gantt-wrap{overflow-x:auto;border:1px solid var(--bd);border-radius:16px;background:var(--w)}
+.gantt{display:grid;grid-template-columns:170px repeat(18,minmax(30px,1fr));min-width:760px;font-size:12px}
+.gantt .h{padding:8px 0;text-align:center;color:var(--g);border-bottom:1px solid var(--bd);font:600 11px var(--d)}
+.gantt .h.we{color:#B0B0B0}.gantt .h.hol{color:var(--ink);background:#FFF9C2}
+.gantt .h small{display:block;font:400 10px var(--b)}
+.gantt .lab{position:sticky;left:0;background:var(--w);padding:10px 12px;border-bottom:1px solid var(--bd);font:600 12.5px/1.2 var(--d);display:flex;flex-direction:column;justify-content:center;z-index:1;cursor:pointer;border-right:1px solid var(--bd)}
+.gantt .lab small{font:400 11px var(--b);color:var(--g);display:block}
+.gantt .cell{border-bottom:1px solid var(--bd);border-left:1px dashed #EFEFEC;position:relative}
+.gantt .bar{grid-row:auto;align-self:center;height:22px;border-radius:6px;margin:0 2px;background:#D2D2CF;cursor:pointer;display:flex;align-items:center;padding:0 8px;font:600 11px var(--d);color:var(--ink);white-space:nowrap;overflow:hidden;z-index:1}
+.gantt .bar.k{background:var(--ink);color:#fff}.gantt .bar.y{background:var(--y)}
+.gantt .ms{align-self:center;justify-self:center;width:14px;height:14px;background:var(--ink);transform:rotate(45deg);border-radius:2px;z-index:1;cursor:pointer}
+.gantt .row-on{background:#FAFAF7}
+.gdetail{margin-top:12px;background:var(--lila);border-radius:14px;padding:16px 18px;font-size:14px;display:none}
+.gdetail.on{display:block;animation:in .25s ease}
+.gdetail b{font-family:var(--d)}
+.gdetail ul{margin:6px 0 0;padding-left:18px}
+.rules{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.rules div{background:var(--lila);border-radius:14px;padding:14px}
+.rules small{display:block;font:600 11px var(--d);letter-spacing:.07em;text-transform:uppercase;color:var(--g)}
+.rules b{display:block;font:600 14.5px/1.3 var(--d);margin:4px 0}
+.rules span{font-size:13px;color:var(--g)}
+@media(max-width:820px){.kpibar{grid-template-columns:repeat(2,1fr)}.kpibar div{border-bottom:1px solid rgba(255,255,255,.1)}.kpibar div:first-child{grid-column:1/-1}.branches{grid-template-columns:1fr;padding-top:0}.branches::before{display:none}.rules{grid-template-columns:1fr 1fr}.gantt{grid-template-columns:128px repeat(18,30px)}}
+@media(max-width:600px){.rules{grid-template-columns:1fr}.gantt-wrap{margin:0 -18px;border-radius:0;border-left:0;border-right:0}}
 
 /* refs */
 .refs{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
@@ -171,7 +216,7 @@ footer img{height:12px;width:auto;display:block}
 <nav><div class="wrap">
   <span class="brand">Dinamico <i>· Reporte y pauta BSS</i></span>
   <div class="links">
-    <a href="#resumen">Resumen</a><a href="#resultados">Resultados</a><a href="#pauta">Plan de pauta</a><a href="#contenidos">Contenidos</a><a href="#referencias">Referencias</a><a class="back" href="/dinamico-bss/">Plan de cierre ↗</a>
+    <a href="#resumen">Resumen</a><a href="#resultados">Resultados</a><a href="#pauta">Plan de pauta</a><a href="#contenidos">Contenidos</a><a class="back" href="/dinamico-bss/">Plan de cierre ↗</a>
   </div>
 </div></nav>
 
@@ -187,7 +232,7 @@ footer img{height:12px;width:auto;display:block}
       <div class="budget">
         <div class="t"><span>Presupuesto total</span><b>$500</b></div>
         <div class="split" role="img" aria-label="Fase 1: $221.18. Fase 2: $278.82"><span class="a" data-w="44.2"></span><span class="b" data-w="55.8"></span></div>
-        <div class="legend"><span><i style="background:#8E72D6"></i>Fase 1 · Summit <b>$221.18</b></span><span><i style="background:var(--y)"></i>Fase 2 · BSS <b>$278.82</b></span></div>
+        <div class="legend"><span><i style="background:#8A8A8A"></i>Fase 1 · Summit <b>$221.18</b></span><span><i style="background:var(--y)"></i>Fase 2 · BSS <b>$278.82</b></span></div>
       </div>
     </div>
 
@@ -289,68 +334,52 @@ footer img{height:12px;width:auto;display:block}
   <div class="wrap">
     <p class="eyebrow">Fase 2 · BrandSystem Sprint</p>
     <h2>Plan de pauta · $278.82</h2>
-    <p class="intro">1–13 dic · Ciudad de Panamá · destino: brandsystem.bydinamico.com. Selecciona un bloque para ver el detalle.</p>
+    <p class="intro">28 nov – 15 dic · Ciudad de Panamá · destino: brandsystem.bydinamico.com · objetivo: llamadas agendadas con Rubén.</p>
 
-    <div class="alloc">
-      <button class="a1" style="width:42%" data-go="p1">A · $117</button>
-      <button class="a2" style="width:51.3%" data-go="p2">B · $143</button>
-      <button class="a3" style="width:6.7%" data-go="p3" aria-label="Reserva $18.82">$19</button>
-    </div>
-
-    <div class="pillars" role="tablist" data-g="plan" style="--c:5">
-      <button class="pil" role="tab" aria-selected="true" data-t="p1"><small>Conjunto A</small><b>$117</b><span>Retargeting</span></button>
-      <button class="pil" role="tab" aria-selected="false" data-t="p2"><small>Conjunto B</small><b>$143</b><span>Prospección</span></button>
-      <button class="pil" role="tab" aria-selected="false" data-t="p3"><small>Reserva</small><b>$18.82</b><span>Escalar ganador</span></button>
-      <button class="pil" role="tab" aria-selected="false" data-t="p4"><small>Medición</small><b>5</b><span>reglas</span></button>
-      <button class="pil" role="tab" aria-selected="false" data-t="p5"><small>Calendario</small><b>13</b><span>días</span></button>
+    <div class="kpibar">
+      <div><b>$278.82</b><span>Presupuesto</span></div>
+      <div><b>13</b><span>Días de pauta · 1–13 dic</span></div>
+      <div><b>$20</b><span>Inversión diaria · A + B</span></div>
+      <div><b>4</b><span>Llamadas agendadas · meta</span></div>
+      <div><b>$70</b><span>Costo máximo por llamada</span></div>
     </div>
 
-    <div class="panel on" id="p1" data-g="plan" role="tabpanel">
-      <div class="ph"><h3>Conjunto A · Retargeting</h3><div class="chips"><span class="chip pay">$9 / día</span><span class="chip">1–13 dic</span></div></div>
-      <dl class="kv">
-        <dt>Audiencias</dt><dd>BSS · Registrados summit 30d · Visitantes web 30d · Vieron reels 30d · Interactuaron IG bydinamico 30d. Ya creadas en el pixel.</dd>
-        <dt>Creativos</dt><dd>Clips del summit (desde 3 dic) · Video de Rubén · Carrusel "para que tu marca venda".</dd>
-        <dt>Base</dt><dd>Retargeting en fase 1: $2.38 por registro, 100% decisores.</dd>
-      </dl>
-    </div>
-    <div class="panel" id="p2" data-g="plan" role="tabpanel">
-      <div class="ph"><h3>Conjunto B · Prospección</h3><div class="chips"><span class="chip pay">$11 / día</span><span class="chip">1–13 dic</span></div></div>
-      <dl class="kv">
-        <dt>Ubicación</dt><dd>Costa del Este, Santa María, Obarrio, Punta Pacífica, Ciudad del Saber, Panamá Pacífico · 1 mi c/u.</dd>
-        <dt>Público</dt><dd>30–55 años · mismos intereses de fase 1 · excluye las audiencias del Conjunto A.</dd>
-        <dt>Creativos</dt><dd>Video de Rubén · Carruseles · Video de texto dinámico.</dd>
-        <dt>Base</dt><dd>decisores_pty en fase 1: $4.20 por registro, 94% decisores.</dd>
-      </dl>
-    </div>
-    <div class="panel" id="p3" data-g="plan" role="tabpanel">
-      <div class="ph"><h3>Reserva · Escalar ganador</h3><div class="chips"><span class="chip pay">$18.82</span><span class="chip">desde 5 dic</span></div></div>
-      <dl class="kv">
-        <dt>Criterio</dt><dd>Menor costo por agenda abierta después de 4 días de datos.</dd>
-        <dt>Acción</dt><dd>Se suma al presupuesto del conjunto con ese anuncio.</dd>
-      </dl>
-    </div>
-    <div class="panel" id="p4" data-g="plan" role="tabpanel">
-      <div class="ph"><h3>Medición y reglas</h3></div>
-      <dl class="kv">
-        <dt>Optimización</dt><dd>Conversión "BSS · Abrir agenda" (clic en Agenda una llamada). Instalada y probada.</dd>
-        <dt>Resultado</dt><dd>Llamadas agendadas en Cal.com y evento Schedule en Meta, con UTM por anuncio.</dd>
-        <dt>Apagado</dt><dd>Anuncio con $40 de gasto sin agenda abierta.</dd>
-        <dt>Revisión</dt><dd>3, 6, 9 y 12 dic. Sin cambios en las primeras 72 h.</dd>
-        <dt>Meta</dt><dd>4 llamadas agendadas desde pauta.</dd>
-      </dl>
-      <p class="hint">Con $20 / día el conjunto queda en "Aprendizaje limitado" (Meta pide ~50 conversiones por semana). Se evalúa por llamadas en Cal.com.</p>
-    </div>
-    <div class="panel" id="p5" data-g="plan" role="tabpanel">
-      <div class="ph"><h3>Calendario</h3></div>
-      <div class="tl">
-        <div class="tli"><span class="d">1 dic</span><span class="dot"></span><div class="t"><b>Inicio A y B</b>Video de Rubén + carrusel "para que tu marca venda".</div></div>
-        <div class="tli"><span class="d">3 dic</span><span class="dot"></span><div class="t"><b>Clips del summit en A</b>Primera revisión.</div></div>
-        <div class="tli"><span class="d">5 dic</span><span class="dot"></span><div class="t"><b>Carrusel "para que NO venda"</b>Se activa la reserva.</div></div>
-        <div class="tli"><span class="d">9 dic</span><span class="dot"></span><div class="t"><b>Copy de cierre</b>Lugares fundadores hasta el 15 dic, inicio en enero.</div></div>
-        <div class="tli"><span class="d">13 dic</span><span class="dot"></span><div class="t"><b>Fin de pauta</b></div></div>
+    <!-- estructura -->
+    <h3 class="sub">Estructura de campaña</h3>
+    <div class="tree">
+      <div class="node root"><small>Campaña</small><b>bss_llamadas</b><span>Objetivo: Ventas · Conversión "BSS · Abrir agenda" · Presupuesto por conjunto</span></div>
+      <div class="branches">
+        <div class="branch">
+          <div class="node"><small>Conjunto A · Retargeting</small><b>$9 / día · $117</b><span>Registrados summit · Visitantes web · Vieron reels · Interactuaron IG (30d)</span></div>
+          <div class="ads"><span>Video Rubén</span><span>Carrusel 1</span><span>4 clips summit</span></div>
+        </div>
+        <div class="branch">
+          <div class="node"><small>Conjunto B · Prospección</small><b>$11 / día · $143</b><span>6 zonas de Panamá · 30–55 · intereses fase 1 · excluye A</span></div>
+          <div class="ads"><span>Video Rubén</span><span>Carrusel 1</span><span>Carrusel 2</span><span>Texto dinámico</span></div>
+        </div>
+        <div class="branch">
+          <div class="node res"><small>Reserva</small><b>$18.82</b><span>Desde 5 dic al conjunto con menor costo por agenda abierta</span></div>
+        </div>
       </div>
-      <p class="hint">8 dic feriado: la pauta corre, no se publica orgánico.</p>
     </div>
+    <p class="hint">Sin A/B test. Todos los anuncios corren juntos dentro de cada conjunto; Meta reparte el gasto y el anuncio con mejor rendimiento se lleva el presupuesto.</p>
+
+    <!-- timeline -->
+    <h3 class="sub">Timeline de ejecución</h3>
+    <p class="hint" style="margin:-4px 0 12px">Toca una fila para ver el detalle.</p>
+    <div class="gantt-wrap"><div class="gantt" id="gantt"></div></div>
+    <div class="gdetail" id="gdetail"></div>
+
+    <!-- reglas -->
+    <h3 class="sub">Reglas de optimización</h3>
+    <div class="rules">
+      <div><small>Medición</small><b>Abrir agenda + Schedule</b><span>Pixel en la landing y en Cal.com. UTM por anuncio.</span></div>
+      <div><small>Primeras 72 h</small><b>Sin cambios</b><span>Meta reparte entre anuncios sin intervención.</span></div>
+      <div><small>Apagado</small><b>$40 sin agenda abierta</b><span>Se pausa el anuncio, no el conjunto.</span></div>
+      <div><small>Escala</small><b>Reserva al ganador</b><span>5 dic, al conjunto con menor costo por agenda abierta.</span></div>
+      <div><small>Revisión</small><b>3 · 6 · 9 · 12 dic</b><span>Reporte a Rubén: gasto, agendas, llamadas, costo por llamada.</span></div>
+    </div>
+    <p class="hint">Con $20 / día los conjuntos quedan en "Aprendizaje limitado" (Meta pide ~50 conversiones por semana). Se evalúa por llamadas en Cal.com.</p>
   </div>
 </section>
 
@@ -359,7 +388,7 @@ footer img{height:12px;width:auto;display:block}
   <div class="wrap">
     <p class="eyebrow">Contenidos</p>
     <h2>Piezas para orgánico y pauta</h2>
-    <p class="intro">Todas terminan en CTA a la landing para agendar con Rubén. Selecciona una pieza.</p>
+    <p class="intro">Todas terminan en CTA a la landing para agendar con Rubén. Fondos neutros por defecto: negro, blanco o gris. Selecciona una pieza.</p>
 
     <div class="pillars" role="tablist" data-g="cont" style="--c:5">
       <button class="pil" role="tab" aria-selected="true" data-t="c1"><small>Carrusel</small><b>4:5</b><span>Para que tu marca venda</span></button>
@@ -411,7 +440,7 @@ footer img{height:12px;width:auto;display:block}
             <dt>Hook</dt><dd>En voz y en texto en pantalla, primeros 2 s.</dd>
             <dt>Duración</dt><dd>Máximo 15 s. A menor duración con la misma información, mejor rendimiento.</dd>
             <dt>CTA</dt><dd>Agendar llamada en la landing.</dd>
-            <dt>Versiones</dt><dd>2–3 hooks distintos para test A/B.</dd>
+            <dt>Versiones</dt><dd>2–3 hooks distintos, todos en el mismo conjunto. El que mejor rinde se lleva el presupuesto.</dd>
             <dt>Dato fase 1</dt><dd>El video de Rubén trajo 50% de los registros pagados y tuvo el CTR más alto de los reels (1.96%).</dd>
           </dl>
         </div>
@@ -434,31 +463,24 @@ footer img{height:12px;width:auto;display:block}
     <div class="panel" id="c5" data-g="cont" role="tabpanel">
       <div class="ph"><h3>Video de texto dinámico</h3><div class="chips"><span class="chip org">Orgánico</span><span class="chip pay">Pauta B</span></div></div>
       <div class="fmt">
-        <div><div class="fbox"><div class="shape s916"><b>9:16</b><small>1080 × 1920 px</small></div></div><p class="hint">8–12 s. Ver referencias abajo.</p></div>
+        <div><div class="fbox"><div class="shape s916"><b>9:16</b><small>1080 × 1920 px</small></div></div><p class="hint">8–12 s. Fondo y tipografía en neutros: negro, blanco o gris.</p></div>
         <dl class="kv">
           <dt>Ritmo</dt><dd>1 palabra o frase por pantalla, cambio cada 0.5–1 s.</dd>
           <dt>Movimiento</dt><dd>Blur, escala o letras por separado en cada corte.</dd>
-          <dt>Color</dt><dd>Cambio de fondo a mitad del video.</dd>
+          <dt>Color</dt><dd>Neutros por defecto (negro, blanco, gris). Cambio de fondo a mitad del video.</dd>
           <dt>Tipografía</dt><dd>Sans bold, centrada.</dd>
           <dt>Cierre</dt><dd>CTA en la última pantalla.</dd>
         </dl>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- REFERENCIAS -->
-<section class="band white" id="referencias">
-  <div class="wrap">
-    <p class="eyebrow">Referencias</p>
-    <h2>Referencias de movimiento</h2>
-    <p class="intro">Uso interno para producción. Toca un video para reproducirlo.</p>
-    <div class="refs">
+      <h3 class="sub" style="margin-top:26px">Referencias de movimiento</h3>
+      <p class="hint" style="margin:-4px 0 12px">Uso interno para producción. Toca un video para reproducirlo.</p>
+      <div class="refs">
       <div class="ref"><video src="assets/ref1.mp4" poster="assets/ref1.jpg" muted loop playsinline preload="none"></video><div class="rb"><b>Frase por corte</b>Fondo alterna blanco, negro y gris.<br><small>@kirtanfx · 7 s</small></div></div>
       <div class="ref"><video src="assets/ref2.mp4" poster="assets/ref2.jpg" muted loop playsinline preload="none"></video><div class="rb"><b>Cambio de color</b>Amarillo / negro, palabra con glow.<br><small>@yp.motionstudio · 9 s</small></div></div>
       <div class="ref"><video src="assets/ref3.mp4" poster="assets/ref3.jpg" muted loop playsinline preload="none"></video><div class="rb"><b>Reveal con blur</b>Blanco a morado, cierra en CTA.<br><small>@alhtipu · 14 s</small></div></div>
       <div class="ref"><video src="assets/ref4.mp4" poster="assets/ref4.jpg" muted loop playsinline preload="none"></video><div class="rb"><b>Palabra al ritmo</b>Degradado, escala y blur.<br><small>@starkmediainc · 14 s</small></div></div>
       <div class="ref"><video src="assets/ref5.mp4" poster="assets/ref5.jpg" muted loop playsinline preload="none"></video><div class="rb"><b>Letras por separado</b>Entran una a una, flash de fondo.<br><small>@ms_motiongraphics · 12 s</small></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -484,6 +506,35 @@ const io=new IntersectionObserver(en=>en.forEach(x=>{if(!x.isIntersecting)return
   if(el.classList.contains('split'))el.querySelectorAll('span').forEach(s=>s.style.width=s.dataset.w+'%');else fill(el);io.unobserve(el)}),{threshold:.25});
 $$('.split').forEach(e=>io.observe(e));$$('.panel.on').forEach(e=>io.observe(e));
 $$('.ref video').forEach(v=>v.addEventListener('click',()=>{if(v.paused){$$('.ref video').forEach(o=>o!==v&&o.pause());v.play()}else v.pause()}));
+
+// gantt
+const D=['28','29','30','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'];
+const W=['Sáb','Dom','Lun','Mar','Mié','Jue','Vie','Sáb','Dom','Lun','Mar','Mié','Jue','Vie','Sáb','Dom','Lun','Mar'];
+const ROWS=[
+ {l:'Producción',s:'Piezas',bars:[[0,2,'Video Rubén · Carrusel 1 · clips','k'],[3,6,'Carrusel 2 · Texto dinámico','']],d:['28–30 nov: video de Rubén (9:16 y 4:5), carrusel 1 y 4 clips del summit.','1–4 dic: carrusel 2 y video de texto dinámico.','Todas las piezas con UTM y CTA a la landing.']},
+ {l:'Setup Meta',s:'Campaña',bars:[[2,2,'Setup','k']],d:['Campaña bss_llamadas, conjuntos A y B con presupuesto diario.','Audiencias de retargeting 30d y exclusión de A en B.','Envío a revisión de Meta antes de las 18:00 del 30 nov.']},
+ {l:'QA tracking',s:'Pixel',bars:[[2,2,'QA','k']],d:['Prueba de AbrirAgenda en la landing y Schedule en Cal.com.','Verificación en Events Manager con reserva de prueba.']},
+ {l:'Conjunto A',s:'$9 / día',bars:[[3,15,'Retargeting · $117','k']],d:['1–13 dic, $9 al día.','1 dic: video Rubén + carrusel 1. 3 dic: entran los 4 clips del summit.','Los anuncios compiten dentro del conjunto.']},
+ {l:'Conjunto B',s:'$11 / día',bars:[[3,15,'Prospección · $143','k']],d:['1–13 dic, $11 al día.','1 dic: video Rubén + carrusel 1. 5 dic: carrusel 2 y texto dinámico.']},
+ {l:'Entrada de piezas',s:'Anuncios',ms:[3,5,7],d:['1 dic: video Rubén + carrusel 1 (A y B).','3 dic: clips del summit (A).','5 dic: carrusel 2 + texto dinámico (B).']},
+ {l:'Reserva',s:'$18.82',bars:[[7,15,'Escala al ganador','y']],d:['Desde 5 dic se suma al conjunto con menor costo por agenda abierta.','Cálculo con 4 días de datos (1–4 dic).']},
+ {l:'Revisiones',s:'Reporte',ms:[5,8,11,14],d:['3, 6, 9 y 12 dic.','Gasto, agendas abiertas, llamadas agendadas, costo por llamada por anuncio.','Pausa de anuncios con $40 sin agenda abierta.']},
+ {l:'Copy de cierre',s:'Mensaje',bars:[[11,15,'Lugares fundadores hasta 15 dic','y']],d:['Desde 9 dic: "3 lugares para Clientes Fundadores. Inicio en enero. Decisión hasta el 15 dic."']},
+ {l:'Llamadas',s:'Rubén',bars:[[3,17,'Llamadas · propuesta en 24 h','']],d:['Llamadas de 30 min con Rubén desde el 1 dic.','Propuesta en menos de 24 h. Cierre de fase el 15 dic.']}
+];
+const G=document.getElementById('gantt'),GD=document.getElementById('gdetail');
+if(G){let h='<div class="h" style="position:sticky;left:0;background:var(--w);z-index:2;border-right:1px solid var(--bd)"></div>';
+ D.forEach((d,i)=>{const we=(W[i]==='Sáb'||W[i]==='Dom');const hol=d==='8'&&i===10;h+=`<div class="h${we?' we':''}${hol?' hol':''}">${d}<small>${hol?'Feriado':(i===0?'nov':(i===3?'dic':W[i]))}</small></div>`});
+ ROWS.forEach((r,ri)=>{const row=ri+2;h+=`<div class="lab" data-r="${ri}" style="grid-row:${row}">${r.l}<small>${r.s}</small></div>`;
+  for(let c=0;c<18;c++)h+=`<div class="cell" style="grid-row:${row};grid-column:${c+2}"></div>`;
+  (r.bars||[]).forEach(b=>h+=`<div class="bar ${b[3]}" data-r="${ri}" style="grid-row:${row};grid-column:${b[0]+2}/${b[1]+3}">${b[2]}</div>`);
+  (r.ms||[]).forEach(m=>h+=`<div class="ms" data-r="${ri}" title="${D[m]}" style="grid-row:${row};grid-column:${m+2}"></div>`);});
+ G.innerHTML=h;
+ const pick=ri=>{const r=ROWS[ri];GD.innerHTML=`<b>${r.l}</b> · ${r.s}<ul>${r.d.map(x=>`<li>${x}</li>`).join('')}</ul>`;GD.classList.add('on');
+  G.querySelectorAll('.lab').forEach(l=>l.style.background=l.dataset.r==ri?'var(--lila)':'var(--w)')};
+ G.addEventListener('click',e=>{const t=e.target.closest('[data-r]');if(t)pick(+t.dataset.r)});
+ pick(3);}
+
 const links=$$('nav .links a:not(.back)');
 const spy=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
 $$('section[id]').forEach(s=>spy.observe(s));
